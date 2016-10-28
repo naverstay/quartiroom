@@ -1,7 +1,7 @@
 $pi: 3.14159265359;
 $square_root_of_2: 1.41421356237;
 
-$content-max-w: 1440px;
+$content-max-w: 1200px;
 
 $resp_xs: 320px;
 $resp_s_1: 480px;
@@ -10,9 +10,13 @@ $resp_l: 960px;
 $resp_xl: 1280px;
 $resp_xxl: $content-max-w;
 
+$resp_step_2: 640px;
+
+$mob_menu_w: 960px;
+
 // colors
 
-$gl_gray_light: #f1f4f4;
+$gl_gray_light: #dfdfdf;
 $gl_gray_fill: #f1f1f1;
 
 $gl_white: #fff;
@@ -24,10 +28,10 @@ $gl_gray_4: #343434;
 $gl_gray_2: $gl_main_black;
 $gl_gray_4: $gl_main_black;
 $gl_cool_black: #30334b;
-$gl_gray_lines: #e6e6e6;
+$gl_gray_lines: #d7d7d7;
 $gl_gray_additional: #808080;
 $gl_brown: #402d2d;
-$gl_turquoise: #99fffb;
+$gl_turquoise: #3bbbcd;
 $gl_violette: #697bff;
 $gl_violette_hover: #5a6eff;
 $gl_violette_link_hover: #5569ff;
@@ -37,9 +41,9 @@ $gl_red: #ff4c6a;
 $gl_red_dark: #d83c56;
 
 $gl_green: #bfff73;
-$default_t_color: #7f7f7f;
+$default_t_color: #333;
 //$default_t_color: $gl_main_black;
-$placeholder_color: $gl_gray_additional;
+$placeholder_color: rgba(51, 51, 51, .5);
 
 $gl_soc: #ccc;
 $gl_vk: #597da3;
@@ -54,8 +58,10 @@ $gl_inp_red: #ffe9e9;
 $icomoon-font-path: "../fonts";
 $icomoon-font-name: 'quartiroom_icons';
 
-$Rubik: 'Rubik', sans-serif;
+$OpenSans: 'Open Sans', sans-serif;
 $PTRoubleSans: 'PTRoubleSans', sans-serif;
+$FontfabricMullerBold: 'FontfabricMullerBold', sans-serif;
+$FontfabricMullerRegular: 'FontfabricMullerRegular', sans-serif;
 $PTSerif: 'PT Serif', serif;
 $font_1: "Trebuchet MS", Helvetica, sans-serif;
 $font_2: 'DSGooseRegular', Arial, Helvetica, sans-serif;
@@ -71,7 +77,6 @@ $cross_font_Impact: Impact, 'Charcoal CY', sans-serif;
 $cross_font_TimesNewRoman: 'Times New Roman', 'Times CY', 'Nimbus Roman No9 L', serif;
 $cross_font_TrebuchetMS: 'Trebuchet MS', 'Helvetica CY', sans-serif;
 $cross_font_Verdana: Verdana, 'Geneva CY', 'DejaVu Sans', sans-serif;
-
 
 @mixin opacity($val : 1, $important : 0) {
   @if $important == 0 {

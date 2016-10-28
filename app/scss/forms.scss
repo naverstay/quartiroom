@@ -1,0 +1,166 @@
+
+.select-box-v1 {
+  .select2-container--default {
+
+    .select2-container {
+
+    }
+
+    .select2-selection__rendered {
+      @include transition_all(color .3s);
+      font-size: 14px;
+      color: $default_t_color;
+      padding: 0 34px 0 14px;
+      line-height: 40px;
+    }
+
+    .select2-selection__placeholder {
+
+    }
+
+    .select2-selection--single {
+      background: $gl_white;
+      border: none;
+      height: 40px;
+
+      &:hover {
+
+        .select2-selection__rendered {
+          color: $gl_black_000;
+        }
+
+        .select2-selection__arrow:before {
+          color: $gl_black_000;
+        }
+      }
+    }
+
+    .select2-selection__arrow {
+      @extend %icon_pseudo;
+      height: 38px;
+
+      &:before {
+        @include transition_all(color .3s);
+        position: absolute;
+        font-size: 14px;
+        line-height: 16px;
+        height: 16px;
+        top: 50%;
+        margin-top: -8px;
+        right: 9px;
+        content: $i-chevron-down;
+        color: #c5c5c5;
+      }
+
+      b {
+        display: none;
+      }
+    }
+  }
+}
+
+.select_box_v2 {
+  padding-left: 5px;
+
+  .select2-results {
+    line-height: normal;
+  }
+
+  .select2-dropdown {
+    border: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
+    background: $gl_white;
+  }
+
+  .select2-results__options {
+    li {
+      padding-left: 14px;
+    }
+  }
+
+  .select2-container--default {
+
+    .select2-container {
+
+    }
+
+    .select2-selection__rendered {
+      @include transition_all(color .3s);
+      font-size: 14px;
+      line-height: 35px;
+      padding: 0 33px 0 14px;
+      color: $gl_brown;
+      background: $gl_white;
+    }
+
+    .select2-selection__placeholder {
+
+    }
+
+    .select2-selection--single {
+      background: none;
+      border: none;
+      border-radius: 0;
+      height: 35px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
+
+      &:hover {
+
+        .select2-selection__arrow:before {
+          color: $gl_violette_link_hover;
+        }
+      }
+    }
+
+    .select2-selection__arrow {
+      @extend %icon_pseudo;
+      height: 33px;
+
+      &:before {
+        @include transition_all(color .3s);
+        position: absolute;
+        font-size: 10px;
+        height: 12px;
+        top: 50%;
+        margin-top: -5px;
+        right: 12px;
+        font-weight: 700;
+        //content: $i-chevron-down;
+        color: $gl_main_black;
+      }
+
+      b {
+        display: none;
+      }
+    }
+  }
+}
+
+.form_row {
+  @extend %clearfix;
+}
+
+.form_cell {
+
+}
+
+.input_w {
+
+}
+
+.f_input {
+  display: block;
+  width: 100%;
+
+  &.input-v1 {
+    height: 40px;
+    border-radius: 4px;
+    background: $gl_white;
+    padding: 10px 14px;
+    color: $default_t_color;
+    font: 14px/20px $OpenSans;
+  }
+
+}
+
+

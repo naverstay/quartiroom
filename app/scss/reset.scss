@@ -146,14 +146,12 @@ textarea {
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: $placeholder_color;
-  text-transform: uppercase;
   font-weight: 500;
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
   color: $placeholder_color;
-  text-transform: uppercase;
   font-weight: 500;
 }
 

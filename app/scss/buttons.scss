@@ -1,5 +1,28 @@
 //************  buttons
 
 %btn_1 {
-  
+
+}
+
+.btn_v1 {
+  height: 40px;
+
+  &.hero_btn {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+    font: 16px $FontfabricMullerRegular;
+    margin-top: 20px;
+
+    @include respond-to-min($resp_step_2) {
+      margin-top: 0;
+    }
+  }
+
+}
+
+.btn_blue {
+  color: $gl_white;
+  background: $gl_turquoise;
 }

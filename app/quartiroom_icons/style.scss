@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'quartiroom_icons';
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?iyspaz');
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?iyspaz#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.ttf?iyspaz') format('truetype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.woff?iyspaz') format('woff'),
-    url('#{$icomoon-font-path}/quartiroom_icons.svg?iyspaz#quartiroom_icons') format('svg');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?vcsh1k');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?vcsh1k#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.ttf?vcsh1k') format('truetype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.woff?vcsh1k') format('woff'),
+    url('#{$icomoon-font-path}/quartiroom_icons.svg?vcsh1k#quartiroom_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-profile {
+  &:before {
+    content: $i-profile;
+  }
+}
 .i-building---apartment {
   &:before {
     content: $i-building---apartment;
@@ -39,6 +44,21 @@
 .i-interior---sofa-chair {
   &:before {
     content: $i-interior---sofa-chair;
+  }
+}
+.i-chevron-down {
+  &:before {
+    content: $i-chevron-down;
+  }
+}
+.i-chevron-thin-down {
+  &:before {
+    content: $i-chevron-thin-down;
+  }
+}
+.i-cross {
+  &:before {
+    content: $i-cross;
   }
 }
 

@@ -1,4 +1,5 @@
 var body, html, doc, wnd,
+    header,
     closeMenuTimer,
     callback_popup,
     auth_popup,
@@ -10,7 +11,11 @@ var body, html, doc, wnd,
 
 $(function ($) {
 
+    doc = $(document);
+    wnd = $(window);
+    html = $('html');
     body = $('body');
+    header = $('.header');
 
     body.delegate('.openMobMenu', 'click', function () {
         clearTimeout(closeMenuTimer);
@@ -24,46 +29,52 @@ $(function ($) {
         body.addClass('icon_close').toggleClass('menu_opened');
         return false;
 
-    }).delegate('.openFav', 'click', function () {
+    }).delegate('.menuItem', 'mouseenter', function () {
+        $(this).addClass('hovered');
+    }).delegate('.menuItem', 'mouseleave', function () {
+        $(this).removeClass('hovered');
+    }).delegate('.menuItem', 'click', function () {
+        $(this).toggleClass('hovered');
+    });
 
-        body.toggleClass('fav_opened');
-        return false;
-        
-    }).delegate('.toggleOneClick', 'click', function () {
+    $('.scrollTo').on('click', function () {
+        docScrollTo($($(this).attr('href')).offset().top - header.height(), 500);
 
-        $('.oneClickForm').toggle();
-        return false;
-        
-    }).delegate('.favBtn', 'click', function () {
-        $(this).toggleClass('favorite');
         return false;
     });
 
-    initInputFillChecker();
-    
-    initCallbackPopup();
-
-    initAuthPopup();
-
-    initRecoveryPopup();
-
-    initFailPopup();
-
-    initSuccessPopup();
-
-    initAddToCartPopup();
-
-    initQuickSearchPopup();
-    
-    initTabs();
-
-    initAsideSubmenu();
-    
     initSelect2();
 
     all_dialog_close();
-  
 });
+
+function setSectionBS() {
+    var section = $('.BSsection');
+
+    section.each(function () {
+        var sctn = $(this);
+        sctn.backstretch(getBSImg(sctn), {fade: 0});
+    });
+}
+
+function docScrollTo(pos, speed, callback) {
+
+    $('html,body').animate({'scrollTop': pos}, speed, function () {
+        if (typeof(callback) == 'function') {
+            callback();
+        }
+    });
+}
+
+function getBSImg(el) {
+
+    if (wnd.width() < 1024 && el.attr('data-bs-1024') != void 0) {
+        return el.attr('data-bs-1024');
+    }
+
+    return el.attr('data-bs');
+
+}
 
 function initMask() {
     $("input").filter(function (i, el) {
@@ -74,7 +85,7 @@ function initMask() {
 function initInputFillChecker() {
     $('input').on('change keyup blur', function () {
         var inp = $(this);
-        
+
         if ('text' == inp[0].type && 'required' == inp.attr('required')) {
             inp.toggleClass('empty', inp.val() == 0);
         }
@@ -102,219 +113,11 @@ function initQuickSearchPopup() {
         }
     });
 
-    $('.quickSearchBtn').on ('click', function () {
+    $('.quickSearchBtn').on('click', function () {
 
         quick_search_popup.dialog('open');
 
         return false;
-    });
-
-}
-
-function initAddToCartPopup() {
-
-    add2cart_popup = $('#add2cart_popup').dialog({
-        autoOpen: false,
-        modal: false,
-        closeOnEscape: true,
-        closeText: '',
-        dialogClass: 'no_close_on_dt dialog_close_butt_mod_1 dialog_g_size_3 mob_dialog_fixed',
-        //appendTo: '.wrapper',
-        width: 430,
-        draggable: true,
-        collision: "fit",
-        position: {
-            my: "right-5 top+15",
-            at: "right bottom",
-            of: $('.cartLink')
-        },
-        open: function (event, ui) {
-            //body.addClass('modal_opened overlay_v2');
-        },
-        close: function (event, ui) {
-            //body.removeClass('modal_opened overlay_v2');
-        }
-    });
-
-    $('.addToCart').on ('click', function () {
-
-        add2cart_popup.dialog('open');
-        
-        setTimeout(function () {
-            add2cart_popup.dialog('close');
-        }, 3000);
-        
-        return false;
-    });
-
-}
-
-function initCallbackPopup() {
-
-    callback_popup = $('#callback_popup').dialog({
-        autoOpen: false,
-        modal: true,
-        closeOnEscape: true,
-        closeText: '',
-        dialogClass: 'no_close_mod dialog_g_size_1',
-        //appendTo: '.wrapper',
-        width: 300,
-        draggable: true,
-        collision: "fit",
-        position: {my: "top center", at: "top center", of: window},
-        open: function (event, ui) {
-            body.addClass('modal_opened overlay_v2');
-        },
-        close: function (event, ui) {
-            body.removeClass('modal_opened overlay_v2');
-        }
-    });
-
-    $('.callbackBtn').on ('click', function () {
-
-        callback_popup.dialog('open');
-
-        return false;
-    });
-
-}
-
-function initAuthPopup() {
-
-    auth_popup = $('#auth_popup').dialog({
-        autoOpen: false,
-        modal: true,
-        closeOnEscape: true,
-        closeText: '',
-        dialogClass: 'no_close_mod dialog_g_size_1',
-        //appendTo: '.wrapper',
-        width: 462,
-        draggable: true,
-        collision: "fit",
-        position: {my: "top center", at: "top center", of: window},
-        open: function (event, ui) {
-            body.addClass('modal_opened overlay_v2');
-        },
-        close: function (event, ui) {
-            body.removeClass('modal_opened overlay_v2');
-        }
-    });
-
-    $('.authBtn').on ('click', function () {
-
-        auth_popup.dialog('open');
-
-        return false;
-    });
-
-}
-
-function initFailPopup() {
-
-    fail_popup = $('#fail_popup').dialog({
-        autoOpen: false,
-        modal: true,
-        closeOnEscape: true,
-        closeText: '',
-        dialogClass: 'no_close_mod dialog_g_size_1',
-        //appendTo: '.wrapper',
-        width: 462,
-        draggable: true,
-        collision: "fit",
-        position: {my: "top center", at: "top center", of: window},
-        open: function (event, ui) {
-            body.addClass('modal_opened overlay_v2');
-        },
-        close: function (event, ui) {
-            body.removeClass('modal_opened overlay_v2');
-        }
-    });
-
-    $('.openFailPopup').on ('click', function () {
-
-        fail_popup.dialog('open');
-
-        return false;
-    });
-
-}
-
-function initSuccessPopup() {
-
-    success_popup = $('#success_popup').dialog({
-        autoOpen: false,
-        modal: true,
-        closeOnEscape: true,
-        closeText: '',
-        dialogClass: 'no_close_mod dialog_g_size_1',
-        //appendTo: '.wrapper',
-        width: 462,
-        draggable: true,
-        collision: "fit",
-        position: {my: "top center", at: "top center", of: window},
-        open: function (event, ui) {
-            body.addClass('modal_opened overlay_v2');
-        },
-        close: function (event, ui) {
-            body.removeClass('modal_opened overlay_v2');
-        }
-    });
-
-    $('.openSuccessPopup').on ('click', function () {
-
-        success_popup.dialog('open');
-
-        return false;
-    });
-
-}
-
-function initRecoveryPopup() {
-
-    recovery_popup = $('#recovery_popup').dialog({
-        autoOpen: false,
-        modal: true,
-        closeOnEscape: true,
-        closeText: '',
-        dialogClass: 'no_close_mod dialog_g_size_1',
-        //appendTo: '.wrapper',
-        width: 462,
-        draggable: true,
-        collision: "fit",
-        position: {my: "top center", at: "top center", of: window},
-        open: function (event, ui) {
-            body.addClass('modal_opened overlay_v2');
-        },
-        close: function (event, ui) {
-            body.removeClass('modal_opened overlay_v2');
-        }
-    });
-
-    $('.passRecoveryBtn').on ('click', function () {
-        auth_popup.dialog('close');
-
-        recovery_popup.dialog('open');
-
-        return false;
-    });
-
-}
-
-function initAsideSubmenu() {
-
-    $('body').delegate('.menuItem', 'mouseenter ', function (e) {
-        $(this).addClass('hovered just_hovered');
-    }).delegate('.menuItem', 'mouseleave', function (e) {
-        $(this).removeClass('hovered just_hovered');
-    }).delegate('.menuItem', 'click', function (e) {
-    
-        var el = $(this);
-
-        if (el.hasClass('just_hovered')) {
-            el.removeClass('just_hovered');
-        } else {
-            el.toggleClass('hovered');
-        }
     });
 
 }
@@ -342,7 +145,10 @@ function initSelect2() {
         slct.select2({
             minimumResultsForSearch: Infinity,
             dropdownParent: slct.parent(),
-            width: '100%'
+            width: '100%',
+            adaptDropdownCssClass: function () {
+                return slct.attr('data-dropdown-class');
+            }
         });
     });
 }
