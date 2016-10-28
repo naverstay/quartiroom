@@ -37,7 +37,9 @@ html(lang='ru')
                                                         
                                                         
                                                         
-                            a.hero_scroll.scrollTo(href='#section_1') Как это работает?
+                            .hero_scroll
+                                span Как это работает?
+                                a.gl_link.scrollTo(href='#section_1') 
                                 
                             
                 div.main_content#section_1
@@ -49,7 +51,8 @@ html(lang='ru')
                                         img(src='images/feature_border.png')
                                         .feature-fraction.fraction-v1 С&nbsp;мебелью
                                         .feature-fraction.fraction-v2 Остальные
-                                        .feature-icon.i-interior---sofa-chair
+                                        .feature-icon
+                                            img(src='images/interior-sofa-chair.svg')
                                     p Квартиры с мебелью продаются <br> в 3 раза быстрее пустых
                             li
                                 .feature-unit
@@ -57,7 +60,8 @@ html(lang='ru')
                                         img(src='images/feature_border_2.png')
                                         .feature-fraction.fraction-v3 Новостройки <br> в&nbsp;других&nbsp;районах
                                         .feature-fraction.fraction-v2 Новостройки <br> в промзонах
-                                        .feature-icon.i-building---apartment
+                                        .feature-icon
+                                            img(src='images/building-apartment.svg')
                                     p Новостройки в промзонах <br> теряют в цене после ГК
                             li
                                 .feature-unit
@@ -65,7 +69,8 @@ html(lang='ru')
                                         img(src='images/feature_border.png')
                                         .feature-fraction.fraction-v1 С мебелью
                                         .feature-fraction.fraction-v2 Остальные
-                                        .feature-icon.i-time---clock-hour
+                                        .feature-icon
+                                            img(src='images/time-clock-hour.svg')
                                     p Однокомнатные квартиры <br> в 5 раз популярнее остальных
                         
                         

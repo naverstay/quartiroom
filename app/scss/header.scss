@@ -193,8 +193,8 @@
 
   &_holder {
     @extend %clearfix;
-    @include transition_all(transform .3s);
-    @include transform_translate(100%, 0);
+    @include transition_all(margin .3s);
+    //@include transform_translate(100%, 0);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -202,12 +202,14 @@
     width: 320px;
     z-index: 10;
     padding: 0 10px;
+    margin-right: -330px;
     background: $gl_white;
     font-family: $FontfabricMullerRegular;
     box-shadow: -2px 0 5px rgba(0, 0, 0, .1);
 
     .menu_opened & {
-      @include transform_translate(0, 0);
+      margin-right: 0;
+      //@include transform_translate(0, 0);
     }
 
     .gl_link {
@@ -224,7 +226,8 @@
     }
 
     @include respond-to-min($mob_menu_w) {
-      @include transform_translate(0, 0);
+      //@include transform_translate(0, 0);
+      margin-right: 0;
       position: relative;
       margin-left: 30%;
       width: auto;
@@ -235,7 +238,7 @@
         display: none;
         position: absolute;
         top: 100%;
-        right: 0;
+        left: 30px;
         background: #fff;
         z-index: 1;
         padding: 0 10px;
@@ -319,6 +322,7 @@
       @extend %icon_pseudo;
 
       &:before {
+        @extend %translate3d;
         @include transition_all(transform .3s);
         position: absolute;
         top: 50%;
@@ -328,6 +332,7 @@
         margin-top: -8px;
         right: 0;
         content: $i-chevron-down;
+        transform-origin: 50% 50%;
       }
     }
 

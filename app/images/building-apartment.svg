@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3c4042;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="668" y="914" width="64" height="64" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#3bbbcd"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="_3-building_-_apartment" data-name="3-building - apartment" class="cls-1" d="M716,978H668v-52h16v-12h32v12h16v52H716Zm-32-48H672v44h12V930Zm12,44h8v-8h-8v8Zm16-48v-8H688v56h4v-12h16v12h4v-48Zm16,4H716v44h12V930Zm-4,12h-4v-4h4v4Zm0,12h-4v-4h4v4Zm0,12h-4v-4h4v4Zm-32-16h16v4H692v-4Zm0-12h16v4H692v-4Zm0-12h16v4H692v-4Zm-12,16h-4v-4h4v4Zm0,12h-4v-4h4v4Zm0,12h-4v-4h4v4Z" transform="translate(-668 -914)"/>
+</svg>

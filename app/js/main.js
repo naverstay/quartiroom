@@ -1,4 +1,5 @@
 var body, html, doc, wnd,
+    ie,
     header,
     closeMenuTimer,
     callback_popup,
@@ -9,7 +10,55 @@ var body, html, doc, wnd,
     add2cart_popup,
     recovery_popup;
 
-$(function ($) {
+function ieCheck() {
+
+    var myNav = navigator.userAgent.toLowerCase(),
+        html = document.documentElement;
+
+    if ((myNav.indexOf('msie') != -1)) {
+        ie = ((myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false);
+        html.className += 'ie ie' + ie;
+    } else if (!!myNav.match(/trident.*rv\:11\./)) {
+        ie = 11;
+        html.className += 'ie ie' + ie;
+    }
+
+    if (myNav.indexOf('safari') != -1) {
+        if (myNav.indexOf('chrome') == -1) {
+            html.className += ' safari';
+        } else {
+            html.className += ' chrome';
+        }
+    }
+
+    if (myNav.indexOf('firefox') != -1) {
+        html.className += ' firefox';
+    }
+
+    if ((myNav.indexOf('windows') != -1)) {
+        html.className += ' windows';
+    }
+}
+
+ieCheck();
+
+console.log(ie);
+
+if (ie == 8) {
+    window.onload = new function () {  // дубль функции $(window).on('load'... для ИЕ 
+        domReady();
+
+        setTimeout(function () {
+            svg_fallback();
+        }, 1000);
+    };
+} else {
+    $(function ($) {
+        domReady();
+    });
+}
+
+function domReady() {
 
     doc = $(document);
     wnd = $(window);
@@ -46,7 +95,16 @@ $(function ($) {
     initSelect2();
 
     all_dialog_close();
-});
+
+}
+
+function svg_fallback() { // замена СВГ на ПНГ 
+    if (html.hasClass('ie8')) {
+        $('img[src$=".svg"]').each(function (ind) {
+            $(this).attr('src', $(this).attr('src').replace(/\.svg$/, '.png'));
+        });
+    }
+}
 
 function setSectionBS() {
     var section = $('.BSsection');

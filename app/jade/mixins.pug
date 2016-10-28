@@ -15,21 +15,22 @@ mixin dev_head(page_title, index, news, search, product, lk, cart)
         | 
         | <!--endbuild-->
         link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic", rel="stylesheet", type='text/css')
-        script(src='js/lib/modernizr.js')
-
-        | <!--[if IE 8]>
-        | <link rel="stylesheet" href="css/ie_8.css" media="all"/>
-        | <script src="js/lib/respond.min.js"/></script>
-        | <![endif]-->
+ 
         | 
         | <!--build:js js/main.min.js -->
         script(src='js/lib/jquery-1.12.1.min.js')
+        script(src='js/lib/modernizr.js')
         script(src='js/lib/jquery-ui-1.11.4.js')
         script(src='js/lib/slick.js')
         script(src='js/lib/select2.js')
         script(src='js/main.js')
         | 
         | <!--endbuild-->
+        | <!--[if IE 8]>
+        | <link rel="stylesheet" href="css/ie_8.css" media="all"/>
+        | <script src="js/lib/respond.min.js"/></script>
+        | <![endif]-->
+        
         - if (index)
             | 
             | <!--build:js js/index.min.js -->

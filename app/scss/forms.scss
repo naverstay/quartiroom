@@ -1,11 +1,17 @@
 
 .select-box-v1 {
-  .select2-container--default {
 
-    .select2-container {
-
+  .select2-container {
+    &.select2-container--open {
+      .select2-selection__arrow {
+        &:before {
+          @include transform_rotate(180);
+        }
+      }
     }
-
+  }
+  
+  .select2-container--default {
     .select2-selection__rendered {
       @include transition_all(color .3s);
       font-size: 14px;
@@ -40,7 +46,8 @@
       height: 38px;
 
       &:before {
-        @include transition_all(color .3s);
+        @extend %translate3d;
+        @include transition_all(color .3s, transform .3s);
         position: absolute;
         font-size: 14px;
         line-height: 16px;
@@ -50,12 +57,19 @@
         right: 9px;
         content: $i-chevron-down;
         color: #c5c5c5;
+        transform-origin: 50% 50%;
       }
 
       b {
         display: none;
       }
     }
+  }
+}
+
+.dropdown-v1 {
+  .select2-results__option {
+    padding: 6px 14px;
   }
 }
 

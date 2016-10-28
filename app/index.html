@@ -15,20 +15,20 @@
      
     <!--endbuild-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;amp;subset=cyrillic" rel="stylesheet" type="text/css"/>
-    <script src="js/lib/modernizr.js"></script>
-    <!--[if IE 8]>
-    <link rel="stylesheet" href="css/ie_8.css" media="all"/>
-    <script src="js/lib/respond.min.js"/></script>
-    <![endif]-->
      
     <!--build:js js/main.min.js -->
     <script src="js/lib/jquery-1.12.1.min.js"></script>
+    <script src="js/lib/modernizr.js"></script>
     <script src="js/lib/jquery-ui-1.11.4.js"></script>
     <script src="js/lib/slick.js"></script>
     <script src="js/lib/select2.js"></script>
     <script src="js/main.js"></script>
      
     <!--endbuild-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" href="css/ie_8.css" media="all"/>
+    <script src="js/lib/respond.min.js"/></script>
+    <![endif]-->
      
     <!--build:js js/index.min.js -->
     <script src="js/lib/jquery.backstretch.js"></script>
@@ -102,7 +102,8 @@
                     </div>
                   </div>
                 </div>
-              </div><a class="hero_scroll scrollTo" href="#section_1">Как это работает?</a>
+              </div>
+              <div class="hero_scroll"><span>Как это работает?</span><a class="gl_link scrollTo" href="#section_1"> </a></div>
             </div>
           </div>
         </div>
@@ -114,7 +115,7 @@
                   <div class="feature-logo"><img src="images/feature_border.png">
                     <div class="feature-fraction fraction-v1">С&nbsp;мебелью</div>
                     <div class="feature-fraction fraction-v2">Остальные</div>
-                    <div class="feature-icon i-interior---sofa-chair"></div>
+                    <div class="feature-icon"><img src="images/interior-sofa-chair.svg"></div>
                   </div>
                   <p>Квартиры с мебелью продаются <br> в 3 раза быстрее пустых</p>
                 </div>
@@ -124,7 +125,7 @@
                   <div class="feature-logo"><img src="images/feature_border_2.png">
                     <div class="feature-fraction fraction-v3">Новостройки <br> в&nbsp;других&nbsp;районах</div>
                     <div class="feature-fraction fraction-v2">Новостройки <br> в промзонах</div>
-                    <div class="feature-icon i-building---apartment"></div>
+                    <div class="feature-icon"><img src="images/building-apartment.svg"></div>
                   </div>
                   <p>Новостройки в промзонах <br> теряют в цене после ГК</p>
                 </div>
@@ -134,7 +135,7 @@
                   <div class="feature-logo"><img src="images/feature_border.png">
                     <div class="feature-fraction fraction-v1">С мебелью</div>
                     <div class="feature-fraction fraction-v2">Остальные</div>
-                    <div class="feature-icon i-time---clock-hour"></div>
+                    <div class="feature-icon"><img src="images/time-clock-hour.svg"></div>
                   </div>
                   <p>Однокомнатные квартиры <br> в 5 раз популярнее остальных</p>
                 </div>
