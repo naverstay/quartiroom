@@ -12,7 +12,7 @@
   background: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 
-  .section_inner {
+  .section-inner {
     position: relative;
   }
 
@@ -100,7 +100,7 @@
   }
 }
 
-.logo_block {
+.header-logo_block {
   float: left;
 
   @include respond-to-min($resp_step_2) {
@@ -108,7 +108,7 @@
   }
 }
 
-.logo {
+.header-logo {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -130,7 +130,7 @@
     border-width: 2px 0 2px 2px;
   }
 
-  .logo_r {
+  .header-logo_r {
     position: relative;
     z-index: 2;
 
@@ -176,7 +176,7 @@
       line-height: 23px;
     }
 
-    .logo_r {
+    .header-logo_r {
       &:after,
       &:before {
         border-left-width: 3px;
@@ -216,7 +216,7 @@
       color: $default_t_color;
     }
 
-    .sub-menu {
+    .main-menu_sub-menu {
       display: none;
 
       li {
@@ -234,7 +234,7 @@
       padding: 0;
       box-shadow: none;
 
-      .sub-menu {
+      .main-menu_sub-menu {
         display: none;
         position: absolute;
         top: 100%;
@@ -254,7 +254,7 @@
   .footer & {
     @extend %clearfix;
 
-    .sub-menu {
+    .main-menu_sub-menu {
       margin-top: 30px;
       display: block;
 
@@ -289,14 +289,14 @@
   }
 }
 
-.sub-menu {
+.main-menu_sub-menu {
 
   li {
     margin-bottom: 14px;
   }
 }
 
-.main_m_item {
+.main-menu_item {
   position: relative;
   border-bottom: 1px solid $gl_gray_lines;
 
@@ -317,7 +317,7 @@
     }
   }
 
-  &.dropdown-menu {
+  &._dropdown-menu {
     > .gl_link {
       @extend %icon_pseudo;
 
@@ -343,13 +343,13 @@
         }
       }
 
-      .sub-menu {
+      .main-menu_sub-menu {
         display: block;
       }
     }
   }
 
-  .sub-menu {
+  .main-menu_sub-menu {
     .gl_link {
       display: block;
       line-height: normal;
@@ -410,30 +410,38 @@
   }
 }
 
-.breadcrumbs {
-  @extend %clearfix;
-  line-height: 18px;
-  margin-bottom: 10px;
+.breadcrumbs_section {
+  background: $gl_white;
+  border-bottom: 1px solid #d4d4d4;
 }
 
-.breadcrumb_item {
+.breadcrumbs {
+  @extend %clearfix;
+  padding: 5px 0 7px;
+
+  @include respond-to-min($resp_step_2) {
+    padding: 22px 0 10px;
+  }
+}
+
+.breadcrumb-item {
   @extend %icon_pseudo;
   float: left;
-  font-size: 12px;
-  margin-bottom: 20px;
+  font-size: 11px;
 
-  &:after {
-    //content: $i-arr_right;
+  &:before {
+    content: $i-chevron_right;
     display: inline-block;
     vertical-align: middle;
-    margin: 0 6px 0 4px;
-    font-size: 14px;
+    margin: 0 5px;
+    font-size: 10px;
     color: $gl_main_black;
   }
 
   span {
     display: inline-block;
     vertical-align: middle;
+    color: #848484;
   }
 
   .gl_link {
@@ -441,20 +449,26 @@
     display: inline-block;
     vertical-align: middle;
     text-decoration: none;
-    color: $gl_main_black;
+    color: #848484;
 
     &:hover {
-      color: $gl_violette_link_hover;
+      color: $gl_black_000;
     }
-
   }
 
-  &:last-child {
-    &:after {
+  &:first-child {
+    &:before {
       display: none;
     }
   }
 
+  @include respond-to-min($resp_step_2) {
+    font-size: 14px;
+
+    &:before {
+      margin: 0 14px;
+    }
+  }
 }
 
 

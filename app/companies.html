@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Quartiroom Компании</title>
+     
+    <!-- saved from url=(0014)about:internet -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+     
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/main_global.css" media="all"/>
+     
+    <!--endbuild-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;amp;subset=cyrillic" rel="stylesheet" type="text/css"/>
+     
+    <!--build:js js/main.min.js -->
+    <script src="js/lib/jquery-1.12.1.min.js"></script>
+    <script src="js/lib/modernizr.js"></script>
+    <script src="js/lib/jquery-ui-1.11.4.js"></script>
+    <script src="js/lib/slick.js"></script>
+    <script src="js/lib/jquery.inputmask.bundle.js"></script>
+    <script src="js/lib/jquery.easy-autocomplete.js"></script>
+    <script src="js/lib/select2.js"></script>
+    <script src="js/main.js"></script>
+     
+    <!--endbuild-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" href="css/ie_8.css" media="all"/>
+    <script src="js/lib/respond.min.js"/></script>
+    <![endif]-->
+     
+    <!--build:js js/companies.min.js -->
+    <script src="js/companies.js"></script>
+     
+    <!--endbuild-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="base _gray">
+        <div class="header">
+          <div class="section-inner">
+            <div class="header-logo_block"><a class="header-logo" href="index.html"><span>КВА<span class="header-logo_r">Р</span>ТИРИУМ</span></a></div><a class="mob-menu_btn openMobMenu" href="#"></a>
+            <div class="main-menu_holder">
+              <div class="user-menu"><a class="user-menu_link" href="#"><span class="user-menu_icon"></span><span>Вход</span></a></div>
+              <ul class="main-menu">
+                <li class="main-menu_item menuItem _dropdown-menu"><span class="gl_link">Квартиры</span>
+                  <ul class="main-menu_sub-menu">
+                    <li><a class="gl_link" href="#">Новостройки</a></li>
+                    <li><a class="gl_link" href="#">Вторичное жилье</a></li>
+                    <li><a class="gl_link" href="#">1-комнатные</a></li>
+                    <li><a class="gl_link" href="#">2-комнатные</a></li>
+                  </ul>
+                </li>
+                <li class="main-menu_item menuItem _dropdown-menu"><span class="gl_link">Новостройки</span>
+                  <ul class="main-menu_sub-menu">
+                    <li><a class="gl_link" href="#">Все новостройки</a></li>
+                    <li><a class="gl_link" href="#">Москва</a></li>
+                    <li><a class="gl_link" href="#">Московская область</a></li>
+                  </ul>
+                </li>
+                <li class="main-menu_item menuItem"><a class="gl_link" href="companies.html">Компании</a></li>
+                <li class="main-menu_item menuItem"><a class="gl_link" href="#">Полезное</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="section breadcrumbs_section">
+          <div class="section-inner">
+            <ul class="breadcrumbs">
+              <li class="breadcrumb-item"><a class="gl_link" href="index.html">Главная</a>
+              </li>
+              <li class="breadcrumb-item"><span>Компании</span>
+              </li>
+            </ul>
+            <div class="section-title">Компании</div>
+            <div class="filter-holder">
+              <div class="filter-list text_upper tabScroller" id="filter_list">
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_1"><span class="middle_block dt_hidden">все</span><span class="middle_block mob_hidden">все</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_2"><span class="middle_block dt_hidden">застройщ.</span><span class="middle_block mob_hidden">застройщики</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_3"><span class="middle_block dt_hidden">строит.</span><span class="middle_block mob_hidden">строительные</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_4"><span class="middle_block dt_hidden">агентства</span><span class="middle_block mob_hidden">агентства недвижимости</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_5"><span class="middle_block">банки</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_6"><span class="middle_block dt_hidden">все</span><span class="middle_block mob_hidden">все</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_7"><span class="middle_block dt_hidden">застройщ.</span><span class="middle_block mob_hidden">застройщики</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_8"><span class="middle_block dt_hidden">строит.</span><span class="middle_block mob_hidden">строительные</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_9"><span class="middle_block dt_hidden">агентства</span><span class="middle_block mob_hidden">агентства недвижимости</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#filter_tab_10"><span class="middle_block">банки</span></a></li>
+              </div>
+              <div class="filter-search">
+                <form action="#">
+                  <div class="form-cell">
+                    <input class="f_input input-v2" placeholder="Название компании">
+                    <button class="filter-btn i-search"></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main_content">
+          <div class="mob-search_spacer"></div>
+          <div class="section-inner">
+            <div class="scrollerTabs" data-tab-context="#filter_list .slick-track">
+              <div id="filter_tab_1"> 
+                <ul class="companies-list">
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_1_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">Главстрой девелопмент</a></div>
+                      <div class="company-unit_type">Застройщик <br> Агентство недвижимости</div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>567</dd>
+                        <dt>Выполненных</dt>
+                        <dd>2098</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                        <dt>Участков</dt>
+                        <dd>3</dd>
+                        <dt>Коттеджей</dt>
+                        <dd>34</dd>
+                      </dl>
+                      <div class="company-unit_footer">
+                        <p class="company-unit_rating"><span class="_clr_blue">Рейтинг</span><span> <span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _half"></span></span><span>4.5</span></p>
+                        <p><span class="_clr_gray">на основе </span><span class="_clr_blue">345 отзывов</span></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_2_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">YIT company</a></div>
+                      <div class="company-unit_type">Застройщик </div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>567</dd>
+                        <dt>Выполненных</dt>
+                        <dd>0</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_3_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">NCC development</a></div>
+                      <div class="company-unit_type">Застройщик </div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>567</dd>
+                        <dt>Выполненных</dt>
+                        <dd>2098</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                        <dt>Таунхаусов</dt>
+                        <dd>3</dd>
+                      </dl>
+                      <div class="company-unit_footer">
+                        <p class="company-unit_rating"><span class="_clr_blue">Рейтинг</span><span> <span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _half"></span></span><span>4.5</span></p>
+                        <p><span class="_clr_gray">на основе </span><span class="_clr_blue">345 отзывов</span></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_4_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">ЛСР недвижимость</a></div>
+                      <div class="company-unit_type">Застройщик <br> Агентство недвижимости</div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>12</dd>
+                        <dt>Выполненных</dt>
+                        <dd>0</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                        <dt>Участков</dt>
+                        <dd>3</dd>
+                        <dt>Коттеджей</dt>
+                        <dd>34</dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_1_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">Главстрой девелопмент</a></div>
+                      <div class="company-unit_type">Застройщик <br> Агентство недвижимости</div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>567</dd>
+                        <dt>Выполненных</dt>
+                        <dd>2098</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                        <dt>Участков</dt>
+                        <dd>3</dd>
+                        <dt>Коттеджей</dt>
+                        <dd>34</dd>
+                      </dl>
+                      <div class="company-unit_footer">
+                        <p class="company-unit_rating"><span class="_clr_blue">Рейтинг</span><span> <span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _half"></span></span><span>4.5</span></p>
+                        <p><span class="_clr_gray">на основе </span><span class="_clr_blue">345 отзывов</span></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_2_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">YIT company</a></div>
+                      <div class="company-unit_type">Застройщик </div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>567</dd>
+                        <dt>Выполненных</dt>
+                        <dd>0</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_3_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">NCC development</a></div>
+                      <div class="company-unit_type">Застройщик </div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>567</dd>
+                        <dt>Выполненных</dt>
+                        <dd>2098</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                        <dt>Таунхаусов</dt>
+                        <dd>3</dd>
+                      </dl>
+                      <div class="company-unit_footer">
+                        <p class="company-unit_rating"><span class="_clr_blue">Рейтинг</span><span> <span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _half"></span></span><span>4.5</span></p>
+                        <p><span class="_clr_gray">на основе </span><span class="_clr_blue">345 отзывов</span></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_4_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">ЛСР недвижимость</a></div>
+                      <div class="company-unit_type">Застройщик <br> Агентство недвижимости</div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>12</dd>
+                        <dt>Выполненных</dt>
+                        <dd>0</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                        <dt>Участков</dt>
+                        <dd>3</dd>
+                        <dt>Коттеджей</dt>
+                        <dd>34</dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_1_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">Главстрой девелопмент</a></div>
+                      <div class="company-unit_type">Застройщик <br> Агентство недвижимости</div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>567</dd>
+                        <dt>Выполненных</dt>
+                        <dd>2098</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                        <dt>Участков</dt>
+                        <dd>3</dd>
+                        <dt>Коттеджей</dt>
+                        <dd>34</dd>
+                      </dl>
+                      <div class="company-unit_footer">
+                        <p class="company-unit_rating"><span class="_clr_blue">Рейтинг</span><span> <span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _half"></span></span><span>4.5</span></p>
+                        <p><span class="_clr_gray">на основе </span><span class="_clr_blue">345 отзывов</span></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_2_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">YIT company</a></div>
+                      <div class="company-unit_type">Застройщик </div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>567</dd>
+                        <dt>Выполненных</dt>
+                        <dd>0</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_3_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">NCC development</a></div>
+                      <div class="company-unit_type">Застройщик </div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>567</dd>
+                        <dt>Выполненных</dt>
+                        <dd>2098</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                        <dt>Таунхаусов</dt>
+                        <dd>3</dd>
+                      </dl>
+                      <div class="company-unit_footer">
+                        <p class="company-unit_rating"><span class="_clr_blue">Рейтинг</span><span> <span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _half"></span></span><span>4.5</span></p>
+                        <p><span class="_clr_gray">на основе </span><span class="_clr_blue">345 отзывов</span></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="company-item">
+                    <div class="company-unit">
+                      <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_4_small.jpg"></a></div>
+                      <div class="company-unit_name"><a class="gl_link" href="company.html">ЛСР недвижимость</a></div>
+                      <div class="company-unit_type">Застройщик <br> Агентство недвижимости</div>
+                      <div class="company-unit_caption">проекты</div>
+                      <dl class="company-unit_info">
+                        <dt>Текущих</dt>
+                        <dd>12</dd>
+                        <dt>Выполненных</dt>
+                        <dd>0</dd>
+                      </dl>
+                      <div class="company-unit_caption">В продаже</div>
+                      <dl class="company-unit_info">
+                        <dt>Квартир</dt>
+                        <dd>456</dd>
+                        <dt>Участков</dt>
+                        <dd>3</dd>
+                        <dt>Коттеджей</dt>
+                        <dd>34</dd>
+                      </dl>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="pagination-list mob_hidden">
+                  <li class="pagination-item _first"> <a class="gl_link" href="#">В начало</a></li>
+                  <li class="pagination-item"> <a class="gl_link" href="#">5</a></li>
+                  <li class="pagination-item"> <a class="gl_link" href="#">6</a></li>
+                  <li class="pagination-item _active"> <a class="gl_link" href="#">7</a></li>
+                  <li class="pagination-item"> <a class="gl_link" href="#">8</a></li>
+                  <li class="pagination-item"> <a class="gl_link" href="#">9</a></li>
+                  <li class="pagination-item _last"><a class="gl_link" href="#">В конец</a></li>
+                </ul>
+              </div>
+              <div id="filter_tab_2">2</div>
+              <div id="filter_tab_3">3</div>
+              <div id="filter_tab_4">4</div>
+              <div id="filter_tab_5">5</div>
+              <div id="filter_tab_6">6</div>
+              <div id="filter_tab_7">7</div>
+              <div id="filter_tab_8">8</div>
+              <div id="filter_tab_9">9</div>
+              <div id="filter_tab_10">10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="section-inner">
+          <div class="footer-about_block">
+            <div class="footer-about mob_hidden">Квартириум - это самый удобный способ поиска недвижимости по точному адресу или по карте, с учётом всех интересующих вас параметров.</div>
+            <ul class="footer-about_menu">
+              <li><a class="gl_link" href="#">О проекте</a></li>
+              <li><a class="gl_link" href="#">Реклама</a></li>
+              <li><a class="gl_link" href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer-menu_holder">
+            <ul class="main-menu">
+              <li class="main-menu_item menuItem"><a class="gl_link" href="#">Квартиры</a>
+                <ul class="main-menu_sub-menu">
+                  <li><a class="gl_link" href="#">Новостройки</a></li>
+                  <li><a class="gl_link" href="#">Вторичное жилье</a></li>
+                  <li><a class="gl_link" href="#">1-комнатные</a></li>
+                  <li><a class="gl_link" href="#">2-комнатные</a></li>
+                </ul>
+              </li>
+              <li class="main-menu_item menuItem"><a class="gl_link" href="#">Новостройки</a>
+                <ul class="main-menu_sub-menu">
+                  <li><a class="gl_link" href="#">Все новостройки</a></li>
+                  <li><a class="gl_link" href="#">Москва</a></li>
+                  <li><a class="gl_link" href="#">Московская область</a></li>
+                </ul>
+              </li>
+              <li class="main-menu_item menuItem"><a class="gl_link" href="#">Компании</a>
+                <ul class="main-menu_sub-menu">
+                  <li><a class="gl_link" href="#">Все компании</a></li>
+                  <li><a class="gl_link" href="#">Рейтинг компаний</a></li>
+                  <li><a class="gl_link" href="#">Лучшие 2016 года</a></li>
+                </ul>
+              </li>
+              <li class="main-menu_item menuItem"><a class="gl_link" href="#">Полезное</a>
+                <ul class="main-menu_sub-menu">
+                  <li><a class="gl_link" href="#">Иноформация</a></li>
+                  <li><a class="gl_link" href="#">Законы и акты</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-copyright_holder">
+            <div class="footer-copyright">2011—2016, kvartirium.ru <br> - всё, что нужно знать о квартирах</div>
+            <div class="footer-adds">По вопросам размещения  рекламы и сотрудничества с сайтом <br>  обращайтесь в рекламный отдел:+7 (495) 432-43-22</div>
+            <ul class="footer_counters">
+              <li><img src="images/li_counter.png"/></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup_close_btn popupClose"></div>
+    <div class="popup popup_v2" id="callback_popup">
+      <div class="popup_inner">
+        <ul class="tab_holder tab_v1" id="callback_switcher">
+          <li><a class="tab_link" href="#callback_tab_1"><span>Перезвоните мне</span></a></li>
+          <li><a class="tab_link" href="#callback_tab_2"><span>Задать вопрос</span></a></li>
+        </ul>
+        <div class="tabBlock" data-tab-context="#callback_switcher">
+          <div id="callback_tab_1">
+            <div class="tab_content">
+              <form action="#">
+                <div class="form-cell">
+                  <input class="f_input input_v2" placeholder="Имя"/>
+                </div>
+                <div class="form-cell">
+                  <input class="f_input input_v2" placeholder="Телефон" data-inputmask="'mask': '[+7] (999)-999-99-99'"/>
+                </div>
+                <div class="form-cell">
+                  <button class="btn_v1 blue_btn order_btn">Отправить заявку</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="callback_tab_2">
+            <div class="tab_content">
+              <form action="#">
+                <div class="form-cell">
+                  <input class="f_input input_v2" placeholder="Имя"/>
+                </div>
+                <div class="form-cell">
+                  <input class="f_input input_v2" placeholder="Телефон" data-inputmask="'mask': '[+7] (999)-999-99-99'"/>
+                </div>
+                <div class="form-cell">
+                  <textarea class="f_input input_v2" placeholder="Вопрос"></textarea>
+                </div>
+                <div class="form-cell">
+                  <button class="btn_v1 blue_btn order_btn">Отправить вопрос</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_v3 popup_fail" id="fail_popup">
+      <div class="popup_inner form-cell_v1">
+        <div class="popup_caption">Ошибка</div>
+        <div class="popup_msg">Вы указали почту, которой нет.  <br>  Попробуйте еще раз</div>
+        <div class="form-cell"><a class="btn_v1 blue_btn order_btn mod_2" href="#">Попробовать еще раз</a><a class="gl_link popupClose" href="#">Закрыть</a></div>
+      </div>
+    </div>
+    <div class="popup popup_v3 popup_success" id="success_popup">
+      <div class="popup_inner form-cell_v1">
+        <div class="popup_caption">Успех!</div>
+        <div class="popup_msg">Новый пароль отправлен на вашу почту. Откройте письмо и пройдите по ссылке </div>
+        <div class="form-cell">
+          <button class="btn_v1 blue_btn order_btn mod_3 popupClose">Закрыть</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_v3" id="recovery_popup">
+      <div class="popup_inner form-cell_v1">
+        <div class="popup_caption">Восстановление пароля</div>
+        <form action="#">
+          <div class="form-cell">
+            <input class="f_input input_v2" placeholder="Email" value="mysweetmail@gmail.com"/>
+          </div>
+          <div class="form-cell">
+            <button class="btn_v1 blue_btn order_btn mod_2">Выслать новый пароль</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_v3" id="auth_popup">
+      <div class="popup_inner">
+        <ul class="tab_holder tab_v2">
+          <li class="ui-state-active"><span class="tab_link" href="#"><span>Вход</span></span></li>
+          <li><a class="tab_link" href="#auth_tab_2"><span>Зарегистрироваться</span></a></li>
+        </ul>
+        <div class="tab_content">
+          <form action="#">
+            <div class="form-cell">
+              <input class="f_input input_v2" placeholder="Email"/>
+            </div>
+            <div class="form-cell">
+              <input class="f_input input_v2" placeholder="пароль"/>
+            </div>
+            <div class="form-cell"><a class="gl_link cool_text fz_13 fw_500 passRecoveryBtn" href="#">Забыли пароль?</a></div>
+            <div class="form-cell">
+              <button class="btn_v1 blue_btn order_btn">Войти</button>
+            </div>
+            <div class="alter_auth">
+              <p>Войти через:</p>
+              <ul class="about_list">
+                <li><a class="about_link" href="#"><span class="i-v"></span></a></li>
+                <li><a class="about_link" href="#"><span class="i-f"></span></a></li>
+                <li><a class="about_link" href="#"><span class="i-t"></span></a></li>
+                <li><a class="about_link" href="#"><span class="i-o"></span></a></li>
+                <li><a class="about_link" href="#"><span class="i-g"></span></a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

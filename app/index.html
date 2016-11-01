@@ -21,6 +21,8 @@
     <script src="js/lib/modernizr.js"></script>
     <script src="js/lib/jquery-ui-1.11.4.js"></script>
     <script src="js/lib/slick.js"></script>
+    <script src="js/lib/jquery.inputmask.bundle.js"></script>
+    <script src="js/lib/jquery.easy-autocomplete.js"></script>
     <script src="js/lib/select2.js"></script>
     <script src="js/main.js"></script>
      
@@ -40,71 +42,93 @@
     <div class="wrapper">
       <div class="base">
         <div class="header">
-          <div class="section_inner">
-            <div class="logo_block"><a class="logo" href="#"><span>КВА<span class="logo_r">Р</span>ТИРИУМ</span></a></div><a class="mob-menu_btn openMobMenu" href="#"></a>
+          <div class="section-inner">
+            <div class="header-logo_block"><a class="header-logo" href="index.html"><span>КВА<span class="header-logo_r">Р</span>ТИРИУМ</span></a></div><a class="mob-menu_btn openMobMenu" href="#"></a>
             <div class="main-menu_holder">
               <div class="user-menu"><a class="user-menu_link" href="#"><span class="user-menu_icon"></span><span>Вход</span></a></div>
               <ul class="main-menu">
-                <li class="main_m_item menuItem dropdown-menu"><span class="gl_link">Квартиры</span>
-                  <ul class="sub-menu">
+                <li class="main-menu_item menuItem _dropdown-menu"><span class="gl_link">Квартиры</span>
+                  <ul class="main-menu_sub-menu">
                     <li><a class="gl_link" href="#">Новостройки</a></li>
                     <li><a class="gl_link" href="#">Вторичное жилье</a></li>
                     <li><a class="gl_link" href="#">1-комнатные</a></li>
                     <li><a class="gl_link" href="#">2-комнатные</a></li>
                   </ul>
                 </li>
-                <li class="main_m_item menuItem dropdown-menu"><span class="gl_link">Новостройки</span>
-                  <ul class="sub-menu">
+                <li class="main-menu_item menuItem _dropdown-menu"><span class="gl_link">Новостройки</span>
+                  <ul class="main-menu_sub-menu">
                     <li><a class="gl_link" href="#">Все новостройки</a></li>
                     <li><a class="gl_link" href="#">Москва</a></li>
                     <li><a class="gl_link" href="#">Московская область</a></li>
                   </ul>
                 </li>
-                <li class="main_m_item menuItem"><a class="gl_link" href="#">Компании</a></li>
-                <li class="main_m_item menuItem"><a class="gl_link" href="#">Полезное</a></li>
+                <li class="main-menu_item menuItem"><a class="gl_link" href="companies.html">Компании</a></li>
+                <li class="main-menu_item menuItem"><a class="gl_link" href="#">Полезное</a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="hero_block">
-          <div class="hero_img BSsection" data-bs="images/hero_1.jpg" data-bs-1024="images/hero_1_mob.jpg">
-            <div class="hero_content">
-              <div class="gl_table">
-                <div class="gl_table_cell">
-                  <div class="section_inner">
-                    <div class="hero_title">Быстрый подбор любых вариантов квартир <br> и другой недвижимости</div>
-                    <div class="hero_slogan mob_hidden">То что вы ищете уже существует, осталось только ввести параметры для поиска</div>
-                    <div class="hero_search">
-                      <form action="#">
-                        <div class="form_row">
-                          <div class="form_cell cell-s1 select-box-v1">
-                            <select class="select2" data-dropdown-class="dropdown-v1"> 
-                              <option>Купить</option>
-                              <option>Продать</option>
-                            </select>
-                          </div>
-                          <div class="form_cell cell-s1 select-box-v1">
-                            <select class="select2" data-dropdown-class="dropdown-v1">
-                              <option>Квартиру</option>
-                              <option>Дом</option>
-                            </select>
-                          </div>
-                          <div class="form_cell cell-s2">
-                            <div class="input_w">
-                              <input class="f_input input-v1" placeholder="Город, район, название комплекса">
+        <div class="hero_img sectionBS" data-bs="images/hero_1.jpg" data-bs-1024="images/hero_1_mob.jpg">
+          <div class="hero_content">
+            <div class="gl_table">
+              <div class="gl_table_cell">
+                <div class="section-inner">
+                  <div class="hero_title">Быстрый подбор любых вариантов квартир <br> и другой недвижимости</div>
+                  <div class="hero_slogan mob_hidden">То что вы ищете уже существует, осталось только ввести параметры для поиска</div>
+                  <div class="hero_search">
+                    <form action="#">
+                      <div class="form-row">
+                        <div class="form-cell cell-s1 select-box-v1 select-multi-v1">
+                          <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select="false" multiple data-placeholder="Купить"> 
+                            <option>1-комнатная квартира</option>
+                            <option>2-комнатная квартира</option>
+                            <option>3-комнатная квартира</option>
+                            <option>Студия</option>
+                          </select>
+                        </div>
+                        <div class="form-cell cell-s1 select-box-v1">
+                          <div class="hero_search-price dropdown-control dropdown-v1 dropdownControl">
+                            <div class="dropdown-val" id="range_val">Цена</div>
+                            <div class="dropdown-block">
+                              <div class="hero_search-range">
+                                <div class="input_w">
+                                  <label class="hero_search-range_label">от</label>
+                                  <input class="f_input input-v2 searchRangeVal" id="range_start" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ">
+                                </div>
+                                <div class="input_w">
+                                  <label class="hero_search-range_label">до</label>
+                                  <input class="f_input input-v2 searchRangeVal" id="range_end" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ">
+                                </div>
+                              </div>
                             </div>
                           </div>
-                          <div class="form_cell cell-s3">
-                            <button class="btn_v1 btn_blue hero_btn">Подобрать</button>
+                          <!--select.select2(data-dropdown-class='dropdown-v1')
+                          option Квартиру
+                          option Дом
+                          -->
+                        </div>
+                        <div class="form-cell cell-s2 select-box-v1 select-search-v1">
+                          <div class="input_w">
+                            <!--input.f_input.input-v1.searchField(placeholder='Город, район, название комплекса')-->
+                            <select class="select2" data-dropdown-class="dropdown-v1" data-placeholder="Город, район, название комплекса" data-minimum-results-for-search="0">
+                              <option>Москва</option>
+                              <option>Питер</option>
+                              <option>Орел</option>
+                              <option>Омск</option>
+                              <option>Воронеж</option>
+                            </select>
                           </div>
                         </div>
-                      </form>
-                    </div>
+                        <div class="form-cell cell-s3">
+                          <button class="btn_v1 btn_blue hero_btn">Подобрать</button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
-              <div class="hero_scroll"><span>Как это работает?</span><a class="gl_link scrollTo" href="#section_1"> </a></div>
             </div>
+            <div class="hero_scroll"><span>Как это работает?</span><a class="gl_link scrollTo" href="#section_1"></a></div>
           </div>
         </div>
         <div class="main_content" id="section_1">
@@ -145,7 +169,7 @@
         </div>
       </div>
       <div class="footer">
-        <div class="section_inner">
+        <div class="section-inner">
           <div class="footer-about_block">
             <div class="footer-about mob_hidden">Квартириум - это самый удобный способ поиска недвижимости по точному адресу или по карте, с учётом всех интересующих вас параметров.</div>
             <ul class="footer-about_menu">
@@ -154,32 +178,32 @@
               <li><a class="gl_link" href="#">Контакты</a></li>
             </ul>
           </div>
-          <div class="footer-menu_holder mob_hidden">
+          <div class="footer-menu_holder">
             <ul class="main-menu">
-              <li class="main_m_item menuItem"><a class="gl_link" href="#">Квартиры</a>
-                <ul class="sub-menu">
+              <li class="main-menu_item menuItem"><a class="gl_link" href="#">Квартиры</a>
+                <ul class="main-menu_sub-menu">
                   <li><a class="gl_link" href="#">Новостройки</a></li>
                   <li><a class="gl_link" href="#">Вторичное жилье</a></li>
                   <li><a class="gl_link" href="#">1-комнатные</a></li>
                   <li><a class="gl_link" href="#">2-комнатные</a></li>
                 </ul>
               </li>
-              <li class="main_m_item menuItem"><a class="gl_link" href="#">Новостройки</a>
-                <ul class="sub-menu">
+              <li class="main-menu_item menuItem"><a class="gl_link" href="#">Новостройки</a>
+                <ul class="main-menu_sub-menu">
                   <li><a class="gl_link" href="#">Все новостройки</a></li>
                   <li><a class="gl_link" href="#">Москва</a></li>
                   <li><a class="gl_link" href="#">Московская область</a></li>
                 </ul>
               </li>
-              <li class="main_m_item menuItem"><a class="gl_link" href="#">Компании</a>
-                <ul class="sub-menu">
+              <li class="main-menu_item menuItem"><a class="gl_link" href="#">Компании</a>
+                <ul class="main-menu_sub-menu">
                   <li><a class="gl_link" href="#">Все компании</a></li>
                   <li><a class="gl_link" href="#">Рейтинг компаний</a></li>
                   <li><a class="gl_link" href="#">Лучшие 2016 года</a></li>
                 </ul>
               </li>
-              <li class="main_m_item menuItem"><a class="gl_link" href="#">Полезное</a>
-                <ul class="sub-menu">
+              <li class="main-menu_item menuItem"><a class="gl_link" href="#">Полезное</a>
+                <ul class="main-menu_sub-menu">
                   <li><a class="gl_link" href="#">Иноформация</a></li>
                   <li><a class="gl_link" href="#">Законы и акты</a></li>
                 </ul>
@@ -187,8 +211,8 @@
             </ul>
           </div>
           <div class="footer-copyright_holder">
-            <div class="copyright">2011—2016, kvartirium.ru <br> - всё, что нужно знать о квартирах</div>
-            <div class="footer_adds">По вопросам размещения  рекламы и сотрудничества с сайтом <br>  обращайтесь в рекламный отдел:+7 (495) 432-43-22</div>
+            <div class="footer-copyright">2011—2016, kvartirium.ru <br> - всё, что нужно знать о квартирах</div>
+            <div class="footer-adds">По вопросам размещения  рекламы и сотрудничества с сайтом <br>  обращайтесь в рекламный отдел:+7 (495) 432-43-22</div>
             <ul class="footer_counters">
               <li><img src="images/li_counter.png"/></li>
             </ul>
@@ -207,13 +231,13 @@
           <div id="callback_tab_1">
             <div class="tab_content">
               <form action="#">
-                <div class="form_cell">
+                <div class="form-cell">
                   <input class="f_input input_v2" placeholder="Имя"/>
                 </div>
-                <div class="form_cell">
+                <div class="form-cell">
                   <input class="f_input input_v2" placeholder="Телефон" data-inputmask="'mask': '[+7] (999)-999-99-99'"/>
                 </div>
-                <div class="form_cell">
+                <div class="form-cell">
                   <button class="btn_v1 blue_btn order_btn">Отправить заявку</button>
                 </div>
               </form>
@@ -222,16 +246,16 @@
           <div id="callback_tab_2">
             <div class="tab_content">
               <form action="#">
-                <div class="form_cell">
+                <div class="form-cell">
                   <input class="f_input input_v2" placeholder="Имя"/>
                 </div>
-                <div class="form_cell">
+                <div class="form-cell">
                   <input class="f_input input_v2" placeholder="Телефон" data-inputmask="'mask': '[+7] (999)-999-99-99'"/>
                 </div>
-                <div class="form_cell">
+                <div class="form-cell">
                   <textarea class="f_input input_v2" placeholder="Вопрос"></textarea>
                 </div>
-                <div class="form_cell">
+                <div class="form-cell">
                   <button class="btn_v1 blue_btn order_btn">Отправить вопрос</button>
                 </div>
               </form>
@@ -241,29 +265,29 @@
       </div>
     </div>
     <div class="popup popup_v3 popup_fail" id="fail_popup">
-      <div class="popup_inner form_cell_v1">
+      <div class="popup_inner form-cell_v1">
         <div class="popup_caption">Ошибка</div>
         <div class="popup_msg">Вы указали почту, которой нет.  <br>  Попробуйте еще раз</div>
-        <div class="form_cell"><a class="btn_v1 blue_btn order_btn mod_2" href="#">Попробовать еще раз</a><a class="gl_link popupClose" href="#">Закрыть</a></div>
+        <div class="form-cell"><a class="btn_v1 blue_btn order_btn mod_2" href="#">Попробовать еще раз</a><a class="gl_link popupClose" href="#">Закрыть</a></div>
       </div>
     </div>
     <div class="popup popup_v3 popup_success" id="success_popup">
-      <div class="popup_inner form_cell_v1">
+      <div class="popup_inner form-cell_v1">
         <div class="popup_caption">Успех!</div>
         <div class="popup_msg">Новый пароль отправлен на вашу почту. Откройте письмо и пройдите по ссылке </div>
-        <div class="form_cell">
+        <div class="form-cell">
           <button class="btn_v1 blue_btn order_btn mod_3 popupClose">Закрыть</button>
         </div>
       </div>
     </div>
     <div class="popup popup_v3" id="recovery_popup">
-      <div class="popup_inner form_cell_v1">
+      <div class="popup_inner form-cell_v1">
         <div class="popup_caption">Восстановление пароля</div>
         <form action="#">
-          <div class="form_cell">
+          <div class="form-cell">
             <input class="f_input input_v2" placeholder="Email" value="mysweetmail@gmail.com"/>
           </div>
-          <div class="form_cell">
+          <div class="form-cell">
             <button class="btn_v1 blue_btn order_btn mod_2">Выслать новый пароль</button>
           </div>
         </form>
@@ -277,14 +301,14 @@
         </ul>
         <div class="tab_content">
           <form action="#">
-            <div class="form_cell">
+            <div class="form-cell">
               <input class="f_input input_v2" placeholder="Email"/>
             </div>
-            <div class="form_cell">
+            <div class="form-cell">
               <input class="f_input input_v2" placeholder="пароль"/>
             </div>
-            <div class="form_cell"><a class="gl_link cool_text fz_13 fw_500 passRecoveryBtn" href="#">Забыли пароль?</a></div>
-            <div class="form_cell">
+            <div class="form-cell"><a class="gl_link cool_text fz_13 fw_500 passRecoveryBtn" href="#">Забыли пароль?</a></div>
+            <div class="form-cell">
               <button class="btn_v1 blue_btn order_btn">Войти</button>
             </div>
             <div class="alter_auth">

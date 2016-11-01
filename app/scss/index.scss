@@ -9,18 +9,38 @@
     margin: 0 auto;
     max-width: 1070px;
 
-    .form_cell {
+    &-range {
+      @extend %clearfix;
+      padding: 3px;
+      margin-left: -10px;
+
+      .input_w {
+        float: left;
+        width: 50%;
+        padding-left: 40px;
+        
+        .hero_search-range_label {
+          position: absolute;
+          left: 15px;
+          top: 0;
+          bottom: 0;
+          line-height: 34px;
+        }
+      }
+    }
+
+    .form-cell {
       margin-bottom: 5px;
     }
 
     @include respond-to-min($resp_step_2) {
       margin-bottom: 95px;
 
-      .form_row {
+      .form-row {
         margin-left: -10px;
       }
 
-      .form_cell {
+      .form-cell {
         float: left;
         padding-left: 10px;
 
@@ -35,7 +55,6 @@
         }
       }
     }
-
   }
 
   &_scroll {
@@ -133,6 +152,10 @@
     max-width: $content-max-w + 40;
     padding: 0 20px;
     margin: 0 auto;
+
+    @include respond-to-min($resp_s) {
+      padding: 30px 20px;
+    }
   }
 
   li {

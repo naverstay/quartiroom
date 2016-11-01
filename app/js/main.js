@@ -1,6 +1,7 @@
 var body, html, doc, wnd,
     ie,
     header,
+    main_script = false,
     closeMenuTimer,
     callback_popup,
     auth_popup,
@@ -42,11 +43,11 @@ function ieCheck() {
 
 ieCheck();
 
-console.log(ie);
-
 if (ie == 8) {
     window.onload = new function () {  // дубль функции $(window).on('load'... для ИЕ 
         domReady();
+
+        main_script = true;
 
         setTimeout(function () {
             svg_fallback();
@@ -54,7 +55,11 @@ if (ie == 8) {
     };
 } else {
     $(function ($) {
-        domReady();
+
+        if (!main_script) {
+            main_script = true;
+            domReady();
+        }
     });
 }
 
@@ -78,12 +83,28 @@ function domReady() {
         body.addClass('icon_close').toggleClass('menu_opened');
         return false;
 
+    }).delegate('.answerBtn', 'click', function () {
+        var btn = $(this), txt = btn.attr('data-text-toggle');
+
+        btn.attr('data-text-toggle', btn.text());
+
+        btn.text(txt).closest('.reviewFooter').find('.reviewAnswer').slideToggle(300);
+
+        return false;
     }).delegate('.menuItem', 'mouseenter', function () {
         $(this).addClass('hovered');
     }).delegate('.menuItem', 'mouseleave', function () {
         $(this).removeClass('hovered');
     }).delegate('.menuItem', 'click', function () {
         $(this).toggleClass('hovered');
+    }).delegate('.dropdownControl .dropdown-val', 'click', function () {
+        $(this).closest('.dropdownControl').toggleClass('opened').find('input:first').focus();
+    });
+
+    doc.on('click', function (e) {
+        if ($(e.target).parents().filter('.dropdownControl').length != 1) {
+            $('.dropdownControl').removeClass('opened');
+        }
     });
 
     $('.scrollTo').on('click', function () {
@@ -94,20 +115,97 @@ function domReady() {
 
     initSelect2();
 
+    initMask();
+
     all_dialog_close();
 
+}
+
+function initTabScroller() {
+
+    var tabBlock = $('.scrollerTabs'), tabs, tabSlider;
+
+    tabSlider = $('.tabScroller').slick({
+        dots: false,
+        infinite: false,
+        arrows: false,
+        zIndex: 1,
+        initialSlide: 0,
+        slide: '.filter-item',
+        variableWidth: true,
+        touchThreshold: 10,
+        onInit: function (sld) {
+            tabs = tabBlock.tabs({
+                active: 0,
+                activate: function (e, u) {
+                    console.log(e, u);
+
+                    setTimeout(function () {
+                        tabSlider.slick('setPosition');
+                    }, 10);
+                }
+            });
+        }
+    });
 }
 
 function svg_fallback() { // замена СВГ на ПНГ 
     if (html.hasClass('ie8')) {
         $('img[src$=".svg"]').each(function (ind) {
-            $(this).attr('src', $(this).attr('src').replace(/\.svg$/, '.png'));
+            var img = $(this);
+            img.attr('src', img.attr('src').replace(/\.svg$/, '.png'));
         });
     }
 }
 
+function initAutoComplete(el, options) {
+
+    el.easyAutocomplete(options);
+
+}
+
+function initPriceRange() {
+    var range_val = $('#range_val'), range_start = $('#range_start'), range_end = $('#range_end');
+
+    $('.searchRangeVal').on('change cut paste drop keydown', function () {
+        setTimeout(function () {
+            var start = (range_start.val()) || 0, end = (range_end.val()) || 0;
+
+            if (!start && !end) {
+                range_val.text('Цена');
+            } else {
+                range_val.text('от ' + start + ' до ' + end);
+            }
+
+        }, 5);
+    });
+}
+
+function initTypeSelect() {
+    $('.typeSelect').on('change', function () {
+        var firedEl = $(this), val = firedEl.val(), str = '', slct = firedEl.next('.select2').find('.select2-search--inline');
+
+        if (val) {
+            for (var i = 0; i < val.length; i++) {
+                str += ', ' + val[i];
+            }
+
+            str = str.replace(/^.{2}/, '');
+        }
+
+        if (slct.find('span').length) {
+            slct.find('span').text(str);
+        } else {
+            slct.prepend('<span>' + str + '</span>')
+        }
+
+        slct.find('input').toggle(!str.length);
+
+    });
+}
+
 function setSectionBS() {
-    var section = $('.BSsection');
+    var section = $('.sectionBS');
 
     section.each(function () {
         var sctn = $(this);
@@ -204,6 +302,15 @@ function initSelect2() {
             minimumResultsForSearch: Infinity,
             dropdownParent: slct.parent(),
             width: '100%',
+            language: {
+                noResults: function (e, r) {
+                    return 'Нет результатов';
+                    // return "Город не найден. <a href='#' class='gl_link _clr_turqoise'>Список городов</a>";
+                }
+            },
+            escapeMarkup: function (markup) {
+                return markup;
+            },
             adaptDropdownCssClass: function () {
                 return slct.attr('data-dropdown-class');
             }

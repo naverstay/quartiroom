@@ -1,5 +1,5 @@
 
-mixin dev_head(page_title, index, news, search, product, lk, cart)
+mixin dev_head(page_title, index, companies, location, product, lk, cart)
     head
         title=page_title
         | 
@@ -22,6 +22,8 @@ mixin dev_head(page_title, index, news, search, product, lk, cart)
         script(src='js/lib/modernizr.js')
         script(src='js/lib/jquery-ui-1.11.4.js')
         script(src='js/lib/slick.js')
+        script(src='js/lib/jquery.inputmask.bundle.js')
+        script(src='js/lib/jquery.easy-autocomplete.js')
         script(src='js/lib/select2.js')
         script(src='js/main.js')
         | 
@@ -38,23 +40,16 @@ mixin dev_head(page_title, index, news, search, product, lk, cart)
             script(src='js/index.js')
             | 
             | <!--endbuild-->
-        - if (news)
+        - if (companies)
             | 
-            | <!--build:js js/news.min.js -->
-            script(src='js/lib/imagesloaded.pkgd.min.js')
-            script(src='js/lib/isotope.pkgd.min.js')
-            script(src='js/lib/packery-mode.pkgd.js')
-            script(src='js/news.js')
+            | <!--build:js js/companies.min.js -->
+            script(src='js/companies.js')
             | 
             | <!--endbuild-->
-        - if (search)
-            link(href='//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css' rel="stylesheet")
-            script(src='//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js')
+        - if (location)
             | 
-            | <!--build:js js/search.min.js -->
-            script(src='js/lib/nouislider.min.js')
-            script(src='js/lib/jquery.inputmask.bundle.js')
-            script(src='js/search.js')
+            | <!--build:js js/location.min.js -->
+            script(src='js/location.js')
             | 
             | <!--endbuild-->
         - if (lk)
@@ -80,12 +75,11 @@ mixin loop_while(counter)
 
 mixin header(active)
     div.header
-        
-        .section_inner
-            .logo_block
-                a.logo(href='#')
+        .section-inner
+            .header-logo_block
+                a.header-logo(href='index.html')
                     span КВА
-                        span.logo_r Р
+                        span.header-logo_r Р
                         | ТИРИУМ
                     
             a.mob-menu_btn.openMobMenu(href='#')
@@ -97,29 +91,29 @@ mixin header(active)
                         span Вход
 
                 ul.main-menu
-                    li.main_m_item.menuItem.dropdown-menu
+                    li.main-menu_item.menuItem._dropdown-menu
                         span.gl_link Квартиры
-                        ul.sub-menu
+                        ul.main-menu_sub-menu
                             li: a.gl_link(href='#') Новостройки
                             li: a.gl_link(href='#') Вторичное жилье
                             li: a.gl_link(href='#') 1-комнатные
                             li: a.gl_link(href='#') 2-комнатные
-                    li.main_m_item.menuItem.dropdown-menu
+                    li.main-menu_item.menuItem._dropdown-menu
                         span.gl_link Новостройки
-                        ul.sub-menu
+                        ul.main-menu_sub-menu
                             li: a.gl_link(href='#') Все новостройки
                             li: a.gl_link(href='#') Москва
                             li: a.gl_link(href='#') Московская область
                         
-                    li.main_m_item.menuItem
-                        a.gl_link(href='#') Компании
-                    li.main_m_item.menuItem
+                    li.main-menu_item.menuItem
+                        a.gl_link(href='companies.html') Компании
+                    li.main-menu_item.menuItem
                         a.gl_link(href='#') Полезное
                     
 
 mixin footer()
     .footer
-        .section_inner
+        .section-inner
             .footer-about_block
                 .footer-about.mob_hidden Квартириум - это самый удобный способ поиска недвижимости по точному адресу или по карте, с учётом всех интересующих вас параметров.
                 ul.footer-about_menu
@@ -127,57 +121,73 @@ mixin footer()
                     li: a.gl_link(href='#') Реклама
                     li: a.gl_link(href='#') Контакты
 
-            .footer-menu_holder.mob_hidden
+            .footer-menu_holder
                 ul.main-menu
-                    li.main_m_item.menuItem
+                    li.main-menu_item.menuItem
                         a.gl_link(href='#') Квартиры
-                        ul.sub-menu
+                        ul.main-menu_sub-menu
                             li: a.gl_link(href='#') Новостройки
                             li: a.gl_link(href='#') Вторичное жилье
                             li: a.gl_link(href='#') 1-комнатные
                             li: a.gl_link(href='#') 2-комнатные
-                    li.main_m_item.menuItem
+                    li.main-menu_item.menuItem
                         a.gl_link(href='#') Новостройки
-                        ul.sub-menu
+                        ul.main-menu_sub-menu
                             li: a.gl_link(href='#') Все новостройки
                             li: a.gl_link(href='#') Москва
                             li: a.gl_link(href='#') Московская область
 
-                    li.main_m_item.menuItem
+                    li.main-menu_item.menuItem
                         a.gl_link(href='#') Компании
-                        ul.sub-menu
+                        ul.main-menu_sub-menu
                             li: a.gl_link(href='#') Все компании
                             li: a.gl_link(href='#') Рейтинг компаний
                             li: a.gl_link(href='#') Лучшие 2016 года
-                    li.main_m_item.menuItem
+                    li.main-menu_item.menuItem
                         a.gl_link(href='#') Полезное
-                        ul.sub-menu
+                        ul.main-menu_sub-menu
                             li: a.gl_link(href='#') Иноформация
                             li: a.gl_link(href='#') Законы и акты
                 
                 
             .footer-copyright_holder
-                .copyright 2011—2016, kvartirium.ru <br> - всё, что нужно знать о квартирах
+                .footer-copyright 2011—2016, kvartirium.ru <br> - всё, что нужно знать о квартирах
 
-                .footer_adds По вопросам размещения  рекламы и сотрудничества с сайтом <br>  обращайтесь в рекламный отдел:+7 (495) 432-43-22
+                .footer-adds По вопросам размещения  рекламы и сотрудничества с сайтом <br>  обращайтесь в рекламный отдел:+7 (495) 432-43-22
                     
                 ul.footer_counters
                     li
                         img(src='images/li_counter.png')
-                    
-
-
-
-
+                        
 mixin breadcrumbs(list)
     ul.breadcrumbs
         for item, i in list
-            li.breadcrumb_item
+            li.breadcrumb-item
                 - if (i == list.length - 1)
                     span=item
                 - else
-                    a.gl_link(href= item == 'Главная' ? 'index.html' : (item == 'Каталог' ? 'catalog.html' : 'products.html'))=item
+                    a.gl_link(href= item == 'Главная' ? 'index.html' : (item == 'Компании' ? 'companies.html' : 'products.html'))=item
             
+mixin review_footer()
+    .review-footer.reviewFooter
+        ul.review-footer_controls
+            li
+                a.review-btn._like(href='#') 5
+            li
+                a.review-btn._dislike(href='#') 2
+            li
+                a.gl_link._clr_blue.answerBtn(href='#' data-text-toggle='Отменить ответ') Ответить
+
+        .review-footer_answer.reviewAnswer
+            form(action='#')
+                .input_w._answer-name
+                    input.f_input.input-v1._bordered(placeholder='Имя')
+                .input_w._answer_text
+                    textarea.f_input.input-v1._h-112._bordered(placeholder='Сообщение')
+
+                .input_w
+                    button.btn_v1.btn_blue.review_btn Ответить
+
 mixin popups()
     .popup_close_btn.popupClose
 
@@ -191,55 +201,55 @@ mixin popups()
                 #callback_tab_1
                     .tab_content
                         form(action='#')
-                            .form_cell
+                            .form-cell
                                 input.f_input.input_v2(placeholder='Имя')
                                 
-                            .form_cell
+                            .form-cell
                                 input.f_input.input_v2(placeholder='Телефон' data-inputmask="'mask': '[+7] (999)-999-99-99'")
                                 
-                            .form_cell
+                            .form-cell
                                 button.btn_v1.blue_btn.order_btn Отправить заявку
                                 
                 #callback_tab_2
                     .tab_content
                         form(action='#')
-                            .form_cell
+                            .form-cell
                                 input.f_input.input_v2(placeholder='Имя')
                                 
-                            .form_cell
+                            .form-cell
                                 input.f_input.input_v2(placeholder='Телефон' data-inputmask="'mask': '[+7] (999)-999-99-99'")
                                 
-                            .form_cell
+                            .form-cell
                                 textarea.f_input.input_v2(placeholder='Вопрос')
                                 
-                            .form_cell
+                            .form-cell
                                 button.btn_v1.blue_btn.order_btn Отправить вопрос
                                 
     #fail_popup.popup.popup_v3.popup_fail
-        .popup_inner.form_cell_v1
+        .popup_inner.form-cell_v1
             .popup_caption Ошибка
             .popup_msg Вы указали почту, которой нет.  <br>  Попробуйте еще раз
             
-            .form_cell
+            .form-cell
                 a.btn_v1.blue_btn.order_btn.mod_2(href='#') Попробовать еще раз
                 a.gl_link.popupClose(href='#') Закрыть
                     
     #success_popup.popup.popup_v3.popup_success
-        .popup_inner.form_cell_v1
+        .popup_inner.form-cell_v1
             .popup_caption Успех!
             .popup_msg Новый пароль отправлен на вашу почту. Откройте письмо и пройдите по ссылке 
             
-            .form_cell
+            .form-cell
                 button.btn_v1.blue_btn.order_btn.mod_3.popupClose Закрыть
 
     #recovery_popup.popup.popup_v3
-        .popup_inner.form_cell_v1
+        .popup_inner.form-cell_v1
             .popup_caption Восстановление пароля
             form(action='#')
-                .form_cell
+                .form-cell
                     input.f_input.input_v2(placeholder='Email' value='mysweetmail@gmail.com')
                     
-                .form_cell
+                .form-cell
                     button.btn_v1.blue_btn.order_btn.mod_2 Выслать новый пароль
 
     #auth_popup.popup.popup_v3
@@ -250,16 +260,16 @@ mixin popups()
                 
             .tab_content
                 form(action='#')
-                    .form_cell
+                    .form-cell
                         input.f_input.input_v2(placeholder='Email')
                         
-                    .form_cell
+                    .form-cell
                         input.f_input.input_v2(placeholder='пароль')
                         
-                    .form_cell
+                    .form-cell
                         a.gl_link.cool_text.fz_13.fw_500.passRecoveryBtn(href='#') Забыли пароль?
                         
-                    .form_cell
+                    .form-cell
                         button.btn_v1.blue_btn.order_btn Войти
                         
                     .alter_auth

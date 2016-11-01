@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'quartiroom_icons';
-  src:  url('fonts/quartiroom_icons.eot?vcsh1k');
-  src:  url('fonts/quartiroom_icons.eot?vcsh1k#iefix') format('embedded-opentype'),
-    url('fonts/quartiroom_icons.ttf?vcsh1k') format('truetype'),
-    url('fonts/quartiroom_icons.woff?vcsh1k') format('woff'),
-    url('fonts/quartiroom_icons.svg?vcsh1k#quartiroom_icons') format('svg');
+  src:  url('fonts/quartiroom_icons.eot?nmdf53');
+  src:  url('fonts/quartiroom_icons.eot?nmdf53#iefix') format('embedded-opentype'),
+    url('fonts/quartiroom_icons.ttf?nmdf53') format('truetype'),
+    url('fonts/quartiroom_icons.woff?nmdf53') format('woff'),
+    url('fonts/quartiroom_icons.svg?nmdf53#quartiroom_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-search:before {
+  content: "\e90e";
+}
+.i-heart:before {
+  content: "\e907";
+}
 .i-profile:before {
   content: "\e903";
 }
@@ -36,13 +42,43 @@
 .i-interior---sofa-chair:before {
   content: "\e902";
 }
+.i-chevron_left:before {
+  content: "\e92c";
+}
+.i-chevron_right:before {
+  content: "\e92d";
+}
 .i-chevron-down:before {
   content: "\e904";
+}
+.i-phone:before {
+  content: "\e906";
+}
+.i-check:before {
+  content: "\e911";
+}
+.i-heart-filled:before {
+  content: "\e908";
+}
+.i-checkmark:before {
+  content: "\e90a";
 }
 .i-chevron-thin-down:before {
   content: "\e909";
 }
+.i-check-thin:before {
+  content: "\e90b";
+}
+.i-thumbs-o-down:before {
+  content: "\e90c";
+}
+.i-thumbs-o-up:before {
+  content: "\e90d";
+}
 .i-cross:before {
   content: "\e905";
+}
+.i-map_pin:before {
+  content: "\e91b";
 }
 

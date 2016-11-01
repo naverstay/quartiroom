@@ -1,0 +1,321 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head("Quartiroom Локация", false, false, true)
+
+    body
+        .wrapper
+            .base._gray
+                +header(1)
+                
+                .section.breadcrumbs_section
+                    .section-inner
+                        +breadcrumbs(['Главная', 'Компании', 'Главстрой девелопмент'])
+                        
+                        .section-title Главстрой девелопмент
+                        
+                        .company-unit_type
+                            span.company-unit_type-cat Застройщик 
+                            span.company-unit_type-cat Агентство недвижимости
+                            
+                div.main_content
+                    .section-inner
+                        .company-block._overview
+                            .company-unit_logo-block
+                                a.company-unit_logo(href='company.html')
+                                    img(src='images/company_logo_1.jpg')
+                                    
+                            .company-info._main
+                                p.company-unit_rating
+                                    span
+                                        span.unit-rate._filled
+                                        span.unit-rate._filled
+                                        span.unit-rate._filled
+                                        span.unit-rate._filled
+                                        span.unit-rate._half
+                                    span 4.5
+                                    span.mob_only <br>
+                                    span
+                                        span._clr_gray на основе 
+                                        span._clr_blue 345 отзывов
+                                        
+                            .company-info_w
+                                .company-info._description
+                                    p На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Населяет Люксембург или итальянский город Пиза. 
+                                    
+                                    p Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город. 
+                                        
+                                .company-info._address
+                                    ul.company-info_contacts
+                                        li.company-info_item
+                                            span.i-map_pin._clr_turqoise.company-info_icon
+                                            .company-info_caption Центральный офис
+                                            p г. Москва, Ленинградский пр., д.16/2, офис 234 
+                                                span.mob_hidden <br>
+                                                | kvartyroom@info.ru
+                                            p 
+                                                a.gl_link._clr_turqoise(href='#') Еще офисы
+                                                
+                                        li.company-info_item
+                                            span._clr_turqoise.company-info_icon.i-phone
+                                            .company-info_caption телефоны
+                                            p +7 (495) 104 34 78
+                                            p 
+                                                a.gl_link._clr_turqoise(href='#') Еще телефоны
+                                            
+                        .company-block
+                            .company-block_caption 
+                                span В продаже
+                                a.company-block_caption-close
+                            .company-info_box
+                                p 
+                                    span._clr_gray-dark Сейчас у компании: 
+                                    span 234 квартиры 
+                                    span._clr_gray-dark и 
+                                    span 15 таунхаусов
+                                    
+                                .company-unit_info_w
+                                    dl.company-unit_info
+                                        dt Студии
+                                        dd от 1 700 000
+                                        dt 1-комнатные
+                                        dd от 2 300 000
+                                        dt 2-комнатные  
+                                        dd от 3 900 000
+                                        
+                                    dl.company-unit_info
+                                        dt 3-комнатные
+                                        dd от 5 600 000
+                                        dt Коммерческие помещения
+                                        dd от 10 300 000
+                                        dt Кладовки
+                                        dd от 150 000
+                                                                                
+                        .company-block
+                            .company-block_caption 
+                                span Объекты компании
+                                a.company-block_caption-close
+                            .company-info_box
+                                .company-info_objects
+                                    ul.company-info_objects-filter
+                                        li
+                                            label.check-emul._check-v1
+                                                input.inp-hidden(type='checkbox')
+                                                span.check-text Жилые комплексы
+                                    
+                                        li
+                                            label.check-emul._check-v1
+                                                input.inp-hidden(type='checkbox')
+                                                span.check-text Студии
+                                    
+                                        li
+                                            label.check-emul._check-v1
+                                                input.inp-hidden(type='checkbox')
+                                                span.check-text Комнаты
+                                    
+                                        li
+                                            label.check-emul._check-v1
+                                                input.inp-hidden(type='checkbox')
+                                                span.check-text 1-комн.кв.
+                                    
+                                        li
+                                            label.check-emul._check-v1
+                                                input.inp-hidden(type='checkbox')
+                                                span.check-text 2-комн.кв.
+                                    
+                                        li
+                                            label.check-emul._check-v1
+                                                input.inp-hidden(type='checkbox')
+                                                span.check-text 3-комн.кв.
+                                    
+                                        li
+                                            label.check-emul._check-v1
+                                                input.inp-hidden(type='checkbox')
+                                                span.check-text Участки
+                                                
+                                    .company-info_objects-wrapper
+                                        .company-info_objects-map
+                                            img(src='images/map.jpg')
+                                            
+                                        .company-info_objects-info
+                                            .company-info_objects-description
+                                                .gl_table
+                                                    .gl_table_cell
+                                                        p
+                                                            span Ул. Народного Ополчения, 34, <br> ЖК "Квартал Руполис-Растуново", 
+                                                            span.mob_hidden <br>
+                                                            span корпус 14
+                                                        p.company-info_objects-count
+                                                            span В этом доме: 
+                                                            span._val 456 квартир
+                                        
+                                            .company-info_objects-container
+                                                ul.company-info_objects-list
+                                                    +loop_while(3)
+                                                        li
+                                                            .company-info_object
+                                                                p.clearfix
+                                                                    a.fl._clr_blue(href='#') 2-комн. кв.
+                                                                    a.fr.favBtn._clr_blue(href='#') 
+                                                                        span.i-heart
+                                                                        
+                                                                p.clearfix
+                                                                    span.fl._price 34 кв. м.
+                                                                    span.fl 5/9 эт.
+                                                                    span.fr 4 560 000 руб.
+                                                                    
+                                                        li
+                                                            .company-info_object
+                                                                p.clearfix
+                                                                    a.fl._clr_blue(href='#') 2-комн. кв.
+                                                                    a.fr.favBtn._clr_blue(href='#')
+                                                                        span.i-heart
+                                                                p.clearfix
+                                                                    span.fl._price 34 кв. м.
+                                                                    span.fl 5/9 эт.
+                                                                    span.fr 4 560 000 руб.
+                                                    +loop_while(7)
+                                                        li.mob_hidden
+                                                            .company-info_object
+                                                                p.clearfix
+                                                                    a.fl._clr_blue(href='#') 2-комн. кв.
+                                                                    a.fr.favBtn._clr_blue(href='#') 
+                                                                        span.i-heart
+                                                                        
+                                                                p.clearfix
+                                                                    span.fl._price 34 кв. м.
+                                                                    span.fl 5/9 эт.
+                                                                    span.fr 4 560 000 руб.
+                                                                    
+                                                        li.mob_hidden
+                                                            .company-info_object
+                                                                p.clearfix
+                                                                    a.fl._clr_blue(href='#') 2-комн. кв.
+                                                                    a.fr.favBtn._clr_blue(href='#')
+                                                                        span.i-heart
+                                                                p.clearfix
+                                                                    span.fl._price 34 кв. м.
+                                                                    span.fl 5/9 эт.
+                                                                    span.fr 4 560 000 руб.
+                                                                    
+                                                    li.dt_hidden.text_center
+                                                        a.btn_v1.btn_transp_blue.show_more(href='#') Показать еще
+                                                        
+                        .company-block
+                            .company-block_caption
+                                span Рейтинг компании
+                                a.company-block_caption-close
+                            .company-info_box
+                                .company-info_features
+                                    .company-info_features-box._first
+                                        .company-info_features-rate
+                                            span.feature-label.fl 
+                                                span Открытость 
+                                                span.mob_hidden компании
+                                            span.feature-rate.fr
+                                                .feature-rate_scale
+                                                    div(style='width:80%;')
+                                                ._val 4,1
+                                                    
+                                        .company-info_features-rate
+                                            span.feature-label.fl Надежность
+                                            span.feature-rate.fr
+                                                .feature-rate_scale
+                                                    div(style='width:60%;')
+                                                ._val 4,5
+                                                    
+                                        .company-info_features-rate
+                                            span.feature-label.fl Выбор объектов
+                                            span.feature-rate.fr
+                                                .feature-rate_scale
+                                                    div(style='width:30%;')
+                                                ._val 3,8
+                                                    
+                                        .company-info_features-rate
+                                            span.feature-label.fl Цена/Качество
+                                            span.feature-rate.fr
+                                                .feature-rate_scale
+                                                    div(style='width:20%;')
+                                                ._val 4,8
+                                                    
+                                    .company-info_features-box._center
+                                        .company-info_total-rate: ._val 4,2
+                                        .company-info_total-rate 
+                                            span._clr_gray-dark Общая оценка <br>
+                                            span на основании: 
+                                                a.gl_link._clr_default(href='#') 345 отзывов
+                                        
+                                    
+                                    .company-info_features-box._last
+                                        a.btn_v1.btn_blue.rate_btn(href='#') Оценить
+                                    
+                                .company-info_reviews
+                                    .company-block_caption Отзывы
+                                        
+                                    ul.review-list
+                                        li
+                                            .review-header
+                                                .review-author
+                                                    a.review-author_avatar(href='#')
+                                                        img(src='images/review_author_1.png')
+                                                .review-author_name
+                                                    a.gl_link._clr_turqoise(href='#') Руслан Иванов
+                                                .review-author_date._clr_gray 14.02.2016, 18:22
+                                                        
+                                            .review-content
+                                                p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
+                                                
+                                            +review_footer()
+                                                
+                                        li
+                                            .review-header
+                                                .review-author
+                                                    a.review-author_avatar(href='#')
+                                                        img(src='images/review_author_1.png')
+                                                .review-author_name
+                                                    a.gl_link._clr_turqoise(href='#') Евгений Александров
+                                                .review-author_date._clr_gray 14.02.2016, 18:22
+                                                        
+                                            .review-content
+                                                p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
+                                                
+                                            +review_footer()
+
+                                        li
+                                            .review-header
+                                                .review-author
+                                                    a.review-author_avatar(href='#')
+                                                        img(src='images/review_author_1.png')
+                                                .review-author_name
+                                                    a.gl_link._clr_turqoise(href='#') Евгений Александров
+                                                .review-author_date._clr_gray 14.02.2016, 18:22
+                                                        
+                                            .review-content
+                                                p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
+
+                                                p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
+                                                
+                                            +review_footer()
+                                        li
+                                            .review-header
+                                                .review-author
+                                                    a.review-author_avatar(href='#')
+                                                        img(src='images/review_author_1.png')
+                                                .review-author_name
+                                                    a.gl_link._clr_turqoise(href='#') Евгений Александров
+                                                .review-author_date._clr_gray 14.02.2016, 18:22
+                                                        
+                                            .review-content
+                                                p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
+
+                                                p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
+                                                
+                                            +review_footer()
+
+                                    .review-show_more
+                                        button.btn_v1.btn_blue.review_btn Показать еще
+                                        
+            +footer()
+            
+        +popups()
+        

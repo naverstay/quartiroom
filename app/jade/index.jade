@@ -8,39 +8,56 @@ html(lang='ru')
             .base
                 +header(1)
                 
-                .hero_block
-                    .hero_img.BSsection(data-bs='images/hero_1.jpg' data-bs-1024='images/hero_1_mob.jpg')
-                        .hero_content
-                            .gl_table
-                                .gl_table_cell
-                                    .section_inner
-                                        .hero_title Быстрый подбор любых вариантов квартир <br> и другой недвижимости
-                                        .hero_slogan.mob_hidden То что вы ищете уже существует, осталось только ввести параметры для поиска
-                                            
-                                        .hero_search
-                                            form(action='#')
-                                                .form_row
-                                                    .form_cell.cell-s1.select-box-v1
-                                                        select.select2(data-dropdown-class='dropdown-v1') 
-                                                            option Купить
-                                                            option Продать
-                                                    .form_cell.cell-s1.select-box-v1
-                                                        select.select2(data-dropdown-class='dropdown-v1')
-                                                            option Квартиру
-                                                            option Дом
-                                                    .form_cell.cell-s2
-                                                        .input_w
-                                                            input.f_input.input-v1(placeholder='Город, район, название комплекса')
-                                                    .form_cell.cell-s3
-                                                        button.btn_v1.btn_blue.hero_btn Подобрать
+                .hero_img.sectionBS(data-bs='images/hero_1.jpg' data-bs-1024='images/hero_1_mob.jpg')
+                    .hero_content
+                        .gl_table
+                            .gl_table_cell
+                                .section-inner
+                                    .hero_title Быстрый подбор любых вариантов квартир <br> и другой недвижимости
+                                    .hero_slogan.mob_hidden То что вы ищете уже существует, осталось только ввести параметры для поиска
+                                        
+                                    .hero_search
+                                        form(action='#')
+                                            .form-row
+                                                .form-cell.cell-s1.select-box-v1.select-multi-v1
+                                                    select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select='false' multiple data-placeholder='Купить') 
+                                                        option 1-комнатная квартира
+                                                        option 2-комнатная квартира
+                                                        option 3-комнатная квартира
+                                                        option Студия
+                                                .form-cell.cell-s1.select-box-v1
+                                                    .hero_search-price.dropdown-control.dropdown-v1.dropdownControl
+                                                        #range_val.dropdown-val Цена
+                                                        .dropdown-block
+                                                            .hero_search-range
+                                                                .input_w
+                                                                    label.hero_search-range_label от
+                                                                    input#range_start.f_input.input-v2.searchRangeVal(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
+                                                                .input_w
+                                                                    label.hero_search-range_label до
+                                                                    input#range_end.f_input.input-v2.searchRangeVal(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                                         
                                                         
+                                                    //select.select2(data-dropdown-class='dropdown-v1')
+                                                        option Квартиру
+                                                        option Дом
+                                                .form-cell.cell-s2.select-box-v1.select-search-v1
+                                                    .input_w
+                                                        //input.f_input.input-v1.searchField(placeholder='Город, район, название комплекса')
+                                                        select.select2(data-dropdown-class='dropdown-v1' data-placeholder='Город, район, название комплекса' data-minimum-results-for-search=0)
+                                                            option Москва
+                                                            option Питер
+                                                            option Орел
+                                                            option Омск
+                                                            option Воронеж
                                                         
                                                         
-                            .hero_scroll
-                                span Как это работает?
-                                a.gl_link.scrollTo(href='#section_1') 
-                                
+                                                .form-cell.cell-s3
+                                                    button.btn_v1.btn_blue.hero_btn Подобрать
+
+                        .hero_scroll
+                            span Как это работает?
+                            a.gl_link.scrollTo(href='#section_1')
                             
                 div.main_content#section_1
                     .features-list_holder
@@ -73,8 +90,6 @@ html(lang='ru')
                                             img(src='images/time-clock-hour.svg')
                                     p Однокомнатные квартиры <br> в 5 раз популярнее остальных
                         
-                        
             +footer()
             
         +popups()
-        

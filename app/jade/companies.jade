@@ -1,0 +1,217 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head("Quartiroom Компании", false, true)
+
+    body
+        .wrapper
+            .base._gray
+                +header(1)
+                
+                .section.breadcrumbs_section
+                    .section-inner
+                        +breadcrumbs(['Главная', 'Компании'])
+                        
+                        .section-title Компании
+                        
+                        .filter-holder
+                            #filter_list.filter-list.text_upper.tabScroller
+                                li.filter-item: a.gl_link(href='#filter_tab_1')
+                                    span.middle_block.dt_hidden все
+                                    span.middle_block.mob_hidden все
+                                li.filter-item: a.gl_link(href='#filter_tab_2')
+                                    span.middle_block.dt_hidden застройщ.
+                                    span.middle_block.mob_hidden застройщики
+                                li.filter-item: a.gl_link(href='#filter_tab_3')
+                                    span.middle_block.dt_hidden строит.
+                                    span.middle_block.mob_hidden строительные
+                                li.filter-item: a.gl_link(href='#filter_tab_4')
+                                    span.middle_block.dt_hidden агентства
+                                    span.middle_block.mob_hidden агентства недвижимости
+                                li.filter-item: a.gl_link(href='#filter_tab_5')
+                                    span.middle_block банки
+                                    
+                                li.filter-item: a.gl_link(href='#filter_tab_6')
+                                    span.middle_block.dt_hidden все
+                                    span.middle_block.mob_hidden все
+                                li.filter-item: a.gl_link(href='#filter_tab_7')
+                                    span.middle_block.dt_hidden застройщ.
+                                    span.middle_block.mob_hidden застройщики
+                                li.filter-item: a.gl_link(href='#filter_tab_8')
+                                    span.middle_block.dt_hidden строит.
+                                    span.middle_block.mob_hidden строительные
+                                li.filter-item: a.gl_link(href='#filter_tab_9')
+                                    span.middle_block.dt_hidden агентства
+                                    span.middle_block.mob_hidden агентства недвижимости
+                                li.filter-item: a.gl_link(href='#filter_tab_10')
+                                    span.middle_block банки
+                                    
+                            .filter-search
+                                form(action='#')
+                                    .form-cell
+                                        input.f_input.input-v2(placeholder='Название компании')
+                                        button.filter-btn.i-search
+                
+                div.main_content
+                    .mob-search_spacer
+                    .section-inner
+                        .scrollerTabs(data-tab-context='#filter_list .slick-track')
+                            #filter_tab_1 
+                                ul.companies-list
+                                    +loop_while(3)
+                                        li.company-item
+                                            .company-unit
+                                                .company-unit_logo-block
+                                                    a.company-unit_logo(href='company.html')
+                                                        img(src='images/company_logo_1_small.jpg')
+                                                .company-unit_name
+                                                    a.gl_link(href='company.html') Главстрой девелопмент
+                                                    
+                                                .company-unit_type Застройщик <br> Агентство недвижимости
+                                                .company-unit_caption проекты
+                                                dl.company-unit_info
+                                                    dt Текущих
+                                                    dd 567
+                                                    dt Выполненных
+                                                    dd 2098
+                                                    
+                                                .company-unit_caption В продаже
+                                                dl.company-unit_info
+                                                    dt Квартир
+                                                    dd 456
+                                                    dt Участков
+                                                    dd 3
+                                                    dt Коттеджей
+                                                    dd 34
+                                                    
+                                                .company-unit_footer
+                                                    p.company-unit_rating
+                                                        span._clr_blue Рейтинг
+                                                        span 
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._half
+                                                        span 4.5
+                                                    p
+                                                        span._clr_gray на основе 
+                                                        span._clr_blue 345 отзывов
+                                                        
+                                        li.company-item
+                                            .company-unit
+                                                .company-unit_logo-block
+                                                    a.company-unit_logo(href='company.html')
+                                                        img(src='images/company_logo_2_small.jpg')
+                                                .company-unit_name
+                                                    a.gl_link(href='company.html') YIT company
+                                                    
+                                                .company-unit_type Застройщик 
+                                                .company-unit_caption проекты
+                                                dl.company-unit_info
+                                                    dt Текущих
+                                                    dd 567
+                                                    dt Выполненных
+                                                    dd 0
+                                                    
+                                                .company-unit_caption В продаже
+                                                dl.company-unit_info
+                                                    dt Квартир
+                                                    dd 456
+    
+                                        li.company-item
+                                            .company-unit
+                                                .company-unit_logo-block
+                                                    a.company-unit_logo(href='company.html')
+                                                        img(src='images/company_logo_3_small.jpg')
+                                                .company-unit_name
+                                                    a.gl_link(href='company.html') NCC development
+                                                    
+                                                .company-unit_type Застройщик 
+                                                .company-unit_caption проекты
+                                                dl.company-unit_info
+                                                    dt Текущих
+                                                    dd 567
+                                                    dt Выполненных
+                                                    dd 2098
+                                                    
+                                                .company-unit_caption В продаже
+                                                dl.company-unit_info
+                                                    dt Квартир
+                                                    dd 456
+                                                    dt Таунхаусов
+                                                    dd 3
+                                                    
+                                                .company-unit_footer
+                                                    p.company-unit_rating
+                                                        span._clr_blue Рейтинг
+                                                        span 
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._half
+                                                        span 4.5
+                                                    p
+                                                        span._clr_gray на основе 
+                                                        span._clr_blue 345 отзывов
+                                                        
+                                        li.company-item
+                                            .company-unit
+                                                .company-unit_logo-block
+                                                    a.company-unit_logo(href='company.html')
+                                                        img(src='images/company_logo_4_small.jpg')
+                                                .company-unit_name
+                                                    a.gl_link(href='company.html') ЛСР недвижимость
+                                                    
+                                                .company-unit_type Застройщик <br> Агентство недвижимости
+                                                .company-unit_caption проекты
+                                                dl.company-unit_info
+                                                    dt Текущих
+                                                    dd 12
+                                                    dt Выполненных
+                                                    dd 0
+                                                    
+                                                .company-unit_caption В продаже
+                                                dl.company-unit_info
+                                                    dt Квартир
+                                                    dd 456
+                                                    dt Участков
+                                                    dd 3
+                                                    dt Коттеджей
+                                                    dd 34
+                                
+                                ul.pagination-list.mob_hidden
+                                    li.pagination-item._first 
+                                        a.gl_link(href='#') В начало
+                                    li.pagination-item 
+                                        a.gl_link(href='#') 5
+                                    li.pagination-item 
+                                        a.gl_link(href='#') 6
+                                    li.pagination-item._active 
+                                        a.gl_link(href='#') 7
+                                    li.pagination-item 
+                                        a.gl_link(href='#') 8
+                                    li.pagination-item 
+                                        a.gl_link(href='#') 9
+                                    li.pagination-item._last
+                                        a.gl_link(href='#') В конец
+                                    
+
+                            #filter_tab_2 2
+                            #filter_tab_3 3
+                            #filter_tab_4 4
+                            #filter_tab_5 5
+                                
+                            #filter_tab_6 6
+                            #filter_tab_7 7
+                            #filter_tab_8 8
+                            #filter_tab_9 9
+                            #filter_tab_10 10
+                                
+                                
+                                
+            +footer()
+            
+        +popups()
+        

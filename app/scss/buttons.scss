@@ -7,12 +7,20 @@
 .btn_v1 {
   height: 40px;
 
+  &.show_more {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font: 14px/40px $FontfabricMullerRegular;
+    margin: 5px 0;
+  }
+
   &.hero_btn {
     display: block;
     width: 100%;
     border-radius: 4px;
     text-align: center;
-    font: 16px $FontfabricMullerRegular;
+    font: 16px/40px $FontfabricMullerRegular;
     margin-top: 20px;
 
     @include respond-to-min($resp_step_2) {
@@ -20,9 +28,45 @@
     }
   }
 
+  &.rate_btn {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0 26px;
+    font: 16px/40px $FontfabricMullerRegular;
+
+    @include respond-to-min($resp_step_2) {
+      display: inline-block;
+      vertical-align: middle;
+      width: auto;
+      margin-left: 20px;
+    }
+  }
+
+  &.review_btn {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0 26px;
+    margin-bottom: 5px;
+    font: 16px/40px $FontfabricMullerRegular;
+
+    @include respond-to-min($resp_step_2) {
+      display: inline-block;
+      vertical-align: middle;
+      width: auto;
+    }
+  }
 }
 
 .btn_blue {
   color: $gl_white;
   background: $gl_turquoise;
+}
+
+.btn_transp_blue {
+  color: $gl_blue;
+  background: none;
 }
