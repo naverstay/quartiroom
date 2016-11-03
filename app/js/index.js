@@ -32,6 +32,7 @@ var autoCompleteOptions = {
 }
 
 var interval = 10; // ms
+
 setTimeout(function () {
     if (main_script) {
         continueLoading();

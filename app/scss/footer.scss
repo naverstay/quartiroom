@@ -163,11 +163,15 @@
   @include respond-to-max($mob_menu_w) {
     display: none !important;
   }
+
+  .show_all & {
+    display: block !important;
+  }
 }
 
 .mob_only {
   display: none;
-  
+
   @include respond-to-max($mob_menu_w) {
     display: initial !important;
   }

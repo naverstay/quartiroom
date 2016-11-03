@@ -27,8 +27,8 @@
     <script src="js/main.js"></script>
      
     <!--endbuild-->
-    <!--[if IE 8]>
-    <link rel="stylesheet" href="css/ie_8.css" media="all"/>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="js/lib/respond.min.js"/></script>
     <![endif]-->
   </head>
@@ -43,7 +43,7 @@
               <ul class="main-menu">
                 <li class="main-menu_item menuItem _dropdown-menu"><span class="gl_link">Квартиры</span>
                   <ul class="main-menu_sub-menu">
-                    <li><a class="gl_link" href="#">Новостройки</a></li>
+                    <li><a class="gl_link" href="complexes.html">Новостройки</a></li>
                     <li><a class="gl_link" href="#">Вторичное жилье</a></li>
                     <li><a class="gl_link" href="#">1-комнатные</a></li>
                     <li><a class="gl_link" href="#">2-комнатные</a></li>
@@ -78,7 +78,7 @@
         </div>
         <div class="main_content">
           <div class="section-inner">
-            <div class="company-block _overview">
+            <div class="company-block companyBlock _overview">
               <div class="company-unit_logo-block"><a class="company-unit_logo" href="company.html"><img src="images/company_logo_1.jpg"></a></div>
               <div class="company-info _main">
                 <p class="company-unit_rating"><span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _filled"></span><span class="unit-rate _half"></span></span><span>4.5</span><span class="mob_only"><br></span><span><span class="_clr_gray">на основе </span><span class="_clr_blue">345 отзывов</span></span></p>
@@ -90,23 +90,31 @@
                 </div>
                 <div class="company-info _address">
                   <ul class="company-info_contacts">
-                    <li class="company-info_item"><span class="i-map_pin _clr_turqoise company-info_icon"></span>
+                    <li class="company-info_item infoItem"><span class="i-map_pin _clr_turqoise company-info_icon"></span>
                       <div class="company-info_caption">Центральный офис</div>
                       <p>г. Москва, Ленинградский пр., д.16/2, офис 234 <span class="mob_hidden"><br></span>kvartyroom@info.ru</p>
-                      <p> <a class="gl_link _clr_turqoise" href="#">Еще офисы</a></p>
+                      <div class="more_info moreInfo">
+                        <p>г. Москва, Ленинградский пр., д.16/2, офис 234 <span class="mob_hidden"><br></span>kvartyroom@info.ru</p>
+                        <p>г. Москва, Ленинградский пр., д.16/2, офис 234 <span class="mob_hidden"><br></span>kvartyroom@info.ru</p>
+                      </div>
+                      <p> <a class="gl_link _clr_turqoise moreInfoBtn" href="#">Еще офисы</a></p>
                     </li>
-                    <li class="company-info_item"><span class="_clr_turqoise company-info_icon i-phone"></span>
+                    <li class="company-info_item infoItem"><span class="_clr_turqoise company-info_icon i-phone"></span>
                       <div class="company-info_caption">телефоны</div>
                       <p>+7 (495) 104 34 78</p>
-                      <p> <a class="gl_link _clr_turqoise" href="#">Еще телефоны</a></p>
+                      <div class="more_info moreInfo">
+                        <p>+7 (495) 104 34 78</p>
+                        <p>+7 (495) 104 34 78</p>
+                      </div>
+                      <p> <a class="gl_link _clr_turqoise moreInfoBtn" href="#">Еще телефоны</a></p>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div class="company-block">
-              <div class="company-block_caption"> <span>В продаже</span><a class="company-block_caption-close"></a></div>
-              <div class="company-info_box">
+            <div class="company-block companyBlock">
+              <div class="company-block_caption"> <span>В продаже</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-info_box infoBlock">
                 <p> <span class="_clr_gray-dark">Сейчас у компании: </span><span>234 квартиры </span><span class="_clr_gray-dark">и </span><span>15 таунхаусов</span></p>
                 <div class="company-unit_info_w">
                   <dl class="company-unit_info">
@@ -120,7 +128,7 @@
                   <dl class="company-unit_info">
                     <dt>3-комнатные</dt>
                     <dd>от 5 600 000</dd>
-                    <dt>Коммерческие помещения</dt>
+                    <dt>Коммерческие <span class="mob_hidden">помещения</span></dt>
                     <dd>от 10 300 000</dd>
                     <dt>Кладовки</dt>
                     <dd>от 150 000</dd>
@@ -128,9 +136,9 @@
                 </div>
               </div>
             </div>
-            <div class="company-block">
-              <div class="company-block_caption"> <span>Объекты компании</span><a class="company-block_caption-close"></a></div>
-              <div class="company-info_box">
+            <div class="company-block companyBlock">
+              <div class="company-block_caption"> <span>Объекты компании</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-info_box infoBlock">
                 <div class="company-info_objects">
                   <ul class="company-info_objects-filter">
                     <li>
@@ -170,7 +178,9 @@
                     </li>
                   </ul>
                   <div class="company-info_objects-wrapper">
-                    <div class="company-info_objects-map"><img src="images/map.jpg"></div>
+                    <div class="company-info_objects-map">
+                      <div class="map-wrapper"><img src="images/big_map.jpg"></div>
+                    </div>
                     <div class="company-info_objects-info">
                       <div class="company-info_objects-description">
                         <div class="gl_table">
@@ -181,7 +191,7 @@
                         </div>
                       </div>
                       <div class="company-info_objects-container">
-                        <ul class="company-info_objects-list">
+                        <ul class="company-info_objects-list objectsList">
                           <li>
                             <div class="company-info_object">
                               <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue" href="#"> <span class="i-heart"></span></a></p>
@@ -302,7 +312,7 @@
                               <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
                             </div>
                           </li>
-                          <li class="dt_hidden text_center"><a class="btn_v1 btn_transp_blue show_more" href="#">Показать еще</a></li>
+                          <li class="dt_hidden text_center"><a class="btn_v1 btn_transp_blue show_more showMoreBtn" href="#">Показать еще</a></li>
                         </ul>
                       </div>
                     </div>
@@ -310,9 +320,9 @@
                 </div>
               </div>
             </div>
-            <div class="company-block">
-              <div class="company-block_caption"><span>Рейтинг компании</span><a class="company-block_caption-close"></a></div>
-              <div class="company-info_box">
+            <div class="company-block companyBlock">
+              <div class="company-block_caption"><span>Рейтинг компании</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-info_box infoBlock">
                 <div class="company-info_features">
                   <div class="company-info_features-box _first">
                     <div class="company-info_features-rate"><span class="feature-label fl"> <span>Открытость </span><span class="mob_hidden">компании</span></span><span class="feature-rate fr">

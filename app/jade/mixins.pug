@@ -1,5 +1,5 @@
 
-mixin dev_head(page_title, index, companies, location, product, lk, cart)
+mixin dev_head(page_title, index, companies, location, complex, lk, cart)
     head
         title=page_title
         | 
@@ -28,8 +28,8 @@ mixin dev_head(page_title, index, companies, location, product, lk, cart)
         script(src='js/main.js')
         | 
         | <!--endbuild-->
-        | <!--[if IE 8]>
-        | <link rel="stylesheet" href="css/ie_8.css" media="all"/>
+        | <!--[if lt IE 9]>
+        | <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
         | <script src="js/lib/respond.min.js"/></script>
         | <![endif]-->
         
@@ -50,6 +50,13 @@ mixin dev_head(page_title, index, companies, location, product, lk, cart)
             | 
             | <!--build:js js/location.min.js -->
             script(src='js/location.js')
+            | 
+            | <!--endbuild-->
+        - if (complex)
+            | 
+            | <!--build:js js/complex.min.js -->
+            script(src='js/lib/nouislider.js')
+            script(src='js/complex.js')
             | 
             | <!--endbuild-->
         - if (lk)
@@ -94,7 +101,7 @@ mixin header(active)
                     li.main-menu_item.menuItem._dropdown-menu
                         span.gl_link Квартиры
                         ul.main-menu_sub-menu
-                            li: a.gl_link(href='#') Новостройки
+                            li: a.gl_link(href='complexes.html') Новостройки
                             li: a.gl_link(href='#') Вторичное жилье
                             li: a.gl_link(href='#') 1-комнатные
                             li: a.gl_link(href='#') 2-комнатные

@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'quartiroom_icons';
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?nmdf53');
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?nmdf53#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.ttf?nmdf53') format('truetype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.woff?nmdf53') format('woff'),
-    url('#{$icomoon-font-path}/quartiroom_icons.svg?nmdf53#quartiroom_icons') format('svg');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?ultd19');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?ultd19#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.ttf?ultd19') format('truetype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.woff?ultd19') format('woff'),
+    url('#{$icomoon-font-path}/quartiroom_icons.svg?ultd19#quartiroom_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,9 +26,59 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.i-search {
+.i-metro {
   &:before {
-    content: $i-search;
+    content: $i-metro;
+  }
+}
+.i-pin {
+  &:before {
+    content: $i-pin;
+  }
+}
+.i-pano {
+  &:before {
+    content: $i-pano;
+  }
+}
+.i-search2 {
+  &:before {
+    content: $i-search2;
+  }
+}
+.i-builder {
+  &:before {
+    content: $i-builder;
+  }
+}
+.i-car {
+  &:before {
+    content: $i-car;
+  }
+}
+.i-bus {
+  &:before {
+    content: $i-bus;
+  }
+}
+.i-pedestrian {
+  &:before {
+    content: $i-pedestrian;
+  }
+}
+.i-23 {
+  &:before {
+    content: $i-23;
+  }
+}
+.i-humburger {
+  &:before {
+    content: $i-humburger;
+  }
+}
+.i-search-thik {
+  &:before {
+    content: $i-search-thik;
   }
 }
 .i-heart {
@@ -109,6 +159,11 @@
 .i-thumbs-o-up {
   &:before {
     content: $i-thumbs-o-up;
+  }
+}
+.i-arrow-up {
+  &:before {
+    content: $i-arrow-up;
   }
 }
 .i-cross {

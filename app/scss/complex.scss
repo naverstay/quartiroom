@@ -1,0 +1,537 @@
+.filter-form {
+  position: relative;
+
+  @include respond-to-max($resp_step_2) {
+    padding-bottom: 90px;
+  }
+}
+
+.filter-container {
+  @extend %clearfix;
+
+  @include respond-to-min($resp_l) {
+    margin-left: -9px;
+    margin-bottom: 5px;
+  }
+
+  &._adv-filter {
+    display: none;
+    position: relative;
+
+    @include respond-to-min($resp_l) {
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 9px;
+        height: 1px;
+        border-top: 1px dashed #ccc;
+      }
+    }
+  }
+
+  &._smpl-filter {
+
+  }
+}
+
+.filter-cell {
+  margin-top: 9px;
+
+  &._col-1,
+  &._col-2,
+  &._col-4 {
+    @extend %clearfix;
+  }
+
+  @include respond-to-min($resp_l) {
+    float: left;
+    padding-left: 9px;
+
+    &._col-1 {
+      width: 32%;
+    }
+
+    &._col-2 {
+      width: 68%;
+    }
+
+    &._col-3 {
+      width: 16%;
+    }
+
+    &._col-4 {
+      width: 36%;
+    }
+  }
+}
+
+.adv-search_cell {
+
+  @include respond-to-max($resp_step_2) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+.adv-search_box {
+  padding: 8px 0 0;
+
+  @include respond-to-max($resp_step_2) {
+    text-align: center;
+    padding: 10px 0 12px;
+  }
+}
+
+.adv-search_link {
+  @extend %icon_pseudo;
+  position: relative;
+  padding-left: 17px;
+  white-space: nowrap;
+  font-size: 14px;
+
+  &:before {
+    content: $i-humburger;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 16px;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: -8px;
+  }
+
+  &.changed {
+
+    &:before {
+      content: $i-arrow-up;
+    }
+  }
+}
+
+.complex-view {
+
+  &_map-holder {
+    position: relative;
+    height: 265px;
+    overflow: hidden;
+
+    @include respond-to-min($resp_step_2) {
+      height: 610px;
+      margin-right: 320px;
+    }
+  }
+
+  &_list {
+    background: $gl_white;
+
+    @include respond-to-min($resp_step_2) {
+      width: 320px;
+      float: right;
+      height: 610px;
+      margin-top: -610px;
+    }
+  }
+
+  &_switcher {
+    line-height: 34px;
+    background: #eee;
+    border-bottom: 1px solid #d4d4d4;
+
+    @include respond-to-max($resp_step_2) {
+      line-height: 26px;
+
+      .filter-item .gl_link {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &_tab-icon {
+    font-size: 20px;
+    margin-right: 6px;
+  }
+
+  &_tabs {
+    float: left;
+
+    .filter-item {
+      float: left;
+    }
+
+    .gl_link {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  &_sort {
+    float: right;
+
+    &-select {
+
+    }
+  }
+}
+
+.complex-tag {
+  border-radius: 2px;
+  padding: 0 12px;
+  background: #eee;
+}
+
+.status-tip {
+  font-size: 13px;
+  line-height: 1;
+  margin-top: -5px;
+}
+
+.complex-block {
+  @extend %clearfix;
+  background: #fff;
+
+  @include respond-to-max($resp_step_2) {
+    position: relative;
+    padding-top: 14px;
+    font-size: 13px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -10px;
+      left: -10px;
+      height: 1px;
+      background: $gl_gray_lines;
+    }
+
+    &._overview {
+      padding-top: 0;
+      //margin: 0 -10px 9px;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    -webkit-transition: padding 0.3s 0.1s;
+    -ms-transition: padding 0.3s 0.1s;
+    transition: padding 0.3s 0.1s;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid $gl_gray_lines;
+    padding-left: 275px;
+    padding-right: 30px;
+    min-height: 207px;
+    margin: 0 -30px 9px;
+
+    &:last-child {
+      margin-bottom: 25px;
+    }
+
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+
+  &_promo {
+    padding-top: 17px;
+    border-top: 1px solid $gl_gray_lines;
+
+    p {
+      line-height: 1.8;
+      margin-bottom: 10px;
+      letter-spacing: .01em;
+    }
+  }
+
+  &_status {
+    text-align: right;
+
+    @include respond-to-min($resp_l) {
+      float: right;
+    }
+  }
+
+  &_tags {
+    @extend %clearfix;
+    font-size: 12px;
+    margin-left: -12px;
+
+    li {
+      float: left;
+      padding-left: 12px;
+      margin-bottom: 8px;
+    }
+
+    @include respond-to-min($resp_l) {
+      float: left;
+    }
+  }
+
+  &_info {
+    @extend %clearfix;
+    line-height: 26px;
+  }
+
+  &_prices {
+    @extend %clearfix;
+    font-size: 13px;
+    float: left;
+    width: 65%;
+    letter-spacing: .015em;
+
+    li {
+      margin-bottom: 2px;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      float: none;
+      width: auto;
+
+      li {
+        float: left;
+        margin-bottom: 5px;
+
+        &:before {
+          content: '\2022';
+          padding: 0 7px;
+          color: #b3b3b3;
+        }
+
+        &:first-child {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &_retings {
+    float: right;
+    width: 35%;
+    text-align: right;
+    margin-top: -3px;
+
+    .company-unit_rating {
+      margin-right: -7px;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      width: 250px;
+      margin-top: 0;
+      padding-bottom: 6px;
+
+      p {
+        margin-bottom: 7px;
+      }
+    }
+  }
+
+  &_links {
+    @extend %clearfix;
+    padding-top: 5px;
+
+    li {
+      margin-bottom: 2px;
+
+      @include respond-to-min($resp_step_2) {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 5px;
+
+        &:before {
+          content: '\2022';
+          padding: 0 8px;
+          color: #b3b3b3;
+        }
+
+        &:first-child {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &_slider {
+
+    &-pagination {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 7px;
+
+      .slick-dots {
+        display: table !important;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+
+        li {
+          display: table-cell;
+          border: 1px solid #d7d7d7;
+          border-top: 0;
+
+          &.slick-active {
+            button {
+              background: #de2223;
+              cursor: default;
+            }
+          }
+        }
+
+        button {
+          @include transition_all(background .3s);
+          cursor: pointer;
+          height: 6px;
+          display: block;
+          width: 100%;
+          font-size: 0;
+          border: 1px solid $gl_white;
+          background: $gl_white;
+        }
+      }
+    }
+
+    .slide {
+      img {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+      }
+    }
+  }
+
+  &_content {
+
+    &-head {
+
+      p {
+        margin-bottom: 3px;
+        letter-spacing: .01em;
+      }
+
+      @include respond-to-max($resp_step_2) {
+        font-size: 12px;
+      }
+
+      @include respond-to-min($resp_l) {
+        padding-right: 260px;
+        padding-top: 12px;
+      }
+    }
+
+    &-body {
+      @extend %clearfix;
+      position: relative;
+    }
+
+    &-footer {
+
+      > p {
+        font-size: 13px;
+        margin-bottom: 12px;
+        letter-spacing: .01em;
+      }
+
+      @include respond-to-max($resp_step_2) {
+        padding-top: 10px;
+
+        > p {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &_gallery {
+    position: relative;
+    float: left;
+    width: 75px;
+    margin-right: 14px;
+
+    @include respond-to-min($resp_step_2) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin-right: 0;
+      padding-bottom: 7px;
+      width: 250px;
+    }
+  }
+
+  .company-unit_logo-block {
+    width: 90px;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+
+  &_caption {
+    font: 16px/20px $FontfabricMullerRegular;
+    color: $gl_blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+
+  &_option {
+
+    &-icon {
+      color: $gl_turquoise;
+      font-size: 18px;
+      margin-right: 4px;
+
+      @include respond-to-min($resp_step_2) {
+        font-size: 20px;
+        margin-right: 6px;
+      }
+    }
+  }
+
+  &_options {
+    @extend %clearfix;
+    font-size: 13px;
+    line-height: 18px;
+    margin-left: -4px;
+    padding-bottom: 4px;
+
+    li {
+      float: left;
+      padding-left: 4px;
+      margin: 6px 0 10px;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      margin-left: -9px;
+      font-size: 14px;
+      padding-bottom: 0;
+
+      li {
+        padding-left: 9px;
+      }
+    }
+  }
+}
+
+

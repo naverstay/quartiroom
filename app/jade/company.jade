@@ -20,7 +20,7 @@ html(lang='ru')
                             
                 div.main_content
                     .section-inner
-                        .company-block._overview
+                        .company-block.companyBlock._overview
                             .company-unit_logo-block
                                 a.company-unit_logo(href='company.html')
                                     img(src='images/company_logo_1.jpg')
@@ -47,27 +47,37 @@ html(lang='ru')
                                         
                                 .company-info._address
                                     ul.company-info_contacts
-                                        li.company-info_item
+                                        li.company-info_item.infoItem
                                             span.i-map_pin._clr_turqoise.company-info_icon
                                             .company-info_caption Центральный офис
                                             p г. Москва, Ленинградский пр., д.16/2, офис 234 
                                                 span.mob_hidden <br>
                                                 | kvartyroom@info.ru
+                                            .more_info.moreInfo
+                                                p г. Москва, Ленинградский пр., д.16/2, офис 234 
+                                                    span.mob_hidden <br>
+                                                    | kvartyroom@info.ru
+                                                p г. Москва, Ленинградский пр., д.16/2, офис 234 
+                                                    span.mob_hidden <br>
+                                                    | kvartyroom@info.ru
                                             p 
-                                                a.gl_link._clr_turqoise(href='#') Еще офисы
+                                                a.gl_link._clr_turqoise.moreInfoBtn(href='#') Еще офисы
                                                 
-                                        li.company-info_item
+                                        li.company-info_item.infoItem
                                             span._clr_turqoise.company-info_icon.i-phone
                                             .company-info_caption телефоны
                                             p +7 (495) 104 34 78
+                                            .more_info.moreInfo
+                                                p +7 (495) 104 34 78
+                                                p +7 (495) 104 34 78
                                             p 
-                                                a.gl_link._clr_turqoise(href='#') Еще телефоны
+                                                a.gl_link._clr_turqoise.moreInfoBtn(href='#') Еще телефоны
                                             
-                        .company-block
+                        .company-block.companyBlock
                             .company-block_caption 
                                 span В продаже
-                                a.company-block_caption-close
-                            .company-info_box
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+                            .company-info_box.infoBlock
                                 p 
                                     span._clr_gray-dark Сейчас у компании: 
                                     span 234 квартиры 
@@ -86,16 +96,17 @@ html(lang='ru')
                                     dl.company-unit_info
                                         dt 3-комнатные
                                         dd от 5 600 000
-                                        dt Коммерческие помещения
+                                        dt Коммерческие 
+                                         span.mob_hidden помещения
                                         dd от 10 300 000
                                         dt Кладовки
                                         dd от 150 000
                                                                                 
-                        .company-block
+                        .company-block.companyBlock
                             .company-block_caption 
                                 span Объекты компании
-                                a.company-block_caption-close
-                            .company-info_box
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+                            .company-info_box.infoBlock
                                 .company-info_objects
                                     ul.company-info_objects-filter
                                         li
@@ -135,7 +146,8 @@ html(lang='ru')
                                                 
                                     .company-info_objects-wrapper
                                         .company-info_objects-map
-                                            img(src='images/map.jpg')
+                                            .map-wrapper
+                                                img(src='images/big_map.jpg')
                                             
                                         .company-info_objects-info
                                             .company-info_objects-description
@@ -150,7 +162,7 @@ html(lang='ru')
                                                             span._val 456 квартир
                                         
                                             .company-info_objects-container
-                                                ul.company-info_objects-list
+                                                ul.company-info_objects-list.objectsList
                                                     +loop_while(3)
                                                         li
                                                             .company-info_object
@@ -199,13 +211,13 @@ html(lang='ru')
                                                                     span.fr 4 560 000 руб.
                                                                     
                                                     li.dt_hidden.text_center
-                                                        a.btn_v1.btn_transp_blue.show_more(href='#') Показать еще
+                                                        a.btn_v1.btn_transp_blue.show_more.showMoreBtn(href='#') Показать еще
                                                         
-                        .company-block
+                        .company-block.companyBlock
                             .company-block_caption
                                 span Рейтинг компании
-                                a.company-block_caption-close
-                            .company-info_box
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+                            .company-info_box.infoBlock
                                 .company-info_features
                                     .company-info_features-box._first
                                         .company-info_features-rate

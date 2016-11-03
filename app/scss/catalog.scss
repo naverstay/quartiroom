@@ -467,8 +467,11 @@
       border-radius: 100%;
 
       @include respond-to-min($resp_step_2) {
-        margin-left: 35px;
         margin-right: 15px;
+      }
+
+      @include respond-to-min($resp_l) {
+        margin-left: 35px;
       }
     }
   }
@@ -546,9 +549,20 @@
 
     .company-info_features-box {
       margin-bottom: 5px;
+
+      @include respond-to-min($resp_step_2) {
+        &._center {
+          float: left;
+        }
+
+        &._last {
+          float: right;
+          line-height: 90px;
+        }
+      }
     }
 
-    @include respond-to-min($resp_step_2) {
+    @include respond-to-min($resp_l) {
       display: table;
       width: 100%;
       margin-bottom: 17px;
@@ -565,10 +579,13 @@
 
         &._center {
           text-align: center;
+          float: none;
         }
 
         &._last {
           text-align: right;
+          line-height: normal;
+          float: none;
         }
       }
     }
@@ -683,17 +700,11 @@
       margin: 0 -10px;
       overflow: hidden;
 
-      img {
-        @extend %hor_vert_centr;
-        position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-      }
-
       @include respond-to-min($resp_step_2) {
         margin-left: 0;
         margin-right: 325px;
         height: 610px;
+        border-right: 1px solid $gl_gray_lines;
         overflow: hidden;
       }
     }
@@ -722,6 +733,7 @@
   }
 
   &_box {
+    display: none;
     @extend %clearfix;
 
     .company-unit_info {
@@ -765,16 +777,27 @@
 
   &_contacts {
     @extend %clearfix;
+    position: relative;
 
     @include respond-to-max($resp_l) {
       padding-left: 2px;
     }
 
-    .company-info_item {
+    @include respond-to-min($resp_step_2) {
+      &:before {
+        content: '';
+        position: absolute;
+        left: 46%;
+        width: 1px;
+        top: -10px;
+        bottom: 10px;
+        background: $gl_gray_lines;
+      }
 
-      @include respond-to-min($resp_step_2) {
+      .company-info_item {
         float: left;
         width: 50%;
+        padding-right: 4.2%;
       }
     }
   }
@@ -833,10 +856,31 @@
   }
 }
 
+.map-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  img {
+    position: absolute;
+    width: 1400px;
+    height: 610px;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    margin: -305px 0 0 -50%;
+  }
+}
+
+.more_info {
+  display: none;
+}
+
 .company-block {
   @extend %clearfix;
   background: #fff;
-  //margin-bottom: 9px;
 
   @include respond-to-max($resp_step_2) {
     position: relative;
@@ -870,10 +914,17 @@
   }
 
   @include respond-to-min($resp_step_2) {
+    -webkit-transition: padding 0.3s 0.1s;
+    -ms-transition: padding 0.3s 0.1s;
+    transition: padding 0.3s 0.1s;
     border-radius: 4px;
     border: 1px solid $gl_gray_lines;
-    padding: 20px 30px 5px;
+    padding: 20px 30px 10px;
     margin: 0 -30px 9px;
+
+    &.opened {
+      padding-bottom: 5px;
+    }
 
     &:last-child {
       margin-bottom: 25px;
@@ -904,19 +955,25 @@
       width: 20px;
       height: 20px;
       text-align: center;
+      cursor: pointer;
 
       &:before {
-        content: $i-cross;
+        content: $i-checkmark;
         font-size: 18px;
         line-height: 20px;
         left: 10px;
         color: #b8b8b8;
+
+        .opened & {
+          content: $i-cross;
+        }
       }
     }
 
     @include respond-to-min($resp_step_2) {
       font-size: 26px;
       line-height: 30px;
+      padding-right: 30px;
 
       &-close {
         width: 30px;

@@ -1,0 +1,535 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+    +dev_head("Quartiroom Комплексы", false, false, false, true)
+
+    body
+        .wrapper
+            .base._gray
+                +header(1)
+                
+                .section.breadcrumbs_section
+                    .section-inner
+                        +breadcrumbs(['Главная', 'Новостройки в Королеве'])
+                        
+                        .section-title Новостройки в Королеве
+                        .filter-form: form(action='#')
+                            .filter-container._smpl-filter
+                                .filter-cell._col-1 
+                                    .form-cell.select-box-v1._bordered.select-search-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Купить')
+                                            option 
+                                            option 1-комнатная квартира
+                                            option 2-комнатная квартира
+                                            option 3-комнатная квартира
+                                            option Студия
+                                    
+                                .filter-cell._col-2
+                                    .select-box-v1.select-search-v1._bordered
+                                        .input_w
+                                            select.select2(data-dropdown-class='dropdown-v1' data-placeholder='Город, название комплекса, застройщик' data-minimum-results-for-search=0)
+                                                option
+                                                option Москва
+                                                option Питер
+                                                option Орел
+                                                option Омск
+                                                option Воронеж
+                                                
+                                .filter-cell._col-1.filterBlock
+                                    .form-cell.toddler-val-v1
+                                        .toddler-val
+                                            span.label 
+                                                span Цена за м
+                                                    sup._index 2
+                                                span от
+                                            span.start 
+                                            span.label &mdash;
+                                            span.end 
+    
+                                    .form-cell.toddler-v1
+                                        .filterToddler(data-format='money' data-suffix=' руб' data-min=500 data-max=500000)
+                                    .toddler-range
+                                        .min 
+                                        .max
+                                            
+                                .filter-cell._col-4
+                                    .form-cell.select-box-v1._bordered._ganged-first._s-50.select-search-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Район')
+                                            option 
+                                            option 1-комнатная квартира
+                                            option 2-комнатная квартира
+                                            option 3-комнатная квартира
+                                            option Студия
+                                            
+                                    .form-cell.select-box-v1._bordered._ganged-last._s-50.select-search-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Метро')
+                                            option 
+                                            option 1-комнатная квартира
+                                            option 2-комнатная квартира
+                                            option 3-комнатная квартира
+                                            option Студия
+                                            
+                                .filter-cell._col-3
+                                    .form-cell.select-box-v1._bordered.select-search-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Срок сдачи')
+                                            option 
+                                            option 1 день
+                                            option 2 месяца
+                                            option 3 года
+                                            
+                                .filter-cell._col-3.adv-search_cell
+                                    .form-cell.select-box-v1._bordered
+                                        button.btn_v1.btn_blue.filter_btn Подобрать
+                                    .form-cell.adv-search_box
+                                        a.gl_link.adv-search_link.advSearchBtn._clr_blue(href='#' data-text-toggle='Свернуть расшир. поиск') 
+                                            span Расширенный поиск 
+                                            
+                            .advSearchBlock.filter-container._adv-filter
+                                .filter-cell._col-1.filterBlock
+                                    .form-cell.toddler-val-v1
+                                        .toddler-val
+                                            span.label Этажность дома от
+                                            span.start 
+                                            span.label &mdash;
+                                            span.end 
+    
+                                    .form-cell.toddler-v1
+                                        .filterToddler(data-plural='этаж,этажа,этажей' data-min=1 data-max=100)
+                                    .toddler-range
+                                        .min
+                                        .max
+                                
+                                .filter-cell._col-4
+                                    .form-cell.radio-group-v1
+                                        .radio-group
+                                            label.check-emul._check-v2
+                                                input.inp-hidden(type='radio' name='remont')
+                                                span.check-text С отделкой
+                                                
+                                            label.check-emul._check-v2
+                                                input.inp-hidden(type='radio' name='remont')
+                                                span.check-text Без отделки
+                                                
+                                            label.check-emul._check-v2
+                                                input.inp-hidden(type='radio' name='remont')
+                                                span.check-text Не важно
+                                                
+                                .filter-cell._col-1
+                                    .form-cell.select-box-v1._bordered.select-search-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Тип')
+                                            option
+                                            option 1-комнатная квартира
+                                            option 2-комнатная квартира
+                                            option 3-комнатная квартира
+                                            option Малоэтажный комплекс
+                                            
+                                .filter-cell._col-1.cb
+                                    .form-cell.select-box-v1._bordered.select-multi-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select='false' multiple data-placeholder='Тип дома:' data-preserve-placeholder='true')
+                                            option
+                                            option Монолит
+                                            option Панельный
+                                            option Кирпичный
+                                            option Сруб
+                                            
+                                .filter-cell._col-4
+                                    .form-cell.radio-group-v1
+                                        .radio-group
+                                            label.check-emul._check-v2
+                                                input.inp-hidden(type='radio' name='kredit')
+                                                span.check-text Ипотека
+    
+                                            label.check-emul._check-v2
+                                                input.inp-hidden(type='radio' name='kredit')
+                                                span.check-text Военная ипотека
+    
+                                            label.check-emul._check-v2
+                                                input.inp-hidden(type='radio' name='kredit')
+                                                span.check-text Рассрочка
+                                                
+                                .filter-cell._col-1
+                                    .form-cell.select-box-v1._bordered.select-multi-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select='false' multiple data-placeholder='Инфраструктура:' data-preserve-placeholder='true')
+                                            option
+                                            option Электричество
+                                            option Центральный газ
+                                            option Центральное отопление
+                                            option Кладовые
+                                            option Центральная канализация
+                                            option Дороги
+                                            
+                                .filter-cell._col-1
+                                    .form-cell.select-box-v1._bordered._ganged-first._s-50.select-search-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='До метро:' data-preserve-placeholder='true')
+                                            option
+                                            option 15 мин.
+                                            option 30 мин.
+                                            option 45 мин.
+                                            option 60 мин.
+    
+                                    .form-cell.select-box-v1._bordered._ganged-last._s-50.select-search-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Транспорт')
+                                            option
+                                            option Пешком
+                                            option На общественном транспорте
+                                            option На автомобиле
+                                            
+                                .filter-cell._col-4
+                                    .form-cell.select-box-v1._bordered._ganged-first._s-50.select-search-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='До станции:' data-preserve-placeholder='true')
+                                            option
+                                            option 15 мин.
+                                            option 30 мин.
+                                            option 45 мин.
+                                            option 60 мин.
+    
+                                    .form-cell.select-box-v1._bordered._ganged-last._s-50.select-search-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Транспорт')
+                                            option
+                                            option Пешком
+                                            option На общественном транспорте
+                                            option На автомобиле
+
+                .complex-view_switcher
+                    .section-inner.clearfix
+                        .complex-view_tabs
+                            ul#view_switcher
+                                li.filter-item
+                                    a.gl_link(href='#view_tab_1')
+                                        span.mb.complex-view_tab-icon.i-humburger.mob_hidden
+                                        span.mb списком
+                                li.filter-item
+                                    a.gl_link(href='#view_tab_2')
+                                        span.mb.complex-view_tab-icon.i-map_pin.mob_hidden
+                                        span.mb на карте
+                        
+                        .complex-view_sort
+                            span._clr_gray.mb.mob_hidden Выводить:
+                            .mb: .complex-view_sort-select.select-box-v2
+                                select.select2(data-dropdown-class='dropdown-v2' data-minimum-results-for-search='Infinity')
+                                    option По рейтингу
+                                    option По цене
+                                
+                
+                .tabBlock(data-tab-context='#view_switcher')
+                    #view_tab_1
+                        .main_content._no-pad
+                            .section-inner
+                                +loop_while(3)
+                                    .complex-block
+                                        .complex-block_gallery.complexGallery
+                                            .complex-block_slider.complexSlider
+                                                .slide
+                                                    img(src='images/complex_1.jpg')
+                                                .slide
+                                                    img(src='images/complex_2.jpg')
+                                                
+                                            .complex-block_slider-pagination.complexPagination
+                                        
+                                        .complex-block_content
+                                            .complex-block_content-head
+                                                p: a.complex-block_caption(href='#') ЖК ‹‹Королев Сити››, Центральный квартал
+                                                p._clr_gray Московская обл., г. Королев, ул. Октябрьская, корп.5, д.45 "В"
+                                            
+                                                ul.complex-block_options
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-metro
+                                                            span.mb Выхино
+                                                            
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-car
+                                                            span.mb 20 мин.
+                                                            
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-bus
+                                                            span.mb 35 мин.
+                                                            
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-pedestrian
+                                                            span.mb 45 мин.
+                                                            
+                                            .complex-block_content-body
+                                                ul.complex-block_prices
+                                                    li 
+                                                        span._clr_gray-dark Студии от
+                                                        span._clr_blue 2 300 000 руб.
+                                                        
+                                                    li 
+                                                        span._clr_gray-dark 1-комн. от
+                                                        span._clr_blue 2 300 000 руб.
+                                                        
+                                                    li 
+                                                        span._clr_gray-dark 2-комн. от
+                                                        span._clr_blue 5 567  000 руб.
+                                                        
+                                                    li 
+                                                        span._clr_gray-dark 3-комн. от
+                                                        span._clr_blue 8 690 000 руб.
+                                                    li 
+                                                        span._clr_gray-dark 4-комн. от
+                                                        span._clr_blue 14 300 000 руб.
+                                                        
+                                                .complex-block_retings
+                                                    p.company-unit_rating
+                                                        span._clr_blue.mob_hidden Рейтинг
+                                                        span
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._half
+                                                        span 4.5
+                                                    p.mob_hidden
+                                                        span._clr_gray на основе 
+                                                        a._clr_blue.gl_link(href='#') 345 отзывов
+                                                    
+                                                    ul.complex-block_links
+                                                        li: a.gl_link._clr_blue(href='#')
+                                                            span.mob_hidden Официальный сайт
+                                                            span.dt_hidden Оф.сайт
+                                                        li: a.gl_link._clr_blue(href='#') Форум
+                                                        
+                                            .complex-block_content-footer
+                                                p Возводящийся жилой комплекс представляющий 6 кирпично-монолитных жилых корпусов распложённых на берегу Невы, напротив зеленых скверов Крестовского острова, в исторической части Петроградского района.
+                                                        
+                                                .complex-block_info
+                                                    .complex-block_status
+                                                        p Дома построены
+                                                        
+                                                    ul.complex-block_tags._clr_gray
+                                                        li: .complex-tag У реки
+                                                        li: .complex-tag Акция
+                                                        li: .complex-tag Военная ипотека
+                                                        li: .complex-tag Таунхаус
+                                                        li: .complex-tag У реки
+                                                        li: .complex-tag Акция
+                                                        
+                                    .complex-block
+                                        .complex-block_gallery.complexGallery
+                                            .complex-block_slider.complexSlider
+                                                .slide
+                                                    img(src='images/complex_1.jpg')
+                                                .slide
+                                                    img(src='images/complex_2.jpg')
+                                                .slide
+                                                    img(src='images/complex_3.jpg')
+                                                
+                                            .complex-block_slider-pagination.complexPagination
+                                        
+                                        .complex-block_content
+                                            .complex-block_content-head
+                                                p: a.complex-block_caption(href='#') ЖК ‹‹Мичуринский парк››
+                                                p._clr_gray Московская обл., г. Королев, ул. Октябрьская, корп.5, д.45 "В"
+                                            
+                                                ul.complex-block_options
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-metro
+                                                            span.mb Выхино
+                                                            
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-car
+                                                            span.mb 20 мин.
+                                                            
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-bus
+                                                            span.mb 35 мин.
+                                                            
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-pedestrian
+                                                            span.mb 45 мин.
+                                                            
+                                            .complex-block_content-body
+                                                ul.complex-block_prices
+                                                    li 
+                                                        span._clr_gray-dark Студии от
+                                                        span._clr_blue 2 300 000 руб.
+                                                        
+                                                    li 
+                                                        span._clr_gray-dark 1-комн. от
+                                                        span._clr_blue 2 300 000 руб.
+                                                        
+                                                    li 
+                                                        span._clr_gray-dark 2-комн. от
+                                                        span._clr_blue 5 567  000 руб.
+                                                        
+                                                    li 
+                                                        span._clr_gray-dark 3-комн. от
+                                                        span._clr_blue 8 690 000 руб.
+                                                    li 
+                                                        span._clr_gray-dark 4-комн. от
+                                                        span._clr_blue 14 300 000 руб.
+                                                        
+                                                .complex-block_retings
+                                                    p.company-unit_rating
+                                                        span._clr_blue.mob_hidden Рейтинг
+                                                        span
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._half
+                                                        span 4.5
+                                                    p.mob_hidden
+                                                        span._clr_gray на основе 
+                                                        a._clr_blue.gl_link(href='#') 345 отзывов
+                                                    
+                                                    ul.complex-block_links
+                                                        li: a.gl_link._clr_blue(href='#')
+                                                            span.mob_hidden Официальный сайт
+                                                            span.dt_hidden Оф.сайт
+                                                        li: a.gl_link._clr_blue(href='#') Форум
+                                                        
+                                            .complex-block_content-footer
+                                                p Представляющий 6 кирпично-монолитных жилых корпусов распложённых на берегу Невы, напротив зеленых скверов Крестовского  острова, в исторической части Петроградского района. Напротив зеленых скверов в исторической части Петроградского района.
+                                                        
+                                                .complex-block_info
+                                                    .complex-block_status
+                                                        p
+                                                            span._clr_gray Срок сдачи : 
+                                                            span 2 квартал 2016
+                                                        .status-tip._clr_gray Есть построенные корпуса
+
+                                                    ul.complex-block_tags._clr_gray
+                                                        li: .complex-tag У реки
+                                                        li: .complex-tag Акция
+                                                        li: .complex-tag Военная ипотека
+                                                        li: .complex-tag Таунхаус
+                                                        li: .complex-tag У реки
+                                                        li: .complex-tag Акция
+                                                        
+                                    .complex-block
+                                        .complex-block_gallery.complexGallery
+                                            .complex-block_slider.complexSlider
+                                                .slide
+                                                    img(src='images/complex_1.jpg')
+                                                .slide
+                                                    img(src='images/complex_2.jpg')
+                                                .slide
+                                                    img(src='images/complex_1.jpg')
+                                                .slide
+                                                    img(src='images/complex_2.jpg')
+                                                
+                                            .complex-block_slider-pagination.complexPagination
+                                        
+                                        .complex-block_content
+                                            .complex-block_content-head
+                                                p: a.complex-block_caption(href='#') ЖК ‹‹Английская миля››
+                                                p._clr_gray Московская обл., г. Королев, ул. Октябрьская, корп.5, д.45 "В"
+                                            
+                                                ul.complex-block_options
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-metro
+                                                            span.mb Выхино
+                                                            
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-car
+                                                            span.mb 20 мин.
+                                                            
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-bus
+                                                            span.mb 35 мин.
+                                                            
+                                                    li
+                                                        .complex-block_option
+                                                            span.mb.complex-block_option-icon.i-pedestrian
+                                                            span.mb 45 мин.
+                                                            
+                                            .complex-block_content-body
+                                                ul.complex-block_prices
+                                                    li 
+                                                        span._clr_gray-dark Студии от
+                                                        span._clr_blue 2 300 000 руб.
+                                                        
+                                                    li 
+                                                        span._clr_gray-dark 1-комн. от
+                                                        span._clr_blue 2 300 000 руб.
+                                                        
+                                                    li 
+                                                        span._clr_gray-dark 2-комн. от
+                                                        span._clr_blue 5 567  000 руб.
+                                                        
+                                                    li 
+                                                        span._clr_gray-dark 3-комн. от
+                                                        span._clr_blue 8 690 000 руб.
+                                                    li 
+                                                        span._clr_gray-dark 4-комн. от
+                                                        span._clr_blue 14 300 000 руб.
+                                                        
+                                                .complex-block_retings
+                                                    p.company-unit_rating
+                                                        span._clr_blue.mob_hidden Рейтинг
+                                                        span
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._half
+                                                        span 4.5
+                                                    p.mob_hidden
+                                                        span._clr_gray на основе 
+                                                        a._clr_blue.gl_link(href='#') 345 отзывов
+                                                    
+                                                    ul.complex-block_links
+                                                        li: a.gl_link._clr_blue(href='#')
+                                                            span.mob_hidden Официальный сайт
+                                                            span.dt_hidden Оф.сайт
+                                                        li: a.gl_link._clr_blue(href='#') Форум
+                                                        
+                                            .complex-block_content-footer
+                                                p Возводящийся жилой комплекс представляющий 6 кирпично-монолитных жилых корпусов распложённых на берегу Невы, напротив зеленых скверов Крестовского острова, в исторической части Петроградского района.
+                                                        
+                                                .complex-block_info
+                                                    .complex-block_status
+                                                        p Дома построены
+                                                        
+                                                    ul.complex-block_tags._clr_gray
+                                                        li: .complex-tag У реки
+                                                        li: .complex-tag Акция
+                                                        li: .complex-tag Военная ипотека
+                                                        li: .complex-tag Таунхаус
+                                                        li: .complex-tag У реки
+                                                        li: .complex-tag Акция
+                                                        
+                                ul.pagination-list.mob_hidden
+                                    li.pagination-item._first
+                                        a.gl_link(href='#') В начало
+                                    li.pagination-item
+                                        a.gl_link(href='#') 5
+                                    li.pagination-item
+                                        a.gl_link(href='#') 6
+                                    li.pagination-item._active
+                                        a.gl_link(href='#') 7
+                                    li.pagination-item
+                                        a.gl_link(href='#') 8
+                                    li.pagination-item
+                                        a.gl_link(href='#') 9
+                                    li.pagination-item._last
+                                        a.gl_link(href='#') В конец
+                             
+                            .section-inner
+                                .complex-block_promo
+                                    p На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза.
+                                        
+                    #view_tab_2
+                        .complex-view_map-holder
+                            .map-wrapper
+                                img(src='images/big_map.jpg')
+                                
+                        .complex-view_list
+                            
+                                        
+            +footer()
+            
+        +popups()
+        

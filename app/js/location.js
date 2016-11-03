@@ -9,6 +9,6 @@ setTimeout(function () {
 
 
 function continueLoading() {
-    initTabScroller();
+
 }
 

@@ -33,6 +33,16 @@ body {
   float: right;
 }
 
+.cb {
+  clear: both;
+}
+
+.mb {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
 .middle_block {
   display: inline-block;
   vertical-align: middle;
@@ -77,6 +87,10 @@ body {
   @include respond-to-min($resp_step_2) {
     padding-bottom: 10px;
   }
+
+  &._no-pad {
+    padding-top: 0;
+  }
 }
 
 .gl_table {
@@ -92,10 +106,10 @@ body {
 }
 
 .gl_link {
-  text-decoration: underline;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
@@ -111,6 +125,12 @@ body {
 
 .text_center {
   text-align: center;
+}
+
+.text_center-mob {
+  @include respond-to-max($resp_step_2) {
+    text-align: center;
+  }
 }
 
 .text_right {
@@ -143,4 +163,10 @@ body {
 
 ._clr_default {
   color: $default_t_color;
+}
+
+._index {
+  display: inline-block;
+  vertical-align: top;
+  font-size: .65em;
 }
