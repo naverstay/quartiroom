@@ -413,6 +413,12 @@
 .breadcrumbs_section {
   background: $gl_white;
   border-bottom: 1px solid #d4d4d4;
+
+  @include respond-to-min($resp_step_2) {
+    &._filder-mode {
+      padding-bottom: 5px;
+    }
+  }
 }
 
 .breadcrumbs {

@@ -357,7 +357,15 @@
 
   &._s-50 {
     float: left;
-    width: 50%;
+    width: 40%;
+
+    &:first-child {
+      width: 60%;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      width: 50% !important;
+    }
   }
 
   &._ganged-first {
@@ -686,6 +694,7 @@
 
   .noUi-origin {
     border-radius: 0;
+    bottom: auto;
 
     &:before {
       content: '';
