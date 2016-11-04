@@ -53,6 +53,9 @@ mixin dev_head(page_title, index, companies, location, complex, lk, cart)
             | 
             | <!--endbuild-->
         - if (complex)
+            script(src='//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.4.1/es5-shim.js')
+            script(src='//cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.1/es6-shim.js')
+            
             | 
             | <!--build:js js/complex.min.js -->
             script(src='js/lib/nouislider.js')
@@ -102,8 +105,8 @@ mixin header(active)
                         span.gl_link Квартиры
                         ul.main-menu_sub-menu
                             li: a.gl_link(href='complexes.html') Новостройки
-                            li: a.gl_link(href='#') Вторичное жилье
-                            li: a.gl_link(href='#') 1-комнатные
+                            li: a.gl_link(href='complexes_2.html') Вторичное жилье
+                            li: a.gl_link(href='objects.html') 1-комнатные
                             li: a.gl_link(href='#') 2-комнатные
                     li.main-menu_item.menuItem._dropdown-menu
                         span.gl_link Новостройки
@@ -196,16 +199,29 @@ mixin review_footer()
                     button.btn_v1.btn_blue.review_btn Ответить
 
 mixin popups()
-    .popup_close_btn.popupClose
+    #region_popup.popup.popup_v2(title='Регион: Москва')
+        .section-inner.clearfix
+            .complex-view_tabs
+                #filter_list.filter-list.text_upper.tabScroller
+                    li.filter-item
+                        a.gl_link(href='#view_tab_1')
+                            span районы и округа
+                    li.filter-item
+                        a.gl_link(href='#view_tab_2')
+                            span направления
+                    li.filter-item
+                        a.gl_link(href='#view_tab_2')
+                            span метро
 
-    #callback_popup.popup.popup_v2
-        .popup_inner
-            ul#callback_switcher.tab_holder.tab_v1
-                li: a.tab_link(href='#callback_tab_1'): span Перезвоните мне
-                li: a.tab_link(href='#callback_tab_2'): span Задать вопрос
+            .complex-view_sort
+                span._clr_gray.mb.mob_hidden Выводить:
+                .mb: .complex-view_sort-select.select-box-v2
+                    select.select2(data-dropdown-class='dropdown-v2' data-minimum-results-for-search='Infinity')
+                        option По рейтингу
+                        option По цене
                 
-            .tabBlock(data-tab-context='#callback_switcher')
-                #callback_tab_1
+            .scrollerTabs(data-tab-context='#region_switcher')
+                #region_tab_1
                     .tab_content
                         form(action='#')
                             .form-cell
@@ -217,84 +233,10 @@ mixin popups()
                             .form-cell
                                 button.btn_v1.blue_btn.order_btn Отправить заявку
                                 
-                #callback_tab_2
-                    .tab_content
-                        form(action='#')
-                            .form-cell
-                                input.f_input.input_v2(placeholder='Имя')
-                                
-                            .form-cell
-                                input.f_input.input_v2(placeholder='Телефон' data-inputmask="'mask': '[+7] (999)-999-99-99'")
-                                
-                            .form-cell
-                                textarea.f_input.input_v2(placeholder='Вопрос')
-                                
-                            .form-cell
-                                button.btn_v1.blue_btn.order_btn Отправить вопрос
-                                
-    #fail_popup.popup.popup_v3.popup_fail
-        .popup_inner.form-cell_v1
-            .popup_caption Ошибка
-            .popup_msg Вы указали почту, которой нет.  <br>  Попробуйте еще раз
-            
-            .form-cell
-                a.btn_v1.blue_btn.order_btn.mod_2(href='#') Попробовать еще раз
-                a.gl_link.popupClose(href='#') Закрыть
-                    
-    #success_popup.popup.popup_v3.popup_success
-        .popup_inner.form-cell_v1
-            .popup_caption Успех!
-            .popup_msg Новый пароль отправлен на вашу почту. Откройте письмо и пройдите по ссылке 
-            
-            .form-cell
-                button.btn_v1.blue_btn.order_btn.mod_3.popupClose Закрыть
-
-    #recovery_popup.popup.popup_v3
-        .popup_inner.form-cell_v1
-            .popup_caption Восстановление пароля
-            form(action='#')
-                .form-cell
-                    input.f_input.input_v2(placeholder='Email' value='mysweetmail@gmail.com')
-                    
-                .form-cell
-                    button.btn_v1.blue_btn.order_btn.mod_2 Выслать новый пароль
-
-    #auth_popup.popup.popup_v3
-        .popup_inner
-            ul.tab_holder.tab_v2
-                li.ui-state-active: span.tab_link(href='#'): span Вход
-                li: a.tab_link(href='#auth_tab_2'): span Зарегистрироваться
                 
-            .tab_content
-                form(action='#')
-                    .form-cell
-                        input.f_input.input_v2(placeholder='Email')
-                        
-                    .form-cell
-                        input.f_input.input_v2(placeholder='пароль')
-                        
-                    .form-cell
-                        a.gl_link.cool_text.fz_13.fw_500.passRecoveryBtn(href='#') Забыли пароль?
-                        
-                    .form-cell
-                        button.btn_v1.blue_btn.order_btn Войти
-                        
-                    .alter_auth
-                        p Войти через:
-                        ul.about_list
-                            li
-                                a.about_link(href='#')
-                                    span.i-v
-                            li
-                                a.about_link(href='#')
-                                    span.i-f
-                            li
-                                a.about_link(href='#')
-                                    span.i-t
-                            li
-                                a.about_link(href='#')
-                                    span.i-o
-                            li
-                                a.about_link(href='#')
-                                    span.i-g
-    
+                #region_tab_2 2
+                                
+                
+                #region_tab_3 3
+                                
+                

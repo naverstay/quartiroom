@@ -8,7 +8,7 @@ var body, html, doc, wnd,
     fail_popup,
     success_popup,
     quick_search_popup,
-    add2cart_popup,
+    region_popup,
     recovery_popup;
 
 function ieCheck() {
@@ -98,6 +98,10 @@ function domReady() {
 
         btn.toggleClass('changed').text(txt);
 
+        $('.simpleSearch').toggleClass('mob_hidden');
+
+        // $('.advSearch').toggle();
+
         $('.advSearchBlock').slideToggle(300);
 
         return false;
@@ -113,6 +117,12 @@ function domReady() {
 
         return false;
 
+    }).delegate('.sortToggle', 'click', function () {
+
+        $(this).toggleClass('_desc');
+
+        return false;
+
     }).delegate('.moreInfoBtn', 'click', function () {
 
         $(this).hide().closest('.infoItem').find('.moreInfo').slideToggle(0);
@@ -121,7 +131,7 @@ function domReady() {
 
     }).delegate('.favBtn', 'click', function () {
 
-        $(this).find('span').toggleClass('i-heart-filled');
+        $(this).find('span').eq(0).toggleClass('i-heart-filled');
 
         return false;
 
@@ -310,37 +320,42 @@ function initInputFillChecker() {
     });
 }
 
-function initQuickSearchPopup() {
+function initRegionPopup() {
 
-    quick_search_popup = $('#quick_search_popup').dialog({
+    region_popup = $('#region_popup').dialog({
         autoOpen: false,
         modal: true,
         closeOnEscape: true,
         closeText: '',
-        dialogClass: 'no_close_mod no_title dialog_fixed',
+        dialogClass: 'dialog_g_size_1 dialog_close_butt_mod_1 ',
         //appendTo: '.wrapper',
-        width: '100%',
+        width: 1200,
         draggable: true,
         collision: "fit",
         position: {my: "top center", at: "top center", of: window},
         open: function (event, ui) {
             body.addClass('modal_opened overlay_v2');
+            
+            setTimeout(function () {
+                initTabScroller();
+
+            }, 5);
         },
         close: function (event, ui) {
             body.removeClass('modal_opened overlay_v2');
         }
     });
 
-    $('.quickSearchBtn').on('click', function () {
+    $('.regionPopupBtn').on('click', function () {
 
-        quick_search_popup.dialog('open');
-
+        region_popup.dialog('open');
+        
         return false;
     });
 
 }
 
-function initTabs() {
+function initTabs(callback) {
 
     $('.tabBlock').each(function (ind) {
         var tab = $(this);
@@ -352,11 +367,20 @@ function initTabs() {
             }
         });
     });
+
+    if (typeof callback == 'function') {
+        callback();
+    }
+
 }
 
 function slickUpdate() {
     setTimeout(function () {
-        $('.slick-initialized:visible').slick('setPosition');
+        // wnd.trigger('resize');
+
+        $('.slick-initialized:visible').each(function (ind) {
+            $(this).slick('setPosition');
+        });
     }, 10);
 }
 

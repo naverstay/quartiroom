@@ -2,7 +2,8 @@
   position: relative;
 
   @include respond-to-max($resp_l) {
-    padding-bottom: 90px;
+    //padding-bottom: 90px;
+    padding-bottom: 40px;
   }
 }
 
@@ -16,25 +17,16 @@
 
   &._adv-filter {
     display: none;
-    position: relative;
-
-    @include respond-to-min($resp_l) {
-
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 9px;
-        height: 1px;
-        border-top: 1px dashed #ccc;
-      }
-    }
   }
 
   &._smpl-filter {
 
   }
+}
+
+._adv-filter_border {
+  margin-left: 9px;
+  border-top: 1px dashed #ccc;
 }
 
 .filter-cell {
@@ -65,25 +57,37 @@
     &._col-4 {
       width: 36%;
     }
+
+    &._col-5 {
+      width: 52%;
+    }
   }
+}
+
+.smpl-search_cell {
+
 }
 
 .adv-search_cell {
 
-  @include respond-to-max($resp_l) {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
+  //@include respond-to-max($resp_l) {
+  //  position: absolute;
+  //  bottom: 0;
+  //  right: 0;
+  //  left: 0;
+  //}
 }
 
-.adv-search_box {
+.form-cell.adv-search_box {
   padding: 8px 0 0;
 
   @include respond-to-max($resp_l) {
     text-align: center;
     padding: 10px 0 12px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
   }
 }
 
@@ -135,6 +139,64 @@
       height: 610px;
       margin-top: -610px;
     }
+
+    &-info {
+      padding: 8px 10px;
+
+      .complex-block_content-head > p {
+        font-size: 13px;
+      }
+
+      .complex-block_retings {
+        p {
+          margin-top: 7px;
+        }
+      }
+
+      .complex-block_options {
+        margin-bottom: 10px;
+      }
+
+      .complex-block_content {
+        position: relative;
+        padding-bottom: 10px;
+        margin-top: 10px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -12px;
+          height: 1px;
+          background: $gl_gray_lines;
+
+          @include respond-to-min($resp_step_2) {
+            right: -24px;
+            left: -24px;
+          }
+        }
+
+        &:first-child {
+          margin-top: 0;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+
+      @include respond-to-min($resp_step_2) {
+        height: 422px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 12px 24px;
+
+        &._full-h {
+          height: 610px;
+        }
+      }
+    }
   }
 
   &_switcher {
@@ -174,6 +236,34 @@
 
     &-select {
 
+    }
+
+    &-toggle {
+      position: relative;
+      padding-right: 20px;
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 30px;
+      color: $default_t_color;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 3px;
+        margin-top: -2px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #354353;
+      }
+
+      &._desc {
+        &:before {
+          border-bottom: 5px solid #354353;
+          border-top: 0;
+        }
+      }
     }
   }
 }
@@ -247,9 +337,31 @@
   &_status {
     font-size: 14px;
 
+    &-item {
+      padding-left: 15px;
+
+      &.mob_ver-1 {
+
+        @include respond-to-max($resp_step_2) {
+          position: absolute;
+          left: 10px;
+          top: 90px;
+          font-size: 18px;
+        }
+      }
+    }
+
     @include respond-to-min($resp_l) {
-      float: right;
-      text-align: right;
+      .complex-block & {
+        float: right;
+        text-align: right;
+      }
+    }
+
+    @include respond-to-max($resp_step_2) {
+      ._object-mode & {
+        font-size: 13px;
+      }
     }
   }
 
@@ -258,6 +370,13 @@
     font-size: 12px;
     padding-top: 10px;
     margin-left: -12px;
+
+    ._object-mode & {
+
+      @include respond-to-max($resp_step_2) {
+        padding-top: 0;
+      }
+    }
 
     li {
       float: left;
@@ -274,36 +393,102 @@
   &_info {
     @extend %clearfix;
     line-height: 26px;
+
+    @include respond-to-min($resp_step_2) {
+      margin-top: 12px;
+    }
+  }
+
+  &_price-val {
+    font-size: 16px;
+    font-weight: 700;
+
+    @include respond-to-min($resp_step_2) {
+      font: 21px $FontfabricMullerRegular;
+      position: absolute;
+      top: 14px;
+      right: 30px;
+
+      ._object-mode & {
+        top: 29px;
+      }
+    }
+  }
+
+  &_price-list {
+    font-size: 13px;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    dd {
+      float: right;
+      background: #fff;
+      position: relative;
+      z-index: 1;
+      width: 170px;
+      margin-right: -3px;
+      padding: 0 3px;
+      margin-bottom: 5px;
+    }
+
+    dt {
+      clear: both;
+      margin-bottom: 5px;
+      float: left;
+      position: relative;
+
+      &:after {
+        content: '.................................................................................................................................................................................................................................';
+        position: absolute;
+        left: 100%;
+        margin-left: 3px;
+        bottom: 0;
+      }
+    }
   }
 
   &_prices {
-    @extend %clearfix;
+    //@extend %clearfix;
     font-size: 13px;
     float: left;
+    overflow: hidden;
     width: 65%;
     letter-spacing: .015em;
 
     li {
       margin-bottom: 2px;
+
+      &._has_dot {
+        &:before {
+          content: '\2022';
+          padding: 0 6px;
+          color: #b3b3b3;
+        }
+      }
+
+      @include respond-to-max($resp_step_2) {
+
+        ._object-mode & {
+          line-height: 20px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
     }
 
     @include respond-to-min($resp_step_2) {
       float: none;
       width: auto;
 
-      li {
-        float: left;
-        margin-bottom: 5px;
+      .complex-block & {
+        li {
+          float: left;
+          margin-bottom: 5px;
 
-        &:before {
-          content: '\2022';
-          padding: 0 6px;
-          color: #b3b3b3;
-        }
-
-        &:first-child {
-          &:before {
-            display: none;
+          &:first-child {
+            &:before {
+              display: none;
+            }
           }
         }
       }
@@ -311,25 +496,31 @@
   }
 
   &_retings {
-    float: right;
-    width: 35%;
-    text-align: right;
-    margin-top: -3px;
 
-    .company-unit_rating {
-      margin-right: -7px;
+    .complex-block & {
+      float: right;
+      width: 35%;
+      text-align: right;
+      margin-top: -3px;
+
+      .company-unit_rating {
+        margin-right: -7px;
+      }
     }
 
     @include respond-to-min($resp_step_2) {
-      position: absolute;
-      right: 0;
-      bottom: 100%;
-      width: 250px;
-      margin-top: 0;
-      padding-bottom: 6px;
 
-      p {
-        margin-bottom: 7px;
+      .complex-block & {
+        position: absolute;
+        right: 0;
+        bottom: 100%;
+        width: 250px;
+        margin-top: 0;
+        padding-bottom: 6px;
+
+        p {
+          margin-bottom: 7px;
+        }
       }
     }
   }
@@ -342,6 +533,27 @@
       margin-bottom: 2px;
 
       @include respond-to-min($resp_step_2) {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 5px;
+
+        &:before {
+          content: '\2022';
+          padding: 0 8px;
+          color: #b3b3b3;
+        }
+
+        &:first-child {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .complex-view_list-info & {
+
+      li {
         display: inline-block;
         vertical-align: top;
         margin-bottom: 5px;
@@ -414,31 +626,61 @@
   &_content {
 
     @include respond-to-min($resp_step_2) {
-      margin-left: 275px;
-      display: inline-block;
-      vertical-align: top;
+
+      .complex-block & {
+        margin-left: 275px;
+        //display: inline-block;
+        //vertical-align: top;
+      }
+
+      ._object-mode & {
+        margin-left: 233px;
+      }
     }
 
     &-head {
-      padding-top: 14px;
+
+      .complex-block & {
+        padding-top: 14px;
+
+        @include respond-to-max($resp_step_2) {
+          font-size: 12px;
+        }
+
+        @include respond-to-min($resp_l) {
+          padding-right: 260px;
+        }
+      }
+
+      ._object-mode & {
+        @include respond-to-min($resp_step_2) {
+          padding-top: 22px;
+          padding-bottom: 12px;
+        }
+      }
 
       p {
         margin-bottom: 3px;
         letter-spacing: .01em;
-      }
-
-      @include respond-to-max($resp_step_2) {
-        font-size: 12px;
-      }
-
-      @include respond-to-min($resp_l) {
-        padding-right: 260px;
       }
     }
 
     &-body {
       @extend %clearfix;
       position: relative;
+
+      @include respond-to-min($resp_step_2) {
+        &:after {
+          display: none;
+        }
+      }
+
+      ._object-mode & {
+
+        @include respond-to-min($resp_step_2) {
+          min-height: 45px;
+        }
+      }
     }
 
     &-footer {
@@ -447,6 +689,10 @@
         font-size: 13px;
         margin-bottom: 12px;
         letter-spacing: .01em;
+
+        .complex-view_list-info & {
+          color: #848484;
+        }
       }
 
       @include respond-to-max($resp_step_2) {
@@ -455,6 +701,10 @@
 
         > p {
           display: none;
+
+          .complex-view_list-info & {
+            display: block;
+          }
         }
       }
     }
@@ -464,13 +714,58 @@
     position: relative;
     float: left;
     width: 75px;
-    margin-bottom: 10px;
-    margin-right: 14px;
+    margin: 16px 14px 10px 0;
 
     @include respond-to-min($resp_step_2) {
       margin: 0 -275px -1px 0;
       padding-bottom: 7px;
       width: 250px;
+    }
+
+    &-single {
+      height: 178px;
+      position: relative;
+      padding-bottom: 7px;
+      overflow: hidden;
+
+      //.slick-track {
+      //  min-height: 100%;        
+      //  height: 100% !important;
+      //}
+      //
+      //.slick-slider,
+      //.slick-list {
+      //  min-width: 100%;
+      //  min-height: 100%;
+      //  height: 100% !important;
+      //}
+      //
+      //.slick-slide {
+      //  min-width: 100%;
+      //  overflow: hidden;
+      //}
+
+      @include respond-to-min($resp_step_2) {
+
+      }
+    }
+  }
+
+  &_object-img {
+    position: relative;
+    float: left;
+    width: 70px;
+    margin: 17px 15px 65px 0;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      margin: 0 -233px 0 0;
+      width: 232px;
+      padding: 26px;
     }
   }
 
@@ -481,16 +776,30 @@
   }
 
   &_caption {
-    font: 16px/20px $FontfabricMullerRegular;
-    color: $gl_blue;
 
-    &:hover {
-      text-decoration: underline;
+    @at-root span#{&} {
+      font: 16px/20px $FontfabricMullerRegular;
+      letter-spacing: .01em;
+
+
+      @include respond-to-min($resp_step_2) {
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
 
-    @include respond-to-min($resp_step_2) {
-      font-size: 26px;
-      line-height: 30px;
+    @at-root a#{&} {
+      font: 16px/20px $FontfabricMullerRegular;
+      color: $gl_blue;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include respond-to-min($resp_step_2) {
+        font-size: 26px;
+        line-height: 30px;
+      }
     }
   }
 
@@ -509,17 +818,25 @@
   }
 
   &_options {
-    @extend %clearfix;
+    //@extend %clearfix;
     font-size: 13px;
+    overflow: hidden;
     line-height: 18px;
     margin-left: -4px;
     padding-bottom: 4px;
-    clear: both;
+    //clear: both;
 
     li {
       float: left;
       padding-left: 4px;
-      margin: 6px 0 10px;
+
+      .complex-block & {
+        margin: 6px 0 10px;
+      }
+
+      .complex-view_list-info & {
+        margin-bottom: 5px;
+      }
     }
 
     @include respond-to-min($resp_step_2) {

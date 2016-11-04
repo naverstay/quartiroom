@@ -49,8 +49,17 @@
     width: 100%;
     border-radius: 4px;
     text-align: center;
-    padding: 0 26px;
+    padding: 0 14px;
     font: 16px/40px $FontfabricMullerRegular;
+
+    &.text_left {
+      text-align: left;
+    }
+
+    ._ganged-first & {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
 
   &.review_btn {
@@ -78,4 +87,10 @@
 .btn_transp_blue {
   color: $gl_blue;
   background: none;
+}
+
+.btn_white {
+  color: $default_t_color;
+  background: $gl_white;
+  border: 1px solid $gl_gray_lines;
 }

@@ -20,7 +20,7 @@
   outline: 0;
   max-width: 98%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
-  
+
   .no_animation & {
     display: none !important;
   }
@@ -52,7 +52,7 @@
       overflow-y: auto;
     }
   }
-  
+
 }
 
 .dialog_global {
@@ -84,9 +84,9 @@
   top: 0;
   //	background: #fff;
   background: transparentize(#000, .75);
-  
+
   .overlay_v2 & {
-    background: transparentize(#000, .85);
+    background: transparentize(#585858, .85);
   }
 }
 
@@ -154,15 +154,14 @@
   }
 
   .dialog_g_size_1 & {
-    height: 20px;
-    border-radius: 2px 2px 0 0;
+    border-radius: 5px 5px 0 0;
     background: #fff;
   }
 
   .dialog_g_size_2 & {
+    background: $gl_white;
     height: 20px;
-    border-radius: 2px 2px 0 0;
-    margin-bottom: -20px;
+    border-radius: 4px 4px 0 0;
     position: relative;
     z-index: 1;
   }

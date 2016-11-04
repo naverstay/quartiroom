@@ -22,6 +22,13 @@
 
 	'use strict';
 
+	function bindEventFix(el, eventName, eventHandler) {
+		if (el.addEventListener) {
+			el.addEventListener(eventName, eventHandler, false);
+		} else if (el.attachEvent) {
+			el.attachEvent('on' + eventName, eventHandler);
+		}
+	}
 
 	// Creates a node, adds it to target, returns the new node.
 	function addNodeTo ( target, className ) {
@@ -1227,7 +1234,8 @@ function closure ( target, options, originalOptions ){
 
 		// Bind a closure on the target for every event type.
 		events.split(' ').forEach(function( eventName ){
-			element.addEventListener(eventName, method, false);
+			bindEventFix(element, eventName, method, false);
+			// element.addEventListener(eventName, method, false);
 			methods.push([eventName, method]);
 		});
 
@@ -1239,8 +1247,10 @@ function closure ( target, options, originalOptions ){
 
 		// Prevent scrolling and panning on touch events, while
 		// attempting to slide. The tap event also depends on this.
-		e.preventDefault();
+		// e.preventDefault();
 
+		e.preventDefault ? e.preventDefault() : e.returnValue = false;
+		
 		// Filter the event to register the type, which can be
 		// touch, mouse or pointer. Offset changes need to be
 		// made on an event specific basis.
@@ -1477,11 +1487,19 @@ function closure ( target, options, originalOptions ){
 		}
 
 		// Fix #551, where a handle gets selected instead of dragged.
-		event.preventDefault();
+		// event.preventDefault();
+
+		event.preventDefault ? event.preventDefault() : event.returnValue = false;
 
 		// A drag should never propagate up to the 'tap' event.
-		event.stopPropagation();
-
+		// event.stopPropagation();
+		
+		if (event.stopPropagation) {
+			event.stopPropagation();
+		} else {
+			event.returnValue = false;
+		}
+		
 		// Attach the move and end events.
 		var moveEvent = attachEvent(actions.move, document.documentElement, eventMove, {
 			startCalcPoint: event.calcPoint,
@@ -1521,7 +1539,8 @@ function closure ( target, options, originalOptions ){
 			document.body.noUiListener = f;
 
 			// Prevent text selection when dragging the handles.
-			document.body.addEventListener('selectstart', f, false);
+			bindEventFix(document.body, 'selectstart', f, false);
+			// document.body.addEventListener('selectstart', f, false);
 		}
 
 		data.handleNumbers.forEach(function(handleNumber){
@@ -1533,7 +1552,13 @@ function closure ( target, options, originalOptions ){
 	function eventTap ( event ) {
 
 		// The tap event shouldn't propagate up
-		event.stopPropagation();
+		// event.stopPropagation();
+
+		if (event.stopPropagation) {
+			event.stopPropagation();
+		} else {
+			event.returnValue = false;
+		}
 
 		var proposal = calcPointToPercentage(event.calcPoint);
 		var handleNumber = getClosestHandle(proposal);
@@ -1761,7 +1786,8 @@ function closure ( target, options, originalOptions ){
 		}
 
 		scope_Connects[index].style[options.style] = toPct(l);
-		scope_Connects[index].style[options.styleOposite] = toPct(100 - h);
+		scope_Connects[index].style[options.styleOposite] = toPct(100 - (h || 0));
+		
 	}
 
 	// ...

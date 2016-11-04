@@ -1,5 +1,14 @@
 .popup {
   display: none;
+
+  &.popup_v2 {
+    background: $gl_white;
+    padding: 10px 0 10px;
+    border-radius: 0 0 4px 4px;
+  }
+
 }
+
+
 
 

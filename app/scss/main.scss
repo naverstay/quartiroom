@@ -113,6 +113,20 @@ body {
   }
 }
 
+.fav_link {
+  display: inline-block;
+  vertical-align: text-bottom;
+  line-height: 19px;
+
+  span {
+
+    &:first-child {
+      min-width: 20px;
+      text-align: center;
+    }
+  }
+}
+
 // **********  text
 
 .section-title {
