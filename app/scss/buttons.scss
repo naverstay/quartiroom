@@ -7,6 +7,22 @@
 .btn_v1 {
   height: 40px;
 
+  &.slide_zoom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140px;
+    margin-left: -70px;
+    margin-top: -20px;
+    border-radius: 4px;
+    text-align: center;
+    font: 16px/40px $FontfabricMullerRegular;
+    
+    span {
+      padding: 0 3px;
+    }
+  }
+  
   &.show_more {
     display: block;
     width: 100%;
@@ -93,4 +109,14 @@
   color: $default_t_color;
   background: $gl_white;
   border: 1px solid $gl_gray_lines;
+}
+
+.btn_white_transp {
+  @include transition_all(background .3s);
+  color: $default_t_color;
+  background: rgba(255, 255, 255, .55);
+
+  &:hover {
+    background: rgba(255, 255, 255, .8);
+  }
 }

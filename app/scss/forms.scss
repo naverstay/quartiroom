@@ -658,6 +658,24 @@
       background: $gl_turquoise;
     }
   }
+
+  &._check-v3 {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -7px;
+    cursor: pointer;
+
+    .check-text {
+      border-radius: 3px;
+      padding: 2px 7px;
+      @include transition_all(background .3s, color .3s);
+    }
+
+    .inp-hidden:checked ~ .check-text {
+      color: $gl_white;
+      background: $gl_turquoise;
+    }
+  }
 }
 
 .check-text {

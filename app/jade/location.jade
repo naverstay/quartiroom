@@ -1,7 +1,7 @@
 include mixins.pug
 doctype html
 html(lang='ru')
-    +dev_head("Quartiroom Локация", false, false, true)
+    +dev_head("Quartiroom Компания", false, false, true)
 
     body
         .wrapper
@@ -10,63 +10,58 @@ html(lang='ru')
                 
                 .section.breadcrumbs_section
                     .section-inner
-                        +breadcrumbs(['Главная', 'Компании', 'Главстрой девелопмент'])
+                        +breadcrumbs(['Главная', 'Недвижимость в Королеве'])
                         
-                        .section-title Главстрой девелопмент
-                        
-                        .company-unit_type
-                            span.company-unit_type-cat Застройщик 
-                            span.company-unit_type-cat Агентство недвижимости
+                        .section-title Недвижимость в Королеве
                             
                 div.main_content
                     .section-inner
-                        .company-block._overview
-                            .company-unit_logo-block
-                                a.company-unit_logo(href='company.html')
-                                    img(src='images/company_logo_1.jpg')
-                                    
-                            .company-info._main
-                                p.company-unit_rating
-                                    span
-                                        span.unit-rate._filled
-                                        span.unit-rate._filled
-                                        span.unit-rate._filled
-                                        span.unit-rate._filled
-                                        span.unit-rate._half
-                                    span 4.5
-                                    span.mob_only <br>
-                                    span
-                                        span._clr_gray на основе 
-                                        span._clr_blue 345 отзывов
-                                        
-                            .company-info_w
-                                .company-info._description
-                                    p На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Населяет Люксембург или итальянский город Пиза. 
-                                    
-                                    p Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город. 
-                                        
-                                .company-info._address
-                                    ul.company-info_contacts
-                                        li.company-info_item
-                                            span.i-map_pin._clr_turqoise.company-info_icon
-                                            .company-info_caption Центральный офис
-                                            p г. Москва, Ленинградский пр., д.16/2, офис 234 
-                                                span.mob_hidden <br>
-                                                | kvartyroom@info.ru
-                                            p 
-                                                a.gl_link._clr_turqoise(href='#') Еще офисы
+                        .location-block
+                            .location-block-view_tabs
+                                ul#location_switcher
+                                    li.filter-item
+                                        a.gl_link(href='#location_tab_1')
+                                            span.mb.complex-view_tab-icon.i-humburger.mob_hidden
+                                            span.mb фото
+                                                span.mob_hidden (12)
+                                    li.filter-item
+                                        a.gl_link(href='#location_tab_2')
+                                            span.mb.complex-view_tab-icon.i-map_pin.mob_hidden
+                                            span.mb на карте
+                            
+                            .tabBlock(data-tab-context='#location_switcher')
+                                #location_tab_1
+                                    .location-block_slider-holder
+                                        .location-block_gallery.locationGallery
+                                            .location-block_slider.locationSlider
+                                                +loop_while(1)
+                                                    .slide
+                                                        img(src='images/loc_1.jpg')
+                                                        a.slide_zoom.btn_v1.btn_white_transp(href='#')
+                                                            span.zoom_icon
+                                                            span Увеличить
+                                                    .slide
+                                                        img(src='images/loc_2.jpg')
+                                                        a.slide_zoom.btn_v1.btn_white_transp(href='#')
+                                                            span.zoom_icon
+                                                            span Увеличить
+                                                    
+                                            .location-block_slider-controls
+                                                .slide_prev.btn_white_transp
+                                                .slide_next.btn_white_transp
                                                 
-                                        li.company-info_item
-                                            span._clr_turqoise.company-info_icon.i-phone
-                                            .company-info_caption телефоны
-                                            p +7 (495) 104 34 78
-                                            p 
-                                                a.gl_link._clr_turqoise(href='#') Еще телефоны
+                                
+                                #location_tab_2
+                                    .location-block_map-holder
+                                        .map-wrapper
+                                            img(src='images/big_map.jpg')
                                             
-                        .company-block
+                            .location-block_params
+                                
+
+                        .company-block.companyBlock.opened
                             .company-block_caption 
-                                span В продаже
-                                a.company-block_caption-close
+                                span Квартиры
                             .company-info_box
                                 p 
                                     span._clr_gray-dark Сейчас у компании: 
@@ -86,16 +81,17 @@ html(lang='ru')
                                     dl.company-unit_info
                                         dt 3-комнатные
                                         dd от 5 600 000
-                                        dt Коммерческие помещения
+                                        dt Коммерческие 
+                                         span.mob_hidden помещения
                                         dd от 10 300 000
                                         dt Кладовки
                                         dd от 150 000
                                                                                 
-                        .company-block
+                        .company-block.companyBlock
                             .company-block_caption 
                                 span Объекты компании
-                                a.company-block_caption-close
-                            .company-info_box
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+                            .company-info_box.infoBlock
                                 .company-info_objects
                                     ul.company-info_objects-filter
                                         li
@@ -135,9 +131,10 @@ html(lang='ru')
                                                 
                                     .company-info_objects-wrapper
                                         .company-info_objects-map
-                                            img(src='images/map.jpg')
+                                            .map-wrapper
+                                                img(src='images/big_map.jpg')
                                             
-                                        .company-info_objects-info
+                                        .company-info_objects-info.heightFillerParent
                                             .company-info_objects-description
                                                 .gl_table
                                                     .gl_table_cell
@@ -149,8 +146,8 @@ html(lang='ru')
                                                             span В этом доме: 
                                                             span._val 456 квартир
                                         
-                                            .company-info_objects-container
-                                                ul.company-info_objects-list
+                                            .company-info_objects-container.heightFiller
+                                                ul.company-info_objects-list.objectsList
                                                     +loop_while(3)
                                                         li
                                                             .company-info_object
@@ -199,13 +196,38 @@ html(lang='ru')
                                                                     span.fr 4 560 000 руб.
                                                                     
                                                     li.dt_hidden.text_center
-                                                        a.btn_v1.btn_transp_blue.show_more(href='#') Показать еще
+                                                        a.btn_v1.btn_transp_blue.show_more.showMoreBtn(href='#') Показать еще
                                                         
-                        .company-block
+                        .company-block.companyBlock
+                            .company-block_caption
+                                span Аналитика и цены
+                                a.company-block_caption-close.collapseBlockBtn(href='#') 
+                            p Стоимость цвадратного метра незначительно ниже по Московскому району.
+
+                            .company-info_box.infoBlock
+                                
+                                                        
+                        .company-block.companyBlock
+                            .company-block_caption
+                                span Мнение редакции
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+                                
+                            .company-info_box.infoBlock
+                                .company-info_features
+                                    .company-info_features-box
+                                        .review-content
+                                            p На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. 
+                                        
+                                    .company-info_features-box._last
+                                        .company-info_total-rate: ._val 4,2
+                                        .company-info_total-rate
+                                            span._clr_gray-dark Оценка <br> редакции
+
+                        .company-block.companyBlock
                             .company-block_caption
                                 span Рейтинг компании
-                                a.company-block_caption-close
-                            .company-info_box
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+                            .company-info_box.infoBlock
                                 .company-info_features
                                     .company-info_features-box._first
                                         .company-info_features-rate

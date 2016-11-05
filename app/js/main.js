@@ -107,7 +107,9 @@ function domReady() {
         return false;
     }).delegate('.collapseBlockBtn', 'click', function () {
 
-        $(this).closest('.companyBlock').toggleClass('opened').find('.infoBlock').slideToggle(300);
+        $(this).closest('.companyBlock').toggleClass('opened').find('.infoBlock').slideToggle(300, function () {
+            heightFiller();
+        });
 
         return false;
 
@@ -126,6 +128,12 @@ function domReady() {
     }).delegate('.moreInfoBtn', 'click', function () {
 
         $(this).hide().closest('.infoItem').find('.moreInfo').slideToggle(0);
+
+        return false;
+
+    }).delegate('.formReset', 'click', function () {
+
+        $($(this).attr('href')).click();
 
         return false;
 
@@ -161,32 +169,43 @@ function domReady() {
 
     initMask();
 
+    heightFiller();
+
     all_dialog_close();
 
 }
 
+$(window).resize(function () {
+
+    heightFiller();
+
+});
+
 function initTabScroller() {
 
-    var tabBlock = $('.scrollerTabs'), tabs, tabSlider;
+    $('.tabScroller').each(function (ind) {
+        $(this).slick({
+            dots: false,
+            infinite: false,
+            arrows: false,
+            zIndex: 1,
+            initialSlide: 0,
+            slide: '.filter-item',
+            variableWidth: true,
+            touchThreshold: 10,
+            onInit: function (sld) {
 
-    tabSlider = $('.tabScroller').slick({
-        dots: false,
-        infinite: false,
-        arrows: false,
-        zIndex: 1,
-        initialSlide: 0,
-        slide: '.filter-item',
-        variableWidth: true,
-        touchThreshold: 10,
-        onInit: function (sld) {
-            tabs = tabBlock.tabs({
-                active: 0,
-                activate: function (e, u) {
-                    slickUpdate();
-                }
-            });
-        }
-    });
+                console.log($(sld.$slider).attr('id'), $('.scrollerTabs[data-tab-context*="#' + $(sld.$slider).attr('id') + '"]').length);
+
+                $('.scrollerTabs[data-tab-context*="#' + $(sld.$slider).attr('id') + '"]').tabs({
+                    active: 0,
+                    activate: function (e, u) {
+                        slickUpdate();
+                    }
+                });
+            }
+        });
+    })
 }
 
 function svg_fallback() { // замена СВГ на ПНГ 
@@ -304,6 +323,14 @@ function getBSImg(el) {
 
 }
 
+function heightFiller() {
+    $('.heightFiller').each(function () {
+        var el = $(this).height('auto'), parent = el.closest('.heightFillerParent');
+
+        el.height((parent.height() - (el.offset().top - parent.offset().top)));
+    });
+}
+
 function initMask() {
     $("input").filter(function (i, el) {
         return $(el).attr('data-inputmask') != void 0;
@@ -327,18 +354,19 @@ function initRegionPopup() {
         modal: true,
         closeOnEscape: true,
         closeText: '',
-        dialogClass: 'dialog_g_size_1 dialog_close_butt_mod_1 ',
-        //appendTo: '.wrapper',
+        dialogClass: 'dialog_g_size_1 dialog_close_butt_mod_1 region_popup',
+        appendTo: '.base',
         width: 1200,
         draggable: true,
         collision: "fit",
         position: {my: "top center", at: "top center", of: window},
         open: function (event, ui) {
             body.addClass('modal_opened overlay_v2');
-            
+
             setTimeout(function () {
                 initTabScroller();
 
+                slickUpdate();
             }, 5);
         },
         close: function (event, ui) {
@@ -349,7 +377,7 @@ function initRegionPopup() {
     $('.regionPopupBtn').on('click', function () {
 
         region_popup.dialog('open');
-        
+
         return false;
     });
 
@@ -377,6 +405,10 @@ function initTabs(callback) {
 function slickUpdate() {
     setTimeout(function () {
         // wnd.trigger('resize');
+
+        // console.log('upd');
+
+        $('.popup .slick-track').css('width', 'auto');
 
         $('.slick-initialized:visible').each(function (ind) {
             $(this).slick('setPosition');

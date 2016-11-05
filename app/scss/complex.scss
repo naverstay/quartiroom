@@ -229,10 +229,84 @@
       text-decoration: none;
       text-transform: uppercase;
     }
+
+    &-holder {
+      @extend %clearfix;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 32px;
+        right: -30px;
+        left: -30px;
+        border-bottom: 1px solid #d4d4d4;
+
+        @include respond-to-min($resp_step_2) {
+          top: 44px;
+        }
+
+        @include respond-to-min($content-max-w) {
+          top: 100%;
+        }
+      }
+
+      @include respond-to-max($content-max-w) {
+
+        .filter-list {
+          padding-top: 3px;
+        }
+
+        .complex-view_sort {
+          padding-top: 5px;
+          line-height: 30px;
+        }
+
+        .complex-view_sort,
+        .complex-view_tabs {
+          float: none;
+        }
+
+        .btn_v1.filter_btn {
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+
+      &._footer_mode {
+        padding-top: 10px;
+        margin-top: 18px;
+
+        &:before {
+          top: 0;
+        }
+      }
+
+      @include respond-to-min($resp_step_2) {
+        .complex-view_sort {
+
+          .complex-view_sort-item {
+            padding-right: 14px;
+          }
+        }
+      }
+
+      @include respond-to-min($content-max-w) {
+
+        .filter-item {
+          padding-right: 62px;
+        }
+
+        .complex-view_sort {
+          margin-right: 35px;
+        }
+      }
+    }
   }
 
   &_sort {
     float: right;
+    line-height: 1;
 
     &-select {
 
@@ -320,6 +394,10 @@
 
     &:first-child {
       margin-top: 10px;
+    }
+
+    &._object-mode {
+      min-height: 0;
     }
   }
 
@@ -708,6 +786,70 @@
         }
       }
     }
+
+    &._alone {
+      padding: 8px 0 0;
+
+      .complex-block_option {
+        margin-bottom: 4px;
+      }
+
+      @include respond-to-max($resp_step_2) {
+        .complex-block_option {
+          float: left;
+        }
+
+        .fav_link {
+          float: right;
+        }
+      }
+
+      @include respond-to-min($resp_step_2) {
+        padding: 14px 24px 0;
+
+        .complex-block_content-head p {
+          margin-bottom: 7px;
+        }
+
+        .fav_link span:first-child {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &-similar {
+      position: relative;
+      padding: 10px 0;
+      clear: both;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        right: -24px;
+        left: -24px;
+        border-top: 1px solid $gl_gray_lines;
+      }
+
+      &:before {
+        top: 0;
+        display: none;
+      }
+
+      &:after {
+        bottom: 0;
+      }
+
+      @include respond-to-min($resp_step_2) {
+        padding-top: 25px;
+        padding-bottom: 15px;
+        margin-top: 20px;
+
+        &:before {
+          display: block;
+        }
+      }
+    }
   }
 
   &_gallery {
@@ -851,4 +993,73 @@
   }
 }
 
+.region_list {
 
+  li {
+    margin-bottom: 3px;
+  }
+
+  &-caption {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 12px;
+    letter-spacing: .1em;
+
+    &._empty {
+      display: none;
+
+      @include respond-to-min($resp_l) {
+        display: block;
+      }
+    }
+  }
+
+  &-holder {
+    margin-right: -4%;
+    font-size: 0;
+    line-height: normal;
+
+    @include respond-to-min($resp_step_2) {
+      padding-top: 5px;
+    }
+  }
+
+  &-col {
+    @extend %clearfix;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    font-size: 14px;
+    line-height: 1;
+
+    @include respond-to-min($resp_step_2) {
+      width: 32%;
+    }
+
+    @include respond-to-min($resp_l) {
+      width: 20%;
+
+      &._wide {
+        width: 40%;
+      }
+    }
+
+    @include respond-to-min($resp_l + 200) {
+      width: 16%;
+
+      &._wide {
+        width: 32%;
+      }
+    }
+  }
+
+  &-unit {
+    @include respond-to-min($resp_l) {
+      ._wide & {
+        float: left;
+        width: 50%;
+      }
+    }
+  }
+}

@@ -1,4 +1,15 @@
+- var cao = ['Арбат','Басманный','Замоскворечье','Красносельский','Мещанский','Пресненский','Таганский','Тверской','Хамовники','Якиманка'];
+    
+- var sao = ['Аэропорт','Беговой','Бескудниковский','Войковский','Головинский','Дегунино Восточное','Дегунино Западное','Дмитровский','Коптево','Левобережный','Молжаниновский','Савёловский'];
+    
+- var sao2 = ['Сокол','Тимирязевский','Ховрино','Хорошёвский'];
 
+- var svao = ['Алексеевский','Алтуфьевский','Бабушкинский','Бибирево','Бутырский','Лианозово','Лосиноостровский','Марфино','Марьина роща','Медведково Северное','Медведково Южное','Останкинский'];    
+    
+- var svao2 = ['Отрадное','Ростокино','Свиблово','Северный','Ярославский'];
+    
+- var uvao = ['Выхино-Жулебино','Капотня','Кузьминки','Лефортово','Люблино','Марьино','Некрасовка','Нижегородский','Печатники','Рязанский','Текстильщики','Южнопортовый'];
+    
 mixin dev_head(page_title, index, companies, location, complex, lk, cart)
     head
         title=page_title
@@ -200,43 +211,172 @@ mixin review_footer()
 
 mixin popups()
     #region_popup.popup.popup_v2(title='Регион: Москва')
-        .section-inner.clearfix
-            .complex-view_tabs
-                #filter_list.filter-list.text_upper.tabScroller
-                    li.filter-item
-                        a.gl_link(href='#view_tab_1')
-                            span районы и округа
-                    li.filter-item
-                        a.gl_link(href='#view_tab_2')
-                            span направления
-                    li.filter-item
-                        a.gl_link(href='#view_tab_2')
-                            span метро
+        form(action='#')
+            .section-inner
+                .complex-view_tabs-holder
+                    .complex-view_tabs
+                        #region_switcher.filter-list.text_upper.tabScroller
+                            li.filter-item
+                                a.gl_link(href='#region_tab_1')
+                                    span районы и округа
+                            li.filter-item
+                                a.gl_link(href='#region_tab_2')
+                                    span направления
+                            li.filter-item
+                                a.gl_link(href='#region_tab_3')
+                                    span метро
+        
+                    .complex-view_sort
+                        span.mb.complex-view_sort-item
+                            | Отмечено  
+                            span.fw_b 2 района:
+                        .dt_hidden
+                        .mb.complex-view_sort-item
+                            button.btn_v1.filter_btn.btn_blue Выбрать
+                        .mb.complex-view_sort-item
+                            input#reset_region.inp-hidden(type='reset')
+                            a._clr_gray.formReset(href="#reset_region") Сбросить
+    
+            .section-inner.clearfix
+                .scrollerTabs(data-tab-context='#region_switcher .slick-track')
+                    #region_tab_1
+                        .tab_content 
+                            ul.region_list-holder
+                                +loop_while(1)
+                                    li.region_list-col
+                                        .region_list-unit
+                                            .region_list-caption ЦАО
+                                            ul.region_list
+                                                for item, i in cao
+                                                    li 
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item 
+                                                
+                                    li.region_list-col._wide
+                                        .region_list-unit
+                                            .region_list-caption САО 
+                                            ul.region_list
+                                                for item, i in sao
+                                                    li 
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item
+                                                    
+                                        .region_list-unit
+                                            .region_list-caption._empty &nbsp; 
+                                            ul.region_list
+                                                for item, i in sao2
+                                                    li 
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item 
+                                                
+                                    li.region_list-col._wide
+                                        .region_list-unit
+                                            .region_list-caption СВАО 
+                                            ul.region_list
+                                                for item, i in svao
+                                                    li 
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item
+                                                    
+                                        .region_list-unit
+                                            .region_list-caption._empty &nbsp; 
+                                            ul.region_list
+                                                for item, i in svao2
+                                                    li 
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item 
+                                                
+                                    li.region_list-col
+                                        .region_list-unit
+                                            .region_list-caption ЮВАО  
+                                            ul.region_list
+                                                for item, i in uvao
+                                                    li
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item
 
-            .complex-view_sort
-                span._clr_gray.mb.mob_hidden Выводить:
-                .mb: .complex-view_sort-select.select-box-v2
-                    select.select2(data-dropdown-class='dropdown-v2' data-minimum-results-for-search='Infinity')
-                        option По рейтингу
-                        option По цене
+
+                                    li.region_list-col._wide
+                                        .region_list-unit
+                                            .region_list-caption СВАО 
+                                            ul.region_list
+                                                for item, i in svao
+                                                    li
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item
+
+                                        .region_list-unit
+                                            .region_list-caption._empty &nbsp; 
+                                            ul.region_list
+                                                for item, i in svao2
+                                                    li
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item
+
+                                    li.region_list-col
+                                        .region_list-unit
+                                            .region_list-caption ЦАО
+                                            ul.region_list
+                                                for item, i in cao
+                                                    li 
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item 
+                                                
+                                    li.region_list-col._wide
+                                        .region_list-unit
+                                            .region_list-caption САО 
+                                            ul.region_list
+                                                for item, i in sao
+                                                    li 
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item
+                                                    
+                                        .region_list-unit
+                                            .region_list-caption._empty &nbsp; 
+                                            ul.region_list
+                                                for item, i in sao2
+                                                    li 
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item
+                                                
+                                    li.region_list-col
+                                        .region_list-unit
+                                            .region_list-caption ЮВАО  
+                                            ul.region_list
+                                                for item, i in uvao
+                                                    li
+                                                        label.check-emul._check-v3
+                                                            input.inp-hidden(type='checkbox')
+                                                            span.check-text=item
+                        
+                        .complex-view_tabs-holder.tablet_hidden._footer_mode
+                            .complex-view_sort
+                                span.mb.complex-view_sort-item
+                                    | Отмечено  
+                                    span.fw_b 2 района:
+                                .mb.complex-view_sort-item
+                                    button.btn_v1.filter_btn.btn_blue Выбрать
+                                .mb.complex-view_sort-item
+                                    input#reset_region.inp-hidden(type='reset')
+                                    a._clr_gray.formReset(href="#reset_region") Сбросить
+                            
+
+                    #region_tab_2 2
+                                    
+                    
+                    #region_tab_3 3
+                                
                 
-            .scrollerTabs(data-tab-context='#region_switcher')
-                #region_tab_1
-                    .tab_content
-                        form(action='#')
-                            .form-cell
-                                input.f_input.input_v2(placeholder='Имя')
-                                
-                            .form-cell
-                                input.f_input.input_v2(placeholder='Телефон' data-inputmask="'mask': '[+7] (999)-999-99-99'")
-                                
-                            .form-cell
-                                button.btn_v1.blue_btn.order_btn Отправить заявку
-                                
-                
-                #region_tab_2 2
-                                
-                
-                #region_tab_3 3
-                                
-                
+                        
+                        

@@ -1234,44 +1234,676 @@
       </div>
     </div>
     <div class="popup popup_v2" id="region_popup" title="Регион: Москва">
-      <div class="section-inner clearfix">
-        <div class="complex-view_tabs">
-          <div class="filter-list text_upper tabScroller" id="filter_list">
-            <li class="filter-item"><a class="gl_link" href="#view_tab_1"><span>районы и округа</span></a></li>
-            <li class="filter-item"><a class="gl_link" href="#view_tab_2"><span>направления</span></a></li>
-            <li class="filter-item"><a class="gl_link" href="#view_tab_2"><span>метро</span></a></li>
-          </div>
-        </div>
-        <div class="complex-view_sort"><span class="_clr_gray mb mob_hidden">Выводить:</span>
-          <div class="mb">
-            <div class="complex-view_sort-select select-box-v2">
-              <select class="select2" data-dropdown-class="dropdown-v2" data-minimum-results-for-search="Infinity">
-                <option>По рейтингу</option>
-                <option>По цене</option>
-              </select>
+      <form action="#">
+        <div class="section-inner">
+          <div class="complex-view_tabs-holder">
+            <div class="complex-view_tabs">
+              <div class="filter-list text_upper tabScroller" id="region_switcher">
+                <li class="filter-item"><a class="gl_link" href="#region_tab_1"><span>районы и округа</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#region_tab_2"><span>направления</span></a></li>
+                <li class="filter-item"><a class="gl_link" href="#region_tab_3"><span>метро</span></a></li>
+              </div>
+            </div>
+            <div class="complex-view_sort"><span class="mb complex-view_sort-item">Отмечено  <span class="fw_b">2 района:</span></span>
+              <div class="dt_hidden"></div>
+              <div class="mb complex-view_sort-item">
+                <button class="btn_v1 filter_btn btn_blue">Выбрать</button>
+              </div>
+              <div class="mb complex-view_sort-item">
+                <input class="inp-hidden" id="reset_region" type="reset"/><a class="_clr_gray formReset" href="#reset_region">Сбросить</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="scrollerTabs" data-tab-context="#region_switcher">
-          <div id="region_tab_1">
-            <div class="tab_content">
-              <form action="#">
-                <div class="form-cell">
-                  <input class="f_input input_v2" placeholder="Имя"/>
+        <div class="section-inner clearfix">
+          <div class="scrollerTabs" data-tab-context="#region_switcher .slick-track">
+            <div id="region_tab_1">
+              <div class="tab_content"> 
+                <ul class="region_list-holder">
+                  <li class="region_list-col">
+                    <div class="region_list-unit">
+                      <div class="region_list-caption">ЦАО</div>
+                      <ul class="region_list">
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Арбат</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Басманный</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Замоскворечье</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Красносельский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Мещанский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Пресненский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Таганский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Тверской</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Хамовники</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Якиманка</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="region_list-col _wide">
+                    <div class="region_list-unit">
+                      <div class="region_list-caption">САО </div>
+                      <ul class="region_list">
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Аэропорт</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Беговой</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Бескудниковский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Войковский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Головинский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Дегунино Восточное</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Дегунино Западное</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Дмитровский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Коптево</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Левобережный</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Молжаниновский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Савёловский</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="region_list-unit">
+                      <div class="region_list-caption _empty">&nbsp; </div>
+                      <ul class="region_list">
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Сокол</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Тимирязевский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Ховрино</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Хорошёвский</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="region_list-col _wide">
+                    <div class="region_list-unit">
+                      <div class="region_list-caption">СВАО </div>
+                      <ul class="region_list">
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Алексеевский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Алтуфьевский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Бабушкинский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Бибирево</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Бутырский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Лианозово</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Лосиноостровский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Марфино</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Марьина роща</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Медведково Северное</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Медведково Южное</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Останкинский</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="region_list-unit">
+                      <div class="region_list-caption _empty">&nbsp; </div>
+                      <ul class="region_list">
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Отрадное</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Ростокино</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Свиблово</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Северный</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Ярославский</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="region_list-col">
+                    <div class="region_list-unit">
+                      <div class="region_list-caption">ЮВАО  </div>
+                      <ul class="region_list">
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Выхино-Жулебино</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Капотня</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Кузьминки</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Лефортово</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Люблино</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Марьино</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Некрасовка</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Нижегородский</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Печатники</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Рязанский</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Текстильщики</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Южнопортовый</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="region_list-col _wide">
+                    <div class="region_list-unit">
+                      <div class="region_list-caption">СВАО </div>
+                      <ul class="region_list">
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Алексеевский</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Алтуфьевский</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Бабушкинский</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Бибирево</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Бутырский</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Лианозово</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Лосиноостровский</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Марфино</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Марьина роща</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Медведково Северное</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Медведково Южное</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Останкинский</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="region_list-unit">
+                      <div class="region_list-caption _empty">&nbsp; </div>
+                      <ul class="region_list">
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Отрадное</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Ростокино</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Свиблово</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Северный</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Ярославский</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="region_list-col">
+                    <div class="region_list-unit">
+                      <div class="region_list-caption">ЦАО</div>
+                      <ul class="region_list">
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Арбат</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Басманный</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Замоскворечье</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Красносельский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Мещанский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Пресненский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Таганский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Тверской</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Хамовники</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Якиманка</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="region_list-col _wide">
+                    <div class="region_list-unit">
+                      <div class="region_list-caption">САО </div>
+                      <ul class="region_list">
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Аэропорт</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Беговой</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Бескудниковский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Войковский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Головинский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Дегунино Восточное</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Дегунино Западное</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Дмитровский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Коптево</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Левобережный</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Молжаниновский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Савёловский</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="region_list-unit">
+                      <div class="region_list-caption _empty">&nbsp; </div>
+                      <ul class="region_list">
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Сокол</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Тимирязевский</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Ховрино</span>
+                          </label>
+                        </li>
+                        <li> 
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Хорошёвский</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="region_list-col">
+                    <div class="region_list-unit">
+                      <div class="region_list-caption">ЮВАО  </div>
+                      <ul class="region_list">
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Выхино-Жулебино</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Капотня</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Кузьминки</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Лефортово</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Люблино</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Марьино</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Некрасовка</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Нижегородский</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Печатники</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Рязанский</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Текстильщики</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="check-emul _check-v3">
+                            <input class="inp-hidden" type="checkbox"/><span class="check-text">Южнопортовый</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="complex-view_tabs-holder tablet_hidden _footer_mode">
+                <div class="complex-view_sort"><span class="mb complex-view_sort-item">Отмечено  <span class="fw_b">2 района:</span></span>
+                  <div class="mb complex-view_sort-item">
+                    <button class="btn_v1 filter_btn btn_blue">Выбрать</button>
+                  </div>
+                  <div class="mb complex-view_sort-item">
+                    <input class="inp-hidden" id="reset_region" type="reset"/><a class="_clr_gray formReset" href="#reset_region">Сбросить</a>
+                  </div>
                 </div>
-                <div class="form-cell">
-                  <input class="f_input input_v2" placeholder="Телефон" data-inputmask="'mask': '[+7] (999)-999-99-99'"/>
-                </div>
-                <div class="form-cell">
-                  <button class="btn_v1 blue_btn order_btn">Отправить заявку</button>
-                </div>
-              </form>
+              </div>
             </div>
+            <div id="region_tab_2">2</div>
+            <div id="region_tab_3">3</div>
           </div>
-          <div id="region_tab_2">2</div>
-          <div id="region_tab_3">3</div>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>

@@ -369,8 +369,9 @@ html(lang='ru')
                                                         span Монолитно-кирпичный
                                                         
                                                 p Отличный вариант для молодой семьи. Распашная квартира с видом на парк и двор.  2 больших комнаты и небольшая кухня очень хорошо.
-                                                        
+                                                
                                             .complex-block_content-footer
+                                                        
                                                 .complex-block_info
                                                     ul.complex-block_tags._clr_gray
                                                         li: .complex-tag У реки
@@ -416,16 +417,34 @@ html(lang='ru')
                                     img(src='images/big_map.jpg')
 
                             .company-info_objects-info._tab_mode.heightFillerParent
-                                .company-info_objects-description
-                                    .gl_table
+                                .company-info_objects-description._object-mode
+                                    .gl_table.text_center
                                         .gl_table_cell
-                                            p
-                                                span Ул. Народного Ополчения, 34, <br> ЖК "Квартал Руполис-Растуново", 
-                                                span.mob_hidden <br>
-                                                span корпус 14
-                                            p.company-info_objects-count
-                                                span В этом доме: 
-                                                span._val 456 квартир
+                                            .company-info_objects-img
+                                                img(src='images/object_4.png')
+                                    .company-info_object-info 
+                                        .company-info_object-price 14 560 000 руб.
+                                        .company-info_object-proposition Ипотека, рассрочка
+                                        
+                                .complex-block_content._alone
+                                    .complex-block_content-head
+                                        p: span.complex-block_caption ЖК ‹‹Королев Сити››, Центральный квартал
+                                        p.clearfix._clr_gray
+                                            span.fl 2 этаж из 9
+                                            span.fr 17.04.16
+                                                
+                                        p
+                                            .complex-block_option
+                                                span.mb.complex-block_option-icon.i-metro
+                                                span.mb Девяткино, 17 мин. пешком
+                                                
+                                        
+                                            a.favBtn._clr_blue.fav_link(href='#')
+                                                span.mb.i-heart
+                                                span.mb.mob_hidden В избранное
+                                                
+                                    .complex-block_content-similar
+                                        span.complex-block_caption Похожие объекты
 
                                 .company-info_objects-container.heightFiller
                                     ul.company-info_objects-list.objectsList
@@ -441,17 +460,7 @@ html(lang='ru')
                                                         span.fl._price 34 кв. м.
                                                         span.fl 5/9 эт.
                                                         span.fr 4 560 000 руб.
-
-                                            li
-                                                .company-info_object
-                                                    p.clearfix
-                                                        a.fl._clr_blue(href='#') 2-комн. кв.
-                                                        a.fr.favBtn._clr_blue.fav_link(href='#')
-                                                            span.i-heart
-                                                    p.clearfix
-                                                        span.fl._price 34 кв. м.
-                                                        span.fl 5/9 эт.
-                                                        span.fr 4 560 000 руб.
+                                                        
                                         +loop_while(7)
                                             li.mob_hidden
                                                 .company-info_object

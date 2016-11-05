@@ -557,6 +557,7 @@
 
         &._last {
           float: right;
+          //min-width: 190px;
           line-height: 90px;
         }
       }
@@ -577,6 +578,10 @@
           width: 36.5%;
         }
 
+        &._first_2 {
+          width: 77%;
+        }
+
         &._center {
           text-align: center;
           float: none;
@@ -586,6 +591,7 @@
           text-align: right;
           line-height: normal;
           float: none;
+          white-space: nowrap;
         }
       }
     }
@@ -616,6 +622,35 @@
         margin: 5px 0;
       }
     }
+
+    &-info {
+      @extend %clearfix;
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      line-height: 18px;
+      padding: 0 10px 10px 10px;
+
+      @include respond-to-min($resp_step_2) {
+        padding: 0 24px 10px 24px;
+      }
+
+    }
+
+    &-price {
+      float: left;
+      color: $gl_white;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    &-proposition {
+      float: right;
+      color: $gl_white;
+      font-size: 13px;
+    }
+
   }
 
   &_objects {
@@ -633,9 +668,8 @@
     }
 
     &-container {
-
-      @include respond-to-min($resp_step_2) {
-        height: 475px;
+      @include respond-to-max($resp_step_2) {
+        height: auto !important;
       }
     }
 
@@ -652,6 +686,29 @@
       @include respond-to-min($resp_step_2) {
         height: 135px;
         padding: 5px 24px 2px;
+      }
+
+      &._object-mode {
+        height: 210px;
+        padding: 0;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          height: 40%;
+          background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(145, 145, 145, 1) 100%);
+          background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(145, 145, 145, 1) 100%);
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(145, 145, 145, 1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#919191', GradientType=0);
+        }
+
+        @include respond-to-max($resp_step_2) {
+          margin: 0 -10px;
+        }
       }
     }
 
@@ -740,11 +797,25 @@
         }
       }
     }
+
+    &-img {
+      display: inline-block;
+      vertical-align: middle;
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+
   }
 
   &_box {
-    display: none;
     @extend %clearfix;
+
+    &.infoBlock {
+      display: none;
+    }
 
     .company-unit_info {
       margin-bottom: 0;
@@ -888,6 +959,173 @@
   display: none;
 }
 
+.zoom_icon {
+  @extend %icon_pseudo;
+  font-size: 20px;
+  line-height: 14px;
+
+  &:before {
+    content: $i-search-thik;
+  }
+
+}
+
+.location-block {
+  @extend %clearfix;
+  background: #fff;
+
+  @include respond-to-min($resp_step_2) {
+    -webkit-transition: padding 0.3s 0.1s, border .3s;
+    -ms-transition: padding 0.3s 0.1s, border .3s;
+    transition: padding 0.3s 0.1s, border .3s;
+    border-radius: 4px;
+    border: 1px solid $gl_gray_light;
+    margin: 0 -30px 9px;
+  }
+
+  &_gallery {
+    position: relative;
+  }
+
+  &_map-holder {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+
+    @include respond-to-min($resp_step_2) {
+      height: 455px;
+    }
+  }
+
+  &_slider {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+
+    .slide {
+      position: relative;
+      height: 100%;
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+
+    //.slick-slide,
+    .slick-track,
+    .slick-list {
+      max-height: 100%;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      height: 455px;
+    }
+
+    &-controls {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      pointer-events: none;
+
+      .slide_next,
+      .slide_prev {
+        @extend %icon_pseudo;
+        width: 34px;
+        height: 34px;
+        margin-top: -17px;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        cursor: pointer;
+        pointer-events: all;
+
+        &:before {
+          font-size: 18px;
+          line-height: 34px;
+        }
+
+        @include respond-to-min($resp_step_2) {
+          width: 56px;
+          height: 56px;
+          margin-top: -28px;
+
+          &:before {
+            font-size: 30px;
+            line-height: 56px;
+          }
+        }
+      }
+
+      .slide_prev {
+        left: 12px;
+
+        &:before {
+          content: $i-chevron_left;
+        }
+
+        @include respond-to-min($resp_step_2) {
+          left: 28px;
+        }
+      }
+
+      .slide_next {
+        right: 12px;
+
+        &:before {
+          content: $i-chevron_right;
+        }
+
+        @include respond-to-min($resp_step_2) {
+          right: 28px;
+        }
+      }
+
+    }
+  }
+
+  &-view_tabs {
+    @extend %clearfix;
+
+    .filter-item {
+      display: inline-block;
+      vertical-align: top;
+      padding-right: 0;
+
+      .gl_link {
+        @include transition_all(background .3s, color .3s);
+        padding-left: 15px;
+        padding-right: 15px;
+        text-transform: uppercase;
+      }
+
+      &.ui-tabs-active .gl_link {
+        font-weight: 400;
+      }
+
+      @include respond-to-min($resp_step_2) {
+        float: left;
+        margin-bottom: 0;
+
+        .gl_link {
+          line-height: 44px;
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        &.ui-tabs-active .gl_link {
+          background: $gl_turquoise;
+          color: $gl_white;
+        }
+      }
+    }
+  }
+}
+
 .company-block {
   @extend %clearfix;
   background: #fff;
@@ -909,7 +1147,6 @@
 
     &._overview {
       padding-top: 0;
-      //margin: 0 -10px 9px;
 
       &:before {
         display: none;
@@ -924,16 +1161,21 @@
   }
 
   @include respond-to-min($resp_step_2) {
-    -webkit-transition: padding 0.3s 0.1s;
-    -ms-transition: padding 0.3s 0.1s;
-    transition: padding 0.3s 0.1s;
+    -webkit-transition: padding 0.3s 0.1s, border .3s;
+    -ms-transition: padding 0.3s 0.1s, border .3s;
+    transition: padding 0.3s 0.1s, border .3s;
     border-radius: 4px;
-    border: 1px solid $gl_gray_lines;
+    border: 1px solid $gl_turquoise;
     padding: 20px 30px 10px;
     margin: 0 -30px 9px;
 
     &.opened {
       padding-bottom: 5px;
+      border-color: $gl_gray_light;
+    }
+
+    &._overview {
+      border-color: $gl_gray_lines;
     }
 
     &:last-child {
@@ -952,10 +1194,16 @@
   }
 
   &_caption {
+    @include transition_all(color .3s);
     font: 16px/20px $FontfabricMullerRegular;
     padding-right: 20px;
     margin-bottom: 6px;
     position: relative;
+    color: #55a9b6;
+
+    .opened & {
+      color: $default_t_color;
+    }
 
     &-close {
       @extend %icon_pseudo;
@@ -964,17 +1212,25 @@
       top: 0;
       width: 20px;
       height: 20px;
+      border-radius: 100%;
+      background: #66cad8;
+      color: #fff;
       text-align: center;
       cursor: pointer;
 
       &:before {
+        @include transition_all(color .3s);
         content: $i-checkmark;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 20px;
         left: 10px;
+      }
+
+      .opened & {
+        background-color: transparent;
         color: #b8b8b8;
 
-        .opened & {
+        &:before {
           content: $i-cross;
         }
       }
