@@ -414,8 +414,14 @@
   background: $gl_white;
   border-bottom: 1px solid #d4d4d4;
 
+  @include respond-to-max($resp_step_2) {
+    &._location-mode {
+      padding-bottom: 10px;
+    }
+  }
+
   @include respond-to-min($resp_step_2) {
-    &._filder-mode {
+    &._filter-mode {
       padding-bottom: 5px;
     }
   }
@@ -472,7 +478,7 @@
     font-size: 14px;
 
     &:before {
-      margin: 0 14px;
+      margin: 0 7px;
     }
   }
 }

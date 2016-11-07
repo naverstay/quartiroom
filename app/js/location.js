@@ -21,8 +21,6 @@ function continueLoading() {
             zIndex: 1,
             initialSlide: 0,
             slide: '.slide',
-            slickPrev: gallery.find('.slide_prev'),
-            slickNext: gallery.find('.slide_next'),
             // variableWidth: false,
             touchThreshold: 10,
             onInit: function (sld) {

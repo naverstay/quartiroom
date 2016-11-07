@@ -8,7 +8,7 @@ html(lang='ru')
             .base._gray
                 +header(1)
                 
-                .section.breadcrumbs_section._filder-mode
+                .section.breadcrumbs_section._filter-mode
                     .section-inner
                         +breadcrumbs(['Главная', 'Квартиры в московской области', 'Квартиры в Королеве'])
                         
@@ -85,7 +85,7 @@ html(lang='ru')
                                     .form-cell.select-box-v1._bordered.simpleSearch
                                         button.btn_v1.btn_blue.filter_btn Подобрать
                                     .form-cell.adv-search_box
-                                        a.gl_link.adv-search_link.advSearchBtn._clr_blue(href='#' data-text-toggle='Свернуть расшир. поиск') 
+                                        a.gl_link.adv-search_link.advSearchBtn._clr_blue(href='#' data-text-toggle='Свернуть') 
                                             span Расширенный поиск 
                                             
                             .advSearchBlock.filter-container._adv-filter
@@ -428,7 +428,7 @@ html(lang='ru')
                                         
                                 .complex-block_content._alone
                                     .complex-block_content-head
-                                        p: span.complex-block_caption ЖК ‹‹Королев Сити››, Центральный квартал
+                                        p: span.complex-block_caption: a(href='#') ЖК ‹‹Королев Сити››, Центральный квартал
                                         p.clearfix._clr_gray
                                             span.fl 2 этаж из 9
                                             span.fr 17.04.16
@@ -444,7 +444,7 @@ html(lang='ru')
                                                 span.mb.mob_hidden В избранное
                                                 
                                     .complex-block_content-similar
-                                        span.complex-block_caption Похожие объекты
+                                        span.complex-block_caption: a(href='#') Похожие объекты
 
                                 .company-info_objects-container.heightFiller
                                     ul.company-info_objects-list.objectsList

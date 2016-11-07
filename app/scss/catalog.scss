@@ -500,6 +500,21 @@
 
     @include respond-to-max($resp_step_2) {
       padding: 7px 0;
+
+      &._flipped {
+        display: table;
+        width: 100%;
+
+        .company-info_features-box {
+          &:first-child {
+            padding-top: 5px;
+          }
+        }
+
+        ._last {
+          display: table-header-group;
+        }
+      }
     }
 
     &-rate {
@@ -767,12 +782,21 @@
       margin: 0 -10px;
       overflow: hidden;
 
+      &._full-width {
+        height: 245px;
+      }
+
       @include respond-to-min($resp_step_2) {
         margin-left: 0;
         margin-right: 325px;
         height: 610px;
         border-right: 1px solid $gl_gray_lines;
         overflow: hidden;
+
+        &._full-width {
+          margin-right: 0;
+          height: 437px;
+        }
       }
     }
 
@@ -962,12 +986,127 @@
 .zoom_icon {
   @extend %icon_pseudo;
   font-size: 20px;
-  line-height: 14px;
 
   &:before {
     content: $i-search-thik;
   }
+}
 
+.location-infrastructure {
+  @extend %clearfix;
+  margin-left: -8px;
+
+  @include respond-to-min($resp_step_2) {
+    margin-left: -14px;
+  }
+
+  li {
+    float: left;
+    padding-left: 5px;
+    margin-bottom: 3px;
+
+    @include respond-to-min($resp_step_2) {
+      margin-bottom: 10px;
+      padding-left: 2px;
+    }
+  }
+
+  &_total {
+    @extend %clearfix;
+
+    @include respond-to-max($resp_step_2) {
+      line-height: 1.4;
+    }
+
+    > span {
+      display: block;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      padding: 10px 0 14px;
+      border-top: 1px dashed #ccc;
+
+      > span {
+        min-width: 258px;
+        float: left;
+      }
+    }
+  }
+}
+
+.location-info_box {
+
+  &._location-prices {
+    .company-unit_info {
+      line-height: 1.4;
+      margin-bottom: 0;
+
+      dd {
+        width: 100px;
+      }
+    }
+  }
+
+  &._location-tags {
+    line-height: 26px;
+
+    @include respond-to-max($resp_step_2) {
+      padding-bottom: 10px;
+
+      .complex-block_tags li {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .company-unit_info {
+
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding-top: 5px;
+
+    &._location-image {
+      float: left;
+      width: 35%;
+      margin-bottom: 12px;
+    }
+
+    &._location-prices {
+      width: 65%;
+      float: left;
+
+      .company-unit_info {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @include respond-to-min($resp_l) {
+
+    &._location-image {
+      float: left;
+      width: 18.5%;
+    }
+
+    &._location-prices {
+      width: 38%;
+      float: left;
+
+      .company-unit_info dd {
+        width: 150px;
+      }
+    }
+
+    &._location-tags {
+      width: 43.5%;
+      float: left;
+
+      .complex-block_tags li {
+        margin-bottom: 11px;
+      }
+    }
+  }
 }
 
 .location-block {
@@ -1002,6 +1141,13 @@
     position: relative;
     overflow: hidden;
 
+    @include respond-to-max($resp_step_2) {
+      &-holder {
+        margin-left: -10px;
+        margin-right: -10px;
+      }
+    }
+
     .slide {
       position: relative;
       height: 100%;
@@ -1022,74 +1168,83 @@
       height: 455px;
     }
 
+    .slick-prev,
+    .slick-next {
+      @extend %icon_pseudo;
+      @extend .btn_white_transp;
+      width: 34px;
+      height: 34px;
+      border-radius: 100%;
+      position: absolute;
+      top: 80px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 0;
+
+      &:before {
+        font-size: 18px;
+        line-height: 34px;
+      }
+
+      @include respond-to-min($resp_step_2) {
+        width: 56px;
+        height: 56px;
+        top: 195px;
+
+        &:before {
+          font-size: 30px;
+          line-height: 56px;
+        }
+      }
+    }
+
+    .slick-prev {
+      left: 12px;
+
+      &:before {
+        content: $i-chevron_left;
+      }
+
+      @include respond-to-min($resp_step_2) {
+        left: 28px;
+      }
+    }
+
+    .slick-next {
+      right: 12px;
+
+      &:before {
+        content: $i-chevron_right;
+      }
+
+      @include respond-to-min($resp_step_2) {
+        right: 28px;
+      }
+    }
+
     &-controls {
       position: absolute;
       top: 0;
-      bottom: 0;
       left: 0;
       right: 0;
       z-index: 10;
-      pointer-events: none;
-
-      .slide_next,
-      .slide_prev {
-        @extend %icon_pseudo;
-        width: 34px;
-        height: 34px;
-        margin-top: -17px;
-        border-radius: 100%;
-        position: absolute;
-        top: 50%;
-        text-align: center;
-        cursor: pointer;
-        pointer-events: all;
-
-        &:before {
-          font-size: 18px;
-          line-height: 34px;
-        }
-
-        @include respond-to-min($resp_step_2) {
-          width: 56px;
-          height: 56px;
-          margin-top: -28px;
-
-          &:before {
-            font-size: 30px;
-            line-height: 56px;
-          }
-        }
-      }
-
-      .slide_prev {
-        left: 12px;
-
-        &:before {
-          content: $i-chevron_left;
-        }
-
-        @include respond-to-min($resp_step_2) {
-          left: 28px;
-        }
-      }
-
-      .slide_next {
-        right: 12px;
-
-        &:before {
-          content: $i-chevron_right;
-        }
-
-        @include respond-to-min($resp_step_2) {
-          right: 28px;
-        }
-      }
-
+      height: 0;
     }
   }
 
   &-view_tabs {
     @extend %clearfix;
+    text-align: center;
+
+    @include respond-to-max($resp_step_2) {
+      margin-top: -7px;
+
+      .filter-item {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
 
     .filter-item {
       display: inline-block;
@@ -1098,13 +1253,8 @@
 
       .gl_link {
         @include transition_all(background .3s, color .3s);
-        padding-left: 15px;
-        padding-right: 15px;
+        font-size: 14px;
         text-transform: uppercase;
-      }
-
-      &.ui-tabs-active .gl_link {
-        font-weight: 400;
       }
 
       @include respond-to-min($resp_step_2) {
@@ -1121,7 +1271,71 @@
           background: $gl_turquoise;
           color: $gl_white;
         }
+
+        &.ui-tabs-active .gl_link {
+          font-weight: 400;
+        }
       }
+    }
+  }
+
+  &_params {
+    letter-spacing: .01em;
+    font-size: 13px;
+    padding-bottom: 2px;
+
+    @include respond-to-min($resp_step_2) {
+      padding: 10px 30px 17px;
+      display: table;
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+
+  &_param-box {
+    border-top: 1px solid $gl_gray_lines;
+    padding-bottom: 6px;
+    padding-top: 2px;
+
+    p {
+      line-height: 1.4;
+    }
+
+    &:first-child {
+      border-top: none;
+      //padding-left: 0 !important;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      border-top: none;
+      display: table-cell;
+      vertical-align: top;
+      padding: 0;
+
+      &._last {
+        padding-left: 55px;
+      }
+    }
+
+    @include respond-to-min($resp_l) {
+      //padding: 0 45px;
+    }
+
+  }
+
+  &_param-col {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  &_param-table {
+    display: table;
+    width: 100%;
+
+    @include respond-to-min($resp_step_2) {
+      border: solid $gl_gray_lines;
+      border-width: 0 1px;
+      padding: 0 45px;
     }
   }
 }
@@ -1172,6 +1386,10 @@
     &.opened {
       padding-bottom: 5px;
       border-color: $gl_gray_light;
+    }
+
+    &._location_mode {
+      padding-top: 15px;
     }
 
     &._overview {

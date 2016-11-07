@@ -9,7 +9,7 @@
 
   &.slide_zoom {
     position: absolute;
-    top: 50%;
+    top: 224px;
     left: 50%;
     width: 140px;
     margin-left: -70px;
@@ -19,6 +19,8 @@
     font: 16px/40px $FontfabricMullerRegular;
     
     span {
+      display: inline-block;
+      vertical-align: middle;
       padding: 0 3px;
     }
   }

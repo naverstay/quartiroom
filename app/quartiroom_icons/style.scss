@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'quartiroom_icons';
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?ultd19');
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?ultd19#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.ttf?ultd19') format('truetype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.woff?ultd19') format('woff'),
-    url('#{$icomoon-font-path}/quartiroom_icons.svg?ultd19#quartiroom_icons') format('svg');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?ab7mid');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?ab7mid#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.ttf?ab7mid') format('truetype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.woff?ab7mid') format('woff'),
+    url('#{$icomoon-font-path}/quartiroom_icons.svg?ab7mid#quartiroom_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-user {
+  &:before {
+    content: $i-user;
+  }
+}
 .i-metro {
   &:before {
     content: $i-metro;
@@ -44,6 +49,46 @@
 .i-search2 {
   &:before {
     content: $i-search2;
+  }
+}
+.i-pencil {
+  &:before {
+    content: $i-pencil;
+  }
+}
+.i-plus {
+  &:before {
+    content: $i-plus;
+  }
+}
+.i-face {
+  &:before {
+    content: $i-face;
+  }
+}
+.i-cart {
+  &:before {
+    content: $i-cart;
+  }
+}
+.i-tree {
+  &:before {
+    content: $i-tree;
+  }
+}
+.i-book {
+  &:before {
+    content: $i-book;
+  }
+}
+.i-pin2 {
+  &:before {
+    content: $i-pin2;
+  }
+}
+.i-check_filled {
+  &:before {
+    content: $i-check_filled;
   }
 }
 .i-builder {
@@ -66,9 +111,9 @@
     content: $i-pedestrian;
   }
 }
-.i-23 {
+.i-phone2 {
   &:before {
-    content: $i-23;
+    content: $i-phone2;
   }
 }
 .i-humburger {
