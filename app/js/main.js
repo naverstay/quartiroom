@@ -416,6 +416,44 @@ function slickUpdate() {
     }, 10);
 }
 
+function toNum(str) {
+    return parseInt(str.toString().replace(/\D*/g, ''));
+}
+
+function resize(inp) {
+    var el = $(inp), txt = el.nextAll('.widthPattern').text(el.val());
+    el.attr('style', 'width:' + txt.outerWidth() + 'px !important;');
+}
+
+function initDynamicWidth($el) {
+    $el.each(function () {
+        var inp = $(this), ptrn = $('<span class="widthPattern" />');
+
+        ptrn.css({
+            'position': 'absolute',
+            'top': -99999,
+            'left': -99999,
+            'pointer-events': 'none',
+            'white-space': 'nowrap',
+            'padding': inp.css('padding'),
+            'border': inp.css('border'),
+            'font-size': inp.css('font-size'),
+            'font-style': inp.css('font-style'),
+            'font-family': inp.css('font-family'),
+            'font-weight': inp.css('font-weight'),
+            'letter-spacing': inp.css('letter-spacing')
+        });
+
+        inp.after(ptrn);
+
+        var e = 'keyup,keypress,focus,blur,change,update'.split(',');
+        for (var i in e) inp.on(e[i], function () {
+            resize(this);
+        });
+        resize(this);
+    });
+}
+
 function initSelect2() {
 
     $('.select2').each(function (ind) {

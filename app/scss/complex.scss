@@ -436,7 +436,7 @@
         max-width: 200px;
       }
     }
-    
+
     @include respond-to-max($resp_step_2) {
       ._object-mode & {
         font-size: 13px;
@@ -658,6 +658,11 @@
   }
 
   &_slider {
+
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
 
     &-pagination {
       position: absolute;

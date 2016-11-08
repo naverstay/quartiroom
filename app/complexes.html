@@ -109,7 +109,30 @@
                   </div>
                   <div class="filter-cell _col-1 filterBlock">
                     <div class="form-cell toddler-val-v1">
-                      <div class="toddler-val"><span class="label"> <span>Цена за м<sup class="_index">2</sup></span><span>от </span></span><span class="start"> </span><span class="label">&mdash;</span><span class="end"> </span></div>
+                      <div class="toddler-val select-box-v3"><span class="label"> <span>Цена за м<sup class="_index">2</sup></span><span> от </span></span><span class="start">
+                          <input class="f_input input-v3 val"></span>
+                        <select class="toddlerSelect" data-target=".start">
+                          <option>500</option>
+                          <option>1000</option>
+                          <option>5000</option>
+                          <option>10000</option>
+                          <option>50000</option>
+                          <option>100000</option>
+                          <option>250000</option>
+                          <option>500000</option>
+                        </select><span class="label">&mdash;</span><span class="end">
+                          <input class="f_input input-v3 val"></span>
+                        <select class="toddlerSelect" data-target=".end">
+                          <option>500</option>
+                          <option>1000</option>
+                          <option>5000</option>
+                          <option>10000</option>
+                          <option>50000</option>
+                          <option>100000</option>
+                          <option>250000</option>
+                          <option>500000</option>
+                        </select>
+                      </div>
                     </div>
                     <div class="form-cell toddler-v1">
                       <div class="filterToddler" data-format="money" data-suffix_2=" руб" data-min="500" data-max="500000"></div>
@@ -152,7 +175,36 @@
                   <div class="_adv-filter_border mob_hidden"></div>
                   <div class="filter-cell _col-1 filterBlock">
                     <div class="form-cell toddler-val-v1">
-                      <div class="toddler-val"><span class="label">Этажность дома от </span><span class="start"> </span><span class="label">&mdash;</span><span class="end"> </span></div>
+                      <div class="toddler-val select-box-v3"><span class="label">Этажность дома от </span><span class="start">
+                          <input class="f_input input-v3 val"></span>
+                        <select class="toddlerSelect" data-target=".start" data-dropdown-class="dropdown-v1">
+                          <option>1</option>
+                          <option>10</option>
+                          <option>20</option>
+                          <option>30</option>
+                          <option>40</option>
+                          <option>50</option>
+                          <option>60 </option>
+                          <option>70 </option>
+                          <option>80 </option>
+                          <option>90 </option>
+                          <option>100 </option>
+                        </select><span class="label">&mdash;</span><span class="end">
+                          <input class="f_input input-v3 val"></span>
+                        <select class="toddlerSelect" data-target=".end" data-dropdown-class="dropdown-v1">
+                          <option>1</option>
+                          <option>10</option>
+                          <option>20</option>
+                          <option>30</option>
+                          <option>40</option>
+                          <option>50</option>
+                          <option>60 </option>
+                          <option>70 </option>
+                          <option>80 </option>
+                          <option>90 </option>
+                          <option>100 </option>
+                        </select>
+                      </div>
                     </div>
                     <div class="form-cell toddler-v1">
                       <div class="filterToddler" data-plural="этаж,этажа,этажей" data-min="1" data-max="100"></div>
@@ -166,13 +218,13 @@
                     <div class="form-cell radio-group-v1">
                       <div class="radio-group">
                         <label class="check-emul _check-v2">
-                          <input class="inp-hidden" type="radio" name="remont"><span class="check-text">С отделкой</span>
+                          <input class="inp-hidden" type="checkbox" name="remont"><span class="check-text">С отделкой</span>
                         </label>
                         <label class="check-emul _check-v2">
-                          <input class="inp-hidden" type="radio" name="remont"><span class="check-text">Без отделки</span>
+                          <input class="inp-hidden" type="checkbox" name="remont"><span class="check-text">Без отделки</span>
                         </label>
                         <label class="check-emul _check-v2">
-                          <input class="inp-hidden" type="radio" name="remont"><span class="check-text">Не важно</span>
+                          <input class="inp-hidden" type="checkbox" name="remont"><span class="check-text">Не важно</span>
                         </label>
                       </div>
                     </div>
@@ -203,13 +255,13 @@
                     <div class="form-cell radio-group-v1">
                       <div class="radio-group">
                         <label class="check-emul _check-v2">
-                          <input class="inp-hidden" type="radio" name="kredit"><span class="check-text">Ипотека</span>
+                          <input class="inp-hidden" type="checkbox" name="kredit"><span class="check-text">Ипотека</span>
                         </label>
                         <label class="check-emul _check-v2">
-                          <input class="inp-hidden" type="radio" name="kredit"><span class="check-text">Военная ипотека</span>
+                          <input class="inp-hidden" type="checkbox" name="kredit"><span class="check-text">Военная ипотека</span>
                         </label>
                         <label class="check-emul _check-v2">
-                          <input class="inp-hidden" type="radio" name="kredit"><span class="check-text">Рассрочка</span>
+                          <input class="inp-hidden" type="checkbox" name="kredit"><span class="check-text">Рассрочка</span>
                         </label>
                       </div>
                     </div>
@@ -229,7 +281,7 @@
                   </div>
                   <div class="filter-cell _col-1 cb">
                     <div class="form-cell select-box-v1 _bordered _ganged-first _s-50 select-search-v1">
-                      <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select_="false" multiple_ data-placeholder="До метро:" data-preserve-placeholder="true">
+                      <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select_="false" multiple_ data-placeholder="До метро:" data-preserve-placeholder="true" data-minimum-results-for-search="Infinity">
                         <option></option>
                         <option>15 мин.</option>
                         <option>30 мин.</option>
@@ -248,7 +300,7 @@
                   </div>
                   <div class="filter-cell _col-4">
                     <div class="form-cell select-box-v1 _bordered _ganged-first _s-50 select-search-v1">
-                      <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select_="false" multiple_ data-placeholder="До станции:" data-preserve-placeholder="true">
+                      <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select_="false" multiple_ data-placeholder="До станции:" data-preserve-placeholder="true" data-minimum-results-for-search="Infinity">
                         <option></option>
                         <option>15 мин.</option>
                         <option>30 мин.</option>

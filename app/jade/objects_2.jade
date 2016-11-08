@@ -66,6 +66,9 @@ html(lang='ru')
                                             option Студия
                                             
                                     .form-cell.select-box-v1._bordered._ganged-mid._s-33.select-search-v1
+                                        a.btn_v1.btn_white.regionPopupBtn.filter_btn.text_left(href='#') Район
+                                            
+                                    //-.form-cell.select-box-v1._bordered._ganged-mid._s-33.select-search-v1
                                         select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Район')
                                             option 
                                             option 1-комнатная квартира
@@ -144,15 +147,15 @@ html(lang='ru')
                                     .form-cell.radio-group-v1
                                         .radio-group._fixed-cell
                                             label.check-emul._check-v2
-                                                input.inp-hidden(type='radio' name='remont')
+                                                input.inp-hidden(type='checkbox' name='remont')
                                                 span.check-text С отделкой
                                                 
                                             label.check-emul._check-v2
-                                                input.inp-hidden(type='radio' name='remont')
+                                                input.inp-hidden(type='checkbox' name='remont')
                                                 span.check-text Без отделки
                                                 
                                             label.check-emul._check-v2
-                                                input.inp-hidden(type='radio' name='remont')
+                                                input.inp-hidden(type='checkbox' name='remont')
                                                 span.check-text Не важно
 
                                 .filter-cell._col-1
@@ -214,15 +217,15 @@ html(lang='ru')
                                     .form-cell.radio-group-v1
                                         .radio-group
                                             label.check-emul._check-v2
-                                                input.inp-hidden(type='radio' name='kredit')
+                                                input.inp-hidden(type='checkbox' name='kredit')
                                                 span.check-text Ипотека
     
                                             label.check-emul._check-v2
-                                                input.inp-hidden(type='radio' name='kredit')
+                                                input.inp-hidden(type='checkbox' name='kredit')
                                                 span.check-text Военная ипотека
     
                                             label.check-emul._check-v2
-                                                input.inp-hidden(type='radio' name='kredit')
+                                                input.inp-hidden(type='checkbox' name='kredit')
                                                 span.check-text Рассрочка
                                                 
                                 .filter-cell._col-1

@@ -17,14 +17,14 @@
     border-radius: 4px;
     text-align: center;
     font: 16px/40px $FontfabricMullerRegular;
-    
+
     span {
       display: inline-block;
       vertical-align: middle;
       padding: 0 3px;
     }
   }
-  
+
   &.show_more {
     display: block;
     width: 100%;
@@ -74,9 +74,22 @@
       text-align: left;
     }
 
+    .select-box-v1 & {
+      font-size: 14px;
+    }
+
+    ._ganged-mid & {
+      border-radius: 0;
+    }
+
     ._ganged-first & {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+    }
+
+    ._ganged-last & {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 
@@ -108,9 +121,13 @@
 }
 
 .btn_white {
-  color: $default_t_color;
+  color: #999;
   background: $gl_white;
   border: 1px solid $gl_gray_lines;
+
+  &.selected {
+    color: $default_t_color;
+  }
 }
 
 .btn_white_transp {
