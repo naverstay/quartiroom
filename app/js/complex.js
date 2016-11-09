@@ -31,10 +31,10 @@ function initComplexSliders(callback) {
         sld.find('.complexSlider').slick({
             dots: true,
             // infinite: false,
-            // arrows: false,
+            arrows: false,
             zIndex: 1,
             // autoplay: true,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 1000,
             initialSlide: 0,
             slidesToShow: 1,
             slide: '.slide',
@@ -47,9 +47,9 @@ function initComplexSliders(callback) {
         });
 
         sld.on('mouseenter', function () {
-            slickAutoPlay($(this));
+            $(this).find('.complexSlider').slickPlay();
         }).on('mouseleave', function () {
-            clearTimeout(slickTimer);
+            $(this).find('.complexSlider').slickPause();
         });
 
     });
@@ -181,12 +181,4 @@ function initToddlers() {
         });
 
     });
-}
-
-function slickAutoPlay(sld) {
-    sld.find('.slick-next').click();
-
-    slickTimer = setTimeout(function () {
-        sld.find('.slick-next').click();
-    }, 1000);
 }
