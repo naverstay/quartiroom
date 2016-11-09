@@ -223,7 +223,7 @@ html(lang='ru')
                                         
                         .company-block.companyBlock
                             .company-block_caption 
-                                span Инфраструктура
+                                span.collapseBlockBtn Инфраструктура
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-info_box.infoBlock
                                 ul.location-infrastructure
@@ -293,7 +293,7 @@ html(lang='ru')
                                         
                         .company-block.companyBlock
                             .company-block_caption 
-                                span Объекты компании
+                                span.collapseBlockBtn Объекты компании
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-info_box.infoBlock
                                 .company-info_objects
@@ -404,7 +404,7 @@ html(lang='ru')
                                                         
                         .company-block.companyBlock
                             .company-block_caption
-                                span Аналитика и цены
+                                span.collapseBlockBtn Аналитика и цены
                                 a.company-block_caption-close.collapseBlockBtn(href='#') 
                             p Стоимость цвадратного метра незначительно ниже по Московскому району.
 
@@ -413,7 +413,7 @@ html(lang='ru')
                                                         
                         .company-block.companyBlock
                             .company-block_caption
-                                span Мнение редакции
+                                span.collapseBlockBtn Мнение редакции
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                                 
                             .company-info_box.infoBlock
@@ -429,55 +429,61 @@ html(lang='ru')
 
                         .company-block.companyBlock
                             .company-block_caption
-                                span Рейтинг компании
+                                span.collapseBlockBtn Рейтинг компании: 4,2
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-info_box.infoBlock
                                 .company-info_features
                                     .company-info_features-box._first
                                         .company-info_features-rate
-                                            span.feature-label.fl 
+                                            span.feature-label.fl
                                                 span Открытость 
                                                 span.mob_hidden компании
                                             span.feature-rate.fr
                                                 .feature-rate_scale
                                                     div(style='width:80%;')
                                                 ._val 4,1
-                                                    
+
                                         .company-info_features-rate
                                             span.feature-label.fl Надежность
                                             span.feature-rate.fr
                                                 .feature-rate_scale
                                                     div(style='width:60%;')
                                                 ._val 4,5
-                                                    
+
                                         .company-info_features-rate
                                             span.feature-label.fl Выбор объектов
                                             span.feature-rate.fr
                                                 .feature-rate_scale
                                                     div(style='width:30%;')
                                                 ._val 3,8
-                                                    
+
                                         .company-info_features-rate
                                             span.feature-label.fl Цена/Качество
                                             span.feature-rate.fr
                                                 .feature-rate_scale
                                                     div(style='width:20%;')
                                                 ._val 4,8
-                                                    
+
                                     .company-info_features-box._center
                                         .company-info_total-rate: ._val 4,2
-                                        .company-info_total-rate 
+                                        .company-info_total-rate
                                             span._clr_gray-dark Общая оценка <br>
                                             span на основании: 
                                                 a.gl_link._clr_default(href='#') 345 отзывов
-                                        
-                                    
+
+
                                     .company-info_features-box._last
                                         a.btn_v1.btn_blue.rate_btn(href='#') Оценить
-                                    
+
+
+                        .company-block.companyBlock
+                            .company-block_caption
+                                span.collapseBlockBtn Отзывы
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+                            p 345 отзывов о компании «Главстрой девелопмент»
+
+                            .company-info_box.infoBlock
                                 .company-info_reviews
-                                    .company-block_caption Отзывы
-                                        
                                     ul.review-list
                                         li
                                             .review-header
@@ -487,24 +493,10 @@ html(lang='ru')
                                                 .review-author_name
                                                     a.gl_link._clr_turqoise(href='#') Руслан Иванов
                                                 .review-author_date._clr_gray 14.02.2016, 18:22
-                                                        
+
                                             .review-content
                                                 p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
-                                                
-                                            +review_footer()
-                                                
-                                        li
-                                            .review-header
-                                                .review-author
-                                                    a.review-author_avatar(href='#')
-                                                        img(src='images/review_author_1.png')
-                                                .review-author_name
-                                                    a.gl_link._clr_turqoise(href='#') Евгений Александров
-                                                .review-author_date._clr_gray 14.02.2016, 18:22
-                                                        
-                                            .review-content
-                                                p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
-                                                
+
                                             +review_footer()
 
                                         li
@@ -515,12 +507,26 @@ html(lang='ru')
                                                 .review-author_name
                                                     a.gl_link._clr_turqoise(href='#') Евгений Александров
                                                 .review-author_date._clr_gray 14.02.2016, 18:22
-                                                        
+
+                                            .review-content
+                                                p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
+
+                                            +review_footer()
+
+                                        li
+                                            .review-header
+                                                .review-author
+                                                    a.review-author_avatar(href='#')
+                                                        img(src='images/review_author_1.png')
+                                                .review-author_name
+                                                    a.gl_link._clr_turqoise(href='#') Евгений Александров
+                                                .review-author_date._clr_gray 14.02.2016, 18:22
+
                                             .review-content
                                                 p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
 
                                                 p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
-                                                
+
                                             +review_footer()
                                         li
                                             .review-header
@@ -530,17 +536,17 @@ html(lang='ru')
                                                 .review-author_name
                                                     a.gl_link._clr_turqoise(href='#') Евгений Александров
                                                 .review-author_date._clr_gray 14.02.2016, 18:22
-                                                        
+
                                             .review-content
                                                 p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
 
                                                 p Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.
-                                                
+
                                             +review_footer()
 
-                                    .review-show_more
-                                        button.btn_v1.btn_blue.review_btn Показать еще
-                                        
+                                .review-show_more
+                                    button.btn_v1.btn_blue.review_btn Показать еще
+
             +footer()
             
         +popups()

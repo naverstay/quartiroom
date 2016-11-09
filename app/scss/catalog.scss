@@ -212,6 +212,7 @@
   display: inline-block;
   vertical-align: middle;
   line-height: 1;
+  max-width: 100%;
 
   img {
     display: block;
@@ -484,13 +485,13 @@
       padding-top: 16px;
 
       &:before {
-        content: '';
-        position: absolute;
-        right: -30px;
-        left: -30px;
-        top: 0;
-        height: 1px;
-        background: $gl_gray_lines;
+        //content: '';
+        //position: absolute;
+        //right: -30px;
+        //left: -30px;
+        //top: 0;
+        //height: 1px;
+        //background: $gl_gray_lines;
       }
     }
   }
@@ -1431,15 +1432,15 @@
       width: 20px;
       height: 20px;
       border-radius: 100%;
-      background: #66cad8;
-      color: #fff;
+      //background: #66cad8;
+      color: #66cad8;
       text-align: center;
       cursor: pointer;
 
       &:before {
         @include transition_all(color .3s);
-        content: $i-checkmark;
-        font-size: 16px;
+        content: $i-check-filled;
+        font-size: 20px;
         line-height: 20px;
         left: 10px;
       }
@@ -1464,7 +1465,7 @@
         height: 30px;
 
         &:before {
-          font-size: 26px;
+          font-size: 30px;
           line-height: 30px;
           left: 30px;
         }

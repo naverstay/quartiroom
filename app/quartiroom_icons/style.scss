@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'quartiroom_icons';
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?ab7mid');
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?ab7mid#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.ttf?ab7mid') format('truetype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.woff?ab7mid') format('woff'),
-    url('#{$icomoon-font-path}/quartiroom_icons.svg?ab7mid#quartiroom_icons') format('svg');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?dyirvo');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?dyirvo#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.ttf?dyirvo') format('truetype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.woff?dyirvo') format('woff'),
+    url('#{$icomoon-font-path}/quartiroom_icons.svg?dyirvo#quartiroom_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-helmet {
+  &:before {
+    content: $i-helmet;
+  }
+}
 .i-user {
   &:before {
     content: $i-user;

@@ -23,6 +23,7 @@
 }
 
 .mob-menu_btn {
+  @extend %translate3d;
   @extend %icon_pseudo;
   position: absolute;
   width: 48px;

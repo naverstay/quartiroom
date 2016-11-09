@@ -75,8 +75,9 @@ html(lang='ru')
                                             
                         .company-block.companyBlock
                             .company-block_caption 
-                                span В продаже
+                                span.collapseBlockBtn В продаже
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
+                                
                             .company-info_box.infoBlock
                                 p 
                                     span._clr_gray-dark Сейчас у компании: 
@@ -104,7 +105,7 @@ html(lang='ru')
                                                                                 
                         .company-block.companyBlock
                             .company-block_caption 
-                                span Объекты компании
+                                span.collapseBlockBtn Объекты компании
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-info_box.infoBlock
                                 .company-info_objects
@@ -215,7 +216,7 @@ html(lang='ru')
                                                         
                         .company-block.companyBlock
                             .company-block_caption
-                                span Рейтинг компании
+                                span.collapseBlockBtn Рейтинг компании: 4,2
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-info_box.infoBlock
                                 .company-info_features
@@ -260,10 +261,15 @@ html(lang='ru')
                                     
                                     .company-info_features-box._last
                                         a.btn_v1.btn_blue.rate_btn(href='#') Оценить
-                                    
-                                .company-info_reviews
-                                    .company-block_caption Отзывы
                                         
+                        .company-block.companyBlock
+                            .company-block_caption
+                                span.collapseBlockBtn Отзывы
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+                            p 345 отзывов о компании «Главстрой девелопмент»
+
+                            .company-info_box.infoBlock
+                                .company-info_reviews
                                     ul.review-list
                                         li
                                             .review-header
@@ -324,9 +330,9 @@ html(lang='ru')
                                                 
                                             +review_footer()
 
-                                    .review-show_more
-                                        button.btn_v1.btn_blue.review_btn Показать еще
-                                        
+                                .review-show_more
+                                    button.btn_v1.btn_blue.review_btn Показать еще
+                                    
             +footer()
             
         +popups()

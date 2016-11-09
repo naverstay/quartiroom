@@ -435,9 +435,15 @@
 
     @include respond-to-min($resp_step_2) {
       .complex-block & {
-        float: right;
         text-align: right;
+      }
+    }
+
+    @include respond-to-min($resp_l) {
+      .complex-block & {
+        float: right;
         max-width: 200px;
+        margin-bottom: 10px;
       }
     }
 
@@ -472,7 +478,7 @@
     }
 
     @include respond-to-min($resp_step_2) {
-      margin-right: 210px;
+      //margin-right: 210px;
     }
 
     @include respond-to-min($resp_l) {
