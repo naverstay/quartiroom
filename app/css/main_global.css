@@ -3197,6 +3197,9 @@ body {
   line-height: 34px;
   background: #eee;
   border-bottom: 1px solid #d4d4d4; }
+  @media only screen and (max-width: 959px) {
+    .complex-view_switcher {
+      line-height: 28px; } }
   @media only screen and (max-width: 639px) {
     .complex-view_switcher {
       line-height: 26px; }
@@ -3352,6 +3355,9 @@ body {
     font-size: 12px;
     padding-top: 10px;
     margin-left: -12px; }
+    @media only screen and (max-width: 959px) {
+      .complex-block_tags {
+        font-size: 11px; } }
     @media only screen and (max-width: 639px) {
       ._object-mode .complex-block_tags {
         padding-top: 0; } }
@@ -3481,7 +3487,7 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
-    height: 7px; }
+    height: 8px; }
     .complex-block_slider-pagination .slick-dots {
       display: table !important;
       width: 100%;
@@ -3489,8 +3495,7 @@ body {
       border-collapse: collapse; }
       .complex-block_slider-pagination .slick-dots li {
         display: table-cell;
-        border: 1px solid #d7d7d7;
-        border-top: 0; }
+        border: 1px solid #d7d7d7; }
         .complex-block_slider-pagination .slick-dots li.slick-active button {
           background: #de2223;
           cursor: default; }
@@ -3594,11 +3599,28 @@ body {
     float: left;
     width: 75px;
     margin: 16px 14px 10px 0; }
+    @media only screen and (max-width: 639px) {
+      .complex-block_gallery .backstretch {
+        display: none; } }
     @media only screen and (min-width: 640px) {
       .complex-block_gallery {
-        margin: 0 -275px -1px 0;
         padding-bottom: 7px;
-        width: 250px; } }
+        width: 250px;
+        position: absolute;
+        margin: 0;
+        top: 0;
+        left: 0;
+        bottom: 0; }
+        .complex-block_gallery .slick-slide,
+        .complex-block_gallery .slick-track,
+        .complex-block_gallery .slick-list,
+        .complex-block_gallery .slick-slider {
+          height: 100% !important; }
+        .complex-block_gallery .full_height {
+          height: 100%;
+          position: relative; }
+          .complex-block_gallery .full_height img {
+            display: none; } }
     .complex-block_gallery-single {
       height: 178px;
       position: relative;

@@ -1,4 +1,4 @@
-var interval = 10, slickTimer; // ms
+var interval = 10, slickTimer, bsTimer;
 
 setTimeout(function () {
     if (main_script) {
@@ -42,7 +42,7 @@ function initComplexSliders(callback) {
             variableWidth: false,
             touchThreshold: 10,
             onInit: function (sld) {
-
+                setSlideBS(sld.$slider.find('.slideBS'));
             }
         });
 
@@ -182,3 +182,11 @@ function initToddlers() {
 
     });
 }
+
+$(window).resize(function () {
+    clearTimeout(bsTimer);
+    
+    bsTimer = setTimeout(function () {
+        setSlideBS($('.slideBS'));
+    }, 5);
+});

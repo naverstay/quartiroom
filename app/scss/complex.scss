@@ -204,6 +204,10 @@
     background: #eee;
     border-bottom: 1px solid #d4d4d4;
 
+    @include respond-to-max($resp_l) {
+      line-height: 28px;
+    }
+
     @include respond-to-max($resp_step_2) {
       line-height: 26px;
 
@@ -450,6 +454,10 @@
     padding-top: 10px;
     margin-left: -12px;
 
+    @include respond-to-max($resp_l) {
+      font-size: 11px;
+    }
+
     ._object-mode & {
 
       @include respond-to-max($resp_step_2) {
@@ -669,7 +677,7 @@
       bottom: 0;
       right: 0;
       left: 0;
-      height: 7px;
+      height: 8px;
 
       .slick-dots {
         display: table !important;
@@ -680,7 +688,7 @@
         li {
           display: table-cell;
           border: 1px solid #d7d7d7;
-          border-top: 0;
+          //border-top: 0;
 
           &.slick-active {
             button {
@@ -869,10 +877,45 @@
     width: 75px;
     margin: 16px 14px 10px 0;
 
+    @include respond-to-max($resp_step_2) {
+      .backstretch {
+        display: none;
+      }
+    }
+
     @include respond-to-min($resp_step_2) {
-      margin: 0 -275px -1px 0;
+      //margin: 0 -275px -1px 0;
       padding-bottom: 7px;
       width: 250px;
+
+      position: absolute;
+      margin: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+
+      .slick-slide,
+      .slick-track,
+      .slick-list,
+      .slick-slider {
+        height: 100% !important;
+      }
+
+      .full_height {
+        height: 100%;
+        position: relative;
+
+        img {
+          display: none;
+          //position: absolute;
+          //min-height: 100%;
+          //top: 50%;
+          //left: 50%;
+          //-webkit-transform: translate(-50%, -50%);
+          //-ms-transform: translate(-50%, -50%);
+          //transform: translate(-50%, -50%);
+        }
+      }
     }
 
     &-single {

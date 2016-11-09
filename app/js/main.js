@@ -102,7 +102,7 @@ function domReady() {
 
         // $('.advSearch').toggle();
 
-        $('.advSearchBlock').slideToggle(300);
+        resize($('.advSearchBlock').slideToggle(300).find('input.val'));
 
         return false;
     }).delegate('.collapseBlockBtn', 'click', function () {
@@ -301,6 +301,13 @@ function setSectionBS() {
     section.each(function () {
         var sctn = $(this);
         sctn.backstretch(getBSImg(sctn), {fade: 0});
+    });
+}
+
+function setSlideBS(slides) {    
+    slides.each(function () {
+        var sctn = $(this);
+        sctn.backstretch(sctn.find('img').attr('src'), {fade: 0});
     });
 }
 
