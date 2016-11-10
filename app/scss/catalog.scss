@@ -1256,6 +1256,10 @@
         @include transition_all(background .3s, color .3s);
         font-size: 14px;
         text-transform: uppercase;
+        
+        &:before {
+          display: none;
+        }
       }
 
       @include respond-to-min($resp_step_2) {

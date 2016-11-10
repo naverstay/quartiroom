@@ -10,7 +10,7 @@
     
 - var uvao = ['Выхино-Жулебино','Капотня','Кузьминки','Лефортово','Люблино','Марьино','Некрасовка','Нижегородский','Печатники','Рязанский','Текстильщики','Южнопортовый'];
     
-mixin dev_head(page_title, index, companies, location, complex, lk, cart)
+mixin dev_head(page_title, index, companies, location, complex, card, cart)
     head
         title=page_title
         | 
@@ -74,10 +74,10 @@ mixin dev_head(page_title, index, companies, location, complex, lk, cart)
             script(src='js/complex.js')
             | 
             | <!--endbuild-->
-        - if (lk)
+        - if (card)
             | 
-            | <!--build:js js/lk.min.js -->
-            script(src='js/lk.js')
+            | <!--build:js js/card.min.js -->
+            script(src='js/card.js')
             | 
             | <!--endbuild-->
         - if (cart)

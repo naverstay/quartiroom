@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'quartiroom_icons';
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?dyirvo');
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?dyirvo#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.ttf?dyirvo') format('truetype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.woff?dyirvo') format('woff'),
-    url('#{$icomoon-font-path}/quartiroom_icons.svg?dyirvo#quartiroom_icons') format('svg');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?g5anxb');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?g5anxb#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.ttf?g5anxb') format('truetype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.woff?g5anxb') format('woff'),
+    url('#{$icomoon-font-path}/quartiroom_icons.svg?g5anxb#quartiroom_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -129,6 +129,41 @@
 .i-search-thik {
   &:before {
     content: $i-search-thik;
+  }
+}
+.i-close_2 {
+  &:before {
+    content: $i-close_2;
+  }
+}
+.i-sort {
+  &:before {
+    content: $i-sort;
+  }
+}
+.i-plus_w {
+  &:before {
+    content: $i-plus_w;
+  }
+}
+.i-face_w {
+  &:before {
+    content: $i-face_w;
+  }
+}
+.i-cart_w {
+  &:before {
+    content: $i-cart_w;
+  }
+}
+.i-tree_w {
+  &:before {
+    content: $i-tree_w;
+  }
+}
+.i-book_w {
+  &:before {
+    content: $i-book_w;
   }
 }
 .i-heart {

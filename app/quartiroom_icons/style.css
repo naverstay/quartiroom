@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'quartiroom_icons';
-  src:  url('fonts/quartiroom_icons.eot?dyirvo');
-  src:  url('fonts/quartiroom_icons.eot?dyirvo#iefix') format('embedded-opentype'),
-    url('fonts/quartiroom_icons.ttf?dyirvo') format('truetype'),
-    url('fonts/quartiroom_icons.woff?dyirvo') format('woff'),
-    url('fonts/quartiroom_icons.svg?dyirvo#quartiroom_icons') format('svg');
+  src:  url('fonts/quartiroom_icons.eot?g5anxb');
+  src:  url('fonts/quartiroom_icons.eot?g5anxb#iefix') format('embedded-opentype'),
+    url('fonts/quartiroom_icons.ttf?g5anxb') format('truetype'),
+    url('fonts/quartiroom_icons.woff?g5anxb') format('woff'),
+    url('fonts/quartiroom_icons.svg?g5anxb#quartiroom_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -86,6 +86,27 @@
 }
 .i-search-thik:before {
   content: "\e90e";
+}
+.i-close_2:before {
+  content: "\e912";
+}
+.i-sort:before {
+  content: "\e914";
+}
+.i-plus_w:before {
+  content: "\e916";
+}
+.i-face_w:before {
+  content: "\e919";
+}
+.i-cart_w:before {
+  content: "\e91a";
+}
+.i-tree_w:before {
+  content: "\e91c";
+}
+.i-book_w:before {
+  content: "\e91d";
 }
 .i-heart:before {
   content: "\e907";

@@ -7,6 +7,18 @@
 .btn_v1 {
   height: 40px;
 
+  &.order_btn {
+    float: left;
+    border-radius: 4px;
+    text-align: center;
+    font: 16px/40px $FontfabricMullerRegular;
+    padding: 0 24px;
+
+    @include respond-to-max($resp_step_2) {
+      width: 100%;
+    }
+  }
+
   &.slide_zoom {
     position: absolute;
     top: 224px;
@@ -130,6 +142,15 @@
   }
 }
 
+.btn_white_2 {
+  color: $default_t_color;
+  background: $gl_white;
+
+  &:hover {
+    background: #f8f8f8;
+  }
+}
+
 .btn_white_transp {
   @include transition_all(background .3s);
   color: $default_t_color;
@@ -139,3 +160,15 @@
     background: rgba(255, 255, 255, .8);
   }
 }
+
+.btn_turquoise_transp {
+  @include transition_all(background .3s);
+  color: $gl_white;
+  background: transparentize($gl_turquoise, .45);
+
+  &:hover {
+    background: transparentize($gl_turquoise, .2);
+  }
+}
+
+

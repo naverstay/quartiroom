@@ -167,6 +167,10 @@ body {
   color: $gl_blue;
 }
 
+._clr_white {
+  color: $gl_white;
+}
+
 ._clr_gray {
   color: #848484;
 }
@@ -188,4 +192,13 @@ body {
 .fw_b {
   font-family: $FontfabricMullerBold;
 }
+
+.fw_600 {
+  font-weight: 600;
+}
+
+.fw_700 {
+  font-weight: 700;
+}
+
 

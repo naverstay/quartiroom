@@ -99,7 +99,7 @@
   font-size: 14px;
 
   &:before {
-    content: $i-humburger;
+    content: $i-sort;
     position: absolute;
     left: 0;
     top: 50%;
@@ -574,13 +574,31 @@
       }
     }
 
+    .breadcrumbs_section & {
+      float: none;
+      width: auto;
+
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 7px 0;
+
+        &:first-child {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+
     @include respond-to-min($resp_l) {
       float: none;
       width: auto;
 
       .complex-block & {
         li {
-          float: left;
+          display: inline-block;
+          vertical-align: middle;
           margin-bottom: 5px;
 
           &:first-child {

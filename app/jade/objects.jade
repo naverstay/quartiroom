@@ -46,9 +46,9 @@ html(lang='ru')
                                                 span Цена за м
                                                     sup._index 2
                                                 span от 
-                                            span.start 
+                                            span.start: input.f_input.input-v3.val 
                                             span.label &mdash;
-                                            span.end 
+                                            span.end: input.f_input.input-v3.val 
     
                                     .form-cell.toddler-v1
                                         .filterToddler(data-format='money' data-suffix_2=' руб' data-suffix_1=' руб' data-min=500 data-max=500000)
@@ -97,12 +97,12 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Общая площадь от
-                                            span.start 
+                                            span.start: input.f_input.input-v3.val 
                                             span.label &mdash;
-                                            span.end 
+                                            span.end: input.f_input.input-v3.val 
     
                                     .form-cell.toddler-v1
-                                        .filterToddler(data-suffix_2=' м<sup class="_index">2</sup>' data-suffix_1=' м<sup class="_index">2</sup>' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
+                                        .filterToddler(data-suffix_2=' м' data-suffix_1=' м' data-suffix_2_=' м<sup class="_index">2</sup>' data-suffix_1_=' м<sup class="_index">2</sup>' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
                                     .toddler-range
                                         .min
                                         .max
@@ -111,12 +111,12 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Жилая площадь от
-                                            span.start 
+                                            span.start: input.f_input.input-v3.val 
                                             span.label &mdash;
-                                            span.end 
+                                            span.end: input.f_input.input-v3.val 
     
                                     .form-cell.toddler-v1
-                                        .filterToddler(data-suffix_2=' м<sup class="_index">2</sup>' data-suffix_1=' м<sup class="_index">2</sup>' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
+                                        .filterToddler(data-suffix_2_=' м<sup class="_index">2</sup>' data-suffix_1_=' м<sup class="_index">2</sup>' data-suffix_2=' м' data-suffix_1=' м' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
                                     .toddler-range
                                         .min
                                         .max
@@ -171,9 +171,9 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Этаж от 
-                                            span.start
+                                            span.start: input.f_input.input-v3.val
                                             span.label &mdash;
-                                            span.end
+                                            span.end: input.f_input.input-v3.val
 
                                     .form-cell.toddler-v1
                                         .filterToddler(data-plural='этаж,этажа,этажей' data-min=1 data-max=100)
@@ -185,9 +185,9 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Этажность дома от 
-                                            span.start
+                                            span.start: input.f_input.input-v3.val
                                             span.label &mdash;
-                                            span.end
+                                            span.end: input.f_input.input-v3.val
 
                                     .form-cell.toddler-v1
                                         .filterToddler(data-plural='этаж,этажа,этажей' data-min=1 data-max=100)
@@ -201,7 +201,7 @@ html(lang='ru')
                                             option
                                             option Пассажирский
                                             option Грузовой
-                                            
+
                                 .filter-cell._col-1.cb
                                     .form-cell.radio-group-v1
                                         .radio-group._fixed-cell
@@ -310,7 +310,7 @@ html(lang='ru')
 
                                         .complex-block_content
                                             .complex-block_content-head
-                                                p: a.complex-block_caption(href='#') 2-комнатная квартира, 63 м2 квартал
+                                                p: a.complex-block_caption(href='card.html') 2-комнатная квартира, 63 м2 квартал
                                                 p._clr_gray Московская обл., г. Королев, ул. Октябрьская, корп.5, д.45 "В"
                                                 .complex-block_price-val 12 387 200 руб.
 
@@ -328,7 +328,7 @@ html(lang='ru')
                                                     li 
                                                         span._clr_gray Дом:  
                                                         span Монолитно-кирпичный
-                                                        
+
                                             .complex-block_content-footer
                                                 .complex-block_info
                                                     ul.complex-block_tags._clr_gray
@@ -352,7 +352,7 @@ html(lang='ru')
 
                                         .complex-block_content
                                             .complex-block_content-head
-                                                p: a.complex-block_caption(href='#') 2-комнатная квартира, 63 м2 квартал
+                                                p: a.complex-block_caption(href='card.html') 2-комнатная квартира, 63 м2 квартал
                                                 p._clr_gray Московская обл., г. Королев, ул. Октябрьская, корп.5, д.45 "В"
                                                 .complex-block_price-val 12 387 200 руб.
 

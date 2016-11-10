@@ -1,11 +1,13 @@
-window.onload = new function () {  // дубль функции $(window).on('load'... для ИЕ 
+var interval = 10; // ms
+setTimeout(function () {
+    if (main_script) {
+        continueLoading();
+    } else {
+        setTimeout(arguments.callee, interval);
+    }
+}, interval);
 
+
+function continueLoading() {
     setSectionBS();
-
-};
-
-$(window).on('load', function () {
-
-    setSectionBS();
-
-});
+}
