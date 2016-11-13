@@ -1,31 +1,246 @@
 .object_card {
   @extend %clearfix;
   padding: 30px 10px 0;
+  margin: 0 -10px;
   border-top: 1px solid $gl_gray_lines;
 
   @include respond-to-min($resp_step_2) {
     padding: 30px;
+    margin: 0;
+  }
+
+  &-total_price {
+    font: 18px $FontfabricMullerRegular;
+    letter-spacing: .01em;
+
+    @include respond-to-max($resp_step_2) {
+      padding: 7px 0;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      padding-top: 10px;
+      font-size: 26px;
+    }
+  }
+
+  &-total_payment {
+    font: 24px $FontfabricMullerBold;
+    letter-spacing: .01em;
+
+    @include respond-to-max($resp_step_2) {
+      padding-top: 8px;
+      margin-bottom: -28px;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      padding-top: 10px;
+      font-size: 36px;
+    }
+  }
+
+  &-rates {
+    @extend %clearfix;
+    padding: 10px 0;
+
+    .company-info_features-rate {
+      margin-top: 9px;
+    }
+
+    @include respond-to-max($resp_step_2) {
+      padding-bottom: 15px;
+
+      .company-info_features-rate {
+        margin-right: -10px;
+      }
+
+      .feature-rate {
+        width: 75px;
+        padding: 0 5px;
+      }
+    }
+
+    @include respond-to-min($resp_step_2) {
+      padding-bottom: 35px;
+
+      .feature-label {
+        min-width: 115px;
+      }
+
+      .feature-rate {
+        width: 195px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  &-graph_holder {
+    @extend %clearfix;
+    //overflow: hidden;
+  }
+
+  &-graph_box-v2 {
+
+    @include respond-to-max($resp_step_2) {
+      margin-bottom: 10px;
+
+      &:first-child {
+        padding-top: 20px;
+      }
+    }
+
+    @include respond-to-min($resp_l) {
+      float: left;
+      width: 49%;
+      padding: 20px 10px 0;
+    }
+  }
+
+  &-graph_box-v1 {
+    display: none;
+
+    @include respond-to-min($resp_l) {
+      display: block;
+      float: left;
+      width: 67%;
+      margin-bottom: 32px;
+      border-right: 1px solid $gl_gray_lines;
+    }
+  }
+
+  &-graph_legend-v1 {
+    position: relative;
+
+    @include respond-to-max($resp_step_2) {
+      padding-top: 5px;
+      padding-bottom: 15px;
+    }
+
+    @include respond-to-min($resp_l) {
+      float: right;
+      width: 31.2%;
+      margin-top: -22px;
+      margin-bottom: 22px;
+
+      &:before {
+        //content: '';
+        //position: absolute;
+        //left: 10px;
+        //top: 0;
+        //height: 1000px;
+        //width: 1px;
+        //background: $gl_gray_lines;
+      }
+    }
+
+  }
+
+  &-legend {
+    width: 100%;
+    font-size: 11px;
+    table-layout: fixed;
+    text-align: left;
+
+    td {
+      font-size: 11px;
+      padding: 2px 0 3px;
+    }
+
+    th {
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding-bottom: 17px;
+    }
+
+    @include respond-to-max($resp_l) {
+      th {
+        display: none;
+      }
+    }
+
+    .col_3 {
+      //text-align: right;
+    }
+  }
+
+  &-analytics {
+
+    @include respond-to-min($resp_step_2) {
+      padding-top: 30px;
+    }
+  }
+
+  &-analytic_caption {
+    font: 14px $FontfabricMullerBold;
+    letter-spacing: .01em;
+    margin-bottom: 2px;
+
+    @include respond-to-min($resp_step_2) {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &-description {
+
+    @include respond-to-max($resp_step_2) {
+      .company-unit_info_w {
+        padding: 0 0 10px !important;
+        margin-top: -5px;
+
+        .company-unit_info {
+          line-height: 1;
+
+          dd, dt {
+            margin: 4px 0;
+          }
+
+          dd {
+            width: 124px;
+          }
+        }
+      }
+    }
+
+    @include respond-to-min($resp_step_2) {
+      padding-top: 12px;
+
+      .company-block_caption {
+        margin-bottom: 0;
+      }
+
+      .company-unit_info_w .company-unit_info {
+        margin: 0 0 25px;
+      }
+
+      .review-content p {
+        margin-top: 0;
+      }
+    }
   }
 
   &-location {
     @extend %clearfix;
     line-height: 22px;
     padding: 6px 0;
+    letter-spacing: .01em;
 
     li {
-      float: left;
+      display: inline;
       position: relative;
-      padding-left: 18px;
+      padding-left: 28px;
 
       &:before {
         content: '';
         position: absolute;
         width: 1px;
         height: 15px;
-        margin-top: -6px;
-        top: 50%;
-        left: 9px;
+        top: 5px;
+        left: 15px;
         background: $gl_gray_lines;
+      }
+
+      span {
+        display: initial;
       }
 
       &:first-child {
@@ -35,12 +250,22 @@
           display: none;
         }
       }
+
+      @include respond-to-max($resp_step_2) {
+        &._small {
+          font-size: 11px;
+        }
+      }
     }
   }
 
   &-slider {
     position: relative;
-    padding: 0 30px;
+    padding: 30px 30px 30px;
+
+    @include respond-to-min($resp_step_2) {
+      padding: 65px 30px;
+    }
 
     .slick-slider {
 
@@ -68,16 +293,15 @@
     }
 
     .slick-prev {
-      left: 28px;
+      left: 0;
 
       &:before {
         content: $i-chevron_left;
       }
-
     }
 
     .slick-next {
-      right: 28px;
+      right: 0;
 
       &:before {
         content: $i-chevron_right;
@@ -98,12 +322,15 @@
         top: 50%;
       }
     }
-
   }
 
   &-thumbs {
     position: relative;
-    padding: 0 80px;
+    padding: 0 35px;
+
+    .slick-list {
+      padding: 30px 0 20px;
+    }
 
     @include respond-to-max($resp_l) {
       display: none;
@@ -116,18 +343,18 @@
       top: 50%;
       width: 18px;
       height: 24px;
-      margin-top: -12px;
+      margin-top: -8px;
       font-size: 0;
 
       &:before {
-        font-size: 20px;
+        font-size: 22px;
         line-height: 24px;
         color: #c1c1c1;
       }
     }
 
     .slick-prev {
-      left: 28px;
+      left: 0;
 
       &:before {
         content: $i-chevron_left;
@@ -136,7 +363,7 @@
     }
 
     .slick-next {
-      right: 28px;
+      right: 0;
 
       &:before {
         content: $i-chevron_right;
@@ -161,7 +388,7 @@
         @include transition_all(background .3s);
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: -14px;
         right: 16px;
         left: 16px;
         height: 3px;
@@ -180,14 +407,25 @@
         max-width: 100%;
       }
     }
-
   }
 
   &-price_controls {
     @extend %clearfix;
-    clear: both;
     line-height: 40px;
     margin-left: -30px;
+
+    .object_card-info & {
+      padding-top: 15px;
+      clear: both;
+
+      @include respond-to-max($resp_step_2) {
+        padding-top: 12px;
+
+        li {
+          margin-bottom: 5px;
+        }
+      }
+    }
 
     li {
       float: left;
@@ -201,10 +439,16 @@
         }
       }
     }
+
+    .fav_icon {
+      font-size: 19px;
+      margin-right: 5px;
+    }
   }
 
   &-price {
     font: 24px $FontfabricMullerBold;
+    margin-bottom: 10px;
 
     @include respond-to-min($resp_step_2) {
       font-size: 30px;
@@ -218,37 +462,141 @@
 
   &-price_block {
     color: $gl_white;
-    margin: 0 -10px;
-    padding: 20px 10px;
     background: $gl_turquoise;
 
-    p {
-      margin-bottom: 10px;
+    @include respond-to-max($resp_step_2) {
+      margin: 0 -10px;
+      padding: 20px 10px 1px;
     }
 
-    @include respond-to-min($resp_step_2) {
-      margin: 0;
-      padding: 30px;
-      border-radius: 4px;
+    .object_card-info & {
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      @include respond-to-min($resp_step_2) {
+        margin: 0;
+        padding: 30px;
+        border-radius: 4px;
+
+        p {
+          margin-bottom: 13px;
+        }
+      }
     }
 
+    &.company-block {
+
+      @include respond-to-max($resp_step_2) {
+        margin-bottom: 20px;
+      }
+
+      .object_card-price_controls {
+        clear: both;
+        padding-top: 20px;
+
+        @include respond-to-max($resp_step_2) {
+          padding: 12px 0 10px;
+        }
+      }
+
+      @include respond-to-min($resp_l) {
+        padding-bottom: 20px;
+
+        .object_card-price_item {
+          p {
+            line-height: 1.3;
+            letter-spacing: .04em;
+          }
+        }
+
+        .object_card-info_phone {
+          padding-left: 15px;
+        }
+
+      }
+
+      @include respond-to-min($resp_xl) {
+        .object_card-price_controls {
+          min-width: 47.5%;
+        }
+
+        .object_card-price_controls {
+          clear: none;
+          padding-top: 0;
+          float: right;
+          display: table;
+
+          > li {
+            display: table-cell;
+            float: none;
+            text-align: center;
+            vertical-align: middle;
+            padding: 0 0 0 5px;
+            min-width: 0;
+
+            &:last-child {
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
   }
 
   &-price_item {
     float: left;
 
+    @include respond-to-max($resp_step_2) {
+      .object_card-info & {
+        width: 50%;
+        padding-left: 42px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+
     @include respond-to-min($resp_step_2) {
       min-width: 220px;
+
+      p {
+        font-weight: 700;
+      }
+
+      .object_card-price_controls {
+        float: right;
+        min-width: 47.5%;
+
+        > li {
+          //display: table-cell;
+          //float: none;
+          //text-align: center;
+          //vertical-align: middle;
+          //padding: 0 5px;
+        }
+      }
     }
   }
 
   &-info_phone {
-    padding: 8px 0;
     font: 24px $FontfabricMullerBold;
+    letter-spacing: .01em;
+    padding-top: 17px;
 
     @include respond-to-min($resp_step_2) {
       font-size: 36px;
-      padding: 30px 0;
+      padding-top: 0;
+    }
+
+    .object_card-info & {
+      padding: 11px 0;
+
+      @include respond-to-min($resp_step_2) {
+        padding: 30px 0;
+      }
     }
   }
 
@@ -269,29 +617,32 @@
     }
 
     dt, dd {
-      margin-top: 5px;
+      line-height: 1.5;
+      //margin-top: 5px;
     }
 
     dt {
       float: left;
       clear: both;
       color: #696969;
-    }
-
-    dd {
-      float: left;
-      padding-left: 4px;
+      padding-right: 4px;
     }
 
     @include respond-to-min($resp_step_2) {
       padding-bottom: 20px;
 
       dt {
-        width: 140px;
+        width: 144px;
+      }
+
+      dd {
+        float: left;
       }
 
       dt, dd {
-        margin-top: 10px;
+        line-height: normal;
+        margin-top: 7px;
+        margin-bottom: 4px;
       }
     }
   }
@@ -299,17 +650,346 @@
   @include respond-to-min($resp_l) {
     &-media {
       float: left;
-      width: 51%;
+      width: 49%;
     }
 
     &-info {
-      float: left;
-      width: 49%;
+      float: right;
+      width: 48.6%;
+    }
+  }
+}
+
+.d3graph {
+
+  &.graph_2 {
+    height: 200px;
+
+    &:before {
+      content: '25';
+      display: none;
+    }
+
+    .legend_text {
+      font-size: 11px;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      height: 300px;
+
+      &:before {
+        content: '32';
+      }
+
+      .legend_text {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &.graph_1 {
+    height: 245px;
+
+    path {
+      fill: none;
+    }
+
+    .gray_grid .tick {
+      stroke: #dadada;
+      stroke-width: 1;
+    }
+
+    .line {
+      stroke-width: 1;
+      stroke: $gl_turquoise;
+    }
+
+    .mark_v1 {
+      fill: $gl_turquoise;
+    }
+
+    .axis line {
+      fill: none;
+      stroke: $gl_turquoise;
+      stroke-width: 1;
+      shape-rendering: crispEdges;
+    }
+
+    .axis.x {
+
+      .domain {
+
+      }
+
+      .tick {
+        display: none;
+      }
     }
   }
 
 }
 
+.graph_trend {
+  @extend %icon_pseudo;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-left: 3px;
 
+  &:before {
+    font-size: 11px;
+  }
+
+  &._down {
+    color: #d71a1c;
+
+    &:before {
+      content: $i-arrow-down;
+    }
+  }
+
+  &._up {
+    color: #3db022;
+
+    &:before {
+      content: $i-arrow-up;
+    }
+  }
+
+}
+
+.similar_offers {
+  @extend %clearfix;
+  margin-left: -30px;
+
+  > li {
+    margin: 12px 0;
+    padding-left: 30px;
+
+    @include respond-to-max($resp_l) {
+      .company-info_objects-description {
+        border-width: 1px 0 0;
+      }
+
+      &:first-child {
+        .company-info_objects-description {
+          border: none;
+        }
+      }
+    }
+  }
+
+  @include respond-to-min($resp_l) {
+    margin-right: -1%;
+
+    .company-info_objects-description {
+      border-width: 1px;
+      border-radius: 4px;
+    }
+
+    > li {
+      float: left;
+      width: 33%;
+      padding-top: 18px;
+      margin: 0 0 17px;
+    }
+  }
+}
+
+.similar-block {
+  position: relative;
+
+  .complex-block_content-head {
+    padding-top: 14px;
+  }
+
+  .complex-block_prices {
+    width: auto;
+  }
+
+  @include respond-to-max($resp_step_2) {
+    border-top: 1px solid $gl_gray_lines;
+
+    li:first-child & {
+      border-top: none;
+    }
+
+    span.complex-block_caption {
+      font: 14px/18px $FontfabricMullerBold;
+    }
+
+    .complex-block_content-head {
+      font-size: 12px;
+    }
+
+    .complex-block_content-body {
+      margin-left: 85px;
+    }
+
+    .complex-block_content-footer {
+      padding: 0;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    border-radius: 4px;
+    border: 1px solid $gl_gray_lines;
+
+    span.complex-block_caption {
+      font: 18px/22px $FontfabricMullerBold;
+    }
+
+    .complex-block_content-head {
+      padding: 12px 20px 0;
+    }
+
+    .complex-block_content-body {
+      padding: 0 20px 7px;
+    }
+
+    .complex-block_content-footer {
+      padding: 0 20px 15px;
+    }
+
+    .complex-block_info {
+      margin-top: 0;
+    }
+
+    .complex-block_status-item {
+      padding-left: 0;
+    }
+
+    .complex-block_prices {
+      font-size: 14px;
+    }
+
+    .fav_link span:first-child {
+      font-size: 20px;
+      margin-right: 8px;
+    }
+  }
+
+  &_count-val {
+    float: left;
+    padding-right: 8px;
+    font: 18px $FontfabricMullerBold;
+
+    a {
+      text-decoration: underline;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      font-size: 30px;
+    }
+
+  }
+
+  &_counters {
+    @extend %clearfix;
+    white-space: nowrap;
+
+    &-holder {
+      position: relative;
+    }
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      width: 56%;
+      margin-top: 8px;
+
+      &:first-child {
+        width: 43%;
+      }
+    }
+
+    p {
+      color: $gl_turquoise;
+      white-space: normal;
+
+      @include respond-to-max($resp_step_2) {
+        font-size: 13px;
+      }
+    }
+
+    @include respond-to-min($resp_l) {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      min-width: 360px;
+      margin-bottom: 5px;
+
+      li {
+        width: 46%;
+
+        &:first-child {
+          width: 53%;
+        }
+      }
+    }
+  }
+
+  &_info {
+    overflow: hidden;
+
+    @include respond-to-max($resp_step_2) {
+      padding: 10px 0;
+
+      .company-info_object-price {
+        color: $default_t_color;
+        font-weight: 700;
+        float: none;
+      }
+
+      .company-info_object-proposition {
+        color: $default_t_color;
+        float: none;
+      }
+    }
+
+    @include respond-to-min($resp_step_2) {
+      position: absolute;
+      bottom: 100%;
+      margin-bottom: -210px;
+      right: 0;
+      left: 0;
+      padding: 12px 20px;
+      z-index: 2;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 40%;
+        min-height: 95px;
+        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.65) 100%);
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.65) 100%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.65) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#a6000000', GradientType=0);
+      }
+
+      .company-info_object-price {
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .company-info_object-proposition {
+        font-size: 14px;
+      }
+
+    }
+  }
+
+}
+
+._price-label {
+  letter-spacing: .01em;
+
+  @include respond-to-max($resp_step_2) {
+    font-size: 14px;
+  }
+}
 
 

@@ -22,7 +22,7 @@
     <script src="js/lib/jquery-ui-1.11.4.js"></script>
     <script src="js/lib/slick.js"></script>
     <script src="js/lib/jquery.inputmask.bundle.js"></script>
-    <script src="js/lib/jquery.easy-autocomplete.js"></script>
+    <!--script(src='js/lib/jquery.easy-autocomplete.js')-->
     <script src="js/lib/select2.js"></script>
     <script src="js/main.js"></script>
      
@@ -31,6 +31,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="js/lib/respond.min.js"/></script>
     <![endif]-->
+     
+    <!--build:js js/company.min.js -->
+    <script src="js/company.js"></script>
+     
+    <!--endbuild-->
   </head>
   <body>
     <div class="wrapper">
@@ -46,18 +51,18 @@
                     <li><a class="gl_link" href="complexes.html">Новостройки</a></li>
                     <li><a class="gl_link" href="complexes_2.html">Вторичное жилье</a></li>
                     <li><a class="gl_link" href="objects.html">1-комнатные</a></li>
-                    <li><a class="gl_link" href="location.html">2-комнатные</a></li>
+                    <li><a class="gl_link" href="objects_2.html">2-комнатные</a></li>
                   </ul>
                 </li>
                 <li class="main-menu_item menuItem _dropdown-menu"><span class="gl_link">Новостройки</span>
                   <ul class="main-menu_sub-menu">
-                    <li><a class="gl_link" href="#">Все новостройки</a></li>
-                    <li><a class="gl_link" href="#">Москва</a></li>
-                    <li><a class="gl_link" href="#">Московская область</a></li>
+                    <li><a class="gl_link" href="rate.html">Все новостройки</a></li>
+                    <li><a class="gl_link" href="location.html">Москва</a></li>
+                    <li><a class="gl_link" href="card.html">Московская область</a></li>
                   </ul>
                 </li>
                 <li class="main-menu_item menuItem"><a class="gl_link" href="companies.html">Компании</a></li>
-                <li class="main-menu_item menuItem"><a class="gl_link" href="#">Полезное</a></li>
+                <li class="main-menu_item menuItem"><a class="gl_link" href="company.html">Полезное</a></li>
               </ul>
             </div>
           </div>
@@ -352,11 +357,11 @@
                     </div>
                     <div class="company-info_total-rate"> <span class="_clr_gray-dark">Общая оценка <br></span><span>на основании: <a class="gl_link _clr_default" href="#">345 отзывов</a></span></div>
                   </div>
-                  <div class="company-info_features-box _last"><a class="btn_v1 btn_blue rate_btn" href="#">Оценить</a></div>
+                  <div class="company-info_features-box _last"><a class="btn_v1 btn_blue rate_btn rateBtn" href="#">Оценить</a></div>
                 </div>
               </div>
             </div>
-            <div class="company-block companyBlock">
+            <div class="company-block companyBlock _info-mode">
               <div class="company-block_caption"><span class="collapseBlockBtn">Отзывы</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
               <p>345 отзывов о компании «Главстрой девелопмент»</p>
               <div class="company-info_box infoBlock">

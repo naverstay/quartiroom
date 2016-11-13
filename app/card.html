@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Quartiroom Локация</title>
+    <title>Quartiroom Карточка Компании</title>
      
     <!-- saved from url=(0014)about:internet -->
     <meta charset="utf-8"/>
@@ -32,8 +32,11 @@
     <script src="js/lib/respond.min.js"/></script>
     <![endif]-->
      
-    <!--build:js js/location.min.js -->
-    <script src="js/location.js"></script>
+    <!--build:js js/card.min.js -->
+    <script src="js/lib/d3.min.js"></script>
+    <script src="js/lib/moment.min.js"></script>
+    <script src="js/lib/nouislider.js"></script>
+    <script src="js/card.js"></script>
      
     <!--endbuild-->
   </head>
@@ -72,10 +75,16 @@
             <ul class="breadcrumbs">
               <li class="breadcrumb-item"><a class="gl_link" href="index.html">Главная</a>
               </li>
-              <li class="breadcrumb-item"><span>Недвижимость в Королеве</span>
+              <li class="breadcrumb-item"><a class="gl_link" href="products.html">Квартиры в московской области</a>
+              </li>
+              <li class="breadcrumb-item"><span>2-комнатные</span>
               </li>
             </ul>
-            <div class="section-title">Недвижимость в Королеве</div>
+            <div class="section-title">2-комнатная квартира 47 кв.м. в Железнодорожном</div>
+            <ul class="object_card-location">
+              <li class="fl"><span class="mb complex-block_option-icon i-metro"></span><span class="mb fw_600">Выхино</span></li>
+              <li class="_small"><span class="_clr_gray mb">пос. Долгопрудный, мкр. Московс&shy;кие Водники, ул. Московская, 45б</span></li>
+            </ul>
           </div>
         </div>
         <div class="main_content">
@@ -83,17 +92,66 @@
             <div class="location-block">
               <div class="location-block-view_tabs">
                 <ul id="location_switcher">
-                  <li class="filter-item"><a class="gl_link" href="#location_tab_1"><span class="mb complex-view_tab-icon i-humburger mob_hidden"></span><span class="mb">фото<span class="mob_hidden">(12)</span></span></a></li>
+                  <li class="filter-item"><a class="gl_link" href="#location_tab_1"><span class="mb complex-view_tab-icon i-humburger mob_hidden"></span><span class="mb">описание</span></a></li>
                   <li class="filter-item"><a class="gl_link" href="#location_tab_2"><span class="mb complex-view_tab-icon i-map_pin mob_hidden"></span><span class="mb">на карте</span></a></li>
+                  <li class="filter-item"><a class="gl_link" href="#location_tab_3"><span class="mb complex-view_tab-icon mob_hidden i-pano"></span><span class="mb"> <span>Панорама</span><span class="mob_hidden"> местности</span></span></a></li>
                 </ul>
               </div>
               <div class="tabBlock" data-tab-context="#location_switcher">
                 <div id="location_tab_1">
-                  <div class="location-block_slider-holder">
-                    <div class="location-block_gallery locationGallery">
-                      <div class="location-block_slider locationSlider">
-                        <div class="slide"><img class="mob_hidden" src="images/loc_2.jpg"><img class="dt_hidden" src="images/loc_2_mob.jpg"><a class="slide_zoom btn_v1 btn_white_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
-                        <div class="slide"><img class="mob_hidden" src="images/loc_2.jpg"><img class="dt_hidden" src="images/loc_2_mob.jpg"><a class="slide_zoom btn_v1 btn_white_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
+                  <div class="object_card">
+                    <div class="object_card-media">
+                      <div class="object_card-slider">
+                        <div class="objectCardSlider noUpdate">
+                          <div class="slide"><img src="images/card_1.jpg"><a class="slide_zoom btn_v1 btn_turquoise_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
+                          <div class="slide"><img src="images/card_1.jpg"><a class="slide_zoom btn_v1 btn_turquoise_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
+                          <div class="slide"><img src="images/card_1.jpg"><a class="slide_zoom btn_v1 btn_turquoise_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
+                          <div class="slide"><img src="images/card_1.jpg"><a class="slide_zoom btn_v1 btn_turquoise_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
+                          <div class="slide"><img src="images/card_1.jpg"><a class="slide_zoom btn_v1 btn_turquoise_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
+                          <div class="slide"><img src="images/card_1.jpg"><a class="slide_zoom btn_v1 btn_turquoise_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
+                          <div class="slide"><img src="images/card_1.jpg"><a class="slide_zoom btn_v1 btn_turquoise_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
+                          <div class="slide"><img src="images/card_1.jpg"><a class="slide_zoom btn_v1 btn_turquoise_transp mob_hidden" href="#"><span class="zoom_icon"></span><span>Увеличить</span></a></div>
+                        </div>
+                      </div>
+                      <div class="object_card-thumbs">
+                        <div class="objectThumbsSlider noUpdate">
+                          <div class="slide"><img src="images/card_2_small.jpg"></div>
+                          <div class="slide"><img src="images/card_1_small.jpg"></div>
+                          <div class="slide"><img src="images/card_2_small.jpg"></div>
+                          <div class="slide"><img src="images/card_1_small.jpg"></div>
+                          <div class="slide"><img src="images/card_2_small.jpg"></div>
+                          <div class="slide"><img src="images/card_1_small.jpg"></div>
+                          <div class="slide"><img src="images/card_2_small.jpg"></div>
+                          <div class="slide"><img src="images/card_1_small.jpg"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="object_card-info">
+                      <dl class="object_card-info_list">
+                        <dt>Комнат:</dt>
+                        <dd>2</dd>
+                        <dt>Общая площадь:</dt>
+                        <dd>63.2 м<sup class="_index">2</sup></dd>
+                        <dt>Компания:</dt>
+                        <dd>Альянс Девелопмент</dd>
+                        <dt>Теги:</dt>
+                        <dd> <a class="tag_link _clr_blue" href="#">Новостройка</a><a class="tag_link _clr_blue" href="#">2-комнатная</a><a class="tag_link _clr_blue" href="#">Подмосковье</a></dd>
+                      </dl>
+                      <div class="object_card-info_phone">+7 (495) 434-56-45</div>
+                      <div class="object_card-price_block">
+                        <div class="object_card-price_item">
+                          <p>Стоимость, руб.:</p>
+                          <div class="object_card-price">15 690 000</div>
+                        </div>
+                        <div class="object_card-price_item">
+                          <p>Ежемесячный платеж, руб.: </p>
+                          <div class="object_card-month_payment">88 900</div>
+                        </div>
+                        <ul class="object_card-price_controls">
+                          <li> <a class="btn_v1 btn_white_2 order_btn" href="#">Отправить заявку</a></li>
+                          <li><a class="favBtn _clr_blue fav_link _clr_white" href="#"><span class="mb i-heart fav_icon"></span><span class="mb">В избранное</span></a></li>
+                          <li><a class="_clr_blue fav_link _clr_white" href="#"><span class="mb i-pencil fav_icon"></span><span class="mb">Пожаловаться</span></a></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -103,249 +161,79 @@
                     <div class="map-wrapper"><img src="images/big_map.jpg"></div>
                   </div>
                 </div>
-              </div>
-              <div class="location-block_params">
-                <div class="location-block_param-box">
-                  <p>Россия, Московская область, <br> город областного значения Королев</p>
-                </div>
-                <div class="location-block_param-box">
-                  <div class="location-block_param-table">
-                    <div class="location-block_param-col">
-                      <p>Площадь:</p>
-                      <p>23 456 тыс. кв. м</p>
-                    </div>
-                    <div class="location-block_param-col">
-                      <p>Население:</p>
-                      <p>345 650 чел</p>
-                    </div>
-                    <div class="location-block_param-col">
-                      <p>Плотность <br> населения:</p>
-                      <p>34 чел./кв.км</p>
-                    </div>
+                <div id="location_tab_3">
+                  <div class="location-block_map-holder">
+                    <div class="map-wrapper"><img src="images/map.jpg"></div>
                   </div>
                 </div>
-                <div class="location-block_param-box _last">
-                  <p> <span class="mob_hidden">Жилой фонд: <br> </span><span>2 430 многоквартирных домов <br> 34 567 индивидуальных хозяйств</span></p>
+              </div>
+            </div>
+            <div class="company-block companyBlock _info-mode">
+              <div class="company-block_caption _mob_caption"><span class="collapseBlockBtn">Основные характеристики</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <dl class="company-block_options">
+                <dt>Общая площадь:</dt>
+                <dd>62.3</dd>
+                <dt>Жилая площадь:</dt>
+                <dd>45.1</dd>
+                <dt>Площадь комнат: </dt>
+                <dd>16.3, 11.9</dd>
+                <dt>Площадь кухни: </dt>
+                <dd>12.6</dd>
+              </dl>
+              <div class="company-info_box infoBlock">
+                <div class="object_card-description">
+                  <div class="company-block_caption">Все характеристики</div>
+                  <div class="company-unit_info_w">
+                    <dl class="company-unit_info">
+                      <dt>Количество санузлов</dt>
+                      <dd>2</dd>
+                      <dt>Тип санузла (-ов)</dt>
+                      <dd>Обычный</dd>
+                      <dt>Балкон</dt>
+                      <dd>Есть</dd>
+                      <dt>Лоджия</dt>
+                      <dd>Нет</dd>
+                      <dt>Высота потолков</dt>
+                      <dd>4 м</dd>
+                      <dt>Отделка</dt>
+                      <dd>Отсутствует</dd>
+                      <dt>Этаж и этажность здания</dt>
+                      <dd>2 этаж из 21</dd>
+                    </dl>
+                    <dl class="company-unit_info">
+                      <dt>Кол-во лифтов и их тип</dt>
+                      <dd>4 стандартные</dd>
+                      <dt>Мусоропровод</dt>
+                      <dd>Отсутствует</dd>
+                      <dt>Наличие консьержа</dt>
+                      <dd>Есть</dd>
+                      <dt>Тип здания</dt>
+                      <dd>Панельный</dd>
+                      <dt>Описание</dt>
+                      <dd>Распашная квартира </dd>
+                      <dt>Ориентация окон</dt>
+                      <dd>Окна с видом на парк</dd>
+                    </dl>
+                  </div>
+                  <div class="company-block_caption">Описание квартиры</div>
+                  <div class="review-content"> 
+                    <p>На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Квартиры</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Студии</dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>1-комнатные</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>2-комнатные  </dt>
-                  <dd>от 3 900 000</dd>
-                  <dt>3-комнатные</dt>
-                  <dd>от 8 300 000</dd>
-                  <dt>4-комнатные</dt>
-                  <dd>от 12 300 000</dd>
-                  <dt>5-комнатные  </dt>
-                  <dd>от 15 900 000</dd>
-                  <dt>6-комнатные</dt>
-                  <dd>от 70 600 000</dd>
-                  <dt>Апартаменты </dt>
-                  <dd>от 10 300 000</dd>
-                  <dt>Лофты</dt>
-                  <dd>от 150 000</dd>
-                  <dt>Квартиры в таунхаусах</dt>
-                  <dd>от 150 000</dd>
+            <div class="company-block companyBlock _info-mode">
+              <div class="company-block_caption _mob_caption"> <span class="collapseBlockBtn">Инфраструктура</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-block-collapsed_info">
+                <dl class="company-block_options">
+                  <dt>Медицина: </dt>
+                  <dd>7</dd>
+                  <dt>Образование:</dt>
+                  <dd>6</dd>
+                  <dt>Магазины и досуг: </dt>
+                  <dd>5</dd>
                 </dl>
               </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Загородная недвижимость</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Участки от 8 соток </dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>Дачные участки с домом от 12 кв.м.</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>Коттеджи 34 кв.м с участком</dt>
-                  <dd>от 3 900 000</dd>
-                </dl>
-              </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Жилые комплексы</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Эконом </dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>Комфорт</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>Бизнес</dt>
-                  <dd>от 3 900 000</dd>
-                  <dt>Элитный</dt>
-                  <dd>от 3 900 000</dd>
-                </dl>
-              </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Коттеджные поселки</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Эконом </dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>Комфорт</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>Бизнес</dt>
-                  <dd>от 3 900 000</dd>
-                  <dt>Элитный</dt>
-                  <dd>от 3 900 000</dd>
-                </dl>
-              </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Дачные поселки</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Эконом </dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>Комфорт</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>Бизнес</dt>
-                  <dd>от 3 900 000</dd>
-                  <dt>Элитный</dt>
-                  <dd>от 3 900 000</dd>
-                </dl>
-              </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-block companyBlock">
-              <div class="company-block_caption"> <span class="collapseBlockBtn">Инфраструктура</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
               <div class="company-info_box infoBlock">
                 <ul class="location-infrastructure">
                   <li>
@@ -384,7 +272,6 @@
                     </label>
                   </li>
                 </ul>
-                <div class="location-infrastructure_total"><span><b>2,4 поликлиники на 1000 чел.</b></span><span>В среднем по Московской области - 3,1 поликлиники на 1000 чел.</span></div>
                 <div class="company-info_objects-wrapper">
                   <div class="company-info_objects-map _full-width">
                     <div class="map-wrapper"><img src="images/big_map.jpg"></div>
@@ -392,192 +279,8 @@
                 </div>
               </div>
             </div>
-            <div class="company-block companyBlock">
-              <div class="company-block_caption"> <span class="collapseBlockBtn">Объекты компании</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
-              <div class="company-info_box infoBlock">
-                <div class="company-info_objects">
-                  <ul class="company-info_objects-filter">
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">Жилые комплексы</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">Студии</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">Комнаты</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">1-комн.кв.</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">2-комн.кв.</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">3-комн.кв.</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">Участки</span>
-                      </label>
-                    </li>
-                  </ul>
-                  <div class="company-info_objects-wrapper">
-                    <div class="company-info_objects-map">
-                      <div class="map-wrapper"><img src="images/big_map.jpg"></div>
-                    </div>
-                    <div class="company-info_objects-info heightFillerParent">
-                      <div class="company-info_objects-description">
-                        <div class="gl_table">
-                          <div class="gl_table_cell">
-                            <p><span>Ул. Народного Ополчения, 34, <br> ЖК "Квартал Руполис-Растуново", </span><span class="mob_hidden"><br></span><span>корпус 14</span></p>
-                            <p class="company-info_objects-count"><span>В этом доме: </span><span class="_val">456 квартир</span></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="company-info_objects-container heightFiller">
-                        <ul class="company-info_objects-list objectsList">
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="dt_hidden text_center"><a class="btn_v1 btn_transp_blue show_more showMoreBtn" href="#">Показать еще</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="company-block companyBlock _info-mode">
-              <div class="company-block_caption _mob_caption"><span class="collapseBlockBtn">Аналитика и цены</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-block_caption _mob_caption"><span class="collapseBlockBtn">Аналитика и цены</span><a class="company-block_caption-close collapseBlockBtn" href="#"> </a></div>
               <p class="_mob_if_opened">Квартира на 5% ниже предложений рядом</p>
               <div class="company-info_box infoBlock" style_="display:block;">
                 <div class="object_card-analytics">
@@ -646,70 +349,70 @@
                     </div>
                     <div class="object_card-graph_legend-v1">
                       <table class="object_card-legend">
-                        <tr>
+                        <tr> 
                           <th class="col_1">Месяц</th>
                           <th class="col_2">Стоимость</th>
                           <th class="col_3">изменение</th>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Январь</td>
                           <td class="col_2">3 790 000 руб.</td>
                           <td class="col_3">&nbsp;</td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Февраль</td>
                           <td class="col_2">3 480 000 руб.</td>
-                          <td class="col_3"><span class="mb">35 000</span><span class="graph_trend _up"></span></td>
+                          <td class="col_3"> <span class="mb">35 000</span><span class="graph_trend _up"> </span></td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Март</td>
                           <td class="col_2">3 240 000 руб.</td>
-                          <td class="col_3"><span class="mb">45 000</span><span class="graph_trend _up"></span></td>
+                          <td class="col_3"> <span class="mb">45 000</span><span class="graph_trend _up"> </span></td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Апрель</td>
                           <td class="col_2">3 120 000 руб.</td>
-                          <td class="col_3"><span class="mb">-15 000</span><span class="graph_trend _down"></span></td>
+                          <td class="col_3"> <span class="mb">-15 000</span><span class="graph_trend _down"></span></td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Январь</td>
                           <td class="col_2">3 790 000 руб.</td>
                           <td class="col_3">&nbsp;</td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Февраль</td>
                           <td class="col_2">3 480 000 руб.</td>
-                          <td class="col_3"><span class="mb">35 000</span><span class="graph_trend _up"></span></td>
+                          <td class="col_3"> <span class="mb">35 000</span><span class="graph_trend _up"> </span></td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Март</td>
                           <td class="col_2">3 240 000 руб.</td>
-                          <td class="col_3"><span class="mb">45 000</span><span class="graph_trend _up"></span></td>
+                          <td class="col_3"> <span class="mb">45 000</span><span class="graph_trend _up"> </span></td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Апрель</td>
                           <td class="col_2">3 120 000 руб.</td>
-                          <td class="col_3"><span class="mb">-15 000</span><span class="graph_trend _down"></span></td>
+                          <td class="col_3"> <span class="mb">-15 000</span><span class="graph_trend _down"></span></td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Январь</td>
                           <td class="col_2">3 790 000 руб.</td>
                           <td class="col_3">&nbsp;</td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Февраль</td>
                           <td class="col_2">3 480 000 руб.</td>
-                          <td class="col_3"><span class="mb">35 000</span><span class="graph_trend _up"></span></td>
+                          <td class="col_3"> <span class="mb">35 000</span><span class="graph_trend _up"> </span></td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Март</td>
                           <td class="col_2">3 240 000 руб.</td>
-                          <td class="col_3"><span class="mb">45 000</span><span class="graph_trend _up"></span></td>
+                          <td class="col_3"> <span class="mb">45 000</span><span class="graph_trend _up"> </span></td>
                         </tr>
-                        <tr>
+                        <tr> 
                           <td class="col_1">Апрель</td>
                           <td class="col_2">3 120 000 руб.</td>
-                          <td class="col_3"><span class="mb">-15 000</span><span class="graph_trend _down"></span></td>
+                          <td class="col_3"> <span class="mb">-15 000</span><span class="graph_trend _down"></span></td>
                         </tr>
                       </table>
                     </div>
@@ -727,195 +430,595 @@
                 </div>
               </div>
             </div>
-            <div class="company-block companyBlock">
-              <div class="company-block_caption"><span class="collapseBlockBtn">Мнение редакции</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+            <div class="company-block companyBlock _info-mode">
+              <div class="company-block_caption _mob_caption"><span class="collapseBlockBtn">Варианты покупки</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <p class="_mob_if_opened">Квартиру можно купить в ипотеку или рассрочку. Есть текущие акции.</p>
               <div class="company-info_box infoBlock">
-                <div class="company-info_features _flipped">
-                  <div class="company-info_features-box">
-                    <div class="review-content">
-                      <p>На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. </p>
-                    </div>
+                <div class="filter-holder filter-holder-v2">
+                  <div class="filter-list text_upper tabScroller" id="variants_list">
+                    <li class="filter-item"><a class="gl_link" href="#variant_tab_1"><span class="middle_block dt_hidden">ипотека</span><span class="middle_block mob_hidden">ипотека</span></a></li>
+                    <li class="filter-item"><a class="gl_link" href="#variant_tab_2"><span class="middle_block dt_hidden">военная ипотека</span><span class="middle_block mob_hidden">военная ипотека </span></a></li>
+                    <li class="filter-item"><a class="gl_link" href="#variant_tab_3"><span class="middle_block dt_hidden">расс&shy;рочка</span><span class="middle_block mob_hidden">рассрочка</span></a></li>
+                    <li class="filter-item"><a class="gl_link" href="#variant_tab_4"><span class="middle_block dt_hidden">100% оплата</span><span class="middle_block mob_hidden">100% оплата </span></a></li>
+                    <li class="filter-item"><a class="gl_link" href="#variant_tab_5"><span class="middle_block dt_hidden">акции</span><span class="middle_block mob_hidden">акции</span></a></li>
                   </div>
-                  <div class="company-info_features-box _last">
-                    <div class="company-info_total-rate">
-                      <div class="_val">4,2</div>
+                  <div class="scrollerTabs" data-tab-context="#variants_list .slick-track">
+                    <div id="variant_tab_1">
+                      <div class="filter-form">
+                        <form action="#">
+                          <div class="filter-container">
+                            <div class="filter-cell _col-4">
+                              <div class="form-cell select-box-v1 _bordered select-search-v1">
+                                <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select_="false" multiple_="multiple_" data-placeholder="Выбрать банк">
+                                  <option></option>
+                                  <option>Банк 1</option>
+                                  <option>Банк 2</option>
+                                  <option>Банк 3</option>
+                                  <option>Банк 4</option>
+                                  <option>Банк 5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>0</option>
+                                    <option>10000</option>
+                                    <option>50000</option>
+                                    <option>100000</option>
+                                    <option>500000</option>
+                                    <option>1000000</option>
+                                    <option>2500000</option>
+                                    <option>5000000</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-min="0" data-max="5000000"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">100 000</div>
+                                <div class="fr">2 500 000</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-plural-suffix_1="data-plural-suffix_1" data-plural="год,года,лет" data-min="1" data-max="20"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">1 год </div>
+                                <div class="fr">20 лет</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-4">
+                              <p class="_clr_gray _price-label">Общая сумма выплат</p>
+                              <div class="object_card-total_price">1 500 890 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1 dt_fr">
+                              <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
+                              <div class="object_card-total_price">1 400 500 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1">
+                              <p class="_clr_gray _price-label">Ежемесячный платеж</p>
+                              <div class="object_card-total_payment">42 500 руб.</div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
                     </div>
-                    <div class="company-info_total-rate"><span class="_clr_gray-dark">Оценка <br> редакции</span></div>
+                    <div id="variant_tab_2">
+                      <div class="filter-form">
+                        <form action="#">
+                          <div class="filter-container">
+                            <div class="filter-cell _col-4">
+                              <div class="form-cell select-box-v1 _bordered select-search-v1">
+                                <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select_="false" multiple_="multiple_" data-placeholder="Выбрать банк">
+                                  <option></option>
+                                  <option>Банк 1</option>
+                                  <option>Банк 2</option>
+                                  <option>Банк 3</option>
+                                  <option>Банк 4</option>
+                                  <option>Банк 5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>0</option>
+                                    <option>10000</option>
+                                    <option>50000</option>
+                                    <option>100000</option>
+                                    <option>500000</option>
+                                    <option>1000000</option>
+                                    <option>2500000</option>
+                                    <option>5000000</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-min="0" data-max="5000000"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">100 000</div>
+                                <div class="fr">2 500 000</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-plural-suffix_1="data-plural-suffix_1" data-plural="год,года,лет" data-min="1" data-max="20"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">1 год </div>
+                                <div class="fr">20 лет</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-4">
+                              <p class="_clr_gray _price-label">Общая сумма выплат</p>
+                              <div class="object_card-total_price">1 500 890 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1 dt_fr">
+                              <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
+                              <div class="object_card-total_price">1 400 500 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1">
+                              <p class="_clr_gray _price-label">Ежемесячный платеж</p>
+                              <div class="object_card-total_payment">42 500 руб.</div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div id="variant_tab_3">
+                      <div class="filter-form">
+                        <form action="#">
+                          <div class="filter-container">
+                            <div class="filter-cell _col-4">
+                              <div class="form-cell select-box-v1 _bordered select-search-v1">
+                                <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select_="false" multiple_="multiple_" data-placeholder="Выбрать банк">
+                                  <option></option>
+                                  <option>Банк 1</option>
+                                  <option>Банк 2</option>
+                                  <option>Банк 3</option>
+                                  <option>Банк 4</option>
+                                  <option>Банк 5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>0</option>
+                                    <option>10000</option>
+                                    <option>50000</option>
+                                    <option>100000</option>
+                                    <option>500000</option>
+                                    <option>1000000</option>
+                                    <option>2500000</option>
+                                    <option>5000000</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-min="0" data-max="5000000"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">100 000</div>
+                                <div class="fr">2 500 000</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-plural-suffix_1="data-plural-suffix_1" data-plural="год,года,лет" data-min="1" data-max="20"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">1 год </div>
+                                <div class="fr">20 лет</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-4">
+                              <p class="_clr_gray _price-label">Общая сумма выплат</p>
+                              <div class="object_card-total_price">1 500 890 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1 dt_fr">
+                              <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
+                              <div class="object_card-total_price">1 400 500 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1">
+                              <p class="_clr_gray _price-label">Ежемесячный платеж</p>
+                              <div class="object_card-total_payment">42 500 руб.</div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div id="variant_tab_4">
+                      <div class="filter-form">
+                        <form action="#">
+                          <div class="filter-container">
+                            <div class="filter-cell _col-4">
+                              <div class="form-cell select-box-v1 _bordered select-search-v1">
+                                <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select_="false" multiple_="multiple_" data-placeholder="Выбрать банк">
+                                  <option></option>
+                                  <option>Банк 1</option>
+                                  <option>Банк 2</option>
+                                  <option>Банк 3</option>
+                                  <option>Банк 4</option>
+                                  <option>Банк 5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>0</option>
+                                    <option>10000</option>
+                                    <option>50000</option>
+                                    <option>100000</option>
+                                    <option>500000</option>
+                                    <option>1000000</option>
+                                    <option>2500000</option>
+                                    <option>5000000</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-min="0" data-max="5000000"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">100 000</div>
+                                <div class="fr">2 500 000</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-plural-suffix_1="data-plural-suffix_1" data-plural="год,года,лет" data-min="1" data-max="20"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">1 год </div>
+                                <div class="fr">20 лет</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-4">
+                              <p class="_clr_gray _price-label">Общая сумма выплат</p>
+                              <div class="object_card-total_price">1 500 890 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1 dt_fr">
+                              <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
+                              <div class="object_card-total_price">1 400 500 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1">
+                              <p class="_clr_gray _price-label">Ежемесячный платеж</p>
+                              <div class="object_card-total_payment">42 500 руб.</div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div id="variant_tab_5">
+                      <div class="filter-form">
+                        <form action="#">
+                          <div class="filter-container">
+                            <div class="filter-cell _col-4">
+                              <div class="form-cell select-box-v1 _bordered select-search-v1">
+                                <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select_="false" multiple_="multiple_" data-placeholder="Выбрать банк">
+                                  <option></option>
+                                  <option>Банк 1</option>
+                                  <option>Банк 2</option>
+                                  <option>Банк 3</option>
+                                  <option>Банк 4</option>
+                                  <option>Банк 5</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>0</option>
+                                    <option>10000</option>
+                                    <option>50000</option>
+                                    <option>100000</option>
+                                    <option>500000</option>
+                                    <option>1000000</option>
+                                    <option>2500000</option>
+                                    <option>5000000</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-min="0" data-max="5000000"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">100 000</div>
+                                <div class="fr">2 500 000</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-1 filterBlock">
+                              <div class="form-cell toddler-val-v2">
+                                <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
+                                    <input class="f_input input-v3 val"/></span>
+                                  <select class="toddlerSelect" data-target=".start">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="form-cell toddler-v1 _single">
+                                <div class="filterToddler" data-format="money" data-single="true" data-plural-suffix_1="data-plural-suffix_1" data-plural="год,года,лет" data-min="1" data-max="20"></div>
+                              </div>
+                              <div class="toddler-range">
+                                <div class="fl">1 год </div>
+                                <div class="fr">20 лет</div>
+                              </div>
+                            </div>
+                            <div class="filter-cell _col-4">
+                              <p class="_clr_gray _price-label">Общая сумма выплат</p>
+                              <div class="object_card-total_price">1 500 890 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1 dt_fr">
+                              <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
+                              <div class="object_card-total_price">1 400 500 руб.</div>
+                            </div>
+                            <div class="filter-cell _col-1">
+                              <p class="_clr_gray _price-label">Ежемесячный платеж</p>
+                              <div class="object_card-total_payment">42 500 руб.</div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="company-block companyBlock">
-              <div class="company-block_caption"><span class="collapseBlockBtn">Рейтинг компании: 4,2</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
-              <div class="company-info_box infoBlock">
-                <div class="company-info_features">
-                  <div class="company-info_features-box _first">
-                    <div class="company-info_features-rate"><span class="feature-label fl"><span>Открытость </span><span class="mob_hidden">компании</span></span><span class="feature-rate fr">
-                        <div class="feature-rate_scale">
-                          <div style="width:80%"></div>
-                        </div>
-                        <div class="_val">4,1</div></span></div>
-                    <div class="company-info_features-rate"><span class="feature-label fl">Надежность</span><span class="feature-rate fr">
-                        <div class="feature-rate_scale">
-                          <div style="width:60%"></div>
-                        </div>
-                        <div class="_val">4,5</div></span></div>
-                    <div class="company-info_features-rate"><span class="feature-label fl">Выбор объектов</span><span class="feature-rate fr">
-                        <div class="feature-rate_scale">
-                          <div style="width:30%"></div>
-                        </div>
-                        <div class="_val">3,8</div></span></div>
-                    <div class="company-info_features-rate"><span class="feature-label fl">Цена/Качество</span><span class="feature-rate fr">
-                        <div class="feature-rate_scale">
-                          <div style="width:20%"></div>
-                        </div>
-                        <div class="_val">4,8</div></span></div>
-                  </div>
-                  <div class="company-info_features-box _center">
-                    <div class="company-info_total-rate">
-                      <div class="_val">4,2</div>
-                    </div>
-                    <div class="company-info_total-rate"><span class="_clr_gray-dark">Общая оценка <br></span><span>на основании: <a class="gl_link _clr_default" href="#">345 отзывов</a></span></div>
-                  </div>
-                  <div class="company-info_features-box _last">
-                    <p class="text_left"> <span>Вы оценили ЖК "Королев Сити" </span><br><span class="_clr_default">на 3,8 балла</span></p>
-                  </div>
-                </div>
+            <div class="company-block object_card-price_block">
+              <div class="object_card-price_item">
+                <p>ООО “Гранд-капитал <br> Альянс Девелопмент”</p>
               </div>
+              <div class="object_card-price_item">
+                <div class="object_card-info_phone">+7 (495) 434-56-45</div>
+              </div>
+              <ul class="object_card-price_controls">
+                <li><a class="btn_v1 btn_white_2 order_btn" href="#">Отправить заявку</a></li>
+                <li><a class="favBtn _clr_blue fav_link _clr_white" href="#"><span class="mb i-heart fav_icon"></span><span class="mb">В избранное</span></a></li>
+                <li><a class="_clr_blue fav_link _clr_white" href="#"><span class="mb i-pencil fav_icon"></span><span class="mb">Пожаловаться</span></a></li>
+              </ul>
             </div>
-            <div class="company-block companyBlock">
-              <div class="company-block_caption"><span class="collapseBlockBtn">Отзывы</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
-              <p>345 отзывов о компании «Главстрой девелопмент»</p>
-              <div class="company-info_box infoBlock">
-                <div class="company-info_reviews">
-                  <ul class="review-list">
-                    <li>
-                      <div class="review-header">
-                        <div class="review-author"><a class="review-author_avatar" href="#"><img src="images/review_author_1.png"></a></div>
-                        <div class="review-author_name"><a class="gl_link _clr_turqoise" href="#">Руслан Иванов</a></div>
-                        <div class="review-author_date _clr_gray">14.02.2016, 18:22</div>
-                      </div>
-                      <div class="review-content">
-                        <p>Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.</p>
-                      </div>
-                      <div class="review-footer reviewFooter">
-                        <ul class="review-footer_controls">
-                          <li><a class="review-btn _like" href="#">5</a></li>
-                          <li><a class="review-btn _dislike" href="#">2</a></li>
-                          <li><a class="gl_link _clr_blue answerBtn" href="#" data-text-toggle="Отменить ответ">Ответить</a></li>
-                        </ul>
-                        <div class="review-footer_answer reviewAnswer">
-                          <form action="#">
-                            <div class="input_w _answer-name">
-                              <input class="f_input input-v1 _bordered" placeholder="Имя"/>
-                            </div>
-                            <div class="input_w _answer_text">
-                              <textarea class="f_input input-v1 _h-112 _bordered" placeholder="Сообщение"></textarea>
-                            </div>
-                            <div class="input_w">
-                              <button class="btn_v1 btn_blue review_btn">Ответить</button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
+            <div class="company-block _overview opened">
+              <div class="company-block_caption"><span>Похожие предложения</span></div>
+              <p>Предложения, очень близкие к данной квартире</p>
+              <div class="company-info_box">
+                <div class="similar-block_counters-holder">
+                  <ul class="similar-block_counters">
+                    <li> 
+                      <div class="similar-block_count-val"><a class="gl_link _clr_turqoise" href="#">340</a></div>
+                      <p>Квартир(ы) <br> в этом доме</p>
                     </li>
-                    <li>
-                      <div class="review-header">
-                        <div class="review-author"><a class="review-author_avatar" href="#"><img src="images/review_author_1.png"></a></div>
-                        <div class="review-author_name"><a class="gl_link _clr_turqoise" href="#">Евгений Александров</a></div>
-                        <div class="review-author_date _clr_gray">14.02.2016, 18:22</div>
-                      </div>
-                      <div class="review-content">
-                        <p>Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.</p>
-                      </div>
-                      <div class="review-footer reviewFooter">
-                        <ul class="review-footer_controls">
-                          <li><a class="review-btn _like" href="#">5</a></li>
-                          <li><a class="review-btn _dislike" href="#">2</a></li>
-                          <li><a class="gl_link _clr_blue answerBtn" href="#" data-text-toggle="Отменить ответ">Ответить</a></li>
-                        </ul>
-                        <div class="review-footer_answer reviewAnswer">
-                          <form action="#">
-                            <div class="input_w _answer-name">
-                              <input class="f_input input-v1 _bordered" placeholder="Имя"/>
-                            </div>
-                            <div class="input_w _answer_text">
-                              <textarea class="f_input input-v1 _h-112 _bordered" placeholder="Сообщение"></textarea>
-                            </div>
-                            <div class="input_w">
-                              <button class="btn_v1 btn_blue review_btn">Ответить</button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="review-header">
-                        <div class="review-author"><a class="review-author_avatar" href="#"><img src="images/review_author_1.png"></a></div>
-                        <div class="review-author_name"><a class="gl_link _clr_turqoise" href="#">Евгений Александров</a></div>
-                        <div class="review-author_date _clr_gray">14.02.2016, 18:22</div>
-                      </div>
-                      <div class="review-content">
-                        <p>Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.</p>
-                        <p>Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.</p>
-                      </div>
-                      <div class="review-footer reviewFooter">
-                        <ul class="review-footer_controls">
-                          <li><a class="review-btn _like" href="#">5</a></li>
-                          <li><a class="review-btn _dislike" href="#">2</a></li>
-                          <li><a class="gl_link _clr_blue answerBtn" href="#" data-text-toggle="Отменить ответ">Ответить</a></li>
-                        </ul>
-                        <div class="review-footer_answer reviewAnswer">
-                          <form action="#">
-                            <div class="input_w _answer-name">
-                              <input class="f_input input-v1 _bordered" placeholder="Имя"/>
-                            </div>
-                            <div class="input_w _answer_text">
-                              <textarea class="f_input input-v1 _h-112 _bordered" placeholder="Сообщение"></textarea>
-                            </div>
-                            <div class="input_w">
-                              <button class="btn_v1 btn_blue review_btn">Ответить</button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="review-header">
-                        <div class="review-author"><a class="review-author_avatar" href="#"><img src="images/review_author_1.png"></a></div>
-                        <div class="review-author_name"><a class="gl_link _clr_turqoise" href="#">Евгений Александров</a></div>
-                        <div class="review-author_date _clr_gray">14.02.2016, 18:22</div>
-                      </div>
-                      <div class="review-content">
-                        <p>Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.</p>
-                        <p>Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания.</p>
-                      </div>
-                      <div class="review-footer reviewFooter">
-                        <ul class="review-footer_controls">
-                          <li><a class="review-btn _like" href="#">5</a></li>
-                          <li><a class="review-btn _dislike" href="#">2</a></li>
-                          <li><a class="gl_link _clr_blue answerBtn" href="#" data-text-toggle="Отменить ответ">Ответить</a></li>
-                        </ul>
-                        <div class="review-footer_answer reviewAnswer">
-                          <form action="#">
-                            <div class="input_w _answer-name">
-                              <input class="f_input input-v1 _bordered" placeholder="Имя"/>
-                            </div>
-                            <div class="input_w _answer_text">
-                              <textarea class="f_input input-v1 _h-112 _bordered" placeholder="Сообщение"></textarea>
-                            </div>
-                            <div class="input_w">
-                              <button class="btn_v1 btn_blue review_btn">Ответить</button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
+                    <li> 
+                      <div class="similar-block_count-val"><a class="gl_link _clr_turqoise" href="#">98</a></div>
+                      <p>Квартир(ы) <br>у этой компании</p>
                     </li>
                   </ul>
                 </div>
-                <div class="review-show_more">
-                  <button class="btn_v1 btn_blue review_btn">Показать еще</button>
-                </div>
+                <ul class="similar_offers">
+                  <li>
+                    <div class="similar-block">
+                      <div class="complex-block_object-img"><img src="images/object_5.jpg"></div>
+                      <div class="complex-block_content">
+                        <div class="complex-block_content-head">
+                          <p><span class="complex-block_caption"><a class="gl_link" href="card.html">2-комнатная квартира, 56 кв.м., с видом на парк, с отделкой</a></span></p>
+                          <p class="_clr_gray">пос. Мурино, ул. Новая</p>
+                          <div class="similar-block_info">
+                            <div class="company-info_object-price">4 560 000 руб.</div>
+                            <div class="company-info_object-proposition">Ипотека, рассрочка</div>
+                          </div>
+                        </div>
+                        <div class="complex-block_content-body">
+                          <ul class="complex-block_prices">
+                            <li>
+                              <div class="complex-block_option"><span class="mb complex-block_option-icon i-metro"></span><span class="mb">Девяткино. 17 мин.пешком</span></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="complex-block_content-footer">
+                          <div class="complex-block_info">
+                            <div class="complex-block_status"><span class="complex-block_status-item mob_ver-1"><a class="favBtn _clr_blue fav_link" href="#"><span class="mb i-heart"></span><span class="mb mob_hidden">В избранное</span></a></span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="similar-block">
+                      <div class="complex-block_object-img"><img src="images/object_5.jpg"></div>
+                      <div class="complex-block_content">
+                        <div class="complex-block_content-head">
+                          <p><span class="complex-block_caption"><a class="gl_link" href="card.html">2-комнатная квартира, 56 кв.м., с видом на парк, с отделкой</a></span></p>
+                          <p class="_clr_gray">пос. Мурино, ул. Новая</p>
+                          <div class="similar-block_info">
+                            <div class="company-info_object-price">4 560 000 руб.</div>
+                            <div class="company-info_object-proposition">Ипотека, рассрочка</div>
+                          </div>
+                        </div>
+                        <div class="complex-block_content-body">
+                          <ul class="complex-block_prices">
+                            <li>
+                              <div class="complex-block_option"><span class="mb complex-block_option-icon i-metro"></span><span class="mb">Девяткино. 17 мин.пешком</span></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="complex-block_content-footer">
+                          <div class="complex-block_info">
+                            <div class="complex-block_status"><span class="complex-block_status-item mob_ver-1"><a class="favBtn _clr_blue fav_link" href="#"><span class="mb i-heart"></span><span class="mb mob_hidden">В избранное</span></a></span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="similar-block">
+                      <div class="complex-block_object-img"><img src="images/object_5.jpg"></div>
+                      <div class="complex-block_content">
+                        <div class="complex-block_content-head">
+                          <p><span class="complex-block_caption"><a class="gl_link" href="card.html">2-комнатная квартира, 56 кв.м., с видом на парк, с отделкой</a></span></p>
+                          <p class="_clr_gray">пос. Мурино, ул. Новая</p>
+                          <div class="similar-block_info">
+                            <div class="company-info_object-price">4 560 000 руб.</div>
+                            <div class="company-info_object-proposition">Ипотека, рассрочка</div>
+                          </div>
+                        </div>
+                        <div class="complex-block_content-body">
+                          <ul class="complex-block_prices">
+                            <li>
+                              <div class="complex-block_option"><span class="mb complex-block_option-icon i-metro"></span><span class="mb">Девяткино. 17 мин.пешком</span></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="complex-block_content-footer">
+                          <div class="complex-block_info">
+                            <div class="complex-block_status"><span class="complex-block_status-item mob_ver-1"><a class="favBtn _clr_blue fav_link" href="#"><span class="mb i-heart"></span><span class="mb mob_hidden">В избранное</span></a></span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

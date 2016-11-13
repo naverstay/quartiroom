@@ -1,7 +1,7 @@
 include mixins.pug
 doctype html
 html(lang='ru')
-    +dev_head("Quartiroom Локация", false, false, true)
+    +dev_head("Quartiroom Отзывы и оценка", false, false, false, false, false, true)
 
     body
         .wrapper
@@ -10,9 +10,9 @@ html(lang='ru')
                 
                 .section.breadcrumbs_section._location-mode
                     .section-inner
-                        +breadcrumbs(['Главная', 'Недвижимость в Королеве'])
+                        +breadcrumbs(['Главная', 'Московская область', "Жилые комплексы в Королеве"])
                         
-                        .section-title Недвижимость в Королеве
+                        .section-title Отзывы и оценка ЖК "Королев Сити"
                             
                 div.main_content
                     .section-inner
@@ -28,6 +28,12 @@ html(lang='ru')
                                         a.gl_link(href='#location_tab_2')
                                             span.mb.complex-view_tab-icon.i-map_pin.mob_hidden
                                             span.mb на карте
+                                    li.filter-item
+                                        a.gl_link(href='#location_tab_3')
+                                            span.mb.complex-view_tab-icon.mob_hidden.i-pano
+                                            span.mb 
+                                                span Панорама 
+                                                span.mob_hidden  местности
                             
                             .tabBlock(data-tab-context='#location_switcher')
                                 #location_tab_1
@@ -53,6 +59,11 @@ html(lang='ru')
                                         .map-wrapper
                                             img(src='images/big_map.jpg')
                                             
+                                #location_tab_3
+                                    .location-block_map-holder
+                                        .map-wrapper
+                                            img(src='images/big_map.jpg')
+                                            
                             .location-block_params
                                 .location-block_param-box
                                     p Россия, Московская область, <br> город областного значения Королев
@@ -74,156 +85,53 @@ html(lang='ru')
                                     p 
                                         span.mob_hidden Жилой фонд: <br> 
                                         span 2 430 многоквартирных домов <br> 34 567 индивидуальных хозяйств
-                                    
-                        .company-block.companyBlock.opened._location_mode
-                            .company-block_caption 
-                                span Квартиры
-                            .location-info_box.mob_hidden._location-image
-                                img(src='images/loc_3.jpg')
-                                
-                            .location-info_box._location-prices
-                                dl.company-unit_info
-                                    dt Студии
-                                    dd от 1 700 000
-                                    dt 1-комнатные
-                                    dd от 2 300 000
-                                    dt 2-комнатные  
-                                    dd от 3 900 000
-                                    dt 3-комнатные
-                                    dd от 8 300 000
-                                    dt 4-комнатные
-                                    dd от 12 300 000
-                                    dt 5-комнатные  
-                                    dd от 15 900 000
-                                    dt 6-комнатные
-                                    dd от 70 600 000
-                                    dt Апартаменты 
-                                    dd от 10 300 000
-                                    dt Лофты
-                                    dd от 150 000
-                                    dt Квартиры в таунхаусах
-                                    dd от 150 000
-                                    
-                            .location-info_box._location-tags
-                                ul.complex-block_tags._clr_gray
-                                    li: .complex-tag квартиры с окнами на парк
-                                    li: .complex-tag квартиры с панорамным остеклением
-                                    li: .complex-tag квартиры рядом с рекой
-                                    li: .complex-tag видовые квартиры
-                                    li: .complex-tag квартиры с военной ипотекой
-                                    li: .complex-tag квартиры в таунхаусах с газом
-                                    li: .complex-tag недорогие лофты
                                         
-                        .company-block.companyBlock.opened._location_mode
-                            .company-block_caption 
-                                span Загородная недвижимость
-                            .location-info_box.mob_hidden._location-image
-                                img(src='images/loc_3.jpg')
-                                
-                            .location-info_box._location-prices
-                                dl.company-unit_info
-                                    dt Участки от 8 соток 
-                                    dd от 1 700 000
-                                    dt Дачные участки с домом от 12 кв.м.
-                                    dd от 2 300 000
-                                    dt Коттеджи 34 кв.м с участком
-                                    dd от 3 900 000
-                                    
-                            .location-info_box._location-tags
-                                ul.complex-block_tags._clr_gray
-                                    li: .complex-tag квартиры с окнами на парк
-                                    li: .complex-tag квартиры с панорамным остеклением
-                                    li: .complex-tag квартиры рядом с рекой
-                                    li: .complex-tag видовые квартиры
-                                    li: .complex-tag квартиры с военной ипотекой
-                                    li: .complex-tag квартиры в таунхаусах с газом
-                                    li: .complex-tag недорогие лофты
-                                        
-                        .company-block.companyBlock.opened._location_mode
-                            .company-block_caption 
-                                span Жилые комплексы
-                            .location-info_box.mob_hidden._location-image
-                                img(src='images/loc_3.jpg')
-                                
-                            .location-info_box._location-prices
-                                dl.company-unit_info
-                                    dt Эконом 
-                                    dd от 1 700 000
-                                    dt Комфорт
-                                    dd от 2 300 000
-                                    dt Бизнес
-                                    dd от 3 900 000
-                                    dt Элитный
-                                    dd от 3 900 000
-                                    
-                            .location-info_box._location-tags
-                                ul.complex-block_tags._clr_gray
-                                    li: .complex-tag квартиры с окнами на парк
-                                    li: .complex-tag квартиры с панорамным остеклением
-                                    li: .complex-tag квартиры рядом с рекой
-                                    li: .complex-tag видовые квартиры
-                                    li: .complex-tag квартиры с военной ипотекой
-                                    li: .complex-tag квартиры в таунхаусах с газом
-                                    li: .complex-tag недорогие лофты
-                                        
-                        .company-block.companyBlock.opened._location_mode
-                            .company-block_caption 
-                                span Коттеджные поселки
-                            .location-info_box.mob_hidden._location-image
-                                img(src='images/loc_3.jpg')
-                                
-                            .location-info_box._location-prices
-                                dl.company-unit_info
-                                    dt Эконом 
-                                    dd от 1 700 000
-                                    dt Комфорт
-                                    dd от 2 300 000
-                                    dt Бизнес
-                                    dd от 3 900 000
-                                    dt Элитный
-                                    dd от 3 900 000
-                                    
-                            .location-info_box._location-tags
-                                ul.complex-block_tags._clr_gray
-                                    li: .complex-tag квартиры с окнами на парк
-                                    li: .complex-tag квартиры с панорамным остеклением
-                                    li: .complex-tag квартиры рядом с рекой
-                                    li: .complex-tag видовые квартиры
-                                    li: .complex-tag квартиры с военной ипотекой
-                                    li: .complex-tag квартиры в таунхаусах с газом
-                                    li: .complex-tag недорогие лофты
-                                        
-                        .company-block.companyBlock.opened._location_mode
-                            .company-block_caption 
-                                span Дачные поселки
-                            .location-info_box.mob_hidden._location-image
-                                img(src='images/loc_3.jpg')
-                                
-                            .location-info_box._location-prices
-                                dl.company-unit_info
-                                    dt Эконом 
-                                    dd от 1 700 000
-                                    dt Комфорт
-                                    dd от 2 300 000
-                                    dt Бизнес
-                                    dd от 3 900 000
-                                    dt Элитный
-                                    dd от 3 900 000
-                                    
-                            .location-info_box._location-tags
-                                ul.complex-block_tags._clr_gray
-                                    li: .complex-tag квартиры с окнами на парк
-                                    li: .complex-tag квартиры с панорамным остеклением
-                                    li: .complex-tag квартиры рядом с рекой
-                                    li: .complex-tag видовые квартиры
-                                    li: .complex-tag квартиры с военной ипотекой
-                                    li: .complex-tag квартиры в таунхаусах с газом
-                                    li: .complex-tag недорогие лофты
-                                        
+                        
                         .company-block.companyBlock
-                            .company-block_caption 
+                            .company-block_caption
+                                span.collapseBlockBtn В продаже
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+
+                            .company-info_box.infoBlock
+                                p
+                                    span._clr_gray-dark Сейчас у компании: 
+                                    span 234 квартиры 
+                                    span._clr_gray-dark и 
+                                    span 15 таунхаусов
+
+                                .company-unit_info_w
+                                    dl.company-unit_info
+                                        dt Студии
+                                        dd от 1 700 000
+                                        dt 1-комнатные
+                                        dd от 2 300 000
+                                        dt 2-комнатные  
+                                        dd от 3 900 000
+
+                                    dl.company-unit_info
+                                        dt 3-комнатные
+                                        dd от 5 600 000
+                                        dt Коммерческие 
+                                            span.mob_hidden помещения
+                                        dd от 10 300 000
+                                        dt Кладовки
+                                        dd от 150 000
+
+                        .company-block.companyBlock._info-mode
+                            .company-block_caption._mob_caption
                                 span.collapseBlockBtn Инфраструктура
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
+                            .company-block-collapsed_info
+                                dl.company-block_options
+                                    dt Медицина: 
+                                    dd 7
+
+                                    dt Образование:
+                                    dd 6
+
+                                    dt Магазины и досуг: 
+                                    dd 5
+
                             .company-info_box.infoBlock
                                 ul.location-infrastructure
                                     li
@@ -233,7 +141,7 @@ html(lang='ru')
                                                 span.mb.mob_hidden._icon-on.i-plus_w
                                                 span.mb.mob_hidden._icon-off.i-plus
                                                 span.mb Мед. учереждения: 2
-                                                
+
                                     li
                                         label.check-emul._check-v4
                                             input.inp-hidden(type='checkbox')
@@ -241,7 +149,7 @@ html(lang='ru')
                                                 span.mb.mob_hidden._icon-on.i-face_w
                                                 span.mb.mob_hidden._icon-off.i-face
                                                 span.mb Детский сад: 3
-                                                
+
                                     li
                                         label.check-emul._check-v4
                                             input.inp-hidden(type='checkbox')
@@ -249,7 +157,7 @@ html(lang='ru')
                                                 span.mb.mob_hidden._icon-on.i-cart_w
                                                 span.mb.mob_hidden._icon-off.i-cart
                                                 span.mb Магазин: 12
-                                                
+
                                     li
                                         label.check-emul._check-v4
                                             input.inp-hidden(type='checkbox')
@@ -264,7 +172,7 @@ html(lang='ru')
                                                 span.mb.mob_hidden._icon-on.i-plus_w
                                                 span.mb.mob_hidden._icon-off.i-plus
                                                 span.mb Поликлиники: 2
-                                                
+
                                     li
                                         label.check-emul._check-v4
                                             input.inp-hidden(type='checkbox')
@@ -272,7 +180,7 @@ html(lang='ru')
                                                 span.mb.mob_hidden._icon-on.i-cart_w
                                                 span.mb.mob_hidden._icon-off.i-cart
                                                 span.mb Гипермаркет: 1
-                                                
+
                                     li
                                         label.check-emul._check-v4
                                             input.inp-hidden(type='checkbox')
@@ -280,127 +188,16 @@ html(lang='ru')
                                                 span.mb.mob_hidden._icon-on.i-book_w
                                                 span.mb.mob_hidden._icon-off.i-book
                                                 span.mb Школа: 3
-                                                
-                                .location-infrastructure_total
+
+                                //-.location-infrastructure_total
                                     span: b 2,4 поликлиники на 1000 чел.
                                     span В среднем по Московской области - 3,1 поликлиники на 1000 чел.
-                                                
+
                                 .company-info_objects-wrapper
                                     .company-info_objects-map._full-width
                                         .map-wrapper
                                             img(src='images/big_map.jpg')
-                                        
-                        .company-block.companyBlock
-                            .company-block_caption 
-                                span.collapseBlockBtn Объекты компании
-                                a.company-block_caption-close.collapseBlockBtn(href='#')
-                            .company-info_box.infoBlock
-                                .company-info_objects
-                                    ul.company-info_objects-filter
-                                        li
-                                            label.check-emul._check-v1
-                                                input.inp-hidden(type='checkbox')
-                                                span.check-text Жилые комплексы
-                                    
-                                        li
-                                            label.check-emul._check-v1
-                                                input.inp-hidden(type='checkbox')
-                                                span.check-text Студии
-                                    
-                                        li
-                                            label.check-emul._check-v1
-                                                input.inp-hidden(type='checkbox')
-                                                span.check-text Комнаты
-                                    
-                                        li
-                                            label.check-emul._check-v1
-                                                input.inp-hidden(type='checkbox')
-                                                span.check-text 1-комн.кв.
-                                    
-                                        li
-                                            label.check-emul._check-v1
-                                                input.inp-hidden(type='checkbox')
-                                                span.check-text 2-комн.кв.
-                                    
-                                        li
-                                            label.check-emul._check-v1
-                                                input.inp-hidden(type='checkbox')
-                                                span.check-text 3-комн.кв.
-                                    
-                                        li
-                                            label.check-emul._check-v1
-                                                input.inp-hidden(type='checkbox')
-                                                span.check-text Участки
-                                                
-                                    .company-info_objects-wrapper
-                                        .company-info_objects-map
-                                            .map-wrapper
-                                                img(src='images/big_map.jpg')
-                                            
-                                        .company-info_objects-info.heightFillerParent
-                                            .company-info_objects-description
-                                                .gl_table
-                                                    .gl_table_cell
-                                                        p
-                                                            span Ул. Народного Ополчения, 34, <br> ЖК "Квартал Руполис-Растуново", 
-                                                            span.mob_hidden <br>
-                                                            span корпус 14
-                                                        p.company-info_objects-count
-                                                            span В этом доме: 
-                                                            span._val 456 квартир
-                                        
-                                            .company-info_objects-container.heightFiller
-                                                ul.company-info_objects-list.objectsList
-                                                    +loop_while(3)
-                                                        li
-                                                            .company-info_object
-                                                                p.clearfix
-                                                                    a.fl._clr_blue(href='#') 2-комн. кв.
-                                                                    a.fr.favBtn._clr_blue.fav_link(href='#') 
-                                                                        span.i-heart
-                                                                        
-                                                                p.clearfix
-                                                                    span.fl._price 34 кв. м.
-                                                                    span.fl 5/9 эт.
-                                                                    span.fr 4 560 000 руб.
-                                                                    
-                                                        li
-                                                            .company-info_object
-                                                                p.clearfix
-                                                                    a.fl._clr_blue(href='#') 2-комн. кв.
-                                                                    a.fr.favBtn._clr_blue.fav_link(href='#')
-                                                                        span.i-heart
-                                                                p.clearfix
-                                                                    span.fl._price 34 кв. м.
-                                                                    span.fl 5/9 эт.
-                                                                    span.fr 4 560 000 руб.
-                                                    +loop_while(7)
-                                                        li.mob_hidden
-                                                            .company-info_object
-                                                                p.clearfix
-                                                                    a.fl._clr_blue(href='#') 2-комн. кв.
-                                                                    a.fr.favBtn._clr_blue.fav_link(href='#') 
-                                                                        span.i-heart
-                                                                        
-                                                                p.clearfix
-                                                                    span.fl._price 34 кв. м.
-                                                                    span.fl 5/9 эт.
-                                                                    span.fr 4 560 000 руб.
-                                                                    
-                                                        li.mob_hidden
-                                                            .company-info_object
-                                                                p.clearfix
-                                                                    a.fl._clr_blue(href='#') 2-комн. кв.
-                                                                    a.fr.favBtn._clr_blue.fav_link(href='#')
-                                                                        span.i-heart
-                                                                p.clearfix
-                                                                    span.fl._price 34 кв. м.
-                                                                    span.fl 5/9 эт.
-                                                                    span.fr 4 560 000 руб.
-                                                                    
-                                                    li.dt_hidden.text_center
-                                                        a.btn_v1.btn_transp_blue.show_more.showMoreBtn(href='#') Показать еще
-                                                        
+
                         .company-block.companyBlock._info-mode
                             .company-block_caption._mob_caption
                                 span.collapseBlockBtn Аналитика и цены
@@ -486,21 +283,6 @@ html(lang='ru')
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                                 
                             .company-info_box.infoBlock
-                                .company-info_features._flipped
-                                    .company-info_features-box
-                                        .review-content
-                                            p На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. 
-                                        
-                                    .company-info_features-box._last
-                                        .company-info_total-rate: ._val 4,2
-                                        .company-info_total-rate
-                                            span._clr_gray-dark Оценка <br> редакции
-
-                        .company-block.companyBlock
-                            .company-block_caption
-                                span.collapseBlockBtn Рейтинг компании: 4,2
-                                a.company-block_caption-close.collapseBlockBtn(href='#')
-                            .company-info_box.infoBlock
                                 .company-info_features
                                     .company-info_features-box._first
                                         .company-info_features-rate
@@ -532,20 +314,23 @@ html(lang='ru')
                                                 .feature-rate_scale
                                                     div(style='width:20%;')
                                                 ._val 4,8
+                                                    
+                                .review-content
+                                    p На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. 
+                                    
+                                    p Столько же жителей населяет Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. 
 
-                                    .company-info_features-box._center
-                                        .company-info_total-rate: ._val 4,2
-                                        .company-info_total-rate
-                                            span._clr_gray-dark Общая оценка <br>
-                                            span на основании: 
-                                                a.gl_link._clr_default(href='#') 345 отзывов
-
+                        .company-block.companyBlock
+                            .company-block_caption
+                                span.collapseBlockBtn Рейтинг комплекса: 4,2
+                                a.company-block_caption-close.collapseBlockBtn(href='#')
+                            .company-info_box.infoBlock
+                                .company-info_features
+                                    .company-info_features-box._first
+                                        p ЖК "Королев Сити" еще никто не оценивал
+                                                
                                     .company-info_features-box._last
-                                        p.text_left 
-                                            span Вы оценили ЖК "Королев Сити" 
-                                            br
-                                            span._clr_default на 3,8 балла
-
+                                        a.btn_v1.btn_blue.rate_btn.rateBtn(href='#') Оценить
 
                         .company-block.companyBlock
                             .company-block_caption

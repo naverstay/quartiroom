@@ -550,6 +550,7 @@
     top: 100% !important;
     left: 50% !important;
     margin-left: -50px;
+    line-height: normal;
 
     &.select2-container--open {
       .select2-selection--single {
@@ -925,7 +926,9 @@
 
   .noUi-base {
     cursor: pointer;
+  }
 
+  .noUi-connect {
     &:before {
       content: '';
       position: absolute;
@@ -935,6 +938,16 @@
       left: 0;
       height: 4px;
       background: #d4d4d4;
+    }
+  }
+
+  &._single {
+    .noUi-connect {
+      cursor: pointer;
+
+      &:before {
+        background: $gl_turquoise;
+      }
     }
   }
 
@@ -951,6 +964,7 @@
   }
 
   .noUi-origin {
+    z-index: 1;
     border-radius: 0;
     bottom: auto;
 
@@ -1052,9 +1066,52 @@
     .end {
 
     }
-
   }
 
+  .toddler-val-v2 & {
+    text-align: center;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0 5px;
+    line-height: 18px;
+    border: 1px solid $gl_gray_lines;
+
+    > span {
+      float: left;
+      width: 50%;
+      font-size: 14px;
+      position: relative;
+
+      &:first-child {
+        border-right: 1px solid $gl_gray_lines;
+      }
+
+      @include respond-to-max($resp_step_2) {
+        padding: 0 5px;
+        font-size: 13px;
+      }
+    }
+
+    .f_input {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .start,
+    .end {
+      cursor: pointer;
+    }
+
+    .label {
+      color: #848484;
+    }
+
+    .end {
+
+    }
+  }
 }
 
 .toddler-range {

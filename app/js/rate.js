@@ -11,7 +11,9 @@ setTimeout(function () {
 
 function continueLoading() {
 
-    initCardSliders();
+    initRatePopup();
+    
+    initLocationSlider();
 
     initTabScroller();
 

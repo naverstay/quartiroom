@@ -1,7 +1,7 @@
 include mixins.pug
 doctype html
 html(lang='ru')
-    +dev_head("Quartiroom Компания")
+    +dev_head("Quartiroom Компания", false, false, false, false, false, false, true)
 
     body
         .wrapper
@@ -257,12 +257,11 @@ html(lang='ru')
                                             span._clr_gray-dark Общая оценка <br>
                                             span на основании: 
                                                 a.gl_link._clr_default(href='#') 345 отзывов
-                                        
-                                    
+                                                                            
                                     .company-info_features-box._last
-                                        a.btn_v1.btn_blue.rate_btn(href='#') Оценить
+                                        a.btn_v1.btn_blue.rate_btn.rateBtn(href='#') Оценить
                                         
-                        .company-block.companyBlock
+                        .company-block.companyBlock._info-mode
                             .company-block_caption
                                 span.collapseBlockBtn Отзывы
                                 a.company-block_caption-close.collapseBlockBtn(href='#')

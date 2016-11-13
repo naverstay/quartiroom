@@ -159,6 +159,12 @@
   font-family: $PTRoubleSans;
 }
 
+._wnw {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .mob_hidden {
   @include respond-to-max($mob_menu_w) {
     display: none !important;
@@ -177,6 +183,18 @@
   }
 }
 
+._mob_if_opened {
+
+  @include respond-to-max($resp_step_2) {
+    display: none;
+    margin-bottom: 10px;
+    
+    .opened & {
+      display: block;
+    }
+  }
+}
+
 .tablet_hidden {
   @include respond-to-max($resp_l) {
     display: none !important;
@@ -186,6 +204,12 @@
 .dt_hidden {
   @include respond-to-min($mob_menu_w) {
     display: none !important;
+  }
+}
+
+.dt_fr {
+  @include respond-to-min($mob_menu_w) {
+    float: right;
   }
 }
 

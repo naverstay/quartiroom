@@ -10,7 +10,7 @@
     
 - var uvao = ['Выхино-Жулебино','Капотня','Кузьминки','Лефортово','Люблино','Марьино','Некрасовка','Нижегородский','Печатники','Рязанский','Текстильщики','Южнопортовый'];
     
-mixin dev_head(page_title, index, companies, location, complex, card, cart)
+mixin dev_head(page_title, index, companies, location, complex, card, rate, company)
     head
         title=page_title
         | 
@@ -34,7 +34,7 @@ mixin dev_head(page_title, index, companies, location, complex, card, cart)
         script(src='js/lib/jquery-ui-1.11.4.js')
         script(src='js/lib/slick.js')
         script(src='js/lib/jquery.inputmask.bundle.js')
-        script(src='js/lib/jquery.easy-autocomplete.js')
+        //script(src='js/lib/jquery.easy-autocomplete.js')
         script(src='js/lib/select2.js')
         script(src='js/main.js')
         | 
@@ -63,6 +63,12 @@ mixin dev_head(page_title, index, companies, location, complex, card, cart)
             script(src='js/location.js')
             | 
             | <!--endbuild-->
+        - if (company)
+            | 
+            | <!--build:js js/company.min.js -->
+            script(src='js/company.js')
+            | 
+            | <!--endbuild-->
         - if (complex)
             script(src='//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.4.1/es5-shim.js')
             script(src='//cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.1/es6-shim.js')
@@ -77,14 +83,19 @@ mixin dev_head(page_title, index, companies, location, complex, card, cart)
         - if (card)
             | 
             | <!--build:js js/card.min.js -->
+            script(src='js/lib/d3.min.js')
+            script(src='js/lib/moment.min.js')
+            script(src='js/lib/nouislider.js')
             script(src='js/card.js')
             | 
             | <!--endbuild-->
-        - if (cart)
+        - if (rate)
             | 
-            | <!--build:js js/cart.min.js -->
-            script(src='js/lib/jquery.inputmask.bundle.js')
-            script(src='js/cart.js')
+            | <!--build:js js/rate.min.js -->
+            script(src='js/lib/d3.min.js')
+            script(src='js/lib/moment.min.js')
+            script(src='js/lib/nouislider.js')
+            script(src='js/rate.js')
             | 
             | <!--endbuild-->
             
@@ -119,18 +130,18 @@ mixin header(active)
                             li: a.gl_link(href='complexes.html') Новостройки
                             li: a.gl_link(href='complexes_2.html') Вторичное жилье
                             li: a.gl_link(href='objects.html') 1-комнатные
-                            li: a.gl_link(href='location.html') 2-комнатные
+                            li: a.gl_link(href='objects_2.html') 2-комнатные
                     li.main-menu_item.menuItem._dropdown-menu
                         span.gl_link Новостройки
                         ul.main-menu_sub-menu
-                            li: a.gl_link(href='#') Все новостройки
-                            li: a.gl_link(href='#') Москва
-                            li: a.gl_link(href='#') Московская область
+                            li: a.gl_link(href='rate.html') Все новостройки
+                            li: a.gl_link(href='location.html') Москва
+                            li: a.gl_link(href='card.html') Московская область
                         
                     li.main-menu_item.menuItem
                         a.gl_link(href='companies.html') Компании
                     li.main-menu_item.menuItem
-                        a.gl_link(href='#') Полезное
+                        a.gl_link(href='company.html') Полезное
                     
 
 mixin footer()
@@ -190,6 +201,107 @@ mixin breadcrumbs(list)
                 - else
                     a.gl_link(href= item == 'Главная' ? 'index.html' : (item == 'Компании' ? 'companies.html' : 'products.html'))=item
             
+mixin prices()
+    .object_card-rates
+        .company-info_features-rate
+            span.feature-label.fl
+                span 3 345 000 руб. 
+            span.feature-rate.fl
+                .feature-rate_scale
+                    div(style='width:80%;')
+            span.feature-label.fl Эта квартира
+
+        .company-info_features-rate
+            span.feature-label.fl 3 545 000 руб.
+            span.feature-rate.fl
+                .feature-rate_scale
+                    div(style='width:60%;')
+            span.feature-label.fl В среднем по району
+
+        .company-info_features-rate
+            span.feature-label.fl 3 745 000 руб.
+            span.feature-rate.fl
+                .feature-rate_scale
+                    div(style='width:30%;')
+            span.feature-label.fl В среднем по округу
+            
+mixin  variants()
+    .filter-form: form(action='#')
+        .filter-container
+            .filter-cell._col-4
+                .form-cell.select-box-v1._bordered.select-search-v1
+                    select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Выбрать банк')
+                        option
+                        option Банк 1
+                        option Банк 2
+                        option Банк 3
+                        option Банк 4
+                        option Банк 5
+
+            .filter-cell._col-1.filterBlock
+                .form-cell.toddler-val-v2
+                    .toddler-val.select-box-v3
+                        span.btn_v1.filter_btn.text_left._wnw Первый взнос, руб.
+                        span.start.btn_v1.filter_btn: input.f_input.input-v3.val
+                        select.toddlerSelect(data-target='.start' )
+                            option 0
+                            option 10000
+                            option 50000
+                            option 100000
+                            option 500000
+                            option 1000000
+                            option 2500000
+                            option 5000000
+                        //-span.label.hide &mdash;
+                        //-span.end.hide: input.f_input.input-v3.val
+                        //-select.toddlerSelect(data-target='.end' )
+                            option 0
+                            option 10000
+                            option 50000
+                            option 100000
+                            option 500000
+                            option 1000000
+                            option 2500000
+                            option 5000000
+
+                .form-cell.toddler-v1._single
+                    .filterToddler(data-format='money' data-single='true' data-min=0 data-max=5000000)
+                .toddler-range
+                    .fl 100 000
+                    .fr 2 500 000
+                        
+            .filter-cell._col-1.filterBlock
+                .form-cell.toddler-val-v2
+                    .toddler-val.select-box-v3
+                        span.btn_v1.filter_btn.text_left._wnw Срок кредитования
+                        span.start.btn_v1.filter_btn: input.f_input.input-v3.val
+                        select.toddlerSelect(data-target='.start' )
+                            - for (var i=1; i<21; i++)
+                                option=i
+                        //-span.label.hide &mdash;
+                        //-span.end.hide: input.f_input.input-v3.val
+                        //-select.toddlerSelect(data-target='.end' )
+                            - for (var i=1; i<21; i++)
+                                option=i
+                            
+                .form-cell.toddler-v1._single
+                    .filterToddler(data-format='money' data-single='true' data-plural-suffix_1=true data-plural='год,года,лет' data-min=1 data-max=20)
+                .toddler-range
+                    .fl 1 год 
+                    .fr 20 лет
+                        
+            .filter-cell._col-4
+                p._clr_gray._price-label Общая сумма выплат
+                .object_card-total_price 1 500 890 руб.
+            
+            .filter-cell._col-1.dt_fr
+                p._clr_gray._price-label Плата за пользование кредитом
+                .object_card-total_price 1 400 500 руб.
+                    
+            .filter-cell._col-1
+                p._clr_gray._price-label Ежемесячный платеж
+                .object_card-total_payment 42 500 руб.
+                    
 mixin review_footer()
     .review-footer.reviewFooter
         ul.review-footer_controls

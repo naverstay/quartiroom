@@ -14,6 +14,75 @@
     padding-right: 26%;
     margin-right: -1%;
   }
+
+  &.filter-holder-v1 {
+    padding-right: 1%;
+
+    .slick-list {
+      min-height: 30px;
+
+      @include respond-to-min($resp_step_2) {
+        min-height: 44px;
+      }
+    }
+
+    .filter-list {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        right: -30px;
+        left: -30px;
+        background: $gl_gray_lines;
+      }
+
+      @include respond-to-min($resp_l) {
+        .filter-item {
+          padding-right: 44px;
+        }
+      }
+    }
+  }
+
+  &.filter-holder-v2 {
+    padding-right: 1%;
+
+    .slick-list {
+      min-height: 30px;
+    }
+
+    .filter-list {
+      position: relative;
+      line-height: 20px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        right: -30px;
+        left: -30px;
+        background: $gl_gray_lines;
+      }
+
+      @include respond-to-min($resp_l) {
+        .filter-item {
+          padding-right: 44px;
+        }
+      }
+    }
+
+    @include respond-to-min($resp_step_2) {
+      margin-top: 10px;
+
+      .filter-cell {
+        margin-bottom: 12px;
+      }
+    }
+  }
 }
 
 .filter-list {
@@ -49,6 +118,15 @@
       right: 0;
       left: 0;
       height: 6px;
+    }
+  }
+
+  .filter-holder-v1 &,
+  .filter-holder-v2 & {
+    .gl_link {
+      &:before {
+        height: 5px;
+      }
     }
   }
 
@@ -532,37 +610,6 @@
       }
     }
 
-    .feature-rate {
-      width: 180px;
-      padding-right: 35px;
-
-      &_scale {
-        position: relative;
-        background: #eee;
-        height: 14px;
-        border-radius: 2px;
-
-        div {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          border-radius: inherit;
-          background: $gl_turquoise;
-        }
-      }
-
-      @include respond-to-min($resp_step_2) {
-        width: 210px;
-      }
-
-      ._val {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-    }
-
     .company-info_features-box {
       margin-bottom: 5px;
 
@@ -659,9 +706,13 @@
       color: $gl_white;
       font-weight: 600;
       font-size: 16px;
+      position: relative;
+      z-index: 1;
     }
 
     &-proposition {
+      position: relative;
+      z-index: 1;
       float: right;
       color: $gl_white;
       font-size: 13px;
@@ -962,6 +1013,40 @@
   }
 }
 
+.feature-rate {
+  width: 180px;
+  padding-right: 35px;
+
+  &_scale {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+    background: #eee;
+    height: 14px;
+    border-radius: 2px;
+
+    div {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: inherit;
+      background: $gl_turquoise;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    width: 210px;
+  }
+
+  ._val {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
 .map-wrapper {
   position: absolute;
   top: 0;
@@ -1155,7 +1240,7 @@
 
       img {
         display: block;
-        max-width: 100%;
+        width: 100%;
       }
     }
 
@@ -1242,8 +1327,8 @@
       margin-top: -7px;
 
       .filter-item {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
       }
     }
 
@@ -1252,13 +1337,17 @@
       vertical-align: top;
       padding-right: 0;
 
+      @include respond-to-max($resp_step_2) {
+        margin-bottom: 9px;
+      }
+
       .gl_link {
         @include transition_all(background .3s, color .3s);
         font-size: 14px;
         text-transform: uppercase;
-        
+
         &:before {
-          display: none;
+          height: 5px;
         }
       }
 
@@ -1270,6 +1359,10 @@
           line-height: 44px;
           padding-left: 30px;
           padding-right: 30px;
+
+          &:before {
+            display: none;
+          }
         }
 
         &.ui-tabs-active .gl_link {
@@ -1388,6 +1481,10 @@
     padding: 20px 30px 10px;
     margin: 0 -30px 9px;
 
+    &._info-mode {
+      padding-top: 14px;
+    }
+
     &.opened {
       padding-bottom: 5px;
       border-color: $gl_gray_light;
@@ -1416,13 +1513,59 @@
     }
   }
 
+  &-collapsed_info {
+    .opened & {
+      display: none;
+    }
+  }
+
+  &_options {
+    @extend %clearfix;
+    margin-left: -33px;
+    line-height: 1;
+
+    @include respond-to-max($resp_step_2) {
+      display: none;
+      margin-bottom: 14px;
+
+      .opened & {
+        display: block;
+      }
+    }
+
+    dt, dd {
+      float: left;
+      margin-bottom: 7px;
+    }
+
+    dt {
+      color: #696969;
+      padding-left: 33px;
+
+      @include respond-to-max($resp_step_2) {
+        clear: both;
+      }
+    }
+
+    dd {
+      padding-left: 5px;
+    }
+  }
+
   &_caption {
     @include transition_all(color .3s);
     font: 16px/20px $FontfabricMullerRegular;
-    padding-right: 20px;
+    padding-right: 26px;
     margin-bottom: 6px;
     position: relative;
     color: #55a9b6;
+
+    &._mob_caption {
+
+      @include respond-to-max($resp_step_2) {
+        line-height: 28px;
+      }
+    }
 
     .opened & {
       color: $default_t_color;
@@ -1433,8 +1576,8 @@
       position: absolute;
       right: 0;
       top: 0;
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       border-radius: 100%;
       //background: #66cad8;
       color: #66cad8;
@@ -1444,9 +1587,10 @@
       &:before {
         @include transition_all(color .3s);
         content: $i-check-filled;
-        font-size: 20px;
-        line-height: 20px;
-        left: 10px;
+        font-size: 24px;
+        line-height: 24px;
+        //line-height: 1;
+        //left: 10px;
       }
 
       .opened & {
@@ -1454,24 +1598,42 @@
         color: #b8b8b8;
 
         &:before {
-          content: $i-cross;
+          //content: $i-cross;
+          font-size: 20px;
+          content: $i-close_2;
         }
+      }
+
+      @include respond-to-max($resp_step_2) {
+        @include transform_rotate(-90);
       }
     }
 
     @include respond-to-min($resp_step_2) {
       font-size: 26px;
       line-height: 30px;
-      padding-right: 30px;
+      padding-right: 50px;
 
       &-close {
-        width: 30px;
-        height: 30px;
+        width: 48px;
+        height: 48px;
+        right: -7px;
+        top: -10px;
+
+        ._info-mode & {
+          top: 3px;
+        }
 
         &:before {
-          font-size: 30px;
-          line-height: 30px;
-          left: 30px;
+          font-size: 48px;
+          line-height: 48px;
+        }
+
+        .opened & {
+
+          &:before {
+            font-size: 26px;
+          }
         }
       }
     }

@@ -1,4 +1,5 @@
-var interval = 10; // ms
+var interval = 10;
+
 setTimeout(function () {
     if (main_script) {
         continueLoading();
@@ -10,7 +11,6 @@ setTimeout(function () {
 
 function continueLoading() {
 
-    initLocationSlider();
+    initRatePopup();    
 
 }
-

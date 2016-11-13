@@ -442,6 +442,7 @@
   @extend %icon_pseudo;
   float: left;
   font-size: 11px;
+  margin-bottom: 4px;
 
   &:before {
     content: $i-chevron_right;
@@ -478,6 +479,7 @@
 
   @include respond-to-min($resp_step_2) {
     font-size: 14px;
+    margin-bottom: 0;
 
     &:before {
       margin: 0 7px;

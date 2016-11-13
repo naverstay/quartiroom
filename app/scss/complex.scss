@@ -501,7 +501,7 @@
     font-size: 16px;
     font-weight: 700;
 
-    @include respond-to-min($resp_step_2) {
+    @include respond-to-min($resp_l) {
       font: 21px $FontfabricMullerRegular;
       position: absolute;
       top: 14px;
@@ -552,6 +552,11 @@
     overflow: hidden;
     width: 65%;
     letter-spacing: .015em;
+
+    ._object-mode & {
+      float: none;
+      width: auto;
+    }
 
     li {
       margin-bottom: 2px;
@@ -756,6 +761,10 @@
 
       ._object-mode & {
         margin-left: 233px;
+      }
+
+      .similar-block & {
+        
       }
     }
 
@@ -982,10 +991,33 @@
       max-width: 100%;
     }
 
+    .similar-block & {
+      overflow: hidden;
+      position: relative;
+      height: 60px;
+      
+      img {
+        min-height: 100%;
+      }
+    }
+    
     @include respond-to-min($resp_step_2) {
       margin: 0 -233px 0 0;
       width: 232px;
       padding: 26px;
+
+      .similar-block & {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        height: 210px;
+        float: none;
+        border-radius: 3px 3px 0 0;
+ 
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 
