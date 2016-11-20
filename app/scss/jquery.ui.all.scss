@@ -54,6 +54,7 @@
   }
 
   &.region_popup {
+    position: fixed !important;
 
     @include respond-to-max($resp_xxl) {
       position: absolute !important;
@@ -100,6 +101,10 @@
   //	background: #fff;
   background: transparentize(#000, .75);
 
+  .overlay_v1 & {
+    background: transparentize($default_t_color, .2);
+  }
+  
   .overlay_v2 & {
     background: transparentize(#585858, .85);
   }
@@ -158,6 +163,39 @@
     }
   }
 
+  .dialog_close_butt_mod_2 & {
+    @extend %icon_pseudo;
+    cursor: pointer;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    left: 5px;
+    //z-index: 1002;
+    text-align: center;
+    background: none;
+
+    &:before {
+      @include transition_all(color .3s);
+      content: $i-chevron_left;
+      color: #b6b6b6;
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      top: 22px;
+      right: 22px;
+      left: auto;
+
+      &:before {
+        content: $i-cross;
+        color: #b6b6b6;
+        font-size: 26px;
+      }
+    }
+  }
+
   .no_close_mod & {
     display: none !important;
   }
@@ -195,32 +233,20 @@
   }
 
   .dialog_g_size_2 & {
-    background: $gl_white;
-    height: 20px;
-    border-radius: 4px 4px 0 0;
-    position: relative;
-    z-index: 1;
-  }
+    background: #fff;
+    padding: 10px 10px 8px 38px;
+    font: 18px/20px $FontfabricMullerBold;
+    border-bottom: 1px solid $gl_gray_lines;
 
-  .dialog_g_size_3 & {
-    height: 20px;
-    border-radius: 2px 2px 0 0;
-    margin-bottom: -20px;
-    position: relative;
-    z-index: 1;
-
-    @include respond-to-min($resp_s) {
-      &:before {
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 100%;
-        border-top: 13px solid transparent;
-        border-right: 13px solid $gl_cool_black;
-      }
+    @include respond-to-min($resp_step_2) {
+      padding: 30px 52px 20px;
+      font: 26px/1.2 $FontfabricMullerRegular;
+      border-radius: 5px 5px 0 0;
+      border-bottom: 0;
     }
+        
   }
-
+  
   .title_center_mod & {
     text-align: center;
   }

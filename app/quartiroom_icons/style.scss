@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'quartiroom_icons';
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?u0ptle');
-  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?u0ptle#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.ttf?u0ptle') format('truetype'),
-    url('#{$icomoon-font-path}/quartiroom_icons.woff?u0ptle') format('woff'),
-    url('#{$icomoon-font-path}/quartiroom_icons.svg?u0ptle#quartiroom_icons') format('svg');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?yyz5fh');
+  src:  url('#{$icomoon-font-path}/quartiroom_icons.eot?yyz5fh#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.ttf?yyz5fh') format('truetype'),
+    url('#{$icomoon-font-path}/quartiroom_icons.woff?yyz5fh') format('woff'),
+    url('#{$icomoon-font-path}/quartiroom_icons.svg?yyz5fh#quartiroom_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -94,6 +94,11 @@
 .i-check_filled {
   &:before {
     content: $i-check_filled;
+  }
+}
+.i-clock {
+  &:before {
+    content: $i-clock;
   }
 }
 .i-builder {

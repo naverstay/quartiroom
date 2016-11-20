@@ -3,6 +3,7 @@ var body, html, doc, wnd,
     header,
     main_script = false,
     update_charts = true,
+    click_event,
     close_menu_timer,
     region_popup,
     rate_popup;
@@ -66,6 +67,8 @@ function domReady() {
     html = $('html');
     body = $('body');
     header = $('.header');
+
+    click_event = html.hasClass('touch') ? 'touchstart' : 'click';
 
     body.delegate('.openMobMenu', 'click', function () {
         clearTimeout(close_menu_timer);
@@ -154,11 +157,18 @@ function domReady() {
         return false;
 
     }).delegate('.menuItem', 'mouseenter', function () {
-        $(this).addClass('hovered');
+        $(this).addClass('hovered just_hovered');
     }).delegate('.menuItem', 'mouseleave', function () {
-        $(this).removeClass('hovered');
-    }).delegate('.menuItem', 'click', function () {
-        $(this).toggleClass('hovered');
+        $(this).removeClass('hovered just_hovered');
+    }).delegate('.menuItem', click_event, function () {
+        var item = $(this);
+
+        if (item.hasClass('just_hovered')) {
+            item.removeClass('just_hovered');
+        } else {
+            item.toggleClass('hovered');
+        }
+        
     }).delegate('.dropdownControl .dropdown-val', 'click', function () {
         $(this).closest('.dropdownControl').toggleClass('opened').find('input:first').focus();
     });
@@ -1010,14 +1020,14 @@ function initRatePopup() {
         modal: true,
         closeOnEscape: true,
         closeText: '',
-        dialogClass: 'dialog_g_size_1 dialog_close_butt_mod_1 region_popup',
+        dialogClass: 'dialog_g_size_2 dialog_close_butt_mod_2 rate_popup',
         appendTo: '.base',
-        width: 1200,
+        width: 790,
         draggable: true,
         collision: "fit",
         position: {my: "top center", at: "top center", of: window},
         open: function (event, ui) {
-            body.addClass('modal_opened overlay_v2');
+            body.addClass('modal_opened overlay_v1');
 
             setTimeout(function () {
                 initTabScroller();
@@ -1026,13 +1036,13 @@ function initRatePopup() {
             }, 10);
         },
         close: function (event, ui) {
-            body.removeClass('modal_opened overlay_v2');
+            body.removeClass('modal_opened overlay_v1');
         }
     });
 
-    $('.regionPopupBtn').on('click', function () {
+    $('.ratePopupBtn').on('click', function () {
 
-        region_popup.dialog('open');
+        rate_popup.dialog('open');
 
         return false;
     });

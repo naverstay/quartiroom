@@ -10,6 +10,22 @@ html {
 body {
   font: 14px/1.2 $OpenSans;
   color: $default_t_color;
+
+}
+
+.footer,
+.main_content,
+.section,
+.header {
+  @include transition_all(filter .3s);
+
+  .overlay_v1 & {
+    -webkit-filter: url(#blur);
+    filter: url(#blur);
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+  }
 }
 
 .hide {
@@ -82,10 +98,10 @@ body {
 }
 
 .main_content {
-  padding: 10px 0 1px;
+  padding: 10px 0 10px;
 
   @include respond-to-min($resp_step_2) {
-    padding-bottom: 10px;
+    //padding-bottom: 10px;
   }
 
   &._no-pad {
@@ -132,8 +148,32 @@ body {
 .section-title {
   font: 18px $FontfabricMullerBold;
 
+  &_controls {
+    @extend %clearfix;
+    clear: both;
+    margin: 10px 0 10px -14px;
+    letter-spacing: 0.02em;
+    
+    li {
+      float: left;
+      padding-left: 14px;
+    }
+
+    @include respond-to-min($resp_l) {
+      clear: none;
+      float: right;
+      margin: -5px 0 15px;
+    }
+  }
+
   @include respond-to-min($resp_step_2) {
     font-size: 30px;
+  }
+
+  @include respond-to-min($resp_l) {
+    &_text {
+      float: left;
+    }
   }
 }
 

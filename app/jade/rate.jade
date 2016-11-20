@@ -12,8 +12,13 @@ html(lang='ru')
                     .section-inner
                         +breadcrumbs(['Главная', 'Московская область', "Жилые комплексы в Королеве"])
                         
-                        .section-title Отзывы и оценка ЖК "Королев Сити"
+                        .section-title.clearfix
+                            .section-title_text Отзывы и оценка ЖК "Королев Сити"
                             
+                            ul.section-title_controls
+                                li: a.btn_v2.btn_blue.title_btn(href='#') Официальный сайт
+                                li: a.btn_v2.btn_blue.title_btn(href='#') Форум
+                                
                 div.main_content
                     .section-inner
                         .location-block
@@ -64,32 +69,152 @@ html(lang='ru')
                                         .map-wrapper
                                             img(src='images/big_map.jpg')
                                             
-                            .location-block_params
-                                .location-block_param-box
-                                    p Россия, Московская область, <br> город областного значения Королев
-                                .location-block_param-box
-                                    .location-block_param-table
-                                        .location-block_param-col
-                                            p Площадь:
-                                            p 23 456 тыс. кв. м
-                                        
-                                        .location-block_param-col
-                                            p Население:
-                                            p 345 650 чел
-                                        
-                                        .location-block_param-col
-                                            p Плотность <br> населения:
-                                            p 34 чел./кв.км
-                                            
-                                .location-block_param-box._last
-                                    p 
-                                        span.mob_hidden Жилой фонд: <br> 
-                                        span 2 430 многоквартирных домов <br> 34 567 индивидуальных хозяйств
-                                        
-                        
+                            .location-block_params-w.companyBlock
+                                a.company-block_caption-close.collapseBlockBtn.mob_invis(href='#')
+
+                                .location-block_params-table_w
+                                    .location-block_params-table
+                                        .location-block_param-unit
+                                            .location-block_param-caption
+                                                span.i-map_pin._clr_turqoise
+                                                span Адрес:
+                                            .location-block_param-info
+                                                p.location-block_name Московская обл.
+                                                p Областной центр, адресный район Красногорский район, д. Опалиха, ул. Фруктовая, дом 12
+    
+                                        .location-block_param-unit
+                                            .location-block_param-caption
+                                                span._clr_turqoise.i-clock
+                                                span время в пути
+                                            .location-block_param-info
+                                                .location-block_param-station
+                                                    p.location-block_name
+                                                        span.mb.complex-block_option-icon.i-metro
+                                                        span.mb Новослободская
+                                                    
+                                                    ul.complex-block_options
+                                                        li
+                                                            .complex-block_option
+                                                                span.mb.complex-block_option-icon.i-car
+                                                                span.mb 20 мин.
+        
+                                                        li
+                                                            .complex-block_option
+                                                                span.mb.complex-block_option-icon.i-bus
+                                                                span.mb 35 мин.
+        
+                                                        li
+                                                            .complex-block_option
+                                                                span.mb.complex-block_option-icon.i-pedestrian
+                                                                span.mb 45 мин.
+                                                    
+                                                .location-block_param-station
+                                                    p.location-block_name
+                                                        span.mb.complex-block_option-icon.i-metro
+                                                        span.mb Новослободская 2
+                                                        
+                                                    ul.complex-block_options
+                                                        li
+                                                            .complex-block_option
+                                                                span.mb.complex-block_option-icon.i-car
+                                                                span.mb 20 мин.
+        
+                                                        li
+                                                            .complex-block_option
+                                                                span.mb.complex-block_option-icon.i-bus
+                                                                span.mb 35 мин.
+        
+                                                        li
+                                                            .complex-block_option
+                                                                span.mb.complex-block_option-icon.i-pedestrian
+                                                                span.mb 45 мин.
+                                                
+                                        .location-block_param-unit._last
+                                            .location-block_param-caption
+                                                span.i-helmet._clr_turqoise
+                                                span Застройщик и срок сдачи
+                                            .location-block_param-info
+                                                p.location-block_name ГВСУ ЦЕНТР
+                                                p.location-block_name 2 квартал 2018 г.
+                                                
+                                                ul.complex-block_tags._clr_gray
+                                                    li: .complex-tag У реки
+                                                    li: .complex-tag Акция
+                                                    li: .complex-tag Военная ипотека
+                                                    li: .complex-tag Таунхаус
+                                                    li: .complex-tag У реки
+                                                    li: .complex-tag Акция
+
+                                .location-block_more.mob_vis
+                                    .company-block_caption
+                                        span.collapseBlockBtn.company-block_caption-link Объекты в комплексе 
+                                        a.company-block_caption-close.collapseBlockBtn(href='#')
+                                                
+                                .company-info_box.infoBlock
+                                    .location-block_more
+                                        .company-block_caption.mob_invis
+                                            span Объекты в комплексе 
+                                                
+                                        .location-block_features
+                                            //-.location-block_col.mob_hidden &nbsp;
+                                            //-.location-block_col._mob_col_wide
+                                                
+                                        .location-block_features._mob_pad
+                                            .location-block_col
+                                                dl.company-unit_info
+                                                    dt._clr_gray-dark Студии
+                                                    dd 986
+                                                    dt._clr_gray-dark 1КК
+                                                    dd 1232
+                                                    dt._clr_gray-dark 2КК
+                                                    dd 234
+                                                    dt._clr_gray-dark 3КК
+                                                    dd 195
+                                                    dt._clr_gray-dark Квартир в таунхаусах 
+                                                    dd 120
+                                                    
+                                            .location-block_col
+                                                dl.company-unit_info
+                                                    dt._clr_gray-dark Корпусов - 15
+                                                    dd 15
+                                                    dt._clr_gray-dark Всего квартир - 2 345
+                                                    dd 2 345
+                                                    dt._clr_gray-dark Общая площадь
+                                                    dd 34 546 кв.м.
+                                                
+                                        .company-block_caption
+                                            span Аккредитация проекта в банках 
+
+                                        .location-block_features
+                                            //-.location-block_col
+                                            ul.location-block_banks
+                                                li
+                                                    a.gl_link.mb(href='#')
+                                                        img(src='images/bank_1.png')
+                                                li
+                                                    a.gl_link.mb(href='#')
+                                                        img(src='images/bank_2.png')
+                                                li
+                                                    a.gl_link.mb(href='#')
+                                                        img(src='images/bank_3.png')
+                                                li
+                                                    a.gl_link.mb(href='#')
+                                                        img(src='images/bank_4.png')
+                                                li
+                                                    a.gl_link.mb(href='#')
+                                                        img(src='images/bank_5.png')
+                                                li
+                                                    a.gl_link.mb(href='#')
+                                                        img(src='images/bank_6.png')
+
+                                            //-.location-block_col
+                                            ul.location-block_docs
+                                                li: a.gl_link._clr_turqoise(href='#') Проектная документация
+                                                li: a.gl_link._clr_turqoise(href='#') Ход строительства
+
                         .company-block.companyBlock
                             .company-block_caption
-                                span.collapseBlockBtn В продаже
+                                span.collapseBlockBtn.company-block_caption-link В продаже
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
 
                             .company-info_box.infoBlock
@@ -119,7 +244,7 @@ html(lang='ru')
 
                         .company-block.companyBlock._info-mode
                             .company-block_caption._mob_caption
-                                span.collapseBlockBtn Инфраструктура
+                                span.collapseBlockBtn.company-block_caption-link Инфраструктура
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-block-collapsed_info
                                 dl.company-block_options
@@ -200,7 +325,7 @@ html(lang='ru')
 
                         .company-block.companyBlock._info-mode
                             .company-block_caption._mob_caption
-                                span.collapseBlockBtn Аналитика и цены
+                                span.collapseBlockBtn.company-block_caption-link Аналитика и цены
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             p._mob_if_opened Квартира на 5% ниже предложений рядом
 
@@ -279,7 +404,7 @@ html(lang='ru')
 
                         .company-block.companyBlock
                             .company-block_caption
-                                span.collapseBlockBtn Мнение редакции
+                                span.collapseBlockBtn.company-block_caption-link Мнение редакции
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                                 
                             .company-info_box.infoBlock
@@ -322,19 +447,19 @@ html(lang='ru')
 
                         .company-block.companyBlock
                             .company-block_caption
-                                span.collapseBlockBtn Рейтинг комплекса: 4,2
+                                span.collapseBlockBtn.company-block_caption-link Рейтинг комплекса
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-info_box.infoBlock
-                                .company-info_features
+                                .company-info_features._mob_view
                                     .company-info_features-box._first
                                         p ЖК "Королев Сити" еще никто не оценивал
                                                 
                                     .company-info_features-box._last
-                                        a.btn_v1.btn_blue.rate_btn.rateBtn(href='#') Оценить
+                                        a.btn_v1.btn_blue.rate_btn.ratePopupBtn(href='#') Оценить
 
                         .company-block.companyBlock
                             .company-block_caption
-                                span.collapseBlockBtn Отзывы
+                                span.collapseBlockBtn.company-block_caption-link Отзывы
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             p 345 отзывов о компании «Главстрой девелопмент»
 

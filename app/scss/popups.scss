@@ -7,6 +7,15 @@
     border-radius: 0 0 4px 4px;
   }
 
+  &.popup_v3 {
+    background: $gl_white;
+    padding: 0 0 10px;
+    border-radius: 0 0 4px 4px;
+
+    @include respond-to-min($resp_step_2) {
+      padding: 0 5px 20px 23px;
+    }
+  }
 }
 
 

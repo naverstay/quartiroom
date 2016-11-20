@@ -183,12 +183,26 @@
   }
 }
 
+.mob_vis {
+
+  @include respond-to-min($resp_step_2) {
+    display: none;
+  }
+}
+
+.mob_invis {
+
+  @include respond-to-max($resp_step_2) {
+    display: none;
+  }
+}
+
 ._mob_if_opened {
 
   @include respond-to-max($resp_step_2) {
     display: none;
     margin-bottom: 10px;
-    
+
     .opened & {
       display: block;
     }

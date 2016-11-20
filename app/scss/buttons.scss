@@ -74,7 +74,7 @@
       margin-left: 20px;
     }
   }
-
+  
   &.filter_btn {
     display: block;
     width: 100%;
@@ -120,6 +120,19 @@
       vertical-align: middle;
       width: auto;
     }
+  }
+}
+
+.btn_v2 {
+  height: 28px;
+
+  &.title_btn {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0 10px;
+    font: 12px/28px $FontfabricMullerRegular;
   }
 }
 

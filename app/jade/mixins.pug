@@ -60,6 +60,8 @@ mixin dev_head(page_title, index, companies, location, complex, card, rate, comp
         - if (location)
             | 
             | <!--build:js js/location.min.js -->
+            script(src='js/lib/d3.min.js')
+            script(src='js/lib/moment.min.js')
             script(src='js/location.js')
             | 
             | <!--endbuild-->
@@ -113,7 +115,7 @@ mixin header(active)
                 a.header-logo(href='index.html')
                     span КВА
                         span.header-logo_r Р
-                        | ТИРИУМ
+                        | ТИРУМ
                     
             a.mob-menu_btn.openMobMenu(href='#')
 
@@ -322,7 +324,54 @@ mixin review_footer()
                 .input_w
                     button.btn_v1.btn_blue.review_btn Ответить
 
+mixin feature_rate()
+    .feature-rate_scale
+        +loop_while(3)
+            span.feature-rate_item._checked
+        +loop_while(2)
+            span.feature-rate_item
+
 mixin popups()
+    svg.hide(version='1.1', xmlns='http://www.w3.org/2000/svg')
+        filter#blur
+            fegaussianblur(stddeviation='3')
+            
+    #rate_popup.popup.popup_v3(title='Оценить')
+        form(action='#')
+            .section-inner
+                .company-info_rating
+                    .company-info_rating-box._first
+                        .company-info_rating-row
+                            span.feature-label Транспортная доступность
+                            span.feature-rate
+                                +feature_rate()
+                                
+                        .company-info_rating-row
+                            span.feature-label Инфраструктура
+                            span.feature-rate
+                                +feature_rate()
+                                
+                        .company-info_rating-row
+                            span.feature-label Экология
+                            span.feature-rate
+                                +feature_rate()
+                                
+                        .company-info_rating-row
+                            span.feature-label Цена/Качество
+                            span.feature-rate
+                                +feature_rate()
+
+                    .company-info_rating-box._last
+                        p Предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. 
+                .company-info_rating-form
+                    .input_w._answer-name
+                        input.f_input.input-v1._bordered(placeholder='Имя')
+                    .input_w._answer_text
+                        textarea.f_input.input-v1._h-112._bordered(placeholder='Сообщение')
+    
+                    .input_w
+                        button.btn_v1.btn_blue.review_btn Отправить
+        
     #region_popup.popup.popup_v2(title='Регион: Москва')
         form(action='#')
             .section-inner

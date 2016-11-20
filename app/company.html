@@ -42,7 +42,7 @@
       <div class="base _gray">
         <div class="header">
           <div class="section-inner">
-            <div class="header-logo_block"><a class="header-logo" href="index.html"><span>КВА<span class="header-logo_r">Р</span>ТИРИУМ</span></a></div><a class="mob-menu_btn openMobMenu" href="#"></a>
+            <div class="header-logo_block"><a class="header-logo" href="index.html"><span>КВА<span class="header-logo_r">Р</span>ТИРУМ</span></a></div><a class="mob-menu_btn openMobMenu" href="#"></a>
             <div class="main-menu_holder">
               <div class="user-menu"><a class="user-menu_link" href="#"><span class="user-menu_icon"></span><span>Вход</span></a></div>
               <ul class="main-menu">
@@ -118,7 +118,7 @@
               </div>
             </div>
             <div class="company-block companyBlock">
-              <div class="company-block_caption"> <span class="collapseBlockBtn">В продаже</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-block_caption"> <span class="collapseBlockBtn company-block_caption-link">В продаже</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
               <div class="company-info_box infoBlock">
                 <p> <span class="_clr_gray-dark">Сейчас у компании: </span><span>234 квартиры </span><span class="_clr_gray-dark">и </span><span>15 таунхаусов</span></p>
                 <div class="company-unit_info_w">
@@ -142,7 +142,7 @@
               </div>
             </div>
             <div class="company-block companyBlock">
-              <div class="company-block_caption"> <span class="collapseBlockBtn">Объекты компании</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-block_caption"> <span class="collapseBlockBtn company-block_caption-link">Объекты компании</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
               <div class="company-info_box infoBlock">
                 <div class="company-info_objects">
                   <ul class="company-info_objects-filter">
@@ -326,7 +326,7 @@
               </div>
             </div>
             <div class="company-block companyBlock">
-              <div class="company-block_caption"><span class="collapseBlockBtn">Рейтинг компании: 4,2</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-block_caption"><span class="collapseBlockBtn company-block_caption-link">Рейтинг компании: 4,2</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
               <div class="company-info_box infoBlock">
                 <div class="company-info_features">
                   <div class="company-info_features-box _first">
@@ -357,12 +357,12 @@
                     </div>
                     <div class="company-info_total-rate"> <span class="_clr_gray-dark">Общая оценка <br></span><span>на основании: <a class="gl_link _clr_default" href="#">345 отзывов</a></span></div>
                   </div>
-                  <div class="company-info_features-box _last"><a class="btn_v1 btn_blue rate_btn rateBtn" href="#">Оценить</a></div>
+                  <div class="company-info_features-box _last"><a class="btn_v1 btn_blue rate_btn ratePopupBtn" href="#">Оценить</a></div>
                 </div>
               </div>
             </div>
             <div class="company-block companyBlock _info-mode">
-              <div class="company-block_caption"><span class="collapseBlockBtn">Отзывы</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-block_caption"><span class="collapseBlockBtn company-block_caption-link">Отзывы</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
               <p>345 отзывов о компании «Главстрой девелопмент»</p>
               <div class="company-info_box infoBlock">
                 <div class="company-info_reviews">
@@ -550,6 +550,47 @@
           </div>
         </div>
       </div>
+    </div>
+    <svg class="hide" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <filter id="blur">
+        <fegaussianblur stddeviation="3"></fegaussianblur>
+      </filter>
+    </svg>
+    <div class="popup popup_v3" id="rate_popup" title="Оценить">
+      <form action="#">
+        <div class="section-inner">
+          <div class="company-info_rating">
+            <div class="company-info_rating-box _first">
+              <div class="company-info_rating-row"><span class="feature-label">Транспортная доступность</span><span class="feature-rate">
+                  <div class="feature-rate_scale"><span class="feature-rate_item _checked"></span><span class="feature-rate_item _checked"></span><span class="feature-rate_item _checked"></span><span class="feature-rate_item"></span><span class="feature-rate_item"></span>
+                  </div></span></div>
+              <div class="company-info_rating-row"><span class="feature-label">Инфраструктура</span><span class="feature-rate">
+                  <div class="feature-rate_scale"><span class="feature-rate_item _checked"></span><span class="feature-rate_item _checked"></span><span class="feature-rate_item _checked"></span><span class="feature-rate_item"></span><span class="feature-rate_item"></span>
+                  </div></span></div>
+              <div class="company-info_rating-row"><span class="feature-label">Экология</span><span class="feature-rate">
+                  <div class="feature-rate_scale"><span class="feature-rate_item _checked"></span><span class="feature-rate_item _checked"></span><span class="feature-rate_item _checked"></span><span class="feature-rate_item"></span><span class="feature-rate_item"></span>
+                  </div></span></div>
+              <div class="company-info_rating-row"><span class="feature-label">Цена/Качество</span><span class="feature-rate">
+                  <div class="feature-rate_scale"><span class="feature-rate_item _checked"></span><span class="feature-rate_item _checked"></span><span class="feature-rate_item _checked"></span><span class="feature-rate_item"></span><span class="feature-rate_item"></span>
+                  </div></span></div>
+            </div>
+            <div class="company-info_rating-box _last">
+              <p>Предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. </p>
+            </div>
+          </div>
+          <div class="company-info_rating-form">
+            <div class="input_w _answer-name">
+              <input class="f_input input-v1 _bordered" placeholder="Имя"/>
+            </div>
+            <div class="input_w _answer_text">
+              <textarea class="f_input input-v1 _h-112 _bordered" placeholder="Сообщение"></textarea>
+            </div>
+            <div class="input_w">
+              <button class="btn_v1 btn_blue review_btn">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
     <div class="popup popup_v2" id="region_popup" title="Регион: Москва">
       <form action="#">

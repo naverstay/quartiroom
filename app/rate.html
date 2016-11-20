@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Quartiroom Локация</title>
+    <title>Quartiroom Отзывы и оценка</title>
      
     <!-- saved from url=(0014)about:internet -->
     <meta charset="utf-8"/>
@@ -32,10 +32,11 @@
     <script src="js/lib/respond.min.js"/></script>
     <![endif]-->
      
-    <!--build:js js/location.min.js -->
+    <!--build:js js/rate.min.js -->
     <script src="js/lib/d3.min.js"></script>
     <script src="js/lib/moment.min.js"></script>
-    <script src="js/location.js"></script>
+    <script src="js/lib/nouislider.js"></script>
+    <script src="js/rate.js"></script>
      
     <!--endbuild-->
   </head>
@@ -74,10 +75,18 @@
             <ul class="breadcrumbs">
               <li class="breadcrumb-item"><a class="gl_link" href="index.html">Главная</a>
               </li>
-              <li class="breadcrumb-item"><span>Недвижимость в Королеве</span>
+              <li class="breadcrumb-item"><a class="gl_link" href="products.html">Московская область</a>
+              </li>
+              <li class="breadcrumb-item"><span>Жилые комплексы в Королеве</span>
               </li>
             </ul>
-            <div class="section-title">Недвижимость в Королеве</div>
+            <div class="section-title clearfix">
+              <div class="section-title_text">Отзывы и оценка ЖК "Королев Сити"</div>
+              <ul class="section-title_controls">
+                <li><a class="btn_v2 btn_blue title_btn" href="#">Официальный сайт</a></li>
+                <li><a class="btn_v2 btn_blue title_btn" href="#">Форум</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="main_content">
@@ -87,6 +96,7 @@
                 <ul id="location_switcher">
                   <li class="filter-item"><a class="gl_link" href="#location_tab_1"><span class="mb complex-view_tab-icon i-humburger mob_hidden"></span><span class="mb">фото<span class="mob_hidden">(12)</span></span></a></li>
                   <li class="filter-item"><a class="gl_link" href="#location_tab_2"><span class="mb complex-view_tab-icon i-map_pin mob_hidden"></span><span class="mb">на карте</span></a></li>
+                  <li class="filter-item"><a class="gl_link" href="#location_tab_3"><span class="mb complex-view_tab-icon mob_hidden i-pano"></span><span class="mb"> <span>Панорама </span><span class="mob_hidden"> местности</span></span></a></li>
                 </ul>
               </div>
               <div class="tabBlock" data-tab-context="#location_switcher">
@@ -105,249 +115,172 @@
                     <div class="map-wrapper"><img src="images/big_map.jpg"></div>
                   </div>
                 </div>
-              </div>
-              <div class="location-block_params">
-                <div class="location-block_param-box">
-                  <p>Россия, Московская область, <br> город областного значения Королев</p>
+                <div id="location_tab_3">
+                  <div class="location-block_map-holder">
+                    <div class="map-wrapper"><img src="images/big_map.jpg"></div>
+                  </div>
                 </div>
-                <div class="location-block_param-box">
-                  <div class="location-block_param-table">
-                    <div class="location-block_param-col">
-                      <p>Площадь:</p>
-                      <p>23 456 тыс. кв. м</p>
+              </div>
+              <div class="location-block_params-w companyBlock"><a class="company-block_caption-close collapseBlockBtn mob_invis" href="#"></a>
+                <div class="location-block_params-table_w">
+                  <div class="location-block_params-table">
+                    <div class="location-block_param-unit">
+                      <div class="location-block_param-caption"><span class="i-map_pin _clr_turqoise"></span><span>Адрес:</span></div>
+                      <div class="location-block_param-info">
+                        <p class="location-block_name">Московская обл.</p>
+                        <p>Областной центр, адресный район Красногорский район, д. Опалиха, ул. Фруктовая, дом 12</p>
+                      </div>
                     </div>
-                    <div class="location-block_param-col">
-                      <p>Население:</p>
-                      <p>345 650 чел</p>
+                    <div class="location-block_param-unit">
+                      <div class="location-block_param-caption"><span class="_clr_turqoise i-clock"></span><span>время в пути</span></div>
+                      <div class="location-block_param-info">
+                        <div class="location-block_param-station">
+                          <p class="location-block_name"><span class="mb complex-block_option-icon i-metro"></span><span class="mb">Новослободская</span></p>
+                          <ul class="complex-block_options">
+                            <li>
+                              <div class="complex-block_option"><span class="mb complex-block_option-icon i-car"></span><span class="mb">20 мин.</span></div>
+                            </li>
+                            <li>
+                              <div class="complex-block_option"><span class="mb complex-block_option-icon i-bus"></span><span class="mb">35 мин.</span></div>
+                            </li>
+                            <li>
+                              <div class="complex-block_option"><span class="mb complex-block_option-icon i-pedestrian"></span><span class="mb">45 мин.</span></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="location-block_param-station">
+                          <p class="location-block_name"><span class="mb complex-block_option-icon i-metro"></span><span class="mb">Новослободская 2</span></p>
+                          <ul class="complex-block_options">
+                            <li>
+                              <div class="complex-block_option"><span class="mb complex-block_option-icon i-car"></span><span class="mb">20 мин.</span></div>
+                            </li>
+                            <li>
+                              <div class="complex-block_option"><span class="mb complex-block_option-icon i-bus"></span><span class="mb">35 мин.</span></div>
+                            </li>
+                            <li>
+                              <div class="complex-block_option"><span class="mb complex-block_option-icon i-pedestrian"></span><span class="mb">45 мин.</span></div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                    <div class="location-block_param-col">
-                      <p>Плотность <br> населения:</p>
-                      <p>34 чел./кв.км</p>
+                    <div class="location-block_param-unit _last">
+                      <div class="location-block_param-caption"><span class="i-helmet _clr_turqoise"></span><span>Застройщик и срок сдачи</span></div>
+                      <div class="location-block_param-info">
+                        <p class="location-block_name">ГВСУ ЦЕНТР</p>
+                        <p class="location-block_name">2 квартал 2018 г.</p>
+                        <ul class="complex-block_tags _clr_gray">
+                          <li>
+                            <div class="complex-tag">У реки</div>
+                          </li>
+                          <li>
+                            <div class="complex-tag">Акция</div>
+                          </li>
+                          <li>
+                            <div class="complex-tag">Военная ипотека</div>
+                          </li>
+                          <li>
+                            <div class="complex-tag">Таунхаус</div>
+                          </li>
+                          <li>
+                            <div class="complex-tag">У реки</div>
+                          </li>
+                          <li>
+                            <div class="complex-tag">Акция</div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="location-block_param-box _last">
-                  <p> <span class="mob_hidden">Жилой фонд: <br> </span><span>2 430 многоквартирных домов <br> 34 567 индивидуальных хозяйств</span></p>
+                <div class="location-block_more mob_vis">
+                  <div class="company-block_caption"><span class="collapseBlockBtn company-block_caption-link">Объекты в комплексе </span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+                </div>
+                <div class="company-info_box infoBlock">
+                  <div class="location-block_more">
+                    <div class="company-block_caption mob_invis"><span>Объекты в комплексе </span></div>
+                    <div class="location-block_features"></div>
+                    <div class="location-block_features _mob_pad">
+                      <div class="location-block_col">
+                        <dl class="company-unit_info">
+                          <dt class="_clr_gray-dark">Студии</dt>
+                          <dd>986</dd>
+                          <dt class="_clr_gray-dark">1КК</dt>
+                          <dd>1232</dd>
+                          <dt class="_clr_gray-dark">2КК</dt>
+                          <dd>234</dd>
+                          <dt class="_clr_gray-dark">3КК</dt>
+                          <dd>195</dd>
+                          <dt class="_clr_gray-dark">Квартир в таунхаусах </dt>
+                          <dd>120</dd>
+                        </dl>
+                      </div>
+                      <div class="location-block_col">
+                        <dl class="company-unit_info">
+                          <dt class="_clr_gray-dark">Корпусов - 15</dt>
+                          <dd>15</dd>
+                          <dt class="_clr_gray-dark">Всего квартир - 2 345</dt>
+                          <dd>2 345</dd>
+                          <dt class="_clr_gray-dark">Общая площадь</dt>
+                          <dd>34 546 кв.м.</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="company-block_caption"><span>Аккредитация проекта в банках </span></div>
+                    <div class="location-block_features">
+                      <ul class="location-block_banks">
+                        <li><a class="gl_link mb" href="#"><img src="images/bank_1.png"></a></li>
+                        <li><a class="gl_link mb" href="#"><img src="images/bank_2.png"></a></li>
+                        <li><a class="gl_link mb" href="#"><img src="images/bank_3.png"></a></li>
+                        <li><a class="gl_link mb" href="#"><img src="images/bank_4.png"></a></li>
+                        <li><a class="gl_link mb" href="#"><img src="images/bank_5.png"></a></li>
+                        <li><a class="gl_link mb" href="#"><img src="images/bank_6.png"></a></li>
+                      </ul>
+                      <ul class="location-block_docs">
+                        <li><a class="gl_link _clr_turqoise" href="#">Проектная документация</a></li>
+                        <li><a class="gl_link _clr_turqoise" href="#">Ход строительства</a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Квартиры</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Студии</dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>1-комнатные</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>2-комнатные  </dt>
-                  <dd>от 3 900 000</dd>
-                  <dt>3-комнатные</dt>
-                  <dd>от 8 300 000</dd>
-                  <dt>4-комнатные</dt>
-                  <dd>от 12 300 000</dd>
-                  <dt>5-комнатные  </dt>
-                  <dd>от 15 900 000</dd>
-                  <dt>6-комнатные</dt>
-                  <dd>от 70 600 000</dd>
-                  <dt>Апартаменты </dt>
-                  <dd>от 10 300 000</dd>
-                  <dt>Лофты</dt>
-                  <dd>от 150 000</dd>
-                  <dt>Квартиры в таунхаусах</dt>
-                  <dd>от 150 000</dd>
-                </dl>
-              </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Загородная недвижимость</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Участки от 8 соток </dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>Дачные участки с домом от 12 кв.м.</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>Коттеджи 34 кв.м с участком</dt>
-                  <dd>от 3 900 000</dd>
-                </dl>
-              </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Жилые комплексы</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Эконом </dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>Комфорт</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>Бизнес</dt>
-                  <dd>от 3 900 000</dd>
-                  <dt>Элитный</dt>
-                  <dd>от 3 900 000</dd>
-                </dl>
-              </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Коттеджные поселки</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Эконом </dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>Комфорт</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>Бизнес</dt>
-                  <dd>от 3 900 000</dd>
-                  <dt>Элитный</dt>
-                  <dd>от 3 900 000</dd>
-                </dl>
-              </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="company-block companyBlock opened _location_mode">
-              <div class="company-block_caption"> <span>Дачные поселки</span></div>
-              <div class="location-info_box mob_hidden _location-image"><img src="images/loc_3.jpg"></div>
-              <div class="location-info_box _location-prices">
-                <dl class="company-unit_info">
-                  <dt>Эконом </dt>
-                  <dd>от 1 700 000</dd>
-                  <dt>Комфорт</dt>
-                  <dd>от 2 300 000</dd>
-                  <dt>Бизнес</dt>
-                  <dd>от 3 900 000</dd>
-                  <dt>Элитный</dt>
-                  <dd>от 3 900 000</dd>
-                </dl>
-              </div>
-              <div class="location-info_box _location-tags">
-                <ul class="complex-block_tags _clr_gray">
-                  <li>
-                    <div class="complex-tag">квартиры с окнами на парк</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с панорамным остеклением</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры рядом с рекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">видовые квартиры</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры с военной ипотекой</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">квартиры в таунхаусах с газом</div>
-                  </li>
-                  <li>
-                    <div class="complex-tag">недорогие лофты</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div class="company-block companyBlock">
-              <div class="company-block_caption"> <span class="collapseBlockBtn company-block_caption-link">Инфраструктура</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-block_caption"><span class="collapseBlockBtn company-block_caption-link">В продаже</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-info_box infoBlock">
+                <p><span class="_clr_gray-dark">Сейчас у компании: </span><span>234 квартиры </span><span class="_clr_gray-dark">и </span><span>15 таунхаусов</span></p>
+                <div class="company-unit_info_w">
+                  <dl class="company-unit_info">
+                    <dt>Студии</dt>
+                    <dd>от 1 700 000</dd>
+                    <dt>1-комнатные</dt>
+                    <dd>от 2 300 000</dd>
+                    <dt>2-комнатные  </dt>
+                    <dd>от 3 900 000</dd>
+                  </dl>
+                  <dl class="company-unit_info">
+                    <dt>3-комнатные</dt>
+                    <dd>от 5 600 000</dd>
+                    <dt>Коммерческие <span class="mob_hidden">помещения</span></dt>
+                    <dd>от 10 300 000</dd>
+                    <dt>Кладовки</dt>
+                    <dd>от 150 000</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            <div class="company-block companyBlock _info-mode">
+              <div class="company-block_caption _mob_caption"><span class="collapseBlockBtn company-block_caption-link">Инфраструктура</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-block-collapsed_info">
+                <dl class="company-block_options">
+                  <dt>Медицина: </dt>
+                  <dd>7</dd>
+                  <dt>Образование:</dt>
+                  <dd>6</dd>
+                  <dt>Магазины и досуг: </dt>
+                  <dd>5</dd>
+                </dl>
+              </div>
               <div class="company-info_box infoBlock">
                 <ul class="location-infrastructure">
                   <li>
@@ -386,194 +319,9 @@
                     </label>
                   </li>
                 </ul>
-                <div class="location-infrastructure_total"><span><b>2,4 поликлиники на 1000 чел.</b></span><span>В среднем по Московской области - 3,1 поликлиники на 1000 чел.</span></div>
                 <div class="company-info_objects-wrapper">
                   <div class="company-info_objects-map _full-width">
                     <div class="map-wrapper"><img src="images/big_map.jpg"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="company-block companyBlock">
-              <div class="company-block_caption"> <span class="collapseBlockBtn company-block_caption-link">Объекты компании</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
-              <div class="company-info_box infoBlock">
-                <div class="company-info_objects">
-                  <ul class="company-info_objects-filter">
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">Жилые комплексы</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">Студии</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">Комнаты</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">1-комн.кв.</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">2-комн.кв.</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">3-комн.кв.</span>
-                      </label>
-                    </li>
-                    <li>
-                      <label class="check-emul _check-v1">
-                        <input class="inp-hidden" type="checkbox"><span class="check-text">Участки</span>
-                      </label>
-                    </li>
-                  </ul>
-                  <div class="company-info_objects-wrapper">
-                    <div class="company-info_objects-map">
-                      <div class="map-wrapper"><img src="images/big_map.jpg"></div>
-                    </div>
-                    <div class="company-info_objects-info heightFillerParent">
-                      <div class="company-info_objects-description">
-                        <div class="gl_table">
-                          <div class="gl_table_cell">
-                            <p><span>Ул. Народного Ополчения, 34, <br> ЖК "Квартал Руполис-Растуново", </span><span class="mob_hidden"><br></span><span>корпус 14</span></p>
-                            <p class="company-info_objects-count"><span>В этом доме: </span><span class="_val">456 квартир</span></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="company-info_objects-container heightFiller">
-                        <ul class="company-info_objects-list objectsList">
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"> <span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="mob_hidden">
-                            <div class="company-info_object">
-                              <p class="clearfix"><a class="fl _clr_blue" href="#">2-комн. кв.</a><a class="fr favBtn _clr_blue fav_link" href="#"><span class="i-heart"></span></a></p>
-                              <p class="clearfix"><span class="fl _price">34 кв. м.</span><span class="fl">5/9 эт.</span><span class="fr">4 560 000 руб.</span></p>
-                            </div>
-                          </li>
-                          <li class="dt_hidden text_center"><a class="btn_v1 btn_transp_blue show_more showMoreBtn" href="#">Показать еще</a></li>
-                        </ul>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -732,24 +480,6 @@
             <div class="company-block companyBlock">
               <div class="company-block_caption"><span class="collapseBlockBtn company-block_caption-link">Мнение редакции</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
               <div class="company-info_box infoBlock">
-                <div class="company-info_features _flipped">
-                  <div class="company-info_features-box">
-                    <div class="review-content">
-                      <p>На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. </p>
-                    </div>
-                  </div>
-                  <div class="company-info_features-box _last">
-                    <div class="company-info_total-rate">
-                      <div class="_val">4,2</div>
-                    </div>
-                    <div class="company-info_total-rate"><span class="_clr_gray-dark">Оценка <br> редакции</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="company-block companyBlock">
-              <div class="company-block_caption"><span class="collapseBlockBtn company-block_caption-link">Рейтинг компании: 4,2</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
-              <div class="company-info_box infoBlock">
                 <div class="company-info_features">
                   <div class="company-info_features-box _first">
                     <div class="company-info_features-rate"><span class="feature-label fl"><span>Открытость </span><span class="mob_hidden">компании</span></span><span class="feature-rate fr">
@@ -773,17 +503,21 @@
                         </div>
                         <div class="_val">4,8</div></span></div>
                   </div>
-                  <div class="company-info_features-box _center">
-                    <div class="company-info_total-rate">
-                      <div class="_val">4,2</div>
-                    </div>
-                    <div class="company-info_total-rate"><span class="_clr_gray-dark">Общая оценка <br></span><span>на основании: <a class="gl_link _clr_default" href="#">345 отзывов</a></span></div>
+                </div>
+                <div class="review-content">
+                  <p>На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. </p>
+                  <p>Столько же жителей населяет Люксембург или итальянский город Пиза. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. </p>
+                </div>
+              </div>
+            </div>
+            <div class="company-block companyBlock">
+              <div class="company-block_caption"><span class="collapseBlockBtn company-block_caption-link">Рейтинг комплекса</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
+              <div class="company-info_box infoBlock">
+                <div class="company-info_features _mob_view">
+                  <div class="company-info_features-box _first">
+                    <p>ЖК "Королев Сити" еще никто не оценивал</p>
                   </div>
-                  <div class="company-info_features-box _last">
-                    <div class="company-info_features-grade">
-                      <p class="text_left mb"><span class="_clr_gray-dark">Вы оценили ЖК "Королев Сити" </span><br><span>на 3,8 балла</span></p>
-                    </div>
-                  </div>
+                  <div class="company-info_features-box _last"><a class="btn_v1 btn_blue rate_btn ratePopupBtn" href="#">Оценить</a></div>
                 </div>
               </div>
             </div>

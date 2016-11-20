@@ -222,7 +222,7 @@ html(lang='ru')
                                         
                         .company-block.companyBlock
                             .company-block_caption 
-                                span.collapseBlockBtn Инфраструктура
+                                span.collapseBlockBtn.company-block_caption-link Инфраструктура
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-info_box.infoBlock
                                 ul.location-infrastructure
@@ -292,7 +292,7 @@ html(lang='ru')
                                         
                         .company-block.companyBlock
                             .company-block_caption 
-                                span.collapseBlockBtn Объекты компании
+                                span.collapseBlockBtn.company-block_caption-link Объекты компании
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-info_box.infoBlock
                                 .company-info_objects
@@ -403,7 +403,7 @@ html(lang='ru')
                                                         
                         .company-block.companyBlock._info-mode
                             .company-block_caption._mob_caption
-                                span.collapseBlockBtn Аналитика и цены
+                                span.collapseBlockBtn.company-block_caption-link Аналитика и цены
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             p._mob_if_opened Квартира на 5% ниже предложений рядом
 
@@ -482,7 +482,7 @@ html(lang='ru')
 
                         .company-block.companyBlock
                             .company-block_caption
-                                span.collapseBlockBtn Мнение редакции
+                                span.collapseBlockBtn.company-block_caption-link Мнение редакции
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                                 
                             .company-info_box.infoBlock
@@ -498,7 +498,7 @@ html(lang='ru')
 
                         .company-block.companyBlock
                             .company-block_caption
-                                span.collapseBlockBtn Рейтинг компании: 4,2
+                                span.collapseBlockBtn.company-block_caption-link Рейтинг компании: 4,2
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-info_box.infoBlock
                                 .company-info_features
@@ -541,15 +541,16 @@ html(lang='ru')
                                                 a.gl_link._clr_default(href='#') 345 отзывов
 
                                     .company-info_features-box._last
-                                        p.text_left 
-                                            span Вы оценили ЖК "Королев Сити" 
-                                            br
-                                            span._clr_default на 3,8 балла
+                                        .company-info_features-grade
+                                            p.text_left.mb
+                                                span._clr_gray-dark Вы оценили ЖК "Королев Сити" 
+                                                br
+                                                span на 3,8 балла
 
 
                         .company-block.companyBlock
                             .company-block_caption
-                                span.collapseBlockBtn Отзывы
+                                span.collapseBlockBtn.company-block_caption-link Отзывы
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             p 345 отзывов о компании «Главстрой девелопмент»
 

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'quartiroom_icons';
-  src:  url('fonts/quartiroom_icons.eot?u0ptle');
-  src:  url('fonts/quartiroom_icons.eot?u0ptle#iefix') format('embedded-opentype'),
-    url('fonts/quartiroom_icons.ttf?u0ptle') format('truetype'),
-    url('fonts/quartiroom_icons.woff?u0ptle') format('woff'),
-    url('fonts/quartiroom_icons.svg?u0ptle#quartiroom_icons') format('svg');
+  src:  url('fonts/quartiroom_icons.eot?yyz5fh');
+  src:  url('fonts/quartiroom_icons.eot?yyz5fh#iefix') format('embedded-opentype'),
+    url('fonts/quartiroom_icons.ttf?yyz5fh') format('truetype'),
+    url('fonts/quartiroom_icons.woff?yyz5fh') format('woff'),
+    url('fonts/quartiroom_icons.svg?yyz5fh#quartiroom_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -65,6 +65,9 @@
 }
 .i-check_filled:before {
   content: "\e93a";
+}
+.i-clock:before {
+  content: "\e93b";
 }
 .i-builder:before {
   content: "\e93c";
