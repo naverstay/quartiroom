@@ -88,6 +88,7 @@ mixin dev_head(page_title, index, companies, location, complex, card, rate, comp
             script(src='js/lib/d3.min.js')
             script(src='js/lib/moment.min.js')
             script(src='js/lib/nouislider.js')
+            script(src='js/lib/jquery.backstretch.js')
             script(src='js/card.js')
             | 
             | <!--endbuild-->
@@ -244,7 +245,7 @@ mixin  variants()
                 .form-cell.toddler-val-v2
                     .toddler-val.select-box-v3
                         span.btn_v1.filter_btn.text_left._wnw Первый взнос, руб.
-                        span.start.btn_v1.filter_btn: input.f_input.input-v3.val
+                        span.start.btn_v1.filter_btn: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                         select.toddlerSelect(data-target='.start' )
                             option 0
                             option 10000
@@ -255,7 +256,7 @@ mixin  variants()
                             option 2500000
                             option 5000000
                         //-span.label.hide &mdash;
-                        //-span.end.hide: input.f_input.input-v3.val
+                        //-span.end.hide: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                         //-select.toddlerSelect(data-target='.end' )
                             option 0
                             option 10000
@@ -276,12 +277,12 @@ mixin  variants()
                 .form-cell.toddler-val-v2
                     .toddler-val.select-box-v3
                         span.btn_v1.filter_btn.text_left._wnw Срок кредитования
-                        span.start.btn_v1.filter_btn: input.f_input.input-v3.val
+                        span.start.btn_v1.filter_btn: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                         select.toddlerSelect(data-target='.start' )
                             - for (var i=1; i<21; i++)
                                 option=i
                         //-span.label.hide &mdash;
-                        //-span.end.hide: input.f_input.input-v3.val
+                        //-span.end.hide: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                         //-select.toddlerSelect(data-target='.end' )
                             - for (var i=1; i<21; i++)
                                 option=i
@@ -292,15 +293,15 @@ mixin  variants()
                     .fl 1 год 
                     .fr 20 лет
                         
-            .filter-cell._col-4
+            .filter-cell._col-4._col_fl
                 p._clr_gray._price-label Общая сумма выплат
                 .object_card-total_price 1 500 890 руб.
             
-            .filter-cell._col-1.dt_fr
+            .filter-cell._col-1._col_fr
                 p._clr_gray._price-label Плата за пользование кредитом
                 .object_card-total_price 1 400 500 руб.
                     
-            .filter-cell._col-1
+            .filter-cell._col-1._col_fl
                 p._clr_gray._price-label Ежемесячный платеж
                 .object_card-total_payment 42 500 руб.
                     

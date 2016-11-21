@@ -62,6 +62,23 @@
       width: 52%;
     }
   }
+
+  &._col_fl {
+    min-width: 32%;
+    
+    @include respond-to-min($resp_s_1) {
+      float: left;
+      padding-right: 10px;
+    }
+  }
+
+  &._col_fr {
+    min-width: 32%;
+
+    @include respond-to-min($resp_s_1) {
+      float: right;
+    }
+  }
 }
 
 .smpl-search_cell {
@@ -204,20 +221,21 @@
   }
 
   &_switcher {
-    line-height: 34px;
+    line-height: 26px;
     background: #eee;
     border-bottom: 1px solid #d4d4d4;
 
+    .filter-item .gl_link {
+      font-size: 14px;
+    }
+
     @include respond-to-max($resp_l) {
-      line-height: 28px;
+      //line-height: 28px;
     }
 
     @include respond-to-max($resp_step_2) {
-      line-height: 26px;
+      //line-height: 26px;
 
-      .filter-item .gl_link {
-        font-size: 14px;
-      }
     }
   }
 
@@ -768,7 +786,7 @@
       }
 
       .similar-block & {
-        
+
       }
     }
 
@@ -999,12 +1017,17 @@
       overflow: hidden;
       position: relative;
       height: 60px;
+      display: block;
+
+      .backstretch {
+        z-index: 10 !important;
+      }
       
       img {
         min-height: 100%;
       }
     }
-    
+
     @include respond-to-min($resp_step_2) {
       margin: 0 -233px 0 0;
       width: 232px;
@@ -1017,7 +1040,7 @@
         height: 210px;
         float: none;
         border-radius: 3px 3px 0 0;
- 
+
         img {
           width: 100%;
         }

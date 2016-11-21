@@ -74,7 +74,7 @@
       margin-left: 20px;
     }
   }
-  
+
   &.filter_btn {
     display: block;
     width: 100%;
@@ -121,6 +121,12 @@
       width: auto;
     }
   }
+
+  @at-root a#{&} {
+    &:hover {
+      opacity: .8;
+    }
+  }
 }
 
 .btn_v2 {
@@ -133,6 +139,12 @@
     text-align: center;
     padding: 0 10px;
     font: 12px/28px $FontfabricMullerRegular;
+  }
+
+  @at-root a#{&} {
+    &:hover {
+      opacity: .8;
+    }
   }
 }
 

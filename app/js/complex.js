@@ -21,6 +21,8 @@ function continueLoading() {
     if ($('#region_popup').length) {
         initRegionPopup();
     }
+
+    setSlideBS($('.slideBS'));
 }
 
 $(window).resize(function () {

@@ -36,6 +36,7 @@
     <script src="js/lib/d3.min.js"></script>
     <script src="js/lib/moment.min.js"></script>
     <script src="js/lib/nouislider.js"></script>
+    <script src="js/lib/jquery.backstretch.js"></script>
     <script src="js/card.js"></script>
      
     <!--endbuild-->
@@ -170,16 +171,24 @@
             </div>
             <div class="company-block companyBlock _info-mode">
               <div class="company-block_caption _mob_caption"><span class="collapseBlockBtn company-block_caption-link">Основные характеристики</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
-              <dl class="company-block_options">
-                <dt>Общая площадь:</dt>
-                <dd>62.3</dd>
-                <dt>Жилая площадь:</dt>
-                <dd>45.1</dd>
-                <dt>Площадь комнат: </dt>
-                <dd>16.3, 11.9</dd>
-                <dt>Площадь кухни: </dt>
-                <dd>12.6</dd>
-              </dl>
+              <div class="company-block_options-holder">
+                <dl class="company-block_options">
+                  <dt>Общая площадь:</dt>
+                  <dd>62.3</dd>
+                </dl>
+                <dl class="company-block_options">
+                  <dt>Жилая площадь:</dt>
+                  <dd>45.1</dd>
+                </dl>
+                <dl class="company-block_options">
+                  <dt>Площадь комнат: </dt>
+                  <dd>16.3, 11.9</dd>
+                </dl>
+                <dl class="company-block_options">
+                  <dt>Площадь кухни: </dt>
+                  <dd>12.6</dd>
+                </dl>
+              </div>
               <div class="company-info_box infoBlock">
                 <div class="object_card-description">
                   <div class="company-block_caption">Все характеристики</div>
@@ -225,14 +234,20 @@
             <div class="company-block companyBlock _info-mode">
               <div class="company-block_caption _mob_caption"> <span class="collapseBlockBtn company-block_caption-link">Инфраструктура</span><a class="company-block_caption-close collapseBlockBtn" href="#"></a></div>
               <div class="company-block-collapsed_info">
-                <dl class="company-block_options">
-                  <dt>Медицина: </dt>
-                  <dd>7</dd>
-                  <dt>Образование:</dt>
-                  <dd>6</dd>
-                  <dt>Магазины и досуг: </dt>
-                  <dd>5</dd>
-                </dl>
+                <div class="company-block_options-holder">
+                  <dl class="company-block_options">
+                    <dt>Медицина: </dt>
+                    <dd>7</dd>
+                  </dl>
+                  <dl class="company-block_options">
+                    <dt>Образование:</dt>
+                    <dd>6</dd>
+                  </dl>
+                  <dl class="company-block_options">
+                    <dt>Магазины и досуг: </dt>
+                    <dd>5</dd>
+                  </dl>
+                </div>
               </div>
               <div class="company-info_box infoBlock">
                 <ul class="location-infrastructure">
@@ -417,14 +432,13 @@
                       </table>
                     </div>
                   </div>
-                  <div class="object_card-analytic_caption">Какие новостройки в Щукино
-                    <div class="object_card-graph_holder">
-                      <div class="object_card-graph_box-v2">
-                        <div class="d3graph graph_2" id="chart_2"></div>
-                      </div>
-                      <div class="object_card-graph_box-v2">
-                        <div class="d3graph graph_2" id="chart_3"></div>
-                      </div>
+                  <div class="object_card-analytic_caption">Какие новостройки в Щукино</div>
+                  <div class="object_card-graph_holder">
+                    <div class="object_card-graph_box-v2">
+                      <div class="d3graph graph_2" id="chart_2"></div>
+                    </div>
+                    <div class="object_card-graph_box-v2">
+                      <div class="d3graph graph_2" id="chart_3"></div>
                     </div>
                   </div>
                 </div>
@@ -462,7 +476,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>0</option>
                                     <option>10000</option>
@@ -486,7 +500,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>1</option>
                                     <option>2</option>
@@ -519,15 +533,15 @@
                                 <div class="fr">20 лет</div>
                               </div>
                             </div>
-                            <div class="filter-cell _col-4">
+                            <div class="filter-cell _col-4 _col_fl">
                               <p class="_clr_gray _price-label">Общая сумма выплат</p>
                               <div class="object_card-total_price">1 500 890 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1 dt_fr">
+                            <div class="filter-cell _col-1 _col_fr">
                               <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
                               <div class="object_card-total_price">1 400 500 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1">
+                            <div class="filter-cell _col-1 _col_fl">
                               <p class="_clr_gray _price-label">Ежемесячный платеж</p>
                               <div class="object_card-total_payment">42 500 руб.</div>
                             </div>
@@ -554,7 +568,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>0</option>
                                     <option>10000</option>
@@ -578,7 +592,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>1</option>
                                     <option>2</option>
@@ -611,15 +625,15 @@
                                 <div class="fr">20 лет</div>
                               </div>
                             </div>
-                            <div class="filter-cell _col-4">
+                            <div class="filter-cell _col-4 _col_fl">
                               <p class="_clr_gray _price-label">Общая сумма выплат</p>
                               <div class="object_card-total_price">1 500 890 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1 dt_fr">
+                            <div class="filter-cell _col-1 _col_fr">
                               <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
                               <div class="object_card-total_price">1 400 500 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1">
+                            <div class="filter-cell _col-1 _col_fl">
                               <p class="_clr_gray _price-label">Ежемесячный платеж</p>
                               <div class="object_card-total_payment">42 500 руб.</div>
                             </div>
@@ -646,7 +660,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>0</option>
                                     <option>10000</option>
@@ -670,7 +684,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>1</option>
                                     <option>2</option>
@@ -703,15 +717,15 @@
                                 <div class="fr">20 лет</div>
                               </div>
                             </div>
-                            <div class="filter-cell _col-4">
+                            <div class="filter-cell _col-4 _col_fl">
                               <p class="_clr_gray _price-label">Общая сумма выплат</p>
                               <div class="object_card-total_price">1 500 890 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1 dt_fr">
+                            <div class="filter-cell _col-1 _col_fr">
                               <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
                               <div class="object_card-total_price">1 400 500 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1">
+                            <div class="filter-cell _col-1 _col_fl">
                               <p class="_clr_gray _price-label">Ежемесячный платеж</p>
                               <div class="object_card-total_payment">42 500 руб.</div>
                             </div>
@@ -738,7 +752,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>0</option>
                                     <option>10000</option>
@@ -762,7 +776,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>1</option>
                                     <option>2</option>
@@ -795,15 +809,15 @@
                                 <div class="fr">20 лет</div>
                               </div>
                             </div>
-                            <div class="filter-cell _col-4">
+                            <div class="filter-cell _col-4 _col_fl">
                               <p class="_clr_gray _price-label">Общая сумма выплат</p>
                               <div class="object_card-total_price">1 500 890 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1 dt_fr">
+                            <div class="filter-cell _col-1 _col_fr">
                               <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
                               <div class="object_card-total_price">1 400 500 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1">
+                            <div class="filter-cell _col-1 _col_fl">
                               <p class="_clr_gray _price-label">Ежемесячный платеж</p>
                               <div class="object_card-total_payment">42 500 руб.</div>
                             </div>
@@ -830,7 +844,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Первый взнос, руб.</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>0</option>
                                     <option>10000</option>
@@ -854,7 +868,7 @@
                             <div class="filter-cell _col-1 filterBlock">
                               <div class="form-cell toddler-val-v2">
                                 <div class="toddler-val select-box-v3"><span class="btn_v1 filter_btn text_left _wnw">Срок кредитования</span><span class="start btn_v1 filter_btn">
-                                    <input class="f_input input-v3 val"/></span>
+                                    <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "/></span>
                                   <select class="toddlerSelect" data-target=".start">
                                     <option>1</option>
                                     <option>2</option>
@@ -887,15 +901,15 @@
                                 <div class="fr">20 лет</div>
                               </div>
                             </div>
-                            <div class="filter-cell _col-4">
+                            <div class="filter-cell _col-4 _col_fl">
                               <p class="_clr_gray _price-label">Общая сумма выплат</p>
                               <div class="object_card-total_price">1 500 890 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1 dt_fr">
+                            <div class="filter-cell _col-1 _col_fr">
                               <p class="_clr_gray _price-label">Плата за пользование кредитом</p>
                               <div class="object_card-total_price">1 400 500 руб.</div>
                             </div>
-                            <div class="filter-cell _col-1">
+                            <div class="filter-cell _col-1 _col_fl">
                               <p class="_clr_gray _price-label">Ежемесячный платеж</p>
                               <div class="object_card-total_payment">42 500 руб.</div>
                             </div>
@@ -936,10 +950,9 @@
                     </li>
                   </ul>
                 </div>
-                <ul class="similar_offers">
+                <ul class="similar_offers"> 
                   <li>
-                    <div class="similar-block">
-                      <div class="complex-block_object-img"><img src="images/object_5.jpg"></div>
+                    <div class="similar-block"><a class="complex-block_object-img slideBS" href="#"><img src="images/object_5.jpg"></a>
                       <div class="complex-block_content">
                         <div class="complex-block_content-head">
                           <p><span class="complex-block_caption"><a class="gl_link" href="card.html">2-комнатная квартира, 56 кв.м., с видом на парк, с отделкой</a></span></p>
@@ -965,8 +978,7 @@
                     </div>
                   </li>
                   <li>
-                    <div class="similar-block">
-                      <div class="complex-block_object-img"><img src="images/object_5.jpg"></div>
+                    <div class="similar-block"><a class="complex-block_object-img slideBS" href="#"><img src="images/object_5.jpg"></a>
                       <div class="complex-block_content">
                         <div class="complex-block_content-head">
                           <p><span class="complex-block_caption"><a class="gl_link" href="card.html">2-комнатная квартира, 56 кв.м., с видом на парк, с отделкой</a></span></p>
@@ -992,8 +1004,7 @@
                     </div>
                   </li>
                   <li>
-                    <div class="similar-block">
-                      <div class="complex-block_object-img"><img src="images/object_5.jpg"></div>
+                    <div class="similar-block"><a class="complex-block_object-img slideBS" href="#"><img src="images/object_5.jpg"></a>
                       <div class="complex-block_content">
                         <div class="complex-block_content-head">
                           <p><span class="complex-block_caption"><a class="gl_link" href="card.html">2-комнатная квартира, 56 кв.м., с видом на парк, с отделкой</a></span></p>

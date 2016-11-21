@@ -58,7 +58,7 @@ html(lang='ru')
                         .scrollerTabs(data-tab-context='#filter_list .slick-track')
                             #filter_tab_1 
                                 ul.companies-list
-                                    +loop_while(3)
+                                    +loop_while(4)
                                         li.company-item
                                             .company-unit
                                                 .company-unit_logo-block
@@ -98,7 +98,8 @@ html(lang='ru')
                                                     p
                                                         span._clr_gray на основе 
                                                         a.gl_link._clr_blue(href='#') 345 отзывов
-                                                        
+
+                                    +loop_while(4)
                                         li.company-item
                                             .company-unit
                                                 .company-unit_logo-block
@@ -119,6 +120,21 @@ html(lang='ru')
                                                 dl.company-unit_info
                                                     dt Квартир
                                                     dd 456
+                                                    
+                                                .company-unit_footer
+                                                    p.company-unit_rating
+                                                        span
+                                                            a._clr_blue.gl_link(href='#') Рейтинг
+                                                        span
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._half
+                                                        span 4.5
+                                                    p
+                                                        span._clr_gray на основе 
+                                                        a.gl_link._clr_blue(href='#') 345 отзывов
     
                                         li.company-item
                                             .company-unit
@@ -143,7 +159,7 @@ html(lang='ru')
                                                     dt Таунхаусов
                                                     dd 3
                                                     
-                                                //-.company-unit_footer
+                                                .company-unit_footer
                                                     p.company-unit_rating
                                                         span
                                                             a._clr_blue.gl_link(href='#') Рейтинг
@@ -182,6 +198,21 @@ html(lang='ru')
                                                     dd 3
                                                     dt Коттеджей
                                                     dd 34
+                                                    
+                                                .company-unit_footer
+                                                    p.company-unit_rating
+                                                        span
+                                                            a._clr_blue.gl_link(href='#') Рейтинг
+                                                        span
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._filled
+                                                            span.unit-rate._half
+                                                        span 4.5
+                                                    p
+                                                        span._clr_gray на основе 
+                                                        a.gl_link._clr_blue(href='#') 345 отзывов
                                 
                                 ul.pagination-list
                                     li.pagination-item._first 

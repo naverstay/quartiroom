@@ -1,4 +1,4 @@
-var interval = 10, redrawDelay;
+var interval = 10, redrawDelay, bsTimer;
 
 setTimeout(function () {
     if (main_script) {
@@ -19,12 +19,19 @@ function continueLoading() {
 
     drawCharts();
 
+    setSlideBS($('.slideBS'));
 }
 
 $(window).resize(function () {
 
     clearTimeout(redrawDelay);
+    
+    clearTimeout(bsTimer);
 
+    bsTimer = setTimeout(function () {
+        setSlideBS($('.slideBS'));
+    }, 5);
+    
     if (update_charts) {
         redrawDelay = setTimeout(function () {
             drawCharts();

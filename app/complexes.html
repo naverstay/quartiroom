@@ -111,7 +111,7 @@
                   <div class="filter-cell _col-1 filterBlock">
                     <div class="form-cell toddler-val-v1">
                       <div class="toddler-val select-box-v3"><span class="label"> <span>Цена за м<sup class="_index">2</sup></span><span> от </span></span><span class="start">
-                          <input class="f_input input-v3 val"></span>
+                          <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false, 'min' : '500', 'max': '500000' "></span>
                         <select class="toddlerSelect" data-target=".start">
                           <option>500</option>
                           <option>1000</option>
@@ -122,7 +122,7 @@
                           <option>250000</option>
                           <option>500000</option>
                         </select><span class="label">&mdash;</span><span class="end">
-                          <input class="f_input input-v3 val"></span>
+                          <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false, 'min' : '500', 'max': '500000' "></span>
                         <select class="toddlerSelect" data-target=".end">
                           <option>500</option>
                           <option>1000</option>
@@ -177,7 +177,7 @@
                   <div class="filter-cell _col-1 filterBlock">
                     <div class="form-cell toddler-val-v1">
                       <div class="toddler-val select-box-v3"><span class="label">Этажность дома от </span><span class="start">
-                          <input class="f_input input-v3 val"></span>
+                          <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "></span>
                         <select class="toddlerSelect" data-target=".start" data-dropdown-class="dropdown-v1">
                           <option>1</option>
                           <option>10</option>
@@ -191,7 +191,7 @@
                           <option>90 </option>
                           <option>100 </option>
                         </select><span class="label">&mdash;</span><span class="end">
-                          <input class="f_input input-v3 val"></span>
+                          <input class="f_input input-v3 val" data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false "></span>
                         <select class="toddlerSelect" data-target=".end" data-dropdown-class="dropdown-v1">
                           <option>1</option>
                           <option>10</option>
@@ -269,7 +269,7 @@
                   </div>
                   <div class="filter-cell _col-1">
                     <div class="form-cell select-box-v1 _bordered select-multi-v1">
-                      <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select="false" multiple data-placeholder="Инфраструктура:" data-preserve-placeholder="true">
+                      <select class="typeSelect select2" data-dropdown-class="dropdown-v1" data-close-on-select="false" multiple data-placeholder="Инфраструктура" data-preserve-placeholder="true">
                         <option></option>
                         <option>Электричество</option>
                         <option>Центральный газ</option>
@@ -287,7 +287,7 @@
                         <option>15 мин.</option>
                         <option>30 мин.</option>
                         <option>45 мин.</option>
-                        <option>60 мин.</option>
+                        <option>60 мин. и более</option>
                       </select>
                     </div>
                     <div class="form-cell select-box-v1 _bordered _ganged-last _s-50 select-search-v1">
@@ -306,7 +306,7 @@
                         <option>15 мин.</option>
                         <option>30 мин.</option>
                         <option>45 мин.</option>
-                        <option>60 мин.</option>
+                        <option>60 мин. и более</option>
                       </select>
                     </div>
                     <div class="form-cell select-box-v1 _bordered _ganged-last _s-50 select-search-v1">
@@ -1084,7 +1084,7 @@
                     </div>
                   </div>
                 </div>
-                <ul class="pagination-list mob_hidden">
+                <ul class="pagination-list">
                   <li class="pagination-item _first"><a class="gl_link" href="#">В начало</a></li>
                   <li class="pagination-item"><a class="gl_link" href="#">5</a></li>
                   <li class="pagination-item"><a class="gl_link" href="#">6</a></li>

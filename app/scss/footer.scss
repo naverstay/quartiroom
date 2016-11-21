@@ -221,12 +221,6 @@
   }
 }
 
-.dt_fr {
-  @include respond-to-min($mob_menu_w) {
-    float: right;
-  }
-}
-
 // todo remove
 #chromeperfectpixel-supported-by {
   display: none !important;

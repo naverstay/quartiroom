@@ -46,9 +46,9 @@ html(lang='ru')
                                                 span Цена за м
                                                     sup._index 2
                                                 span от 
-                                            span.start: input.f_input.input-v3.val 
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end: input.f_input.input-v3.val 
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
     
                                     .form-cell.toddler-v1
                                         .filterToddler(data-format='money' data-suffix_2=' руб' data-suffix_1=' руб' data-min=500 data-max=500000)
@@ -97,9 +97,9 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Общая площадь от
-                                            span.start: input.f_input.input-v3.val 
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end: input.f_input.input-v3.val 
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
     
                                     .form-cell.toddler-v1
                                         .filterToddler(data-suffix_2=' м' data-suffix_1=' м' data-suffix_2_=' м<sup class="_index">2</sup>' data-suffix_1_=' м<sup class="_index">2</sup>' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
@@ -111,9 +111,9 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Жилая площадь от
-                                            span.start: input.f_input.input-v3.val 
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end: input.f_input.input-v3.val 
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
     
                                     .form-cell.toddler-v1
                                         .filterToddler(data-suffix_2_=' м<sup class="_index">2</sup>' data-suffix_1_=' м<sup class="_index">2</sup>' data-suffix_2=' м' data-suffix_1=' м' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
@@ -171,9 +171,9 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Этаж от 
-                                            span.start: input.f_input.input-v3.val
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end: input.f_input.input-v3.val
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
 
                                     .form-cell.toddler-v1
                                         .filterToddler(data-plural='этаж,этажа,этажей' data-min=1 data-max=100)
@@ -185,9 +185,9 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Этажность дома от 
-                                            span.start: input.f_input.input-v3.val
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end: input.f_input.input-v3.val
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
 
                                     .form-cell.toddler-v1
                                         .filterToddler(data-plural='этаж,этажа,этажей' data-min=1 data-max=100)
@@ -230,7 +230,7 @@ html(lang='ru')
                                                 
                                 .filter-cell._col-1
                                     .form-cell.select-box-v1._bordered.select-multi-v1
-                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select='false' multiple data-placeholder='Инфраструктура:' data-preserve-placeholder='true')
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select='false' multiple data-placeholder='Инфраструктура' data-preserve-placeholder='true')
                                             option
                                             option Электричество
                                             option Центральный газ
@@ -246,7 +246,7 @@ html(lang='ru')
                                             option 15 мин.
                                             option 30 мин.
                                             option 45 мин.
-                                            option 60 мин.
+                                            option 60 мин. и более
     
                                     .form-cell.select-box-v1._bordered._ganged-last._s-50.select-search-v1
                                         select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Транспорт')
@@ -262,7 +262,7 @@ html(lang='ru')
                                             option 15 мин.
                                             option 30 мин.
                                             option 45 мин.
-                                            option 60 мин.
+                                            option 60 мин. и более
     
                                     .form-cell.select-box-v1._bordered._ganged-last._s-50.select-search-v1
                                         select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Транспорт')
@@ -304,7 +304,7 @@ html(lang='ru')
                             .section-inner
                                 +loop_while(6)
                                     .complex-block._object-mode
-                                        .complex-block_object-img
+                                        a.complex-block_object-img.slideBS(href='#')
                                             img(src='images/object_1.png')
 
                                         .complex-block_content
@@ -320,13 +320,13 @@ html(lang='ru')
                                                             span.mb.complex-block_option-icon.i-metro
                                                             span.mb Выхино
                                                     li._has_dot
+                                                        span._clr_gray Дом:  
+                                                        span Монолитно-кирпичный
+                                                        
+                                                    li._has_dot
                                                         span 6 этаж 
                                                         span._clr_gray из  
                                                         span 14
-                                                        
-                                                    li 
-                                                        span._clr_gray Дом:  
-                                                        span Монолитно-кирпичный
 
                                             .complex-block_content-footer
                                                 .complex-block_info
@@ -346,7 +346,7 @@ html(lang='ru')
                                                         li: .complex-tag Акция
                                                                 
                                     .complex-block._object-mode
-                                        .complex-block_object-img
+                                        a.complex-block_object-img.slideBS(href='#')
                                             img(src='images/object_1.png')
 
                                         .complex-block_content
@@ -361,15 +361,16 @@ html(lang='ru')
                                                         .complex-block_option
                                                             span.mb.complex-block_option-icon.i-metro
                                                             span.mb Выхино
+                                                    
+                                                    li._has_dot 
+                                                        span._clr_gray Дом:  
+                                                        span Монолитно-кирпичный
+                                                        
                                                     li._has_dot
                                                         span 6 этаж 
                                                         span._clr_gray из  
                                                         span 14
-                                                        
-                                                    li 
-                                                        span._clr_gray Дом:  
-                                                        span Монолитно-кирпичный
-                                                        
+
                                                 p Отличный вариант для молодой семьи. Распашная квартира с видом на парк и двор.  2 больших комнаты и небольшая кухня очень хорошо.
                                                         
                                             .complex-block_content-footer
@@ -391,7 +392,7 @@ html(lang='ru')
                                                         li: .complex-tag У реки
                                                         li: .complex-tag Акция
 
-                                ul.pagination-list.mob_hidden
+                                ul.pagination-list
                                     li.pagination-item._first
                                         a.gl_link(href='#') В начало
                                     li.pagination-item

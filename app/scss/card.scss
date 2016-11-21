@@ -75,7 +75,10 @@
 
   &-graph_holder {
     @extend %clearfix;
-    //overflow: hidden;
+
+    @include respond-to-max($resp_l) {
+      margin-bottom: 10px;
+    }
   }
 
   &-graph_box-v2 {

@@ -117,18 +117,19 @@ html(lang='ru')
                                 span.collapseBlockBtn.company-block_caption-link Основные характеристики
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             
-                            dl.company-block_options
-                                dt Общая площадь:
-                                dd 62.3
-                                
-                                dt Жилая площадь:
-                                dd 45.1
-                                
-                                dt Площадь комнат: 
-                                dd 16.3, 11.9
-                                
-                                dt Площадь кухни: 
-                                dd 12.6
+                            .company-block_options-holder
+                                dl.company-block_options
+                                    dt Общая площадь:
+                                    dd 62.3
+                                dl.company-block_options
+                                    dt Жилая площадь:
+                                    dd 45.1
+                                dl.company-block_options
+                                    dt Площадь комнат: 
+                                    dd 16.3, 11.9
+                                dl.company-block_options
+                                    dt Площадь кухни: 
+                                    dd 12.6
 
                             .company-info_box.infoBlock
                                 .object_card-description
@@ -169,22 +170,22 @@ html(lang='ru')
                                         
                                     .review-content 
                                         p На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. На просторной и благоустроенной территории «Северной долины» предусмотрено все для комфортного проживания. На территории «Северной долины» в 270 га будут проживать 80 тысяч жителей Санкт-Петербурга. Столько же жителей населяет Люксембург или итальянский город Пиза. 
-                                
-
+                                        
                         .company-block.companyBlock._info-mode
                             .company-block_caption._mob_caption 
                                 span.collapseBlockBtn.company-block_caption-link Инфраструктура
                                 a.company-block_caption-close.collapseBlockBtn(href='#')
                             .company-block-collapsed_info
-                                dl.company-block_options
-                                    dt Медицина: 
-                                    dd 7
-
-                                    dt Образование:
-                                    dd 6
-
-                                    dt Магазины и досуг: 
-                                    dd 5
+                                .company-block_options-holder
+                                    dl.company-block_options
+                                        dt Медицина: 
+                                        dd 7
+                                    dl.company-block_options
+                                        dt Образование:
+                                        dd 6
+                                    dl.company-block_options
+                                        dt Магазины и досуг: 
+                                        dd 5
                                     
                             .company-info_box.infoBlock
                                 ul.location-infrastructure
@@ -321,16 +322,14 @@ html(lang='ru')
                                                         td.col_3 
                                                             span.mb -15 000
                                                             span.graph_trend._down
-                                                    
-                                            
+                                                            
                                     .object_card-analytic_caption Какие новостройки в Щукино
-                                        .object_card-graph_holder
-                                            .object_card-graph_box-v2
-                                                #chart_2.d3graph.graph_2
-                                                    
-                                            .object_card-graph_box-v2
-                                                #chart_3.d3graph.graph_2
-                                        
+                                    .object_card-graph_holder
+                                        .object_card-graph_box-v2
+                                            #chart_2.d3graph.graph_2
+                                                
+                                        .object_card-graph_box-v2
+                                            #chart_3.d3graph.graph_2
                                         
                         .company-block.companyBlock._info-mode
                             .company-block_caption._mob_caption
@@ -406,11 +405,11 @@ html(lang='ru')
                                         .similar-block_count-val: a.gl_link._clr_turqoise(href='#') 98
                                         p Квартир(ы) <br>у этой компании
                                 
-                                ul.similar_offers
+                                ul.similar_offers 
                                     +loop_while(3)
                                         li
                                             .similar-block
-                                                .complex-block_object-img
+                                                a.complex-block_object-img.slideBS(href='#')
                                                     img(src='images/object_5.jpg')
     
                                                 .complex-block_content
@@ -440,7 +439,7 @@ html(lang='ru')
                                                                     
                                         //-li
                                             .complex-block
-                                                .complex-block_object-img
+                                                a.complex-block_object-img.slideBS(href='#')
                                                     img(src='images/object_1.png')
                                                     
                                                 .complex-block_content

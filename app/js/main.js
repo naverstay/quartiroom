@@ -672,7 +672,6 @@ function initToddlers() {
         initDynamicWidth(filter.find('input.val'));
 
         if (single) {
-            console.log('single');
             noUiSlider.create(this, {
                 start: max * .2,
                 connect: [true, false],
@@ -682,7 +681,6 @@ function initToddlers() {
                 }
             });
         } else {
-            console.log('connect');
             noUiSlider.create(this, {
                 start: [max * .2, max * .8],
                 connect: true,
@@ -691,8 +689,6 @@ function initToddlers() {
                     'max': max
                 }
             });
-
-
         }
 
         this.noUiSlider.on('update', function (values, handle) {
@@ -781,6 +777,9 @@ function initToddlers() {
                         return 'Нет результатов';
                         // return "Город не найден. <a href='#' class='gl_link _clr_turqoise'>Список городов</a>";
                     }
+                },
+                templateResult: function (data) {
+                    return $.isNumeric(data.text) ? numFormat(data.text) : data.text;
                 },
                 escapeMarkup: function (markup) {
                     return markup;
@@ -1082,6 +1081,10 @@ function slickUpdate() {
 
 function toNum(str) {
     return parseInt(str.toString().replace(/\D*/g, ''));
+}
+
+function numFormat(str) {
+    return str.replace(/(?!^)(?=(\d{3})+(?=\.|$))/gm, ' ');
 }
 
 function resize(inp) {

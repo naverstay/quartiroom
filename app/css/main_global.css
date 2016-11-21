@@ -29,7 +29,7 @@
   -webkit-box-pack: justify;
   -webkit-box-align: stretch; }
 
-.section-inner:after, .section-title_controls:after, .main-menu:after, .main-menu_holder:after, .footer .main-menu:after, .breadcrumbs:after, .hero_search-range:after, .features-list:after, .companies-list:after, .company-unit_info:after, .company-info_features:after, .company-info_features-rate:after, .company-info_rating:after, .company-info_object:after, .company-info_object-info:after, .company-info_objects-filter:after, .company-info_box:after, .company-info_box .company-unit_info_w:after, .company-info_box .company-unit_info_container:after, .company-info_contacts:after, .location-infrastructure:after, .location-infrastructure_total:after, .location-block:after, .location-block-view_tabs:after, .location-block_docs:after, .location-block_banks:after, .location-block_features:after, .company-block:after, .company-block_options:after, .review-header:after, .review-footer_controls:after, .filter-container:after, .filter-cell._col-1:after, .filter-cell._col-2:after, .filter-cell._col-4:after, .complex-view_tabs-holder:after, .complex-block:after, .complex-block_tags:after, .complex-block_info:after, .complex-block_links:after, .complex-block_content-body:after, .region_list-col:after, .object_card:after, .object_card-rates:after, .object_card-graph_holder:after, .object_card-location:after, .object_card-price_controls:after, .object_card-info_list:after, .similar_offers:after, .similar-block_counters:after, ._ganged-triple:after, .form-row:after, .toddler-range:after, .slick-track:after, .footer-about_menu:after, .footer-copyright_holder:after, .footer_counters:after {
+.section-inner:after, .section-title_controls:after, .main-menu:after, .main-menu_holder:after, .footer .main-menu:after, .breadcrumbs:after, .hero_search-range:after, .features-list:after, .companies-list:after, .company-unit_info:after, .company-info_features:after, .company-info_features-rate:after, .company-info_rating:after, .company-info_object:after, .company-info_object-info:after, .company-info_objects-filter:after, .company-info_box:after, .company-info_box .company-unit_info_w:after, .company-info_box .company-unit_info_container:after, .company-info_contacts:after, .location-infrastructure:after, .location-infrastructure_total:after, .location-block:after, .location-block-view_tabs:after, .location-block_docs:after, .location-block_banks:after, .location-block_features:after, .company-block:after, .company-block_options-holder:after, .review-header:after, .review-footer_controls:after, .filter-container:after, .filter-cell._col-1:after, .filter-cell._col-2:after, .filter-cell._col-4:after, .complex-view_tabs-holder:after, .complex-block:after, .complex-block_tags:after, .complex-block_info:after, .complex-block_links:after, .complex-block_content-body:after, .region_list-col:after, .object_card:after, .object_card-rates:after, .object_card-graph_holder:after, .object_card-location:after, .object_card-price_controls:after, .object_card-info_list:after, .similar_offers:after, .similar-block_counters:after, ._ganged-triple:after, .form-row:after, .toddler-range:after, .slick-track:after, .footer-about_menu:after, .footer-copyright_holder:after, .footer_counters:after {
   position: static;
   display: block;
   height: 0;
@@ -2059,25 +2059,14 @@ body {
 .filter-holder {
   position: relative;
   margin-bottom: -1px; }
-  .filter-holder:before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    width: 100px;
-    z-index: 1;
-    pointer-events: none;
-    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=1); }
   .filter-holder .slick-track {
     min-width: 100%; }
   @media only screen and (min-width: 960px) {
     .filter-holder {
       padding-right: 26%;
-      margin-right: -1%; } }
+      margin-right: -1%; }
+      .filter-holder:before {
+        display: none; } }
   .filter-holder.filter-holder-v1 {
     padding-right: 1%; }
     .filter-holder.filter-holder-v1 .slick-list {
@@ -2105,6 +2094,19 @@ body {
     .filter-holder.filter-holder-v2 .filter-list {
       position: relative;
       line-height: 20px; }
+      .filter-holder.filter-holder-v2 .filter-list:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 1px;
+        top: 0;
+        width: 100px;
+        z-index: 1;
+        pointer-events: none;
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=1); }
       .filter-holder.filter-holder-v2 .filter-list:before {
         content: '';
         position: absolute;
@@ -3298,8 +3300,11 @@ body {
   .opened .company-block-collapsed_info {
     display: none; }
   .company-block_options {
-    margin-left: -33px;
-    line-height: 1; }
+    float: left;
+    line-height: 1;
+    white-space: nowrap; }
+    .company-block_options-holder {
+      margin-left: -33px; }
     @media only screen and (max-width: 639px) {
       .company-block_options {
         display: none;
@@ -3307,7 +3312,9 @@ body {
         .opened .company-block_options {
           display: block; } }
     .company-block_options dt, .company-block_options dd {
-      float: left;
+      display: inline-block;
+      vertical-align: top;
+      white-space: normal;
       margin-bottom: 7px; }
     .company-block_options dt {
       color: #696969;
@@ -3316,7 +3323,7 @@ body {
         .company-block_options dt {
           clear: both; } }
     .company-block_options dd {
-      padding-left: 5px; }
+      padding-left: 4px; }
   .company-block_caption {
     -webkit-transition: color 0.3s;
     -ms-transition: color 0.3s;
@@ -3563,6 +3570,17 @@ body {
         width: 36%; }
       .filter-cell._col-5 {
         width: 52%; } }
+  .filter-cell._col_fl {
+    min-width: 32%; }
+    @media only screen and (min-width: 480px) {
+      .filter-cell._col_fl {
+        float: left;
+        padding-right: 10px; } }
+  .filter-cell._col_fr {
+    min-width: 32%; }
+    @media only screen and (min-width: 480px) {
+      .filter-cell._col_fr {
+        float: right; } }
 
 .form-cell.adv-search_box {
   padding: 8px 0 0; }
@@ -3650,17 +3668,11 @@ body {
           height: 610px; } }
 
 .complex-view_switcher {
-  line-height: 34px;
+  line-height: 26px;
   background: #eee;
   border-bottom: 1px solid #d4d4d4; }
-  @media only screen and (max-width: 959px) {
-    .complex-view_switcher {
-      line-height: 28px; } }
-  @media only screen and (max-width: 639px) {
-    .complex-view_switcher {
-      line-height: 26px; }
-      .complex-view_switcher .filter-item .gl_link {
-        font-size: 14px; } }
+  .complex-view_switcher .filter-item .gl_link {
+    font-size: 14px; }
 
 .complex-view_tab-icon {
   font-size: 20px;
@@ -4106,7 +4118,10 @@ body {
     .similar-block .complex-block_object-img {
       overflow: hidden;
       position: relative;
-      height: 60px; }
+      height: 60px;
+      display: block; }
+      .similar-block .complex-block_object-img .backstretch {
+        z-index: 10 !important; }
       .similar-block .complex-block_object-img img {
         min-height: 100%; }
     @media only screen and (min-width: 640px) {
@@ -4273,6 +4288,9 @@ body {
         .object_card-rates .feature-rate {
           width: 195px;
           padding-right: 20px; } }
+  @media only screen and (max-width: 959px) {
+    .object_card-graph_holder {
+      margin-bottom: 10px; } }
   @media only screen and (max-width: 639px) {
     .object_card-graph_box-v2 {
       margin-bottom: 10px; }
@@ -4889,6 +4907,8 @@ body {
         display: inline-block;
         vertical-align: middle;
         width: auto; } }
+  a.btn_v1:hover {
+    opacity: .8; }
 
 .btn_v2 {
   height: 28px; }
@@ -4899,6 +4919,8 @@ body {
     text-align: center;
     padding: 0 10px;
     font: 12px/28px "FontfabricMullerRegular", sans-serif; }
+  a.btn_v2:hover {
+    opacity: .8; }
 
 .btn_blue {
   color: #fff;
@@ -5140,17 +5162,11 @@ body {
   color: #333;
   padding: 0 20px 0 6px;
   line-height: 30px; }
-  @media only screen and (min-width: 640px) {
-    .select-box-v2 .select2-container--default .select2-selection__rendered {
-      line-height: 38px; } }
 
 .select-box-v2 .select2-container--default .select2-selection--single {
   background: none;
   border: none;
   height: 28px; }
-  @media only screen and (min-width: 640px) {
-    .select-box-v2 .select2-container--default .select2-selection--single {
-      height: 36px; } }
   .select-box-v2 .select2-container--default .select2-selection--single:hover {
     background: #fff; }
     .select-box-v2 .select2-container--default .select2-selection--single:hover .select2-selection__rendered {
@@ -5160,9 +5176,6 @@ body {
 
 .select-box-v2 .select2-container--default .select2-selection__arrow {
   height: 30px; }
-  @media only screen and (min-width: 640px) {
-    .select-box-v2 .select2-container--default .select2-selection__arrow {
-      height: 38px; } }
   .select-box-v2 .select2-container--default .select2-selection__arrow:before {
     -webkit-transition: color 0.3s, transform 0.3s;
     -ms-transition: color 0.3s, transform 0.3s;
@@ -5309,7 +5322,7 @@ body {
   border-width: 0;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2); }
   .dropdown-v2 .select2-results__option {
-    padding: 6px; }
+    padding: 2px 6px; }
 
 .dropdown-v1 {
   border-width: 0;
@@ -5627,7 +5640,6 @@ body {
     vertical-align: middle;
     line-height: normal;
     position: relative;
-    z-index: 2;
     padding: 0 2px; }
   .toddler-val-v1 .toddler-val .start,
   .toddler-val-v1 .toddler-val .end {
@@ -5845,10 +5857,6 @@ body {
 @media only screen and (min-width: 960px) {
   .dt_hidden {
     display: none !important; } }
-
-@media only screen and (min-width: 960px) {
-  .dt_fr {
-    float: right; } }
 
 #chromeperfectpixel-supported-by {
   display: none !important; }
