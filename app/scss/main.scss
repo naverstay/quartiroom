@@ -5,12 +5,15 @@ html, body {
 html {
   overflow-x: hidden;
   overflow-y: scroll;
+  
+  &.no_scroll {
+    overflow: hidden;
+  }
 }
 
 body {
   font: 14px/1.2 $OpenSans;
   color: $default_t_color;
-
 }
 
 .footer,

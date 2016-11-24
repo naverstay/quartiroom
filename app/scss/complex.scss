@@ -332,12 +332,8 @@
 
   &_sort {
     float: right;
-    line-height: 1;
-
-    &-select {
-
-    }
-
+    line-height: 34px;
+    
     &-toggle {
       position: relative;
       padding-right: 20px;
@@ -1078,6 +1074,13 @@
       font: 16px/20px $FontfabricMullerRegular;
       color: $gl_blue;
 
+      sup {
+        font-size: .5em;
+        margin-top: -.5em;
+        display: inline-block;
+        vertical-align: top;
+      }
+      
       &:hover {
         text-decoration: underline;
       }

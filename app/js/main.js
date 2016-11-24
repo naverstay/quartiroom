@@ -991,6 +991,7 @@ function initRegionPopup() {
         position: {my: "top center", at: "top center", of: window},
         open: function (event, ui) {
             body.addClass('modal_opened overlay_v2');
+            html.addClass('no_scroll');
 
             setTimeout(function () {
                 initTabScroller();
@@ -1000,6 +1001,7 @@ function initRegionPopup() {
         },
         close: function (event, ui) {
             body.removeClass('modal_opened overlay_v2');
+            html.removeClass('no_scroll');
         }
     });
 

@@ -1349,6 +1349,8 @@ html, body {
 html {
   overflow-x: hidden;
   overflow-y: scroll; }
+  html.no_scroll {
+    overflow: hidden; }
 
 body {
   font: 14px/1.2 "Open Sans", sans-serif;
@@ -3304,7 +3306,8 @@ body {
     line-height: 1;
     white-space: nowrap; }
     .company-block_options-holder {
-      margin-left: -33px; }
+      margin-left: -33px;
+      margin-right: 43px; }
     @media only screen and (max-width: 639px) {
       .company-block_options {
         display: none;
@@ -3728,7 +3731,7 @@ body {
 
 .complex-view_sort {
   float: right;
-  line-height: 1; }
+  line-height: 34px; }
   .complex-view_sort-toggle {
     position: relative;
     padding-right: 20px;
@@ -4156,6 +4159,11 @@ body {
   a.complex-block_caption {
     font: 16px/20px "FontfabricMullerRegular", sans-serif;
     color: #55a9b6; }
+    a.complex-block_caption sup {
+      font-size: .5em;
+      margin-top: -.5em;
+      display: inline-block;
+      vertical-align: top; }
     a.complex-block_caption:hover {
       text-decoration: underline; }
     @media only screen and (min-width: 640px) {

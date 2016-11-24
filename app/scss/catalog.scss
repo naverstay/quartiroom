@@ -1984,6 +1984,7 @@
     &-holder {
       @extend %clearfix;
       margin-left: -33px;
+      margin-right: 43px;
     }
 
     @include respond-to-max($resp_step_2) {
