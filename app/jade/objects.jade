@@ -42,23 +42,23 @@ html(lang='ru')
                                 .filter-cell._col-1.filterBlock
                                     .form-cell.toddler-val-v1
                                         .toddler-val
-                                            //-span.label 
+                                            span.label 
                                                 span Цена за м
                                                     sup._index 2
-                                                span от 
+                                                
                                             span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
                                             span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
     
                                     .form-cell.toddler-v1
-                                        .filterToddler(data-format='money' data-suffix_2=' руб' data-suffix_1=' руб' data-min=500 data-max=500000)
+                                        .filterToddler(data-format='money' data-suffix_2=' руб' data-suffix_1=' руб' data-min=500 data-max=500000 )
                                     .toddler-range
                                         .min 
                                         .max
                                             
                                 .filter-cell._col-5: ._ganged-triple
-                                    .form-cell.select-box-v1._bordered._ganged-first._s-33.select-search-v1
-                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Кол-во комнат')
+                                    .form-cell.select-box-v1._bordered._ganged-first._s-33.select-multi-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select='false' multiple data-placeholder='Кол-во комнат:' data-preserve-placeholder='true')
                                             option 
                                             option 1
                                             option 2
@@ -311,7 +311,7 @@ html(lang='ru')
                                             .complex-block_content-head
                                                 p: a.complex-block_caption(href='card.html')
                                                     span 2-комнатная квартира, 63 м
-                                                        sup 2
+                                                        span._index_top 2
                                                     span  квартал
                                                 p._clr_gray Московская обл., г. Королев, ул. Октябрьская, корп.5, д.45 "В"
                                                 .complex-block_price-val 12 387 200 руб.
@@ -356,7 +356,7 @@ html(lang='ru')
                                             .complex-block_content-head
                                                 p: a.complex-block_caption(href='card.html')
                                                     span 2-комнатная квартира, 63 м
-                                                        sup 2
+                                                        span._index_top 2
                                                     span  квартал
                                                 p._clr_gray Московская обл., г. Королев, ул. Октябрьская, корп.5, д.45 "В"
                                                 .complex-block_price-val 12 387 200 руб.

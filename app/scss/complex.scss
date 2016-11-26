@@ -1074,7 +1074,7 @@
       font: 16px/20px $FontfabricMullerRegular;
       color: $gl_blue;
 
-      sup {
+      ._index_top {
         font-size: .5em;
         margin-top: -.5em;
         display: inline-block;
@@ -1082,7 +1082,7 @@
       }
       
       &:hover {
-        text-decoration: underline;
+        border-bottom: 2px solid $gl_blue;
       }
 
       @include respond-to-min($resp_step_2) {

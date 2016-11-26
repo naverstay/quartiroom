@@ -445,19 +445,17 @@ a {
       background: #fff;
       box-shadow: none;
       overflow-y: auto; } }
-  .ui-dialog.region_popup {
-    position: fixed !important; }
-    @media only screen and (max-width: 1199px) {
-      .ui-dialog.region_popup {
-        position: absolute !important;
-        top: 72px !important;
-        right: 0 !important;
-        left: 0 !important;
-        max-width: 100%;
-        box-shadow: none; } }
-    @media only screen and (max-width: 639px) {
-      .ui-dialog.region_popup {
-        top: 43px !important; } }
+  @media only screen and (max-width: 1199px) {
+    .ui-dialog.region_popup {
+      position: absolute !important;
+      top: 72px !important;
+      right: 0 !important;
+      left: 0 !important;
+      max-width: 100%;
+      box-shadow: none; } }
+  @media only screen and (max-width: 639px) {
+    .ui-dialog.region_popup {
+      top: 43px !important; } }
 
 .dialog_global {
   box-shadow: 0 3px 13px rgba(59, 59, 59, 0.86); }
@@ -4159,13 +4157,13 @@ body {
   a.complex-block_caption {
     font: 16px/20px "FontfabricMullerRegular", sans-serif;
     color: #55a9b6; }
-    a.complex-block_caption sup {
+    a.complex-block_caption ._index_top {
       font-size: .5em;
       margin-top: -.5em;
       display: inline-block;
       vertical-align: top; }
     a.complex-block_caption:hover {
-      text-decoration: underline; }
+      border-bottom: 2px solid #55a9b6; }
     @media only screen and (min-width: 640px) {
       a.complex-block_caption {
         font-size: 26px;

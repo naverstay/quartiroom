@@ -54,7 +54,7 @@
   }
 
   &.region_popup {
-    position: fixed !important;
+    //position: fixed !important;
 
     @include respond-to-max($resp_xxl) {
       position: absolute !important;
@@ -98,7 +98,6 @@
   height: 100%;
   left: 0;
   top: 0;
-  //	background: #fff;
   background: transparentize(#000, .75);
 
   .overlay_v1 & {
@@ -138,7 +137,6 @@
     height: 30px;
     top: 5px;
     left: 5px;
-    //z-index: 1002;
     text-align: center;
     background: none;
 
@@ -171,7 +169,6 @@
     height: 30px;
     top: 5px;
     left: 5px;
-    //z-index: 1002;
     text-align: center;
     background: none;
 
@@ -244,7 +241,6 @@
       border-radius: 5px 5px 0 0;
       border-bottom: 0;
     }
-        
   }
   
   .title_center_mod & {
@@ -257,7 +253,6 @@
 }
 
 .dialog_butt_wrap {
-
   .dialog_butt_v1 & {
     @extend %global_flex_block_row_nowrap_center;
     padding: 25px 0;
@@ -265,4 +260,3 @@
 }
 
 //---------------------------------------------------------------------ui-dialog
-

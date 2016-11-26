@@ -42,23 +42,23 @@ html(lang='ru')
                                 .filter-cell._col-1.filterBlock
                                     .form-cell.toddler-val-v1
                                         .toddler-val
-                                            //-span.label 
+                                            span.label 
                                                 span Цена за м
                                                     sup._index 2
-                                                span от 
-                                            span.start 
+                                                
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end 
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
     
                                     .form-cell.toddler-v1
-                                        .filterToddler(data-format='money' data-suffix_2=' руб' data-suffix_1=' руб' data-min=500 data-max=500000)
+                                        .filterToddler(data-format='money' data-suffix_2=' руб' data-suffix_1=' руб' data-min=500 data-max=500000 )
                                     .toddler-range
                                         .min 
                                         .max
                                             
                                 .filter-cell._col-5: ._ganged-triple
-                                    .form-cell.select-box-v1._bordered._ganged-first._s-33.select-search-v1
-                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Кол-во комнат')
+                                    .form-cell.select-box-v1._bordered._ganged-first._s-33.select-multi-v1
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select='false' multiple data-placeholder='Кол-во комнат:' data-preserve-placeholder='true')
                                             option 
                                             option 1
                                             option 2
@@ -67,7 +67,7 @@ html(lang='ru')
                                             
                                     .form-cell.select-box-v1._bordered._ganged-mid._s-33.select-search-v1
                                         a.btn_v1.btn_white.regionPopupBtn.filter_btn.text_left(href='#') Район
-                                            
+                                        
                                     //-.form-cell.select-box-v1._bordered._ganged-mid._s-33.select-search-v1
                                         select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Район')
                                             option 
@@ -97,12 +97,12 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Общая площадь от
-                                            span.start 
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end 
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
     
                                     .form-cell.toddler-v1
-                                        .filterToddler(data-suffix_2=' м<sup class="_index">2</sup>' data-suffix_1=' м<sup class="_index">2</sup>' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
+                                        .filterToddler(data-suffix_2=' м' data-suffix_1=' м' data-suffix_2_=' м<sup class="_index">2</sup>' data-suffix_1_=' м<sup class="_index">2</sup>' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
                                     .toddler-range
                                         .min
                                         .max
@@ -111,12 +111,12 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Жилая площадь от
-                                            span.start 
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end 
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
     
                                     .form-cell.toddler-v1
-                                        .filterToddler(data-suffix_2=' м<sup class="_index">2</sup>' data-suffix_1=' м<sup class="_index">2</sup>' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
+                                        .filterToddler(data-suffix_2_=' м<sup class="_index">2</sup>' data-suffix_1_=' м<sup class="_index">2</sup>' data-suffix_2=' м' data-suffix_1=' м' data-plural-text='м<sup class="_index">2</sup>' data-min=1 data-max=300)
                                     .toddler-range
                                         .min
                                         .max
@@ -171,9 +171,9 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Этаж от 
-                                            span.start
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
 
                                     .form-cell.toddler-v1
                                         .filterToddler(data-plural='этаж,этажа,этажей' data-min=1 data-max=100)
@@ -185,9 +185,9 @@ html(lang='ru')
                                     .form-cell.toddler-val-v1
                                         .toddler-val
                                             span.label Этажность дома от 
-                                            span.start
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
                                             span.label &mdash;
-                                            span.end
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
 
                                     .form-cell.toddler-v1
                                         .filterToddler(data-plural='этаж,этажа,этажей' data-min=1 data-max=100)
@@ -201,7 +201,7 @@ html(lang='ru')
                                             option
                                             option Пассажирский
                                             option Грузовой
-                                            
+
                                 .filter-cell._col-1.cb
                                     .form-cell.radio-group-v1
                                         .radio-group._fixed-cell

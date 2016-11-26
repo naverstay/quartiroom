@@ -37,14 +37,32 @@ html(lang='ru')
                                                 
                                 .filter-cell._col-1.filterBlock
                                     .form-cell.toddler-val-v1
-                                        .toddler-val
+                                        .toddler-val.select-box-v3
                                             span.label 
                                                 span Цена за м
                                                     sup._index 2
                                                 span  от 
-                                            span.start 
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false, 'min' : '500', 'max': '500000' ")
+                                            select.toddlerSelect(data-target='.start' )
+                                                option 500
+                                                option 1000
+                                                option 5000
+                                                option 10000
+                                                option 50000
+                                                option 100000
+                                                option 250000
+                                                option 500000
                                             span.label &mdash;
-                                            span.end 
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false, 'min' : '500', 'max': '500000' ")
+                                            select.toddlerSelect(data-target='.end' )
+                                                option 500
+                                                option 1000
+                                                option 5000
+                                                option 10000
+                                                option 50000
+                                                option 100000
+                                                option 250000
+                                                option 500000
     
                                     .form-cell.toddler-v1
                                         .filterToddler(data-format='money' data-suffix_2=' руб' data-min=500 data-max=500000)
@@ -55,8 +73,8 @@ html(lang='ru')
                                 .filter-cell._col-4
                                     .form-cell.select-box-v1._bordered._ganged-first._s-50.select-search-v1
                                         a.btn_v1.btn_white.regionPopupBtn.filter_btn.text_left(href='#') Район
-                                    //-.form-cell.select-box-v1._bordered._ganged-first._s-50.select-search-v1
-                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Район')
+
+                                        //-select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='Район')
                                             option 
                                             option 1-комнатная квартира
                                             option 2-комнатная квартира
@@ -90,11 +108,36 @@ html(lang='ru')
                                 ._adv-filter_border.mob_hidden
                                 .filter-cell._col-1.filterBlock
                                     .form-cell.toddler-val-v1
-                                        .toddler-val
+                                        .toddler-val.select-box-v3
                                             span.label Этажность дома от 
-                                            span.start 
+                                            span.start: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
+                                            select.toddlerSelect(data-target='.start' data-dropdown-class='dropdown-v1')
+                                                option 1
+                                                option 10
+                                                option 20
+                                                option 30
+                                                option 40
+                                                option 50
+                                                option 60 
+                                                option 70 
+                                                option 80 
+                                                option 90 
+                                                option 100 
+                                                
                                             span.label &mdash;
-                                            span.end 
+                                            span.end: input.f_input.input-v3.val(data-inputmask="'alias': 'decimal', 'groupSeparator': ' ', 'digitsOptional': true, 'autoGroup': true, 'rightAlign': false ")
+                                            select.toddlerSelect(data-target='.end' data-dropdown-class='dropdown-v1')
+                                                option 1
+                                                option 10
+                                                option 20
+                                                option 30
+                                                option 40
+                                                option 50
+                                                option 60 
+                                                option 70 
+                                                option 80 
+                                                option 90 
+                                                option 100 
     
                                     .form-cell.toddler-v1
                                         .filterToddler(data-plural='этаж,этажа,этажей' data-min=1 data-max=100)
@@ -163,7 +206,7 @@ html(lang='ru')
                                             
                                 .filter-cell._col-1.cb
                                     .form-cell.select-box-v1._bordered._ganged-first._s-50.select-search-v1
-                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='До метро:' data-preserve-placeholder='true')
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='До метро:' data-preserve-placeholder='true' data-minimum-results-for-search= 'Infinity')
                                             option
                                             option 15 мин.
                                             option 30 мин.
@@ -179,7 +222,7 @@ html(lang='ru')
                                             
                                 .filter-cell._col-4
                                     .form-cell.select-box-v1._bordered._ganged-first._s-50.select-search-v1
-                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='До станции:' data-preserve-placeholder='true')
+                                        select.typeSelect.select2(data-dropdown-class='dropdown-v1' data-close-on-select_='false' multiple_ data-placeholder='До станции:' data-preserve-placeholder='true' data-minimum-results-for-search= 'Infinity')
                                             option
                                             option 15 мин.
                                             option 30 мин.
